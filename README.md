@@ -11,4 +11,4 @@ If error on torch installation: https://stackoverflow.com/questions/56239310/cou
 
 Running 
 
-`python basic_topic_identifier.py`
+`python runner.py`
