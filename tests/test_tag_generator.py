@@ -1,4 +1,4 @@
-from basic_topic_identifier import GenerateTags
+from tag_identifier import TagIdentifier
 import unittest
 
 test_list = ["Cowboys lose Browns bounce back",
@@ -11,7 +11,7 @@ class TestGenerateTags(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         super(TestGenerateTags, self).setUpClass()
-        self.generate_tags = GenerateTags()
+        self.generate_tags = TagIdentifier()
 
 
     def test_get_token_dict_valid(self):

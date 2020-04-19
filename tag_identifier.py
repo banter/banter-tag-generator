@@ -1,4 +1,4 @@
-from google_search_term_identifier import GoogleSearchClass
+from google_search_scraper import GoogleSearchScraper
 import pickle
 import json
 import stanza
@@ -8,22 +8,37 @@ from helper_class import HelperClass
 import logging
 import logging.handlers
 import os
+from multiprocessing import Pool
+import time
+PARENT_DIR = os.getcwd()
 
-class GenerateTags(GoogleSearchClass):
+logger = logging.getLogger(__name__)
+
+
+class TagIdentifier:
 
     def __init__(self):
-        self.tag_logger = logging.getLogger("Tag_Logger")
+        logger = logging.getLogger("Tag Identifier ")
+
+        self.reference_dir = r"%s\assets\reference_dict" % PARENT_DIR
+
+        # self.setup_logger()
+        #
+        # TODO Move back to __init__ , moved for quicker testing
+        self.nlp = stanza.Pipeline('en')  # This sets up a default neural pipeline in English
+
         self.helper = HelperClass()
-
-        parent_dir = os.getcwd()
-        self.reference_dir = r"%s\assets\reference_dict" % parent_dir
-
+        self.google_search_scraper = GoogleSearchScraper()
         self.sports_leagues = ["nfl", "nhl", "nba", "football", "mlb", "ncaab", "ncaafb"]
         self.sports = ["american_football", "basketball", "football", "hockey", "baseball"]
 
         self.sports_team_dict = self.set_team_dict()
         self.sports_player_dict = self.set_player_dict()
         self.sports_terms_dict = self.set_sports_terms_dict()
+
+    def setup_logger(self):
+        pass
+
 
     def set_team_dict(self):
         """
@@ -63,9 +78,10 @@ class GenerateTags(GoogleSearchClass):
         :return: a list of dictionaries, each dictionary is a tag
         Entinty Recognition: https://www.nltk.org/book/ch07.html
         """
+
         podcast_tags = []
-        # TODO Move back to __init__ , moved for quicker testing
-        self.nlp = stanza.Pipeline('en')  # This sets up a default neural pipeline in English
+        print("GENERATING TAGSSSSS")
+
 
         for index, summary in enumerate(summary_list):
 
@@ -73,14 +89,15 @@ class GenerateTags(GoogleSearchClass):
 
             # Google Results is used after iterating through a summary if there are no valid tags, this is the
             # Cumulative string for the entire summary
-            google_results: str = ''
+            google_search_results: str = ''
 
             token_dict_list = self.get_token_dict(summary)
-            self.tag_logger.info(f"Token Dict List for: {summary} :", token_dict_list)
+            print("Token DIct List", token_dict_list)
+            logger.info(f"Token Dict List for: {summary} :", token_dict_list)
             # NLP Couldnt find any clear tokens
             if len(token_dict_list) == 0:
                 token_dict_list = self.get_token_dict_manual(summary)
-                self.tag_logger.info(f"Manual Dict List for: {summary} :", token_dict_list)
+                logger.info(f"Manual Dict List for: {summary} :", token_dict_list)
 
             for token in token_dict_list:
 
@@ -89,17 +106,17 @@ class GenerateTags(GoogleSearchClass):
 
                 if len(tmp_tag_list) == 0:
                     # Convert Tag using google search
-                    google_results += self.get_google_search_results(token["text"])
-                    self.tag_logger.info(f"Google Search for: {token['text']} results:", google_results)
+                    google_search_results += self.google_search_scraper.get_google_search_results(token["text"])
+                    logger.info(f"Google Search for: {token['text']} results:", google_search_results)
                 else:
-                    self.tag_logger.info(f"Adding tags to {summary}:", tmp_tag_list)
+                    logger.info(f"Adding tags to {summary}:", tmp_tag_list)
                     summary_tag_list += tmp_tag_list
 
             # If google was required
-            if len(google_results) != 0:
+            if len(google_search_results) != 0:
 
-                token_dict_google_list = self.get_token_dict(google_results)
-                self.tag_logger.info(f"Tokenized Google Results: {token_dict_google_list}")
+                token_dict_google_list = self.get_token_dict(google_search_results)
+                logger.info(f"Tokenized Google Results: {token_dict_google_list}")
 
                 for token in token_dict_google_list:
                     tmp_tag_list: list = []
@@ -107,9 +124,11 @@ class GenerateTags(GoogleSearchClass):
                     summary_tag_list += tmp_tag_list
 
             summary_tag_obj = {"Summary": summary, "Tags": summary_tag_list}
-            self.tag_logger.info(f"Appending to Final Podcast Summary: {summary_tag_obj}")
+            logger.info(f"Appending to Final Podcast Summary: {summary_tag_obj}")
+            print("Done", podcast_tags)
             podcast_tags.append(summary_tag_obj)
 
+        print("Done", podcast_tags)
         return podcast_tags
 
     def get_token_dict(self, summary: str):
@@ -130,7 +149,7 @@ class GenerateTags(GoogleSearchClass):
         # Tampa Bay Buccaneers is a person? {'text': "Tampa Bay Buccaneers'", 'type': 'PERSON', 'start_char': 10, 'end_char': 31}
 
         tmp_tag_dict_list: list = []
-        print("Get Tags Using Dict", token_dict)
+        logger.debug("Get Tags Using Dict", token_dict)
 
         # Todo how to handle Tampa Bay Buccaneers being considered a person
         if token_dict["type"] == "ORG" or token_dict["type"] == "PERSON":
@@ -139,7 +158,7 @@ class GenerateTags(GoogleSearchClass):
         else:
             tmp_tag_dict_list += self.get_sports_terms_tag(token_dict)
 
-        self.tag_logger.info("get_tags_using_dict response", tmp_tag_dict_list)
+        logger.info("get_tags_using_dict response", tmp_tag_dict_list)
         return tmp_tag_dict_list
 
     def get_token_dict_manual(self, summary: str):
@@ -167,11 +186,11 @@ class GenerateTags(GoogleSearchClass):
         # Sometime names have punctuation that will screw it up, checking if it without punctuation is contained
         # IN List
         team_name_no_punc = self.helper.remove_punctuation_from_text(team_name)
-        print("Tame Name", team_name, team_name_no_punc)
+        logger.debug("Tame Name", team_name, team_name_no_punc)
         for league in self.sports_team_dict.keys():
             # TODO Handle if there are multiple teams with the same name
             if team_name in self.sports_team_dict[league]:
-                print(f"Team Exists in {league}")
+                logger.debug(f"Team Exists in {league}")
                 org_tags.append({"type": "team", "value": self.sports_team_dict[league][team_name]})
                 org_tags.append({"type": "league", "value": league})
                 break
@@ -191,14 +210,14 @@ class GenerateTags(GoogleSearchClass):
         for league in self.sports_player_dict.keys():
 
             if player_name in self.sports_player_dict[league]:
-                print(f"Team Exists in {league}")
+                logger.debug(f"Team Exists in {league}")
                 org_tags.append({"type": "team", "value": self.sports_player_dict[league][player_name]})
                 org_tags.append({"type": "person", "value": player_name})
                 org_tags.append({"type": "league", "value": league})
                 break
 
             if player_name_no_punc in self.sports_player_dict[league]:
-                print(f"Team Exists in {league}")
+                logger.debug(f"Team Exists in {league}")
                 org_tags.append({"type": "team", "value": self.sports_player_dict[league][player_name_no_punc]})
                 org_tags.append({"type": "person", "value": player_name_no_punc})
                 org_tags.append({"type": "league", "value": league})
@@ -213,22 +232,17 @@ class GenerateTags(GoogleSearchClass):
             # TODO Handle if there are multiple teams with the same name
             # Todo Handle Case Sensitive
             if token_dict["text"] in self.sports_terms_dict[sport]:
-                print(f"Term exists in {sport}")
+                logger.debug(f"Term exists in {sport}")
                 org_tags.append({"type": "sport", "value": sport})
                 break
         return org_tags
 
-
 if __name__ == "__main__":
 
-    generate_tags = GenerateTags()
-# results = x.generate_tags(["TB12 declining?"])
-    results = generate_tags.generate_tags(["Cowboys lose Browns bounce back",
-                           "Bucs win",
-                           "TB12 declining?",
-                           "Burfict suspended"])
-
-    r_2 = generate_tags.generate_tags(["Bucs win",
+    generate_tags = TagIdentifier()
+    # Setting number of processes to pool count
+    p = Pool()
+    values = p.map(generate_tags.test, ["Bucs win",
                        "TB12 declining?",
                        "Burfict suspended",
                        "Pick ems Week 5",
@@ -238,6 +252,4 @@ if __name__ == "__main__":
                        "Breakout players",
                        "CA Pass bill for college players",
                        "Baseball update"])
-
-    print("Final Results",results)
-    print("Final Reulsts ",r_2)
+    print("Final Values", values)

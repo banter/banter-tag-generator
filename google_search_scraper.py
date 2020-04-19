@@ -1,8 +1,17 @@
 import requests
 from bs4 import BeautifulSoup
+import logging
+import sys
+logger = logging.getLogger(__name__)
 
 
-class GoogleSearchClass:
+
+class GoogleSearchScraper:
+
+    def __init__(self):
+        logger = logging.getLogger("google search scraper ")
+        logger.setLevel(logging.DEBUG)
+        logger.info("__init__")
 
     def get_google_search_results(self, google_search: str):
         """
@@ -21,7 +30,7 @@ class GoogleSearchClass:
         headers = {"user-agent": USER_AGENT}
         resp = requests.get(URL, headers=headers)
         if resp.status_code == 200:
-            print(resp.content)
+            logger.info(resp.content)
             soup = BeautifulSoup(resp.content, "html.parser")
         results = []
         try:
@@ -31,7 +40,7 @@ class GoogleSearchClass:
                 text_list += self.try_webpage_scrap_on_class(soup, 'kp-header')
 
         except Exception as e:
-            print(e)
+            logger.info(e)
             text_list = []
 
         return str(text_list)
@@ -40,10 +49,10 @@ class GoogleSearchClass:
 
         tmp_text: list = []
         for g in soup.find_all('div', class_=html_class):
-            print("GGGG", g)
+            logger.info("GGGG", g)
             anchors = g.find_all('span')
             if anchors:
-                print("ANCHORS", anchors)
+                logger.info("ANCHORS", anchors)
                 for index, value in enumerate(anchors):
                     tmp_text.append(anchors[index].text)
         return tmp_text
