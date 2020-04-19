@@ -7,7 +7,7 @@ import string
 from helper_class import HelperClass
 import logging
 import logging.handlers
-
+import os
 
 class GenerateTags(GoogleSearchClass):
 
@@ -15,8 +15,9 @@ class GenerateTags(GoogleSearchClass):
         self.tag_logger = logging.getLogger("Tag_Logger")
         self.helper = HelperClass()
 
-        # TODO FIX path
-        self.reference_dir = r"C:\Users\runni_000\PycharmProjects\podcastProject\assets\reference_dict"
+        parent_dir = os.getcwd()
+        self.reference_dir = r"%s\assets\reference_dict" % parent_dir
+
         self.sports_leagues = ["nfl", "nhl", "nba", "football", "mlb", "ncaab", "ncaafb"]
         self.sports = ["american_football", "basketball", "football", "hockey", "baseball"]
 
