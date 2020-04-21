@@ -9,8 +9,6 @@ logger = logging.getLogger(__name__)
 class GoogleSearchScraper:
 
     def __init__(self):
-        logger = logging.getLogger("google search scraper ")
-        logger.setLevel(logging.DEBUG)
         logger.info("__init__")
 
     def get_google_search_results(self, google_search: str):
@@ -20,6 +18,7 @@ class GoogleSearchScraper:
 
         # TODO Remove punctuation from response simplify main class?
         """
+        logger.info(f"Google Search Request: {google_search}")
         text_list = []
         google_search = google_search.replace(' ', '+')
         URL = f"https://google.com/search?q={google_search}"
@@ -30,7 +29,6 @@ class GoogleSearchScraper:
         headers = {"user-agent": USER_AGENT}
         resp = requests.get(URL, headers=headers)
         if resp.status_code == 200:
-            logger.info(resp.content)
             soup = BeautifulSoup(resp.content, "html.parser")
         results = []
         try:
@@ -42,17 +40,19 @@ class GoogleSearchScraper:
         except Exception as e:
             logger.info(e)
             text_list = []
-
+        logger.info(f"Google Search Results Scraped Final Text List: {str(text_list)}")
         return str(text_list)
 
     def try_webpage_scrap_on_class(self, soup, html_class: str):
 
         tmp_text: list = []
         for g in soup.find_all('div', class_=html_class):
-            logger.info("GGGG", g)
+            logger.debug(f"Find All divs of specfic html class = {html_class}: {g}")
             anchors = g.find_all('span')
             if anchors:
-                logger.info("ANCHORS", anchors)
+                logger.debug(f"SPAN ANCHORS: {anchors}")
                 for index, value in enumerate(anchors):
                     tmp_text.append(anchors[index].text)
+
+        logger.info(f"Google Search Result Scraped Text: {tmp_text}")
         return tmp_text

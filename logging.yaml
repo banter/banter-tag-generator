@@ -6,17 +6,17 @@ formatters:
 handlers:
     console:
         class: logging.StreamHandler
-        level: DEBUG
+        level: INFO
         formatter: simple
         stream: ext://sys.stdout
     mplog:
         class: mplog.MultiProcessingLog
-        level: DEBUG
+        level: INFO
         formatter: simple
         name: data/mplog.log
         mode: a
         maxsize: 1024
         rotate: 0
 root:
-    level: DEBUG
+    level: INFO
     handlers: [console, mplog]

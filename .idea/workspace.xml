@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1b66df8-cc48-422b-8a78-07c0af1482df" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/logs/tag_identifier.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basic_topic_identifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/tag_identifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/google_search_term_identifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/google_search_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_tag_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_tag_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_search_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/google_search_scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/helper_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logging.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/logging.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/runner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tag_identifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/tag_identifier.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,41 +20,48 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.open.time.42" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="log" value="3" />
-          <entry key="md" value="1" />
-          <entry key="py" value="9" />
+          <entry key="gitignore" value="1" />
+          <entry key="ini" value="1" />
+          <entry key="log" value="5" />
+          <entry key="md" value="2" />
+          <entry key="py" value="17" />
           <entry key="txt" value="1" />
-          <entry key="yaml" value="1" />
+          <entry key="yaml" value="2" />
           <entry key="yml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="9" />
-          <entry key="YAML" value="2" />
+          <entry key="Log" value="1" />
+          <entry key="Markdown" value="2" />
+          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="Python" value="17" />
+          <entry key="YAML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="Python Console" value="369" />
           <entry key="dummy" value="78" />
-          <entry key="md" value="144" />
-          <entry key="py" value="1476" />
-          <entry key="yaml" value="11" />
+          <entry key="gitignore" value="11" />
+          <entry key="ini" value="33" />
+          <entry key="md" value="151" />
+          <entry key="py" value="3496" />
+          <entry key="yaml" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="144" />
-          <entry key="PLAIN_TEXT" value="78" />
-          <entry key="Python" value="1476" />
-          <entry key="YAML" value="11" />
+          <entry key="Markdown" value="151" />
+          <entry key="PLAIN_TEXT" value="122" />
+          <entry key="Python" value="3865" />
+          <entry key="YAML" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -64,31 +72,37 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/google_search_scraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="60" lean-forward="true" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
+            <state relative-caret-position="41">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1587329883137" expanded="true" signature="163:172" ph="..." />
-                <marker date="1587329883137" expanded="true" signature="163:301" ph="..." />
+                <marker date="1587427026084" expanded="true" signature="163:201" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tag_identifier.py">
+        <entry file="file://$PROJECT_DIR$/runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2056">
-              <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+            <state relative-caret-position="317">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
               <folding>
-                <element signature="e#0#53#0" expanded="true" />
-                <marker date="1587330355152" expanded="true" signature="443:444" ph="..." />
-                <marker date="1587330355152" expanded="true" signature="1194:1214" ph="..." />
+                <element signature="e#0#14#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/dev.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -96,74 +110,70 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logging.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mplog.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="72" lean-forward="true" selection-start-line="10" selection-start-column="72" selection-end-line="10" selection-end-column="72" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="340">
+              <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/runner.py">
+        <entry file="file://$PROJECT_DIR$/tag_identifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="214">
+              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
               <folding>
-                <element signature="e#0#14#0" expanded="true" />
+                <element signature="e#0#53#0" expanded="true" />
+                <element signature="e#6240#6853#0" />
+                <marker date="1587430553463" expanded="true" signature="414:415" ph="..." />
+                <marker date="1587430553463" expanded="true" signature="1480:1500" ph="..." />
+                <marker date="1587430553463" expanded="true" signature="7963:7968" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/test_tag_generator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/stanza/pipeline/tokenize_processor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/mplog.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-603" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/subproc.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-                <marker date="1587329610155" expanded="true" signature="74:113" ph="..." />
-              </folding>
-            </state>
+          <provider selected="true" editor-type-id="LogFileEditorProvider">
+            <state relative-caret-position="-13845" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="119">
+              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
-                <marker date="1587329533459" expanded="true" signature="275:283" ph="..." />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Anaconda3/Lib/multiprocessing/pool.py">
+        <entry file="file://$PROJECT_DIR$/utils/decorators.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="260" column="8" selection-start-line="260" selection-start-column="8" selection-end-line="260" selection-end-column="8" />
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -183,7 +193,13 @@
       <find>print</find>
       <find>get_google_search_results</find>
       <find>self.logger</find>
+      <find>get_token_dict</find>
+      <find>logger.info</find>
+      <find>Done</find>
+      <find>Aubur</find>
+      <find>get_tags_using_dict r</find>
       <find>logger</find>
+      <find>loggin</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -192,22 +208,26 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/basic_topic_identifier.py" />
         <option value="$PROJECT_DIR$/google_search_term_identifier.py" />
         <option value="$PROJECT_DIR$/google_tag_identifier.py" />
         <option value="$PROJECT_DIR$/custom_logger.py" />
-        <option value="$PROJECT_DIR$/logging.yaml" />
         <option value="$PROJECT_DIR$/mplog.py" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/subproc.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/utils/__init__.py" />
+        <option value="$PROJECT_DIR$/utils/decorators.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/logging.yaml" />
         <option value="$PROJECT_DIR$/google_search_scraper.py" />
-        <option value="$PROJECT_DIR$/tag_identifier.py" />
+        <option value="$PROJECT_DIR$/config/dev.ini" />
         <option value="$PROJECT_DIR$/runner.py" />
+        <option value="$PROJECT_DIR$/tag_identifier.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-1928" />
     <option name="y" value="1" />
     <option name="width" value="1936" />
@@ -219,6 +239,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -229,19 +250,26 @@
             <path>
               <item name="TagGenerator" type="b2602c69:ProjectViewProjectNode" />
               <item name="TagGenerator" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TagGenerator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TagGenerator" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\runni_000\PycharmProjects\TagGenerator\utils" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\runni_000\PycharmProjects\TagGenerator" />
     </key>
@@ -352,8 +380,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.runner" />
-        <item itemvalue="Python.tag_identifier" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.tag_identifier" />
         <item itemvalue="Python.basic_topic_identifier" />
       </list>
     </recent_temporary>
@@ -372,23 +400,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="1" width="1936" height="1056" extended-state="6" />
+    <frame x="-1928" y="1" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18071654" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" weight="0.329718" />
-      <window_info anchor="bottom" id="Python Console" weight="0.329718" />
-      <window_info anchor="bottom" id="Terminal" weight="0.2451193" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44685465" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.44685465" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.38177875" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.329718" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.37635574" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.19197397" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -396,6 +424,27 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tag_identifier.py</url>
+          <line>119</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tag_identifier.py</url>
+          <line>142</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tag_identifier.py</url>
+          <line>143</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Anaconda3/Lib/logging/__init__.py">
@@ -405,17 +454,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/logs/tag_identifier.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logging.yml" />
+    <entry file="file://$PROJECT_DIR$/mplog.log" />
+    <entry file="file://$PROJECT_DIR$/custom_logger.py" />
+    <entry file="file://$PROJECT_DIR$/subproc.py" />
+    <entry file="file://$PROJECT_DIR$/data/logs/tag_identifier.log" />
+    <entry file="file://$PROJECT_DIR$/mplog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="72" selection-start-line="10" selection-start-column="72" selection-end-line="10" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="85">
-            <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <first_editor relative-caret-position="221">
+            <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
           </first_editor>
           <second_editor />
         </state>
@@ -423,94 +484,127 @@
     </entry>
     <entry file="file://$USER_HOME$/Anaconda3/Lib/multiprocessing/pool.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
+        <state relative-caret-position="4233">
           <caret line="260" column="8" selection-start-line="260" selection-start-column="8" selection-end-line="260" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logging.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mplog.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/custom_logger.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/decorators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4635">
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <marker date="1587329533459" expanded="true" signature="275:283" ph="..." />
+            <element signature="e#24#106#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subproc.py">
+    <entry file="file://$PROJECT_DIR$/utils/helper_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/decorators.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="36" />
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <marker date="1587329610155" expanded="true" signature="74:113" ph="..." />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/stanza/pipeline/tokenize_processor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/google_search_scraper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="60" lean-forward="true" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
+        <state relative-caret-position="41">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1587329883137" expanded="true" signature="163:172" ph="..." />
-            <marker date="1587329883137" expanded="true" signature="163:301" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mplog.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="72" lean-forward="true" selection-start-line="10" selection-start-column="72" selection-end-line="10" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
+            <marker date="1587427026084" expanded="true" signature="163:201" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/mplog.log">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-1063" />
+      </provider>
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="-13845" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_tag_generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-603" />
+        <state relative-caret-position="157">
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logging.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        <state relative-caret-position="340">
+          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tag_identifier.py">
+    <entry file="file://$PROJECT_DIR$/config/dev.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2056">
-          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-            <marker date="1587330355152" expanded="true" signature="443:444" ph="..." />
-            <marker date="1587330355152" expanded="true" signature="1194:1214" ph="..." />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/runner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="317">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tag_identifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+            <element signature="e#6240#6853#0" />
+            <marker date="1587430553463" expanded="true" signature="414:415" ph="..." />
+            <marker date="1587430553463" expanded="true" signature="1480:1500" ph="..." />
+            <marker date="1587430553463" expanded="true" signature="7963:7968" ph="..." />
           </folding>
         </state>
       </provider>
