@@ -15,8 +15,6 @@ if __name__ == '__main__':
             config = yaml.load(f.read())
             logging.config.dictConfig(config)
 
-    config.read('config.ini')
-
     generate_tags = TagIdentifier(store_ml_data = True)
 
     # Setting number of processes to pool count

@@ -1,7 +1,8 @@
 import string
 import json
 import pickle
-
+import stanza
+from nltk.tokenize import word_tokenize
 ENGLISH_STOP_WORDS = frozenset([
     "a", "about", "above", "across", "after", "afterwards", "again", "against",
     "all", "almost", "alone", "along", "already", "also", "although", "always",
@@ -50,6 +51,7 @@ class HelperClass:
 
     def __init__(self):
         self.eng_stop_words = ENGLISH_STOP_WORDS
+        self.nlp = stanza.Pipeline('en')  # This sets up a default neural pipeline in English
         pass
 
     def remove_punctuation_from_text(self, text: str):
@@ -76,3 +78,57 @@ class HelperClass:
         with open(f'{file_path}\{file_name}', 'rb') as filehandle:
             # read the data as binary data stream
             return pickle.load(filehandle)
+
+    def save_dict(self, dictionary, file_path, file_name):
+        tmp_json = json.dumps(dictionary)
+        with open(f'{file_path}\{file_name}', "w") as json_file:
+            json_file.write(tmp_json)
+            json_file.close()
+
+    def add_to_ml_data(self, ml_dict: dict, file_path, file_name):
+
+        existing_ml_dict: dict = self.read_json_file(file_path=file_path, file_name=file_name)
+        existing_ml_dict.update(ml_dict)
+        self.save_dict(existing_ml_dict, file_path, file_name)
+
+        return
+
+    def append_to_existing_dict(self, key, _dict, value):
+
+        if key in _dict:
+            # TODO Switch Back, writing whole key for testing purposes
+            # _dict[key].append(value)
+            _dict[key] = value
+        else:
+            _dict[key] = value
+        return _dict
+
+
+    def get_token_dict_from_nlp(self, _str: str):
+        """
+        Take a summary provided from a podcast and return a tokenized dictionary
+        :param summary: A list of words in string format
+        :return: tokenized dictionary
+        """
+        token_span_list = self.nlp(_str).entities
+        token_dict_list: dict = self.convert_span_list_to_dict_list(token_span_list)
+        return token_dict_list
+
+
+    def get_token_dict_manual(self, _str: str):
+        """
+        This is used to determine the tokens without using standford nlp
+        :param summary: Summary
+        :return: dict
+        """
+        # Tokenizing Data, breaks up into words/ phrases
+        token_dict_list = []
+        token_list = word_tokenize(_str)
+        # Removing Stop words and punctuation from data
+        clean_data = [word for word in token_list if
+                      not word in self.eng_stop_words and not word in string.punctuation]
+
+        for word in clean_data:
+            token_dict_list.append({"text": word, "type": "UNKNOWN"})
+
+        return token_dict_list

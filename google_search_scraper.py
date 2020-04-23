@@ -5,11 +5,7 @@ import sys
 logger = logging.getLogger(__name__)
 
 
-
-class GoogleSearchScraper:
-
-    def __init__(self):
-        logger.info("__init__")
+class GoogleSearchTagGenerator:
 
     def get_google_search_results(self, google_search: str):
         """
@@ -56,3 +52,5 @@ class GoogleSearchScraper:
 
         logger.info(f"Google Search Result Scraped Text: {tmp_text}")
         return tmp_text
+
+

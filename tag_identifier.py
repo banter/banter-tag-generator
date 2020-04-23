@@ -1,4 +1,4 @@
-from google_search_scraper import GoogleSearchScraper
+from google_search_scraper import GoogleSearchTagGenerator
 import stanza
 from nltk.tokenize import word_tokenize
 import string
@@ -6,6 +6,7 @@ from utils.helper_class import HelperClass
 import logging
 import logging.handlers
 import os
+import pandas
 from multiprocessing import Pool
 from utils.decorators import timeit
 PARENT_DIR = os.getcwd()
@@ -17,16 +18,13 @@ class TagIdentifier:
 
     def __init__(self, store_ml_data: bool = True):
 
+        self.parent_dir = PARENT_DIR
         self.reference_dir = r"%s\assets\reference_dict" % PARENT_DIR
         self.store_ml_data = store_ml_data
 
-        # self.setup_logger()
-        #
-        # TODO Move back to __init__ , moved for quicker testing
-        self.nlp = stanza.Pipeline('en')  # This sets up a default neural pipeline in English
 
         self.helper = HelperClass()
-        self.google_search_scraper = GoogleSearchScraper()
+        self.google_search_scraper = GoogleSearchTagGenerator()
         self.sports_leagues = ["nfl", "nhl", "nba", "football", "mlb", "ncaab", "ncaafb"]
         self.sports_with_references = ["american_football", "basketball", "football", "hockey", "baseball"]
         # TODO handle football/soccer vs american football
@@ -80,8 +78,9 @@ class TagIdentifier:
         Entinty Recognition: https://www.nltk.org/book/ch07.html
         """
 
+        logging.info("Starting Generate Tags")
         podcast_tags = []
-        print("GENERATING TAGSSSSS")
+
 
         for index, summary in enumerate(summary_list):
 
@@ -90,13 +89,14 @@ class TagIdentifier:
             # Google Results is used after iterating through a summary if there are no valid tags, this is the
             # Cumulative string for the entire summary
             google_search_results: str = ''
+            untaged_words: list = []
 
-            token_dict_list = self.get_token_dict(summary)
+            token_dict_list = self.helper.get_token_dict_from_nlp(summary)
             print("Token DIct List", token_dict_list)
             logger.info(f"Token Dict List for: {summary} : {token_dict_list}")
             # NLP Couldnt find any clear tokens
             if len(token_dict_list) == 0:
-                token_dict_list = self.get_token_dict_manual(summary)
+                token_dict_list = self.helper.get_token_dict_manual(summary)
                 logger.info(f"Manual Dict List for: {summary} : {token_dict_list}")
 
             for token in token_dict_list:
@@ -105,25 +105,17 @@ class TagIdentifier:
                 tmp_tag_list += self.get_tags_using_dict(token)
 
                 if len(tmp_tag_list) == 0:
+                    # Creating a list of untaged words that will later be google searched
+                    untaged_words.append(token["text"])
 
-                    # Convert Tag using google search
-                    # Adding to one long array so NLP only has to go through one string (Performance improvement)
-                    google_search_results += self.google_search_scraper.get_google_search_results(token["text"])
-                    logger.info(f"Google Search for: {token['text']} results:" + google_search_results)
                 else:
                     logger.info(f"Adding tags to {summary}: {tmp_tag_list}")
                     summary_tag_list += tmp_tag_list
 
-            # If google was required
-            if len(google_search_results) != 0:
+            if len(untaged_words) != 0:
+                logging.info("Untaged Words: %s" % untaged_words)
+                summary_tag_list += self.get_tags_from_unknown_words(untaged_words, self.store_ml_data)
 
-                token_dict_google_list = self.get_token_dict(google_search_results)
-                logger.info(f"Tokenized Google Results: {token_dict_google_list}")
-
-                for token in token_dict_google_list:
-                    tmp_tag_list: list = []
-                    tmp_tag_list += self.get_tags_using_dict(token)
-                    summary_tag_list += tmp_tag_list
 
             summary_tag_obj = {"Summary": summary, "Tags": summary_tag_list}
             logger.info(f"Appending to Final Podcast Summary: {summary_tag_obj}")
@@ -134,15 +126,6 @@ class TagIdentifier:
         logger.info(f"Completed Anlysis of {summary_list} : {podcast_tags}")
         return podcast_tags
 
-    def get_token_dict(self, summary: str):
-        """
-        Take a summary provided from a podcast and return a tokenized dictionary
-        :param summary: A list of words in string format
-        :return: tokenized dictionary
-        """
-        token_span_list = self.nlp(summary).entities
-        token_dict_list = self.helper.convert_span_list_to_dict_list(token_span_list)
-        return token_dict_list
 
     def get_tags_using_dict(self, token_dict):
         """
@@ -192,7 +175,6 @@ class TagIdentifier:
 
         return token_dict_list
 
-
     def get_team_tags(self, token_dict: object):
 
         org_tags = []
@@ -213,6 +195,7 @@ class TagIdentifier:
                 org_tags.append({"type": "league", "value": league})
                 break
         return org_tags
+
 
     def get_person_tags(self, token_dict: object):
 
@@ -250,3 +233,33 @@ class TagIdentifier:
                 org_tags.append({"type": "sport", "value": sport})
                 break
         return org_tags
+
+
+    def get_tags_from_unknown_words(self, untaged_words: list, store_ml_data: bool):
+        """
+        :param untaged_words: list of untagged words
+        :return:
+        google_search_tags -- the tags determined by the google search results
+        ml_info = machine learning reference data
+        """
+        ml_dict: dict = {}
+        google_search_tags = []
+
+        for index , word in enumerate(untaged_words):
+            # TODO Parallelize get_google_search_results
+            word_search_results: str = self.google_search_scraper.get_google_search_results(word)
+            word_search_tokens: dict = self.helper.get_token_dict_from_nlp(word_search_results)
+            for token in word_search_tokens:
+                tag_list = self.get_tags_using_dict(token)
+                ml_dict = self.helper.append_to_existing_dict(word, ml_dict, tag_list)
+
+                google_search_tags += tag_list
+
+        if store_ml_data is True:
+            self.helper.add_to_ml_data(ml_dict,
+                                   file_path=r"%s\data\tag_generation_pending_validation" % self.parent_dir,
+                                   file_name="tag_token_pending_validation.json"
+                                   )
+
+        return google_search_tags
+

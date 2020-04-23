@@ -17,7 +17,7 @@ class TestGenerateTags(unittest.TestCase):
     def test_get_token_dict_valid(self):
 
         sample = "Hello this is Austin Marchese and this is the Banter Podcast."
-        response = self.generate_tags.get_token_dict(sample)
+        response = self.generate_tags.get_token_dict_from_nlp(sample)
         print(response)
         # TODO fix test
         self.assertIsNotNone(response)
@@ -26,7 +26,7 @@ class TestGenerateTags(unittest.TestCase):
     def test_get_token_dict_empty(self):
 
         sample = "ajbfasd askdhasd sdkja"
-        response = self.generate_tags.get_token_dict(sample)
+        response = self.generate_tags.get_token_dict_from_nlp(sample)
         print(response)
         self.assertEqual(response, [])
 
