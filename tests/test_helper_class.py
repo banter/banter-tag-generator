@@ -18,6 +18,6 @@ class TestGenerateTags(unittest.TestCase):
     def testTagGenerationFullRegression(self):
         sample_list = []
 
-        self.helper_class.add_to_ml_data()
+        self.helper_class.save_to_existing_dict_summary()
         pass
 

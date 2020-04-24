@@ -19,7 +19,7 @@ if __name__ == '__main__':
 
     # Setting number of processes to pool count
     # p = Pool()
-    # part_1 = ["Bucs win","TB12 declining?","Burfict suspended","Pick ems Week 5"]
+    part_1 = ["Bucs win","TB12 declining?","Burfict suspended","Pick ems Week 5"]
 
     part_2 = [ "Clemson escapes","Auburn vs Florida","ESPN NBA top 10","Breakout players","CA Pass bill for college players","Baseball update"]
 
@@ -27,7 +27,7 @@ if __name__ == '__main__':
               "Top NBA players backing out of FIBA", "Kawhi and his camp demands", "Players you think will make a big jump?",
               "Wimbledon", "Zion to Jumpman"]
 
-    values = generate_tags.generate_tags(part_3)
+    values = generate_tags.generate_tags(part_1)
 
     # values = p.map(generate_tags.generate_tags, [part_1, part_2])
     print("Final Values", values)

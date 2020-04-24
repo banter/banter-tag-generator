@@ -2,7 +2,9 @@ import string
 import json
 import pickle
 import stanza
+from pathlib import Path
 from nltk.tokenize import word_tokenize
+import os
 ENGLISH_STOP_WORDS = frozenset([
     "a", "about", "above", "across", "after", "afterwards", "again", "against",
     "all", "almost", "alone", "along", "already", "also", "although", "always",
@@ -52,7 +54,49 @@ class HelperClass:
     def __init__(self):
         self.eng_stop_words = ENGLISH_STOP_WORDS
         self.nlp = stanza.Pipeline('en')  # This sets up a default neural pipeline in English
+        self.sports_leagues = ["nfl", "nhl", "nba", "football", "mlb", "ncaab", "ncaafb"]
+        self.sports_leagues = ["nfl", "nhl", "nba", "football", "mlb", "ncaab", "ncaafb"]
+        self.sports_with_references = ["american_football", "basketball", "football", "hockey", "baseball"]
+        # TODO handle football/soccer vs american football
+        self.all_sports = ["american_football", "basketball", "football", "hockey", "baseball", "tennis",
+                           "swimming", "track", "olympics", "lacrosse", "rugby", "soccer"]
+        self.root_dir = str(Path(os.getcwd()).parents[0])
+        self.reference_dir = r"%s\assets\reference_dict" % self.root_dir
+
         pass
+
+    def set_team_dict(self):
+        """
+        Set team dictionary for class
+        """
+        tmp_dict = {}
+        for league in self.sports_leagues:
+            # Dont have football team info (soccer)
+            if league == "football":
+                pass
+            else:
+                tmp_dict[league] = self.read_json_file(file_path=self.reference_dir,
+                                                              file_name=f"{league}_team_dict.json")
+        return tmp_dict
+
+
+    def set_player_dict(self):
+        tmp_dict = {}
+        for league in self.sports_leagues:
+            # Dont have football (soccer) , ncaab, ncaafb player info
+            if league in ["football", "ncaab", "ncaafb"]:
+                pass
+            else:
+                tmp_dict[league] = self.read_json_file(file_path=self.reference_dir,
+                                                              file_name=f"{league}_player_dict.json")
+        return tmp_dict
+
+    def set_sports_terms_dict(self):
+        tmp_dict = {}
+        for sport in self.sports_with_references:
+            tmp_dict[sport] = self.read_pickled_file(file_path=self.reference_dir,
+                                                            file_name=f"{sport}_terms.data")
+        return tmp_dict
 
     def remove_punctuation_from_text(self, text: str):
         translator = str.maketrans('', '', string.punctuation)
@@ -85,23 +129,45 @@ class HelperClass:
             json_file.write(tmp_json)
             json_file.close()
 
-    def add_to_ml_data(self, ml_dict: dict, file_path, file_name):
-
-        existing_ml_dict: dict = self.read_json_file(file_path=file_path, file_name=file_name)
-        existing_ml_dict.update(ml_dict)
-        self.save_dict(existing_ml_dict, file_path, file_name)
+    def save_to_existing_dict_tags(self, appended_dict: dict, file_path: str , file_name: str):
+        """
+        :param appended_dict:
+        :param file_path: r"%s\data\tag_generation_pending_validation" % self.parent_dir,
+        :param file_name: "tags.json"
+        :return:
+        """
+        existing_dict: dict = self.read_json_file(file_path=file_path, file_name=file_name)
+        existing_dict.update(appended_dict)
+        self.save_dict(existing_dict, file_path, file_name)
 
         return
 
-    def append_to_existing_dict(self, key, _dict, value):
+    def save_to_existing_dict_summary(self, summary_list: list, file_path: str, file_name: str):
+        """
 
-        if key in _dict:
+        :param summary_list:
+        :param file_path: r"%s\data\tag_generation_pending_validation" % self.parent_dir,
+        :param file_name: "summary_tag__pending_validation.json"
+        :return:
+        """
+
+        existing_dict: dict = self.read_json_file(file_path=file_path, file_name=file_name)
+        print(existing_dict)
+
+        for index, summary in enumerate(summary_list):
+            existing_dict["SummaryList"].append(summary)
+        self.save_dict(existing_dict, file_path, file_name)
+        return
+
+    def append_to_existing_dict(self, key, dict_, value):
+
+        if key in dict_:
             # TODO Switch Back, writing whole key for testing purposes
             # _dict[key].append(value)
-            _dict[key] = value
+            dict_[key] = value
         else:
-            _dict[key] = value
-        return _dict
+            dict_[key] = value
+        return dict_
 
 
     def get_token_dict_from_nlp(self, _str: str):

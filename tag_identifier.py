@@ -18,58 +18,15 @@ class TagIdentifier:
 
     def __init__(self, store_ml_data: bool = True):
 
-        self.parent_dir = PARENT_DIR
-        self.reference_dir = r"%s\assets\reference_dict" % PARENT_DIR
         self.store_ml_data = store_ml_data
 
 
         self.helper = HelperClass()
         self.google_search_scraper = GoogleSearchTagGenerator()
-        self.sports_leagues = ["nfl", "nhl", "nba", "football", "mlb", "ncaab", "ncaafb"]
-        self.sports_with_references = ["american_football", "basketball", "football", "hockey", "baseball"]
-        # TODO handle football/soccer vs american football
-        self.all_sports = ["american_football", "basketball", "football", "hockey", "baseball", "tennis",
-                           "swimming", "track", "olympics", "lacrosse", "rugby", "soccer"]
 
-        self.sports_team_dict = self.set_team_dict()
-        self.sports_player_dict = self.set_player_dict()
-        self.sports_terms_dict = self.set_sports_terms_dict()
-
-    def setup_logger(self):
-        pass
-
-
-    def set_team_dict(self):
-        """
-        Set team dictionary for class
-        """
-        tmp_dict = {}
-        for league in self.sports_leagues:
-            # Dont have football team info (soccer)
-            if league == "football":
-                pass
-            else:
-                tmp_dict[league] = self.helper.read_json_file(file_path=self.reference_dir,
-                                                              file_name=f"{league}_team_dict.json")
-        return tmp_dict
-
-    def set_player_dict(self):
-        tmp_dict = {}
-        for league in self.sports_leagues:
-            # Dont have football (soccer) , ncaab, ncaafb player info
-            if league in ["football", "ncaab", "ncaafb"]:
-                pass
-            else:
-                tmp_dict[league] = self.helper.read_json_file(file_path=self.reference_dir,
-                                                              file_name=f"{league}_player_dict.json")
-        return tmp_dict
-
-    def set_sports_terms_dict(self):
-        tmp_dict = {}
-        for sport in self.sports_with_references:
-            tmp_dict[sport] = self.helper.read_pickled_file(file_path=self.reference_dir,
-                                                            file_name=f"{sport}_terms.data")
-        return tmp_dict
+        self.sports_team_dict = self.helper.set_team_dict()
+        self.sports_player_dict = self.helper.set_player_dict()
+        self.sports_terms_dict = self.helper.set_sports_terms_dict()
 
     def generate_tags(self, summary_list: list):
         """
@@ -124,6 +81,9 @@ class TagIdentifier:
             logger.info(f"Adding {summary_tag_obj} to Podcast Tags")
 
         logger.info(f"Completed Anlysis of {summary_list} : {podcast_tags}")
+        self.helper.save_to_existing_dict_summary(podcast_tags,
+                                                  file_path = r"%s\data\tag_generation_pending_validation" % self.parent_dir,
+                                                  file_name = "summary.json")
         return podcast_tags
 
 
@@ -256,10 +216,10 @@ class TagIdentifier:
                 google_search_tags += tag_list
 
         if store_ml_data is True:
-            self.helper.add_to_ml_data(ml_dict,
-                                   file_path=r"%s\data\tag_generation_pending_validation" % self.parent_dir,
-                                   file_name="tag_token_pending_validation.json"
-                                   )
+            self.helper.save_to_existing_dict_tags(ml_dict,
+                                                      file_path=r"%s\data\tag_generation_pending_validation" % self.helper.root_dir,
+                                                      file_name="tags.json"
+                                                      )
 
         return google_search_tags
 
