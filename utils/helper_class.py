@@ -55,17 +55,39 @@ class HelperClass:
         self.eng_stop_words = ENGLISH_STOP_WORDS
         self.nlp = stanza.Pipeline('en')  # This sets up a default neural pipeline in English
         self.sports_leagues = ["nfl", "nhl", "nba", "football", "mlb", "ncaab", "ncaafb"]
-        self.sports_leagues = ["nfl", "nhl", "nba", "football", "mlb", "ncaab", "ncaafb"]
         self.sports_with_references = ["american_football", "basketball", "football", "hockey", "baseball"]
+        self.sports_with_nickname_coaches = ['nfl', 'nba', 'mlb']
+        # Todo add more indv. sports dicts
+        self.individual_sports = ['golf']
         # TODO handle football/soccer vs american football
         self.all_sports = ["american_football", "basketball", "football", "hockey", "baseball", "tennis",
                            "swimming", "track", "olympics", "lacrosse", "rugby", "soccer"]
-        self.root_dir = str(Path(os.getcwd()).parents[0])
-        self.reference_dir = r"%s\assets\reference_dict" % self.root_dir
+        # When running from runner this references root dict
+        # C:\Users\runni_000\PycharmProjects
+        # Useful for local Coding depending where import helper_class
+        try:
+            self.root_dir = str(Path(os.getcwd()).parents[0])
+            self.reference_dir = r"%s\assets\reference_dict" % self.root_dir
+            self.sports_team_dict = self.set_team_dict(self.reference_dir)
+            self.sports_player_dict = self.set_player_dict(self.reference_dir)
+            self.sports_terms_dict = self.set_sports_terms_dict(self.reference_dir)
+            self.individual_sports_dict = self.set_individual_sport_dict(self.reference_dir)
+            self.sports_coach_dict = self.set_coach_dict(self.reference_dir)
+            self.sports_nickname_dict = self.set_nickname_dict(self.reference_dir)
+        except FileNotFoundError as error:
+            print(error)
+            self.root_dir = str(Path(os.getcwd()))
+            self.reference_dir= r"%s\assets\reference_dict" % self.root_dir
+            self.sports_team_dict = self.set_team_dict(self.reference_dir)
+            self.sports_player_dict = self.set_player_dict(self.reference_dir)
+            self.individual_sports_dict = self.set_individual_sport_dict(self.reference_dir)
+            self.sports_terms_dict = self.set_sports_terms_dict(self.reference_dir)
+            self.sports_coach_dict = self.set_coach_dict(self.reference_dir)
+            self.sports_nickname_dict = self.set_nickname_dict(self.reference_dir)
 
         pass
 
-    def set_team_dict(self):
+    def set_team_dict(self, file_path):
         """
         Set team dictionary for class
         """
@@ -75,28 +97,49 @@ class HelperClass:
             if league == "football":
                 pass
             else:
-                tmp_dict[league] = self.read_json_file(file_path=self.reference_dir,
+                tmp_dict[league] = self.read_json_file(file_path=file_path,
                                                               file_name=f"{league}_team_dict.json")
         return tmp_dict
 
 
-    def set_player_dict(self):
+    def set_player_dict(self, file_path):
         tmp_dict = {}
         for league in self.sports_leagues:
             # Dont have football (soccer) , ncaab, ncaafb player info
             if league in ["football", "ncaab", "ncaafb"]:
                 pass
             else:
-                tmp_dict[league] = self.read_json_file(file_path=self.reference_dir,
+                tmp_dict[league] = self.read_json_file(file_path=file_path,
                                                               file_name=f"{league}_player_dict.json")
         return tmp_dict
 
-    def set_sports_terms_dict(self):
+    def set_sports_terms_dict(self, file_path):
         tmp_dict = {}
         for sport in self.sports_with_references:
-            tmp_dict[sport] = self.read_pickled_file(file_path=self.reference_dir,
+            tmp_dict[sport] = self.read_pickled_file(file_path=file_path,
                                                             file_name=f"{sport}_terms.data")
         return tmp_dict
+
+    def set_nickname_dict(self, file_path):
+        tmp_dict = {}
+        for sport in self.sports_with_nickname_coaches:
+            tmp_dict[sport] = self.read_json_file(file_path=file_path,
+                                                            file_name=f"{sport}_nickname_dict.json")
+        return tmp_dict
+
+    def set_coach_dict(self, file_path):
+        tmp_dict = {}
+        for sport in self.sports_with_nickname_coaches:
+            tmp_dict[sport] = self.read_json_file(file_path=file_path,
+                                                            file_name=f"{sport}_coach_dict.json")
+        return tmp_dict
+
+    def set_individual_sport_dict(self, file_path):
+        tmp_dict = {}
+        for sport in self.individual_sports:
+            tmp_dict[sport] = self.read_pickled_file(file_path=file_path, file_name=f"{sport}_athlete_set.data")
+        return tmp_dict
+
 
     def remove_punctuation_from_text(self, text: str):
         translator = str.maketrans('', '', string.punctuation)
@@ -152,11 +195,12 @@ class HelperClass:
         """
 
         existing_dict: dict = self.read_json_file(file_path=file_path, file_name=file_name)
-        print(existing_dict)
+
 
         for index, summary in enumerate(summary_list):
             existing_dict["SummaryList"].append(summary)
         self.save_dict(existing_dict, file_path, file_name)
+        # print("Summary List", existing_dict)
         return
 
     def append_to_existing_dict(self, key, dict_, value):
@@ -180,6 +224,8 @@ class HelperClass:
         token_dict_list: dict = self.convert_span_list_to_dict_list(token_span_list)
         return token_dict_list
 
+    def remove_duplicates_from_list(self, list_: list):
+        return list(dict.fromkeys(list_))
 
     def get_token_dict_manual(self, _str: str):
         """
