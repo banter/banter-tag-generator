@@ -55,7 +55,7 @@ class TestGenerateTags(unittest.TestCase):
 
     def test_get_player_tags_mlb(self):
         sample = {'text': 'Cam Bedrosian', 'type': 'PERSON', 'start_char': 13, 'end_char': 19}
-        response = self.generate_tags.get_person_tags(sample)
+        response = self.generate_tags.get_player_or_coach_tags(sample)
         print(response)
         valid_response = [{'type': 'team', 'value': 'Los Angeles Angels'},{'type': 'league', 'value': 'mlb'}, {'type': 'person', 'value': 'Cam Bedrosian'}]
         self.assertCountEqual(response, valid_response)

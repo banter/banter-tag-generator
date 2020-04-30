@@ -1,5 +1,6 @@
 import logging
 from multiprocessing import Pool
+import mysql.connector
 import os
 import logging.config
 import yaml
@@ -17,8 +18,7 @@ if __name__ == '__main__':
 
     generate_tags = TagIdentifier(store_ml_data = True)
 
-    # Setting number of processes to pool count
-    # p = Pool()
+
     part_1 = ["Bucs win","TB12 declining?","Burfict suspended","Pick ems Week 5"]
 
     part_2 = [ "Clemson escapes","Auburn vs Florida","ESPN NBA top 10","Breakout players","CA Pass bill for college players","Baseball update"]
@@ -27,7 +27,35 @@ if __name__ == '__main__':
               "Top NBA players backing out of FIBA", "Kawhi and his camp demands", "Players you think will make a big jump?",
               "Wimbledon", "Zion to Jumpman"]
 
-    values = generate_tags.generate_tags(part_1)
+    pmt = ["MNF recap, the Bears are back and the Skins have PFT very angry"]
 
-    # values = p.map(generate_tags.generate_tags, [part_1, part_2])
+    import mysql.connector
+
+    cnx = mysql.connector.connect(user='user', password='password',
+                                  host='127.0.0.1',
+                                  database='db', auth_plugin='mysql_native_password')
+    cursor = cnx.cursor()
+    query = ("select description from discussion where match(description) against('sport' in natural language mode) order by match(description) against('belly but' in natural language mode) desc limit 50 offset 0")
+
+    cursor.execute(query)
+
+    description_list = []
+
+
+
+    fetch_size = 10
+    all_results = []
+    while True:
+        result = cursor.fetchmany(fetch_size)
+        if not result:
+            break
+        else:
+            # Converting list of tuples to list of strings
+            partial_result: list = [".".join(map(str, r)) for r in result]
+            all_results.append(partial_result)
+    # values = generate_tags.generate_tags(results)
+
+    # Setting number of processes to pool count
+    p = Pool()
+    values = p.map(generate_tags.generate_tags, all_results)
     print("Final Values", values)
