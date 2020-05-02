@@ -97,12 +97,12 @@ class TagIdentifier:
         sport_and_league_tags: list = []
         matching_league = [league for league in self.helper.sports_leagues if league in summary.lower()]
         if matching_league:
-            for index, value in matching_league:
+            for index, value in enumerate(matching_league):
                 sport_and_league_tags.append({"type": "league", "value": value})
 
         matching_sport = [sport for sport in self.helper.all_sports if sport in summary.lower()]
         if matching_league:
-            for index, value in matching_sport:
+            for index, value in enumerate(matching_sport):
                 sport_and_league_tags.append({"type": "sport", "value": value})
 
         return sport_and_league_tags

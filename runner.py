@@ -29,7 +29,7 @@ if __name__ == '__main__':
 
     pmt = ["MNF recap, the Bears are back and the Skins have PFT very angry"]
 
-    import mysql.connector
+
 
     cnx = mysql.connector.connect(user='user', password='password',
                                   host='127.0.0.1',
@@ -43,19 +43,30 @@ if __name__ == '__main__':
 
 
 
-    fetch_size = 10
-    all_results = []
-    while True:
-        result = cursor.fetchmany(fetch_size)
-        if not result:
-            break
-        else:
-            # Converting list of tuples to list of strings
-            partial_result: list = [".".join(map(str, r)) for r in result]
-            all_results.append(partial_result)
-    # values = generate_tags.generate_tags(results)
+    # fetch_size = 10
+    # all_results = []
+    # count = 0
+    # while count < 4:
+    #     result = cursor.fetchmany(10)
+    #     partial_result: list = [".".join(map(str, r)) for r in result]
+    #     all_results.append(partial_result)
+    #     count +=1
+
+
+    # while True:
+    #     result = cursor.fetchmany(fetch_size)
+    #     if not result:
+    #         break
+    #     else:
+    #         # Converting list of tuples to list of strings
+    #         partial_result: list = [".".join(map(str, r)) for r in result]
+    #         all_results.append(partial_result)
+
+    result = cursor.fetchmany(10)
+    partial_result: list = [".".join(map(str, r)) for r in result]
+    values = generate_tags.generate_tags(partial_result)
 
     # Setting number of processes to pool count
-    p = Pool()
-    values = p.map(generate_tags.generate_tags, all_results)
+    # p = Pool()
+    # values = p.map(generate_tags.generate_tags, [part_2,part_1])
     print("Final Values", values)

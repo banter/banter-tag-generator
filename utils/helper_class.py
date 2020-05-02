@@ -1,7 +1,10 @@
 import string
+# https://medium.com/@ageitgey/learn-how-to-use-static-type-checking-in-python-3-6-in-10-minutes-12c86d72677b
+from typing import *
 import json
 import pickle
 import stanza
+from stanza import Document
 from pathlib import Path
 from nltk.tokenize import word_tokenize
 import os
@@ -62,6 +65,16 @@ class HelperClass:
         # TODO handle football/soccer vs american football
         self.all_sports = ["american_football", "basketball", "football", "hockey", "baseball", "tennis",
                            "swimming", "track", "olympics", "lacrosse", "rugby", "soccer"]
+
+        # TODO Consider EVENTS
+        self.token_types_analyzed = {'ORG', 'PERSON', 'GPE'}
+        # TODO Consider NOUNS?
+        self.language_types_considered: Dict[str, str] = {'PROPN'}
+        self.ignore_tags = {'Spotify', 'Apple', "Apple Music"}
+        # TODO Consider max descrition size to consider
+        self.max_description = 1000
+
+        self.word_tokenize = word_tokenize
         # When running from runner this references root dict
         # C:\Users\runni_000\PycharmProjects
         # Useful for local Coding depending where import helper_class
@@ -146,7 +159,7 @@ class HelperClass:
         text = text.translate(translator)
         return text
 
-    def convert_span_list_to_dict_list(self, span_list: list):
+    def convert_span_list_to_dict_list(self, span_list: list) -> List[Dict[str,str]]:
         """
         :param span_list: Span list created from Standford NLP
         :return: dict_list
@@ -155,6 +168,11 @@ class HelperClass:
             span_list[index] = span_list[index].to_dict()
 
         return span_list
+
+    def convert_tuple_list_to_str_list(self, tuple_list: list):
+        str_list: list = [".".join(map(str, r)) for r in tuple_list]
+        return str_list
+
 
     def read_json_file(self, file_path, file_name):
         # C:\Users\runni_000\PycharmProjects\podcastProject\assets\reference_dict\nba_team_dict.json
@@ -214,18 +232,95 @@ class HelperClass:
         return dict_
 
 
-    def get_token_dict_from_nlp(self, _str: str):
+    def get_token_dict_from_nlp(self, nlp_response: Document) -> List[Dict[str,str]] :
         """
         Take a summary provided from a podcast and return a tokenized dictionary
         :param summary: A list of words in string format
         :return: tokenized dictionary
         """
-        token_span_list = self.nlp(_str).entities
-        token_dict_list: dict = self.convert_span_list_to_dict_list(token_span_list)
+        token_span_list = nlp_response.entities
+        token_dict_list: List[Dict[str,str]] = self.convert_span_list_to_dict_list(token_span_list)
         return token_dict_list
 
     def remove_duplicates_from_list(self, list_: list):
         return list(dict.fromkeys(list_))
+
+    def remove_stop_words_and_punctuation(self, list_: list):
+        clean_data = [word for word in list_ if
+                      not word in self.eng_stop_words and not word in string.punctuation]
+        return clean_data
+
+    def filter_token_list_by_type(self, token_list: list, type:str):
+        filtered_list = [token for token in token_list if token['type'] == type]
+        return filtered_list
+
+    def get_nlp_response(self, str_:str) -> Document:
+        return self.nlp(str_)
+
+    def is_description_below_max_length(self, str_:str, max_description: int) -> bool:
+        return len(str_.split(' ')) < max_description
+
+    def get_key_word_dict(self, str_:str) -> List[Dict]:
+        is_descption_too_long: bool = self.is_description_below_max_length(str_, self.max_description)
+        if is_descption_too_long:
+            nlp_response = self.get_nlp_response(str_)
+
+            token_dict_list = self.get_token_dict_from_nlp(nlp_response)
+            all_tokens_as_string: str = ''
+            token_dict_list, token_set, token_concat_str = self.filter_tokens_get_unique_text(token_dict_list)
+
+            for token in token_dict_list:
+                all_tokens_as_string += token['text']
+
+            token_dict_list += self.get_nouns_from_sentence(nlp_response, token_set, token_concat_str)
+
+            return token_dict_list
+
+        else:
+            print("Description is Too Long")
+            return []
+
+
+
+    def filter_tokens_get_unique_text(self, token_dict_list: List[Dict]) -> [List[Dict], Set, str]:
+
+        filtered_token_list: List[Dict] = []
+        token_set: Set = set()
+        token_concat_str: str = ''
+        for token in token_dict_list:
+            if token['text'] in token_set:
+                pass
+            else:
+                token_set.add(token['text'])
+                token_concat_str += token['text']
+                if token['type'] in self.token_types_analyzed:
+                    filtered_token_list.append(token)
+
+        return filtered_token_list, token_set, token_concat_str
+
+    def get_nouns_from_sentence(self, nlp_response: Document, token_set: Set, token_concat_str: str) -> List[Dict]:
+        nlp_list = nlp_response.to_dict()
+
+        noun_list = []
+
+        for index, sentence in enumerate(nlp_list):
+
+            # TODO Consider the Following TB12 is considered a noun, AB is considered a proper noun
+            # TODO Allowing for nouns open ups a can of worms
+            for token in sentence:
+                # Checking if we care about the upos (NOUN, PRONOUN, Etc.) Also Checking for Duplicates
+                if token['upos'] in self.language_types_considered and token['text'] not in token_set:
+                    # Above checks for an EXACT Match, however St.Louis Rams gets tokenized as St.Louis Rams
+                    # But each St. , Louis, Rams, are all technically different parts of speach.
+                    # As a result, a token_concat_str is created and it just looks to see if it contains a sub string
+                    # TODO this probably fucks some edge scenarios up
+                    if token['text'] not in token_concat_str:
+                        # Creating noun dict to match with entities dict, arbitrary start_char and end_char
+                        noun = {"text": token['text'], "type": token['upos'], "start_char": 1, "end_char":1}
+                        noun_list.append(noun)
+
+        return noun_list
+
 
     def get_token_dict_manual(self, _str: str):
         """
@@ -235,10 +330,9 @@ class HelperClass:
         """
         # Tokenizing Data, breaks up into words/ phrases
         token_dict_list = []
-        token_list = word_tokenize(_str)
+        token_list = self.word_tokenize(_str)
         # Removing Stop words and punctuation from data
-        clean_data = [word for word in token_list if
-                      not word in self.eng_stop_words and not word in string.punctuation]
+        clean_data = self.remove_stop_words_and_punctuation(token_list)
 
         for word in clean_data:
             token_dict_list.append({"text": word, "type": "UNKNOWN"})
