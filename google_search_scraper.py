@@ -2,12 +2,18 @@ import requests
 from bs4 import BeautifulSoup
 import logging
 import sys
+from types import *
 logger = logging.getLogger(__name__)
+from utils.decorators import debug
 
 
 class GoogleSearchTagGenerator:
 
-    def get_google_search_results(self, google_search: str):
+    @debug
+    def get_google_search_results(self, google_search: str) -> str:
+        # TODO Edge Cases to Consider
+        # TODO 1. Zion
+        # TODO 2. Jarvis
         """
         :param google_search: Search Term for Google
         :return: String of terms associated to the Person Block on the Google Search

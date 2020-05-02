@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1b66df8-cc48-422b-8a78-07c0af1482df" name="Default Changelist" comment="added individual athletes to helper class, format {sport:{name, name}}">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_search_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/google_search_scraper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/runner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tag_identifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/tag_identifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/decorators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/helper_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/helper_class.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,7 +34,7 @@
           <entry key="json" value="21" />
           <entry key="log" value="5" />
           <entry key="md" value="3" />
-          <entry key="py" value="52" />
+          <entry key="py" value="54" />
           <entry key="txt" value="1" />
           <entry key="yaml" value="3" />
           <entry key="yml" value="1" />
@@ -47,19 +46,19 @@
           <entry key="Log" value="1" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Python" value="52" />
+          <entry key="Python" value="54" />
           <entry key="YAML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="6134" />
+          <entry key="Python Console" value="6276" />
           <entry key="dummy" value="93" />
           <entry key="gitignore" value="11" />
           <entry key="ini" value="33" />
           <entry key="json" value="25" />
           <entry key="md" value="167" />
-          <entry key="py" value="14748" />
+          <entry key="py" value="16780" />
           <entry key="txt" value="79" />
           <entry key="yaml" value="23" />
         </counts>
@@ -69,7 +68,7 @@
           <entry key="JSON" value="25" />
           <entry key="Markdown" value="167" />
           <entry key="PLAIN_TEXT" value="216" />
-          <entry key="Python" value="20882" />
+          <entry key="Python" value="23056" />
           <entry key="YAML" value="23" />
         </counts>
       </usages-collector>
@@ -81,191 +80,99 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5815313">
+    <splitter split-orientation="horizontal" split-proportion="0.8849503">
       <split-first>
-        <splitter split-orientation="horizontal" split-proportion="0.35453776">
-          <split-first>
-            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/runner.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="425">
-                      <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-                      <folding>
-                        <element signature="e#0#14#0" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/sports_nlp.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="119">
-                      <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/create_nickname_dict.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="816">
-                      <caret line="52" selection-start-line="52" selection-end-line="84" selection-end-column="20" />
-                      <folding>
-                        <element signature="e#0#29#0" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$USER_HOME$/Anaconda3/Lib/unittest/case.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="19533">
-                      <caret line="1162" selection-start-line="1162" selection-end-line="1162" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/create_player_dict.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="289">
-                      <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-                      <folding>
-                        <element signature="e#0#55#0" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/test.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="306">
-                      <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="45" selection-end-column="5646" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/sports_terms_creator.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="240">
-                      <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
-                      <folding>
-                        <element signature="e#0#29#0" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/create_golfer_dict.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="1173">
-                      <caret line="71" selection-start-line="71" selection-end-line="71" />
-                      <folding>
-                        <element signature="e#0#29#0" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/utils/helper_class.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="292">
-                      <caret line="315" column="69" selection-start-line="315" selection-start-column="69" selection-end-line="315" selection-end-column="69" />
-                      <folding>
-                        <element signature="e#0#13#0" expanded="true" />
-                        <marker date="1588388410711" expanded="true" signature="8236:8242" ph="..." />
-                        <marker date="1588388410711" expanded="true" signature="8817:8826" ph="..." />
-                        <marker date="1588388410711" expanded="true" signature="8910:8917" ph="..." />
-                        <marker date="1588388410711" expanded="true" signature="11594:15073" ph="..." />
-                        <marker date="1588388410711" expanded="true" signature="11863:15073" ph="..." />
-                        <marker date="1588388410711" expanded="true" signature="15068:15073" ph="..." />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-first>
-          <split-second>
-            <leaf>
-              <file pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/utils/helper_class.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="402">
-                      <caret line="281" selection-start-line="281" selection-end-line="281" />
-                      <folding>
-                        <element signature="e#0#13#0" expanded="true" />
-                        <marker date="1588388410711" expanded="true" signature="8236:8242" ph="..." />
-                        <marker date="1588388410711" expanded="true" signature="8817:8826" ph="..." />
-                        <marker date="1588388410711" expanded="true" signature="8910:8917" ph="..." />
-                        <marker date="1588388410711" expanded="true" signature="11594:15073" ph="..." />
-                        <marker date="1588388410711" expanded="true" signature="11863:15073" ph="..." />
-                        <marker date="1588388410711" expanded="true" signature="12216:12276" ph="..." />
-                        <marker date="1588388410711" expanded="true" signature="13679:13685" ph="..." />
-                        <marker date="1588388410711" expanded="true" signature="15068:15073" ph="..." />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/config/dev.ini">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="17">
-                      <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$USER_HOME$/Anaconda3/Lib/string.py">
-                  <provider selected="true" editor-type-id="text-editor" />
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$USER_HOME$/Anaconda3/Lib/typing.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="140">
-                      <caret line="1995" column="6" selection-start-line="1995" selection-start-column="6" selection-end-line="1995" selection-end-column="6" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/stanza/models/common/doc.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="201">
-                      <caret line="274" lean-forward="true" selection-start-line="274" selection-end-line="274" />
-                      <folding>
-                        <element signature="e#31#40#0" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-second>
-        </splitter>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/runner.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="334">
+                  <caret line="85" column="127" selection-start-line="85" selection-start-column="127" selection-end-line="85" selection-end-column="127" />
+                  <folding>
+                    <element signature="e#0#14#0" expanded="true" />
+                    <marker date="1588397422633" expanded="true" signature="252:253" ph="..." />
+                    <marker date="1588397422633" expanded="true" signature="630:633" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/utils/helper_class.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="270">
+                  <caret line="70" column="6" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="6" />
+                  <folding>
+                    <element signature="e#0#13#0" expanded="true" />
+                    <marker date="1588395941157" expanded="true" signature="8539:8545" ph="..." />
+                    <marker date="1588395941157" expanded="true" signature="9120:9129" ph="..." />
+                    <marker date="1588395941157" expanded="true" signature="9213:9220" ph="..." />
+                    <marker date="1588395941157" expanded="true" signature="11897:15817" ph="..." />
+                    <marker date="1588395941157" expanded="true" signature="12166:15817" ph="..." />
+                    <marker date="1588395941157" expanded="true" signature="12519:12590" ph="..." />
+                    <marker date="1588395941157" expanded="true" signature="14423:14429" ph="..." />
+                    <marker date="1588395941157" expanded="true" signature="15812:15817" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/config/dev.ini">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="17">
+                  <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/Anaconda3/Lib/string.py">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/stanza/models/common/doc.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="201">
+                  <caret line="274" selection-start-line="274" selection-end-line="274" />
+                  <folding>
+                    <element signature="e#31#40#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tag_identifier.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="121">
-                  <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
+                <state relative-caret-position="151">
+                  <caret line="343" column="30" selection-start-line="343" selection-start-column="30" selection-end-line="343" selection-end-column="30" />
                   <folding>
-                    <element signature="e#0#58#0" expanded="true" />
-                    <marker date="1588293561434" expanded="true" signature="4897:4906" ph="..." />
-                    <marker date="1588293561434" expanded="true" signature="7251:7256" ph="..." />
-                    <marker date="1588293561434" expanded="true" signature="8419:8424" ph="..." />
+                    <element signature="e#1#14#0" expanded="true" />
+                    <element signature="e#4335#4827#0" />
+                    <marker date="1588395343108" expanded="true" signature="1963:1968" ph="..." />
+                    <marker date="1588395343108" expanded="true" signature="2032:2056" ph="..." />
+                    <marker date="1588395343108" expanded="true" signature="6437:7159" ph="..." />
+                    <marker date="1588395343108" expanded="true" signature="7201:7210" ph="..." />
+                    <marker date="1588395343108" expanded="true" signature="9555:9560" ph="..." />
+                    <marker date="1588395343108" expanded="true" signature="10723:10728" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/utils/decorators.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="17">
+                  <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+                  <folding>
+                    <element signature="e#0#11#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -274,10 +181,11 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/google_search_scraper.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="59">
-                  <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+                <state relative-caret-position="255">
+                  <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
                   <folding>
-                    <marker date="1587604149410" expanded="true" signature="142:148" ph="..." />
+                    <element signature="e#0#15#0" expanded="true" />
+                    <marker date="1588395621089" expanded="true" signature="197:214" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -320,10 +228,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Aubur</find>
-      <find>get_tags_using_dict r</find>
-      <find>logger</find>
-      <find>loggin</find>
       <find>ORG</find>
       <find>shee</find>
       <find>get_token_dict_man</find>
@@ -333,7 +237,6 @@
       <find>TODO</find>
       <find>person</find>
       <find>SummaryList</find>
-      <find>google_search_scraper</find>
       <find>Untag</find>
       <find>golf</find>
       <find>stop</find>
@@ -345,11 +248,16 @@
       <find>Token</find>
       <find>upos</find>
       <find>entities</find>
-      <find>get_token_dict_from_nlp</find>
       <find>nlp</find>
-      <find>filter</find>
+      <find>get_token_dict_from_nlp</find>
       <find>remove</find>
       <find>Spotif</find>
+      <find>sports_leagues</find>
+      <find>filter</find>
+      <find>remove_d</find>
+      <find>google_search_scraper</find>
+      <find>OBJ</find>
+      <find>get_sport</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -366,12 +274,10 @@
         <option value="$PROJECT_DIR$/subproc.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/utils/__init__.py" />
-        <option value="$PROJECT_DIR$/utils/decorators.py" />
         <option value="$PROJECT_DIR$/logging.yaml" />
         <option value="$PROJECT_DIR$/config/dev.ini" />
         <option value="$PROJECT_DIR$/tests/test_tag_generation_regression.py" />
         <option value="$PROJECT_DIR$/tests/test_helper_class.py" />
-        <option value="$PROJECT_DIR$/google_search_scraper.py" />
         <option value="$PROJECT_DIR$/data/tag_generation_pending_improvements/tag_token_improvements.json" />
         <option value="$PROJECT_DIR$/data/tag_generation_pending_validation/tag_token_pending_validation.json" />
         <option value="$PROJECT_DIR$/data/tag_generation_pending_validation/summary_tag_pending_validation.json" />
@@ -379,11 +285,13 @@
         <option value="$PROJECT_DIR$/sports_dictionary_creator/create_nickname_dict.py" />
         <option value="$PROJECT_DIR$/sports_dictionary_creator/create_golfer_dict.py" />
         <option value="$PROJECT_DIR$/sports_dictionary_creator/create_headcoach_dict.py" />
-        <option value="$PROJECT_DIR$/runner.py" />
-        <option value="$PROJECT_DIR$/tag_identifier.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/utils/decorators.py" />
+        <option value="$PROJECT_DIR$/google_search_scraper.py" />
         <option value="$PROJECT_DIR$/utils/helper_class.py" />
+        <option value="$PROJECT_DIR$/tag_identifier.py" />
+        <option value="$PROJECT_DIR$/runner.py" />
       </list>
     </option>
   </component>
@@ -462,7 +370,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../podcastProject" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -643,20 +551,20 @@
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.098524764" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15226555" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.17136659" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36882547" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29934925" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.41602635" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32930845" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.50054884" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.5" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.36984816" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.4121475" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.34273317" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -700,172 +608,167 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>305</line>
+          <line>364</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>308</line>
+          <line>367</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>307</line>
+          <line>366</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>302</line>
+          <line>361</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>301</line>
+          <line>360</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>309</line>
+          <line>368</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>310</line>
+          <line>369</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>70</line>
+          <line>107</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>63</line>
+          <line>100</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>59</line>
+          <line>96</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>82</line>
+          <line>87</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>83</line>
+          <line>88</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>85</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>91</line>
+          <line>96</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>93</line>
+          <line>98</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>94</line>
+          <line>99</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>95</line>
+          <line>100</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>96</line>
+          <line>101</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>97</line>
+          <line>102</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>98</line>
+          <line>103</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>87</line>
+          <line>92</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>86</line>
+          <line>90</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>84</line>
+          <line>89</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>88</line>
+          <line>93</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>33</line>
+          <line>46</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>35</line>
+          <line>48</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>36</line>
+          <line>49</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>39</line>
+          <line>52</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>55</line>
+          <line>68</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>56</line>
+          <line>69</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>58</line>
+          <line>71</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>59</line>
+          <line>72</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>61</line>
+          <line>74</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>62</line>
+          <line>75</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
@@ -899,13 +802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/decorators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -1033,39 +929,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19533">
-          <caret line="1162" selection-start-line="1162" selection-end-line="1162" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/create_player_dict.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/create_golfer_dict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/create_nickname_dict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="52" selection-start-line="52" selection-end-line="84" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1084,16 +953,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="241" selection-start-line="241" selection-end-line="241" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/google_search_scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
-          <folding>
-            <marker date="1587604149410" expanded="true" signature="142:148" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1117,49 +976,9 @@
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/stanza/models/common/doc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
-          <caret line="274" lean-forward="true" selection-start-line="274" selection-end-line="274" />
+          <caret line="274" selection-start-line="274" selection-end-line="274" />
           <folding>
             <element signature="e#31#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tag_identifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-            <marker date="1588293561434" expanded="true" signature="4897:4906" ph="..." />
-            <marker date="1588293561434" expanded="true" signature="7251:7256" ph="..." />
-            <marker date="1588293561434" expanded="true" signature="8419:8424" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/string.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/typing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="1995" column="6" selection-start-line="1995" selection-start-column="6" selection-end-line="1995" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/sports_nlp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/sports_terms_creator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1178,30 +997,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/runner.py">
+    <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/sports_nlp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        <state relative-caret-position="119">
+          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/create_nickname_dict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="61" column="27" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="1162" selection-start-line="1162" selection-end-line="1162" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/sports_terms_creator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/create_golfer_dict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/typing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="1995" column="6" selection-start-line="1995" selection-start-column="6" selection-end-line="1995" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/decorators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/string.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/google_search_scraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1588395621089" expanded="true" signature="197:214" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/helper_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="281" selection-start-line="281" selection-end-line="281" />
+        <state relative-caret-position="270">
+          <caret line="70" column="6" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="6" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1588388410711" expanded="true" signature="8236:8242" ph="..." />
-            <marker date="1588388410711" expanded="true" signature="8817:8826" ph="..." />
-            <marker date="1588388410711" expanded="true" signature="8910:8917" ph="..." />
-            <marker date="1588388410711" expanded="true" signature="11594:15073" ph="..." />
-            <marker date="1588388410711" expanded="true" signature="11863:15073" ph="..." />
-            <marker date="1588388410711" expanded="true" signature="12216:12276" ph="..." />
-            <marker date="1588388410711" expanded="true" signature="13679:13685" ph="..." />
-            <marker date="1588388410711" expanded="true" signature="15068:15073" ph="..." />
+            <marker date="1588395941157" expanded="true" signature="8539:8545" ph="..." />
+            <marker date="1588395941157" expanded="true" signature="9120:9129" ph="..." />
+            <marker date="1588395941157" expanded="true" signature="9213:9220" ph="..." />
+            <marker date="1588395941157" expanded="true" signature="11897:15817" ph="..." />
+            <marker date="1588395941157" expanded="true" signature="12166:15817" ph="..." />
+            <marker date="1588395941157" expanded="true" signature="12519:12590" ph="..." />
+            <marker date="1588395941157" expanded="true" signature="14423:14429" ph="..." />
+            <marker date="1588395941157" expanded="true" signature="15812:15817" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tag_identifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="343" column="30" selection-start-line="343" selection-start-column="30" selection-end-line="343" selection-end-column="30" />
+          <folding>
+            <element signature="e#1#14#0" expanded="true" />
+            <element signature="e#4335#4827#0" />
+            <marker date="1588395343108" expanded="true" signature="1963:1968" ph="..." />
+            <marker date="1588395343108" expanded="true" signature="2032:2056" ph="..." />
+            <marker date="1588395343108" expanded="true" signature="6437:7159" ph="..." />
+            <marker date="1588395343108" expanded="true" signature="7201:7210" ph="..." />
+            <marker date="1588395343108" expanded="true" signature="9555:9560" ph="..." />
+            <marker date="1588395343108" expanded="true" signature="10723:10728" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="85" column="127" selection-start-line="85" selection-start-column="127" selection-end-line="85" selection-end-column="127" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1588397422633" expanded="true" signature="252:253" ph="..." />
+            <marker date="1588397422633" expanded="true" signature="630:633" ph="..." />
           </folding>
         </state>
       </provider>

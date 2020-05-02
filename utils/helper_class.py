@@ -1,4 +1,5 @@
 import string
+from utils.decorators import debug
 # https://medium.com/@ageitgey/learn-how-to-use-static-type-checking-in-python-3-6-in-10-minutes-12c86d72677b
 from typing import *
 import json
@@ -8,6 +9,7 @@ from stanza import Document
 from pathlib import Path
 from nltk.tokenize import word_tokenize
 import os
+from google_search_scraper import GoogleSearchTagGenerator
 ENGLISH_STOP_WORDS = frozenset([
     "a", "about", "above", "across", "after", "afterwards", "again", "against",
     "all", "almost", "alone", "along", "already", "also", "although", "always",
@@ -52,12 +54,15 @@ ENGLISH_STOP_WORDS = frozenset([
     "yourselves", "like"])
 
 
-class HelperClass:
+class HelperClass(GoogleSearchTagGenerator):
 
     def __init__(self):
         self.eng_stop_words = ENGLISH_STOP_WORDS
         self.nlp = stanza.Pipeline('en')  # This sets up a default neural pipeline in English
-        self.sports_leagues = ["nfl", "nhl", "nba", "football", "mlb", "ncaab", "ncaafb"]
+        self.sports_leagues = ["nfl", "nhl", "nba", "football", "mlb", "ncaab", "ncaafb", 'fiba']
+        self.sports_leagues_no_player_ref = ["football", "ncaab", "ncaafb", "fiba"]
+        self.sports_leagues_no_team_ref = ["football", "fiba"]
+
         self.sports_with_references = ["american_football", "basketball", "football", "hockey", "baseball"]
         self.sports_with_nickname_coaches = ['nfl', 'nba', 'mlb']
         # Todo add more indv. sports dicts
@@ -83,8 +88,8 @@ class HelperClass:
             self.reference_dir = r"%s\assets\reference_dict" % self.root_dir
             self.sports_team_dict = self.set_team_dict(self.reference_dir)
             self.sports_player_dict = self.set_player_dict(self.reference_dir)
-            self.sports_terms_dict = self.set_sports_terms_dict(self.reference_dir)
             self.individual_sports_dict = self.set_individual_sport_dict(self.reference_dir)
+            # self.sports_terms_dict = self.set_sports_terms_dict(self.reference_dir)
             self.sports_coach_dict = self.set_coach_dict(self.reference_dir)
             self.sports_nickname_dict = self.set_nickname_dict(self.reference_dir)
         except FileNotFoundError as error:
@@ -94,7 +99,7 @@ class HelperClass:
             self.sports_team_dict = self.set_team_dict(self.reference_dir)
             self.sports_player_dict = self.set_player_dict(self.reference_dir)
             self.individual_sports_dict = self.set_individual_sport_dict(self.reference_dir)
-            self.sports_terms_dict = self.set_sports_terms_dict(self.reference_dir)
+            # self.sports_terms_dict = self.set_sports_terms_dict(self.reference_dir)
             self.sports_coach_dict = self.set_coach_dict(self.reference_dir)
             self.sports_nickname_dict = self.set_nickname_dict(self.reference_dir)
 
@@ -107,7 +112,7 @@ class HelperClass:
         tmp_dict = {}
         for league in self.sports_leagues:
             # Dont have football team info (soccer)
-            if league == "football":
+            if league in self.sports_leagues_no_team_ref:
                 pass
             else:
                 tmp_dict[league] = self.read_json_file(file_path=file_path,
@@ -119,7 +124,7 @@ class HelperClass:
         tmp_dict = {}
         for league in self.sports_leagues:
             # Dont have football (soccer) , ncaab, ncaafb player info
-            if league in ["football", "ncaab", "ncaafb"]:
+            if league in self.sports_leagues_no_player_ref:
                 pass
             else:
                 tmp_dict[league] = self.read_json_file(file_path=file_path,
@@ -260,6 +265,7 @@ class HelperClass:
     def is_description_below_max_length(self, str_:str, max_description: int) -> bool:
         return len(str_.split(' ')) < max_description
 
+    @debug
     def get_key_word_dict(self, str_:str) -> List[Dict]:
         is_descption_too_long: bool = self.is_description_below_max_length(str_, self.max_description)
         if is_descption_too_long:
@@ -280,6 +286,17 @@ class HelperClass:
             print("Description is Too Long")
             return []
 
+    def filter_duplicates_from_dict_list(self, list_: List[Dict], filtered_key: str = "value") -> [List[Dict], Set, str]:
+
+        filterd_list: List[Dict] = []
+        token_set: Set = set()
+        for value in list_:
+            if value[filtered_key] in token_set:
+                pass
+            else:
+                token_set.add(value[filtered_key])
+                filterd_list.append(value)
+        return filterd_list
 
 
     def filter_tokens_get_unique_text(self, token_dict_list: List[Dict]) -> [List[Dict], Set, str]:

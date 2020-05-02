@@ -1,11 +1,12 @@
-from google_search_scraper import GoogleSearchTagGenerator
 import stanza
 from nltk.tokenize import word_tokenize
+from typing import *
 import string
 from utils.helper_class import HelperClass
 import logging
 import logging.handlers
 import os
+from utils.decorators import debug
 import pandas
 from multiprocessing import Pool
 from utils.decorators import timeit
@@ -18,11 +19,47 @@ logger = logging.getLogger(__name__)
 class TagIdentifier:
 
     def __init__(self, store_ml_data: bool = True):
-
         self.store_ml_data = store_ml_data
-
         self.helper = HelperClass()
-        self.google_search_scraper = GoogleSearchTagGenerator()
+
+    @debug
+    def generate_tags_on_genre(self, description: str, genre: str) -> List[Dict] :
+        if genre == "sports":
+            sports_tags = self.generate_sports_tags(description)
+            return self.helper.filter_duplicates_from_dict_list(sports_tags, "value")
+        else:
+            general_tags = self.generate_tags_non_specific(description)
+            return self.helper.filter_duplicates_from_dict_list(general_tags, "value")
+
+    @debug
+    def generate_sports_tags(self, description: str):
+
+        description_tags: List[Dict] = []
+
+        key_words = self.helper.get_key_word_dict(description)
+
+        description_tags += self.check_sport_and_league(description)
+
+        for word in key_words:
+
+            if word['text'].lower() in self.helper.sports_leagues:
+                # Handling sports leagues in other method skipping this
+                continue
+            word_tags = self.get_tags_using_sports_dict(word)
+            if len(word_tags) == 0:
+                google_results = self.helper.get_google_search_results(word['text'])
+                google_key_words = self.helper.get_key_word_dict(google_results)
+                for google_word in google_key_words:
+                    google_word_tags = self.get_tags_using_sports_dict(google_word)
+                    description_tags += google_word_tags
+            else:
+                description_tags += word_tags
+        return description_tags
+
+
+
+    def generate_tags_non_specific(self, description) -> List[Dict]:
+        return []
 
     def generate_tags(self, summary_list: list):
         """
@@ -86,21 +123,22 @@ class TagIdentifier:
                                                   file_name="summary.json")
         return podcast_tags
 
-    def check_sport_and_league(self, summary: str):
+    @debug
+    def check_sport_and_league(self, description: str) -> List[Dict]:
         """
         If League is mentioned in a tokenized word i.e ESPN NBA, this would tag for NBA
         Done before any words are tokenized for a quick check
-        :param summary: String/Text of Summary
+        :param description: String/Text of Summary
         :return: List of tags
         """
 
         sport_and_league_tags: list = []
-        matching_league = [league for league in self.helper.sports_leagues if league in summary.lower()]
+        matching_league = [league for league in self.helper.sports_leagues if league in description.lower()]
         if matching_league:
             for index, value in enumerate(matching_league):
                 sport_and_league_tags.append({"type": "league", "value": value})
 
-        matching_sport = [sport for sport in self.helper.all_sports if sport in summary.lower()]
+        matching_sport = [sport for sport in self.helper.all_sports if sport in description.lower()]
         if matching_league:
             for index, value in enumerate(matching_sport):
                 sport_and_league_tags.append({"type": "sport", "value": value})
@@ -123,6 +161,27 @@ class TagIdentifier:
             person_tags.append({"type": "person", "value": name})
 
         return person_tags
+
+    @debug
+    def get_tags_using_sports_dict(self, key_word: Dict)-> List[Dict]:
+
+        key_word_tags: list = []
+
+        key_word_tags += self.get_person_tags(key_word)
+        key_word_tags += self.get_team_tags(key_word)
+        key_word_tags += self.get_player_or_coach_tags(key_word, self.helper.sports_player_dict)
+        if len(key_word_tags) == 0:
+            key_word_tags += self.get_individual_sports_tags(key_word, self.helper.individual_sports_dict)
+        if len(key_word_tags) == 0:
+            key_word_tags += self.get_nickname_tags(key_word, self.helper.sports_nickname_dict)
+        # TODO Dont think sports terms is worth it
+        # if len(tmp_tag_dict_list) == 0:
+        #     tmp_tag_dict_list += self.get_sports_terms_tag(token_dict)
+
+        return key_word_tags
+
+
+
 
     def get_tags_using_dict(self, token_dict):
         """
@@ -305,7 +364,7 @@ class TagIdentifier:
 
         for index, word in enumerate(untaged_words):
             # TODO Parallelize get_google_search_results
-            word_search_results: str = self.google_search_scraper.get_google_search_results(word)
+            word_search_results: str = self.helper.get_google_search_results(word)
             word_search_tokens: dict = self.helper.get_token_dict_from_nlp(word_search_results)
             for token in word_search_tokens:
                 tag_list = self.get_tags_using_dict(token)
