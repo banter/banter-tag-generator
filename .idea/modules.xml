@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/TagGenerator.iml" filepath="$PROJECT_DIR$/.idea/TagGenerator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/banter_tag_gen.iml" filepath="$PROJECT_DIR$/.idea/banter_tag_gen.iml" />
     </modules>
   </component>
 </project>

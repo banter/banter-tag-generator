@@ -2,12 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1b66df8-cc48-422b-8a78-07c0af1482df" name="Default Changelist" comment="added individual athletes to helper class, format {sport:{name, name}}">
-      <change beforePath="$PROJECT_DIR$/google_search_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/google_search_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/runner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tag_identifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/tag_identifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/decorators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/helper_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/helper_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TagGenerator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/banter_tag_gen.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/american_football_terms.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/baseball_terms.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/basketball_terms.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/football_terms.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/golf_athlete_set.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/hockey_terms.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/mlb_coach_dict.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/mlb_nickname_dict.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/mlb_player_dict.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/mlb_team_dict.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nba_coach_dict.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nba_nickname_dict.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nba_player_dict.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nba_team_dict.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/ncaab_team_dict.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/ncaafb_team_dict.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nfl_coach_dict.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nfl_nickname_dict.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nfl_player_dict.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nfl_team_dict.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nhl_player_dict.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nhl_team_dict.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/dev.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_search_scraper.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logging.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mplog.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runner.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sports_dictionary_creator/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sports_dictionary_creator/create_golfer_dict.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sports_dictionary_creator/create_headcoach_dict.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sports_dictionary_creator/create_nickname_dict.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sports_dictionary_creator/create_player_dict.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sports_dictionary_creator/create_team_dict.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sports_dictionary_creator/dictionary_improver.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sports_dictionary_creator/sports_nlp.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sports_dictionary_creator/sports_terms_creator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tag_generator_ml/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tag_identifier.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_helper_class.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_tag_generation_regression.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_tag_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/decorators.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/helper_class.py" beforeDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,201 +63,222 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="2006692057">
+    <session id="74293263">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
-          <entry key="project.open.time.14" value="1" />
-          <entry key="project.open.time.32" value="1" />
-          <entry key="project.open.time.42" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gitignore" value="2" />
+          <entry key="Dockerfile" value="3" />
+          <entry key="Dockerfile-flask" value="1" />
+          <entry key="Dockerfile-nginx" value="2" />
+          <entry key="conf" value="2" />
+          <entry key="config" value="2" />
+          <entry key="dockerignore" value="3" />
+          <entry key="gitignore" value="3" />
           <entry key="ini" value="2" />
-          <entry key="json" value="21" />
-          <entry key="log" value="5" />
-          <entry key="md" value="3" />
-          <entry key="py" value="54" />
-          <entry key="txt" value="1" />
-          <entry key="yaml" value="3" />
-          <entry key="yml" value="1" />
+          <entry key="log" value="2" />
+          <entry key="md" value="5" />
+          <entry key="py" value="53" />
+          <entry key="spec" value="1" />
+          <entry key="txt" value="8" />
+          <entry key="yaml" value="2" />
+          <entry key="yml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="21" />
-          <entry key="Log" value="1" />
-          <entry key="Markdown" value="3" />
-          <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Python" value="54" />
+          <entry key="Log" value="2" />
+          <entry key="Logstash" value="2" />
+          <entry key="Markdown" value="5" />
+          <entry key="PLAIN_TEXT" value="25" />
+          <entry key="Python" value="53" />
           <entry key="YAML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="6276" />
-          <entry key="dummy" value="93" />
-          <entry key="gitignore" value="11" />
-          <entry key="ini" value="33" />
-          <entry key="json" value="25" />
-          <entry key="md" value="167" />
-          <entry key="py" value="16780" />
-          <entry key="txt" value="79" />
-          <entry key="yaml" value="23" />
+          <entry key="Dockerfile" value="63" />
+          <entry key="Dockerfile-nginx" value="4" />
+          <entry key="Python Console" value="353" />
+          <entry key="conf" value="2" />
+          <entry key="config" value="410" />
+          <entry key="dummy" value="58" />
+          <entry key="gitignore" value="41" />
+          <entry key="ini" value="8" />
+          <entry key="md" value="1120" />
+          <entry key="py" value="2339" />
+          <entry key="txt" value="32" />
+          <entry key="yaml" value="3" />
+          <entry key="yml" value="98" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="25" />
-          <entry key="Markdown" value="167" />
-          <entry key="PLAIN_TEXT" value="216" />
-          <entry key="Python" value="23056" />
-          <entry key="YAML" value="23" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.vcs.git.usages">
-        <counts>
-          <entry key="git.branch.rename" value="1" />
+          <entry key="Logstash" value="2" />
+          <entry key="Markdown" value="1120" />
+          <entry key="PLAIN_TEXT" value="616" />
+          <entry key="Python" value="2692" />
+          <entry key="YAML" value="101" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.8849503">
+    <splitter split-orientation="horizontal" split-proportion="0.65420026">
       <split-first>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/runner.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="334">
-                  <caret line="85" column="127" selection-start-line="85" selection-start-column="127" selection-end-line="85" selection-end-column="127" />
-                  <folding>
-                    <element signature="e#0#14#0" expanded="true" />
-                    <marker date="1588397422633" expanded="true" signature="252:253" ph="..." />
-                    <marker date="1588397422633" expanded="true" signature="630:633" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/utils/helper_class.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="70" column="6" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="6" />
-                  <folding>
-                    <element signature="e#0#13#0" expanded="true" />
-                    <marker date="1588395941157" expanded="true" signature="8539:8545" ph="..." />
-                    <marker date="1588395941157" expanded="true" signature="9120:9129" ph="..." />
-                    <marker date="1588395941157" expanded="true" signature="9213:9220" ph="..." />
-                    <marker date="1588395941157" expanded="true" signature="11897:15817" ph="..." />
-                    <marker date="1588395941157" expanded="true" signature="12166:15817" ph="..." />
-                    <marker date="1588395941157" expanded="true" signature="12519:12590" ph="..." />
-                    <marker date="1588395941157" expanded="true" signature="14423:14429" ph="..." />
-                    <marker date="1588395941157" expanded="true" signature="15812:15817" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/config/dev.ini">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
-                  <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$USER_HOME$/Anaconda3/Lib/string.py">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/stanza/models/common/doc.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="201">
-                  <caret line="274" selection-start-line="274" selection-end-line="274" />
-                  <folding>
-                    <element signature="e#31#40#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="horizontal" split-proportion="0.9">
+          <split-first>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="136">
+                      <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/Dockerfile">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="85">
+                      <caret line="5" selection-start-line="5" selection-end-line="5" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/requirements.txt">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="527">
+                      <caret line="31" selection-start-line="31" selection-end-line="31" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="119">
+                      <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+                      <folding>
+                        <element signature="e#14#46#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/main/config/banter_tag_gen.config">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="255">
+                      <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/script.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="68">
+                      <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+                      <folding>
+                        <element signature="e#25#46#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/main/tag_identifier.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="291">
+                      <caret line="361" lean-forward="true" selection-start-line="361" selection-end-line="361" />
+                      <folding>
+                        <element signature="e#0#39#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/main/utils/google_search_scraper.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="68">
+                      <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+                      <folding>
+                        <element signature="e#0#15#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/main/utils/helper_class.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="228">
+                      <caret line="95" column="72" selection-start-line="95" selection-start-column="72" selection-end-line="95" selection-end-column="72" />
+                      <folding>
+                        <element signature="e#0#13#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/main/utils/helper_class.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="-17">
+                      <caret line="83" column="26" lean-forward="true" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
+                      <folding>
+                        <element signature="e#0#13#0" expanded="true" />
+                        <element signature="e#496#3533#0" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/nltk/tokenize/__init__.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="178">
+                      <caret line="113" column="4" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+        <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/tag_identifier.py">
+            <entry file="file://$PROJECT_DIR$/src/main/config/banter_tag_gen.config">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="151">
-                  <caret line="343" column="30" selection-start-line="343" selection-start-column="30" selection-end-line="343" selection-end-column="30" />
-                  <folding>
-                    <element signature="e#1#14#0" expanded="true" />
-                    <element signature="e#4335#4827#0" />
-                    <marker date="1588395343108" expanded="true" signature="1963:1968" ph="..." />
-                    <marker date="1588395343108" expanded="true" signature="2032:2056" ph="..." />
-                    <marker date="1588395343108" expanded="true" signature="6437:7159" ph="..." />
-                    <marker date="1588395343108" expanded="true" signature="7201:7210" ph="..." />
-                    <marker date="1588395343108" expanded="true" signature="9555:9560" ph="..." />
-                    <marker date="1588395343108" expanded="true" signature="10723:10728" ph="..." />
-                  </folding>
+                <state relative-caret-position="85">
+                  <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/utils/decorators.py">
+            <entry file="file://$PROJECT_DIR$/src/main/utils/test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
-                  <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+                <state relative-caret-position="187">
+                  <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
                   <folding>
-                    <element signature="e#0#11#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/google_search_scraper.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-                  <folding>
-                    <element signature="e#0#15#0" expanded="true" />
-                    <marker date="1588395621089" expanded="true" signature="197:214" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/create_nickname_dict.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1037">
-                  <caret line="61" column="27" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
-                  <folding>
-                    <element signature="e#0#29#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/create_headcoach_dict.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2159">
-                  <caret line="131" selection-start-line="131" selection-end-line="133" />
-                  <folding>
-                    <element signature="e#0#29#0" expanded="true" />
+                    <element signature="e#0#9#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -228,10 +297,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ORG</find>
-      <find>shee</find>
-      <find>get_token_dict_man</find>
-      <find>Mavr</find>
       <find>Maver</find>
       <find>re</find>
       <find>TODO</find>
@@ -258,6 +323,10 @@
       <find>google_search_scraper</find>
       <find>OBJ</find>
       <find>get_sport</find>
+      <find>sport</find>
+      <find>banter_ml_data</find>
+      <find>self.sports_leagues</find>
+      <find>Read Json File</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -266,41 +335,56 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/basic_topic_identifier.py" />
-        <option value="$PROJECT_DIR$/google_search_term_identifier.py" />
-        <option value="$PROJECT_DIR$/google_tag_identifier.py" />
-        <option value="$PROJECT_DIR$/custom_logger.py" />
-        <option value="$PROJECT_DIR$/mplog.py" />
-        <option value="$PROJECT_DIR$/subproc.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/utils/__init__.py" />
-        <option value="$PROJECT_DIR$/logging.yaml" />
-        <option value="$PROJECT_DIR$/config/dev.ini" />
-        <option value="$PROJECT_DIR$/tests/test_tag_generation_regression.py" />
-        <option value="$PROJECT_DIR$/tests/test_helper_class.py" />
-        <option value="$PROJECT_DIR$/data/tag_generation_pending_improvements/tag_token_improvements.json" />
-        <option value="$PROJECT_DIR$/data/tag_generation_pending_validation/tag_token_pending_validation.json" />
-        <option value="$PROJECT_DIR$/data/tag_generation_pending_validation/summary_tag_pending_validation.json" />
+        <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/banter_tag_gen/utils/google_search_scraper.py" />
+        <option value="$PROJECT_DIR$/banter_tag_gen/tag_identifier.py" />
         <option value="$PROJECT_DIR$/sports_dictionary_creator/dictionary_improver.py" />
-        <option value="$PROJECT_DIR$/sports_dictionary_creator/create_nickname_dict.py" />
-        <option value="$PROJECT_DIR$/sports_dictionary_creator/create_golfer_dict.py" />
-        <option value="$PROJECT_DIR$/sports_dictionary_creator/create_headcoach_dict.py" />
+        <option value="$PROJECT_DIR$/banter_tag_gen/utils/helper_class.py" />
+        <option value="$PROJECT_DIR$/sports_dictionary_creator/sports_nlp.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/utils/decorators.py" />
-        <option value="$PROJECT_DIR$/google_search_scraper.py" />
-        <option value="$PROJECT_DIR$/utils/helper_class.py" />
-        <option value="$PROJECT_DIR$/tag_identifier.py" />
+        <option value="$PROJECT_DIR$/logger/logging.yaml" />
         <option value="$PROJECT_DIR$/runner.py" />
+        <option value="$PROJECT_DIR$/banter_tag_gen/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/banter_tag_gen/app/main/tag_identifier.py" />
+        <option value="$PROJECT_DIR$/banter_tag_gen/app/main/utils/google_search_scraper.py" />
+        <option value="$PROJECT_DIR$/__init__.py" />
+        <option value="$PROJECT_DIR$/banter_tag_gen/app/main/utils/__init__.py" />
+        <option value="$PROJECT_DIR$/banter_tag_gen/app/requirements.txt" />
+        <option value="$PROJECT_DIR$/banter_tag_gen/app/main/utils/helper_class.py" />
+        <option value="$PROJECT_DIR$/banter_tag_gen/app/Dockerfile" />
+        <option value="$PROJECT_DIR$/banter_tag_gen/app/app.py" />
+        <option value="$PROJECT_DIR$/app/main/utils/google_search_scraper.py" />
+        <option value="$PROJECT_DIR$/app/main/tag_identifier.py" />
+        <option value="$PROJECT_DIR$/app/Dockerfile" />
+        <option value="$PROJECT_DIR$/app/app.conf" />
+        <option value="$PROJECT_DIR$/app/Dockerfile-nginx" />
+        <option value="$PROJECT_DIR$/Dockerfile-flask" />
+        <option value="$PROJECT_DIR$/Dockerfile-nginx" />
+        <option value="$PROJECT_DIR$/app/app.ini" />
+        <option value="$PROJECT_DIR$/app/requirements.txt" />
+        <option value="$PROJECT_DIR$/app/test.py" />
+        <option value="$PROJECT_DIR$/app/app.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/app/main/utils/helper_class.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/src/main/test.py" />
+        <option value="$PROJECT_DIR$/src/main/utils/test.py" />
+        <option value="$PROJECT_DIR$/src/main/config/banter_tag_gen.config" />
+        <option value="$PROJECT_DIR$/src/main/utils/helper_class.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-1928" />
-    <option name="y" value="1" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
+  <component name="ProjectId" id="1bMPi3D0rhDh21yndAVtI3rukWy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -312,54 +396,25 @@
         <subPane>
           <expand>
             <path>
-              <item name="TagGenerator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TagGenerator" type="462c0819:PsiDirectoryNode" />
+              <item name="banter_tag_gen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="banter_tag_gen" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="TagGenerator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TagGenerator" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="banter_tag_gen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="banter_tag_gen" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="TagGenerator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TagGenerator" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="banter_tag_gen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="banter_tag_gen" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="TagGenerator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TagGenerator" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TagGenerator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TagGenerator" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="tag_generation_pending_improvements" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TagGenerator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TagGenerator" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="tag_generation_pending_validation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TagGenerator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TagGenerator" type="462c0819:PsiDirectoryNode" />
-              <item name="sports_dictionary_creator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TagGenerator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TagGenerator" type="462c0819:PsiDirectoryNode" />
-              <item name="tag_generator_ml" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TagGenerator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TagGenerator" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TagGenerator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TagGenerator" type="462c0819:PsiDirectoryNode" />
+              <item name="banter_tag_gen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="banter_tag_gen" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -368,18 +423,30 @@
       </pane>
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../podcastProject" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\runni_000\PycharmProjects\TagGenerator" />
+      <recent name="C:\Users\runni_000\PycharmProjects\banter_tag_gen" />
+      <recent name="C:\Users\runni_000\PycharmProjects\banter_tag_gen\banter_tag_gen\app" />
+      <recent name="C:\Users\runni_000\PycharmProjects\banter_tag_gen\banter_tag_gen\src" />
+      <recent name="C:\Users\runni_000\PycharmProjects\banter_tag_gen\banter_tag_gen\src\main" />
+      <recent name="C:\Users\runni_000\PycharmProjects\banter_tag_gen\banter_tag_gen" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\runni_000\PycharmProjects\TagGenerator\tests\data" />
-      <recent name="C:\Users\runni_000\PycharmProjects\TagGenerator\data\tag_generation_pending_validation" />
-      <recent name="C:\Users\runni_000\PycharmProjects\TagGenerator\utils" />
+      <recent name="C:\Users\runni_000\PycharmProjects\banter_tag_gen" />
+      <recent name="C:\Users\runni_000\PycharmProjects\banter_tag_gen\banter_tag_gen\app\main\resources" />
+      <recent name="C:\Users\runni_000\PycharmProjects\banter_tag_gen\banter_tag_gen\app" />
+      <recent name="C:\Users\runni_000\PycharmProjects\banter_tag_gen\banter_tag_gen\src\main\utils" />
+      <recent name="C:\Users\runni_000\PycharmProjects\banter_tag_gen\banter_tag_gen\src\main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -394,64 +461,43 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.runner">
-    <configuration name="create_golfer_dict" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="TagGenerator" />
+  <component name="RunManager" selected="Python.test">
+    <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="banter_tag_gen" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sports_dictionary_creator" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sports_dictionary_creator/create_golfer_dict.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="create_headcoach_dict" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="TagGenerator" />
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="banter_tag_gen" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sports_dictionary_creator" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/banter_tag_gen/app" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sports_dictionary_creator/create_headcoach_dict.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/banter_tag_gen/app/app.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="create_nickname_dict" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="TagGenerator" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sports_dictionary_creator" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sports_dictionary_creator/create_nickname_dict.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -459,7 +505,7 @@
       <method v="2" />
     </configuration>
     <configuration name="dictionary_improver" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="TagGenerator" />
+      <module name="banter_tag_gen" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -480,7 +526,7 @@
       <method v="2" />
     </configuration>
     <configuration name="runner" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="TagGenerator" />
+      <module name="banter_tag_gen" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -491,7 +537,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/runner.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\runni_000\PycharmProjects\banter_tag_gen\banter_tag_gen\app\runner.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -500,20 +546,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="banter_tag_gen" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/utils/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.runner" />
       <item itemvalue="Python.dictionary_improver" />
-      <item itemvalue="Python.create_nickname_dict" />
-      <item itemvalue="Python.create_headcoach_dict" />
-      <item itemvalue="Python.create_golfer_dict" />
+      <item itemvalue="Python.runner" />
+      <item itemvalue="Python.app" />
+      <item itemvalue="Python.app (1)" />
+      <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.runner" />
-        <item itemvalue="Python.create_headcoach_dict" />
-        <item itemvalue="Python.create_golfer_dict" />
-        <item itemvalue="Python.create_nickname_dict" />
-        <item itemvalue="Python.dictionary_improver" />
+        <item itemvalue="Python.app (1)" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.app" />
       </list>
     </recent_temporary>
   </component>
@@ -527,6 +589,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587228808296</updated>
+      <workItem from="1588439115425" duration="27000" />
     </task>
     <task id="LOCAL-00001" summary="added individual athletes to helper class, format {sport:{name, name}}">
       <created>1588211067250</created>
@@ -549,26 +612,28 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15226555" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14278187" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.17136659" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29934925" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.41602635" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3275488" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.45878524" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32930845" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.5" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.36984816" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.329718" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3253796" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.34273317" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.4088937" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -581,14 +646,6 @@
               </option>
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
               </option>
             </State>
           </value>
@@ -603,518 +660,379 @@
     <MESSAGE value="added individual athletes to helper class, format {sport:{name, name}}" />
     <option name="LAST_COMMIT_MESSAGE" value="added individual athletes to helper class, format {sport:{name, name}}" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>364</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>367</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>366</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>361</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>360</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>368</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>369</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>107</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>100</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tag_identifier.py</url>
-          <line>96</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>87</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>88</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>96</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>98</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>99</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>100</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>101</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>102</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>103</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>92</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>90</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>89</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/helper_class.py</url>
-          <line>93</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>46</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>48</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>49</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>52</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>68</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>69</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>71</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>72</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>74</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/runner.py</url>
-          <line>75</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mplog.log" />
-    <entry file="file://$PROJECT_DIR$/custom_logger.py" />
-    <entry file="file://$PROJECT_DIR$/subproc.py" />
-    <entry file="file://$PROJECT_DIR$/data/logs/tag_identifier.log" />
-    <entry file="file://$PROJECT_DIR$/mplog.py">
+    <entry file="file://$PROJECT_DIR$/../docker-workshop/examples/compose/app/main/utils/banter_dictionary_creator/create_golfer_dict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../docker-workshop/examples/compose/app/main/utils/banter_dictionary_creator/create_headcoach_dict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../docker-workshop/examples/compose/app/main/utils/banter_dictionary_creator/create_nickname_dict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runner.spec">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../docker-workshop/examples/compose/app/main/utils/banter_dictionary_creator/dictionary_improver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../docker-workshop/examples/compose/app/main/utils/banter_dictionary_creator/sports_nlp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="10" column="72" selection-start-line="10" selection-start-column="72" selection-end-line="10" selection-end-column="72" />
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/multiprocessing/pool.py">
+    <entry file="file://$PROJECT_DIR$/../docker-workshop/examples/compose/app/main/utils/banter_dictionary_creator/sports_terms_creator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4233">
-          <caret line="260" column="8" selection-start-line="260" selection-start-column="8" selection-end-line="260" selection-end-column="8" />
+        <state relative-caret-position="238">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/decorators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4635" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/__init__.py">
+    <entry file="file://$PROJECT_DIR$/../docker-workshop/examples/compose/app/main/utils/banter_dictionary_creator/create_player_dict.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/stanza/pipeline/tokenize_processor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/mplog.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="-13845" />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="-1063" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ml_tag_token_mapping.json" />
-    <entry file="file://$PROJECT_DIR$/tests/data/tag_generation_regression_test.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_tag_generation_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/json/decoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6018">
-          <caret line="356" selection-start-line="356" selection-end-line="356" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/tag_generation_pending_validation/summary.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" selection-start-column="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logging.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/dictionary_improver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/reference_dict/nba_nickname_dict.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_helper_class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/create_team_dict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/reference_dict/nfl_player_dict.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/reference_dict/nfl_team_dict.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/reference_dict/mlb_coach_dict.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/reference_dict/nba_coach_dict.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/reference_dict/nba_player_dict.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/reference_dict/nfl_nickname_dict.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/tag_generation_pending_improvements/tag_token_improvements.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/tag_generation_pending_validation/tags.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="34" selection-start-column="34" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/reference_dict/nfl_coach_dict.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="33" selection-start-column="33" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_tag_generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="100" column="20" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/create_player_dict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/create_headcoach_dict.py">
+    <entry file="file://$PROJECT_DIR$/../docker-workshop/examples/compose/app/main/utils/banter_dictionary_creator/create_team_dict.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2159">
-          <caret line="131" selection-start-line="131" selection-end-line="133" />
+        <state>
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#55#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/torch/multiprocessing/reductions.py">
+    <entry file="file://$PROJECT_DIR$/local_script.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="241" selection-start-line="241" selection-end-line="241" />
+        <state relative-caret-position="459">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/nltk/tokenize/__init__.py">
+    <entry file="file://$PROJECT_DIR$/logger/mplog.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="158">
-            <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/stanza/models/common/doc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="274" selection-start-line="274" selection-end-line="274" />
+        <state>
           <folding>
-            <element signature="e#31#40#0" expanded="true" />
+            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="45" selection-end-column="5646" />
+    <entry file="file://$PROJECT_DIR$/data/mplog.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="510">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/dev.ini">
+    <entry file="file://$PROJECT_DIR$/logger/logging.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+        <state relative-caret-position="323">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/sports_nlp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/tag_generator_ml/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/create_nickname_dict.py">
+    <entry file="file://$PROJECT_DIR$/../docker-workshop/examples/compose/app/main/script.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="61" column="27" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
+        <state>
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#25#46#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/unittest/case.py">
+    <entry file="file://$PROJECT_DIR$/../docker-workshop/examples/compose/app/main/utils/google_search_scraper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="1162" selection-start-line="1162" selection-end-line="1162" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/sports_terms_creator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+        <state relative-caret-position="425">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sports_dictionary_creator/create_golfer_dict.py">
+    <entry file="file://$PROJECT_DIR$/../docker-workshop/examples/compose/app/main/utils/decorators.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/typing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="1995" column="6" selection-start-line="1995" selection-start-column="6" selection-end-line="1995" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/decorators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        <state>
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/string.py">
+    <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/google_search_scraper.py">
+    <entry file="file://$PROJECT_DIR$/src/main/utils/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../docker-workshop/examples/compose/app/main/utils/helper_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-731">
+          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/utils/decorators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../docker-workshop/examples/compose/app/main/tag_identifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Dockerfile-flask">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Dockerfile-nginx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.conf">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile-nginx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.ini">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile-flask">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/req.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="282" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/.dockerignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.dockerignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="561">
+            <caret line="33" selection-start-line="33" selection-end-line="33" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+          <folding>
+            <element signature="e#25#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+          <folding>
+            <element signature="e#14#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/nltk/tokenize/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="113" column="4" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/utils/google_search_scraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1588395621089" expanded="true" signature="197:214" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/helper_class.py">
+    <entry file="file://$PROJECT_DIR$/src/main/tag_identifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="70" column="6" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="6" />
+        <state relative-caret-position="291">
+          <caret line="361" lean-forward="true" selection-start-line="361" selection-end-line="361" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/utils/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/config/banter_tag_gen.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/utils/helper_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="95" column="72" selection-start-line="95" selection-start-column="72" selection-end-line="95" selection-end-column="72" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1588395941157" expanded="true" signature="8539:8545" ph="..." />
-            <marker date="1588395941157" expanded="true" signature="9120:9129" ph="..." />
-            <marker date="1588395941157" expanded="true" signature="9213:9220" ph="..." />
-            <marker date="1588395941157" expanded="true" signature="11897:15817" ph="..." />
-            <marker date="1588395941157" expanded="true" signature="12166:15817" ph="..." />
-            <marker date="1588395941157" expanded="true" signature="12519:12590" ph="..." />
-            <marker date="1588395941157" expanded="true" signature="14423:14429" ph="..." />
-            <marker date="1588395941157" expanded="true" signature="15812:15817" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tag_identifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="343" column="30" selection-start-line="343" selection-start-column="30" selection-end-line="343" selection-end-column="30" />
-          <folding>
-            <element signature="e#1#14#0" expanded="true" />
-            <element signature="e#4335#4827#0" />
-            <marker date="1588395343108" expanded="true" signature="1963:1968" ph="..." />
-            <marker date="1588395343108" expanded="true" signature="2032:2056" ph="..." />
-            <marker date="1588395343108" expanded="true" signature="6437:7159" ph="..." />
-            <marker date="1588395343108" expanded="true" signature="7201:7210" ph="..." />
-            <marker date="1588395343108" expanded="true" signature="9555:9560" ph="..." />
-            <marker date="1588395343108" expanded="true" signature="10723:10728" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="85" column="127" selection-start-line="85" selection-start-column="127" selection-end-line="85" selection-end-column="127" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <marker date="1588397422633" expanded="true" signature="252:253" ph="..." />
-            <marker date="1588397422633" expanded="true" signature="630:633" ph="..." />
           </folding>
         </state>
       </provider>

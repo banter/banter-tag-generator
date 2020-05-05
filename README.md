@@ -1,25 +1,53 @@
 "# banter_tag_gen"
 
-Package Intallation 
+#Run th App
+- `docker-compose up`
 
+Note:
+- This initial startup will take some time, if MemoryError, increase memory allocation for each container on the docker vm.
+- Downloading: Python Packages, English model for neural pipeline and Setting default neural pipeline in english
+- `docker-machine create -d virtualbox --virtualbox-cpu-count=2 --virtualbox-memory=4096 --virtualbox-disk-size=50000 default`    
+
+
+Endpoints:
+
+- /actuator: See if up 
+
+- /getTags 
+    - (GET or POST) 
+    - Request Body: {"description": Description string}
+    - Response:  [List of tags]
+
+Sample Curl Request:
+
+- `curl --location --request GET 'http://localhost:5000/getTags' \
+--header 'Content-Type: application/json' \
+--data-raw '{"description": "Is Jared Goff on the decline?"} '`
+
+Sample Response:
+
+- `[{"type": "person", "value": "Jared Goff"}, {"type": "team", "value": "Los Angeles Rams"}, {"type": "league", "value":
+"nfl"}]`
+
+
+
+
+#Python Package Local Installation:
+
+
+Local Installation 
 `pip install -r requirements.txt`
 
 If error on torch installation: https://stackoverflow.com/questions/56239310/could-not-find-a-version-that-satisfies-the-requirement-torch-1-0-0
 
 `pip install torch===1.4.0 torchvision===0.5.0 -f https://download.pytorch.org/whl/torch_stable.html`
 
+#Resources 
 
-Running 
-
-`python runner.py`
-
-
-Resources 
-
-# Python Issue on Windows https://stackoverflow.com/questions/56239310/could-not-find-a-version-that-satisfies-the-requirement-torch-1-0-0
-# Information on what these the upos mean in each token: https://polyglot.readthedocs.io/en/latest/POS.html
-# Objects information
-# https://stanfordnlp.github.io/stanza/data_objects#document
+ Python Issue on Windows https://stackoverflow.com/questions/56239310/could-not-find-a-version-that-satisfies-the-requirement-torch-1-0-0
+ Information on what these the upos mean in each token: https://polyglot.readthedocs.io/en/latest/POS.html
+ Objects information
+ https://stanfordnlp.github.io/stanza/data_objects#document
 """
 Resources:
 Stanza Overview: https://pypi.org/project/stanza/
@@ -47,5 +75,25 @@ PERCENT	twenty pct, 18.75 %
 FACILITY	Washington Monument, Stonehenge
 GPE	South East Asia, Midlothian
 
+Python Docker:
+
+https://runnable.com/docker/python/docker-compose-with-flask-apps
+https://djangostars.com/blog/what-is-docker-and-how-to-use-it-with-python/
+
+Interesting POinters on compose:
+https://medium.com/bitcraft/docker-composing-a-python-3-flask-app-line-by-line-93b721105777
+
+Future Boilerplate?
+https://github.com/gabimelo/flask-boilerplate
+
+Windows Docker Port Forwarding: 
+For me NATing the port in VirtualBox worked
+Go to VirtualBox -> Your BOX -> Settings -> Network ->
+Choose NAT
+Open Advanced
+Click Port Forwarding
+Add new rule to map whatever port you need from host to guest
+Click OK, OK
+Then stop, start the BOX
 
 """
