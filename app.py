@@ -16,7 +16,7 @@ def getTags():
 
     description = request.args.get('description')
     if description is None or len(description) == 0:
-        return "please provide description in url", status.HTTP_400_BAD_REQUEST
+        return "please provide desscription in url", status.HTTP_400_BAD_REQUEST
     else:
         pass
 

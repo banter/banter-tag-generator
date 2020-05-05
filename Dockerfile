@@ -1,8 +1,8 @@
 FROM python:3.6.3
 
-ADD . /app
+ADD . /src
 
-WORKDIR /app
+WORKDIR /src
 
 RUN pip install -r requirements.txt --default-timeout=10000 --no-cache-dir -v
 
