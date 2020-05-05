@@ -8,12 +8,25 @@ tag_id = TagIdentifier()
 
 @app.route('/actuator')
 def actuator():
-    print("AU")
     return "success", status.HTTP_200_OK
 
 
-@app.route('/getTags', methods=["GET", "POST"])
+@app.route('/getTags', methods=["GET"])
 def getTags():
+
+    description = request.args.get('description')
+    if description is None or len(description) == 0:
+        return "please provide description in url", status.HTTP_400_BAD_REQUEST
+    else:
+        pass
+
+    tags = tag_id.generate_tags_on_genre(description, 'sports')
+    return json.dumps(tags)
+
+
+
+@app.route('/getTagsFromBody', methods=["GET", "POST"])
+def getTagsFromBody():
     try:
         data = request.json
         description = data['description']
@@ -27,5 +40,5 @@ def getTags():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5003, debug=True)
+    app.run(host="0.0.0.0", debug=False)
 
