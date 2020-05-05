@@ -13,20 +13,22 @@ Endpoints:
 
 - /actuator: See if up 
 
-- /getTags 
+- /getTags
+    - GET 
+    - parameter:description
+    - Response:  [List of tags]
+    - Sample Request: `curl --location --request GET 'http://localhost:5000/getTags?description=Austin%20Marchese%20is%20the%20man'`
+    - Sample Response: `[{"type": "person", "value": "Austin Marchese"}]`
+    
+(Same as above different request format)
+- /getTagsFromBody
     - (GET or POST) 
     - Request Body: {"description": Description string}
     - Response:  [List of tags]
-
-Sample Curl Request:
-
-- `curl --location --request GET 'http://localhost:5000/getTags' \
+    - Sample Curl Request:`curl --location --request GET 'http://localhost:5000/getTagsFromBody' \
 --header 'Content-Type: application/json' \
---data-raw '{"description": "Is Jared Goff on the decline?"} '`
-
-Sample Response:
-
-- `[{"type": "person", "value": "Jared Goff"}, {"type": "team", "value": "Los Angeles Rams"}, {"type": "league", "value":
+--data-raw '{"description": "Is Jared Goff on the decline?"} '` 
+    - Sample Response:`[{"type": "person", "value": "Jared Goff"}, {"type": "team", "value": "Los Angeles Rams"}, {"type": "league", "value":
 "nfl"}]`
 
 
