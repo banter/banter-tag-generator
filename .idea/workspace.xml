@@ -3,57 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c1b66df8-cc48-422b-8a78-07c0af1482df" name="Default Changelist" comment="added individual athletes to helper class, format {sport:{name, name}}">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TagGenerator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/banter_tag_gen.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/american_football_terms.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/baseball_terms.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/basketball_terms.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/football_terms.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/golf_athlete_set.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/hockey_terms.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/mlb_coach_dict.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/mlb_nickname_dict.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/mlb_player_dict.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/mlb_team_dict.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nba_coach_dict.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nba_nickname_dict.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nba_player_dict.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nba_team_dict.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/ncaab_team_dict.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/ncaafb_team_dict.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nfl_coach_dict.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nfl_nickname_dict.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nfl_player_dict.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nfl_team_dict.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nhl_player_dict.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/reference_dict/nhl_team_dict.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/dev.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/google_search_scraper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logging.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mplog.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sports_dictionary_creator/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sports_dictionary_creator/create_golfer_dict.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sports_dictionary_creator/create_headcoach_dict.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sports_dictionary_creator/create_nickname_dict.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sports_dictionary_creator/create_player_dict.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sports_dictionary_creator/create_team_dict.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sports_dictionary_creator/dictionary_improver.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sports_dictionary_creator/sports_nlp.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sports_dictionary_creator/sports_terms_creator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tag_generator_ml/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tag_identifier.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_helper_class.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_tag_generation_regression.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_tag_generator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/decorators.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/helper_class.py" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,10 +30,10 @@
           <entry key="conf" value="2" />
           <entry key="config" value="2" />
           <entry key="dockerignore" value="3" />
-          <entry key="gitignore" value="3" />
+          <entry key="gitignore" value="4" />
           <entry key="ini" value="2" />
           <entry key="log" value="2" />
-          <entry key="md" value="5" />
+          <entry key="md" value="6" />
           <entry key="py" value="53" />
           <entry key="spec" value="1" />
           <entry key="txt" value="8" />
@@ -95,8 +45,8 @@
         <counts>
           <entry key="Log" value="2" />
           <entry key="Logstash" value="2" />
-          <entry key="Markdown" value="5" />
-          <entry key="PLAIN_TEXT" value="25" />
+          <entry key="Markdown" value="6" />
+          <entry key="PLAIN_TEXT" value="26" />
           <entry key="Python" value="53" />
           <entry key="YAML" value="4" />
         </counts>
@@ -105,32 +55,32 @@
         <counts>
           <entry key="Dockerfile" value="63" />
           <entry key="Dockerfile-nginx" value="4" />
-          <entry key="Python Console" value="353" />
+          <entry key="Python Console" value="421" />
           <entry key="conf" value="2" />
           <entry key="config" value="410" />
           <entry key="dummy" value="58" />
-          <entry key="gitignore" value="41" />
+          <entry key="gitignore" value="82" />
           <entry key="ini" value="8" />
-          <entry key="md" value="1120" />
-          <entry key="py" value="2339" />
+          <entry key="md" value="1324" />
+          <entry key="py" value="2496" />
           <entry key="txt" value="32" />
           <entry key="yaml" value="3" />
-          <entry key="yml" value="98" />
+          <entry key="yml" value="105" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Logstash" value="2" />
-          <entry key="Markdown" value="1120" />
-          <entry key="PLAIN_TEXT" value="616" />
-          <entry key="Python" value="2692" />
-          <entry key="YAML" value="101" />
+          <entry key="Markdown" value="1324" />
+          <entry key="PLAIN_TEXT" value="657" />
+          <entry key="Python" value="2917" />
+          <entry key="YAML" value="108" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.65420026">
+    <splitter split-orientation="horizontal" split-proportion="0.70374924">
       <split-first>
         <splitter split-orientation="horizontal" split-proportion="0.9">
           <split-first>
@@ -139,7 +89,16 @@
                 <entry file="file://$PROJECT_DIR$/docker-compose.yml">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="136">
-                      <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+                      <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/.gitignore">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="153">
+                      <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
                     </state>
                   </provider>
                 </entry>
@@ -154,22 +113,25 @@
                 </entry>
               </file>
               <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/requirements.txt">
+                <entry file="file://$PROJECT_DIR$/app.py">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="527">
-                      <caret line="31" selection-start-line="31" selection-end-line="31" />
+                    <state relative-caret-position="714">
+                      <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
+                      <folding>
+                        <element signature="e#14#46#0" expanded="true" />
+                      </folding>
                     </state>
                   </provider>
                 </entry>
               </file>
               <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="119">
-                      <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-                      <folding>
-                        <element signature="e#14#46#0" expanded="true" />
-                      </folding>
+                <entry file="file://$PROJECT_DIR$/README.md">
+                  <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                    <state split_layout="SPLIT">
+                      <first_editor relative-caret-position="177">
+                        <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+                      </first_editor>
+                      <second_editor />
                     </state>
                   </provider>
                 </entry>
@@ -195,11 +157,11 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/main/tag_identifier.py">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="291">
-                      <caret line="361" lean-forward="true" selection-start-line="361" selection-end-line="361" />
+                    <state relative-caret-position="425">
+                      <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
                       <folding>
                         <element signature="e#0#39#0" expanded="true" />
                       </folding>
@@ -219,11 +181,11 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/main/utils/helper_class.py">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="228">
-                      <caret line="95" column="72" selection-start-line="95" selection-start-column="72" selection-end-line="95" selection-end-column="72" />
+                    <state relative-caret-position="925">
+                      <caret line="97" column="34" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="34" />
                       <folding>
                         <element signature="e#0#13#0" expanded="true" />
                       </folding>
@@ -367,14 +329,15 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/app/main/utils/helper_class.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/src/main/test.py" />
         <option value="$PROJECT_DIR$/src/main/utils/test.py" />
         <option value="$PROJECT_DIR$/src/main/config/banter_tag_gen.config" />
         <option value="$PROJECT_DIR$/src/main/utils/helper_class.py" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/tag_identifier.py" />
       </list>
     </option>
   </component>
@@ -461,7 +424,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.app (1)">
     <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="banter_tag_gen" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -618,14 +581,14 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3275488" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.45878524" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.68598527" weight="0.5347071" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.329718" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3253796" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49894625" weight="0.329718" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49789253" visible="true" weight="0.3253796" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5021075" side_tool="true" visible="true" weight="0.3253796" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.4088937" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -922,37 +885,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="561">
-            <caret line="33" selection-start-line="33" selection-end-line="33" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-          <folding>
-            <element signature="e#25#46#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -963,25 +899,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/test.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding>
-            <element signature="e#14#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/nltk/tokenize/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -996,16 +915,6 @@
           <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/tag_identifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="361" lean-forward="true" selection-start-line="361" selection-end-line="361" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1029,10 +938,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/utils/helper_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="95" column="72" selection-start-line="95" selection-start-column="72" selection-end-line="95" selection-end-column="72" />
+        <state relative-caret-position="925">
+          <caret line="97" column="34" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="34" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+          <folding>
+            <element signature="e#25#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="177">
+            <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
+          <folding>
+            <element signature="e#14#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/tag_identifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

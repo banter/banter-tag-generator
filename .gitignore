@@ -5,6 +5,11 @@ venv/
 data
 data/
 
+
+'.idea'
+'.idea/workspace.xml'
+.idea
+
 script.py
 
 setup.py
