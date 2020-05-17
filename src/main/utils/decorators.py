@@ -1,7 +1,6 @@
 import time
 import functools
 
-
 def timeit(method):
     def timed(*args, **kw):
         ts = time.time()
@@ -15,8 +14,6 @@ def timeit(method):
                   (method.__name__, (te - ts) * 1000))
         return result
     return timed
-
-
 
 def debug(func):
     """Print the function signature and return value"""
