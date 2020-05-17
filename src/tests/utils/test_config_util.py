@@ -1,6 +1,8 @@
 import unittest
-from src.main.utils.config_util import SportsConfig
+
 from src.main.utils.config_util import LanguageConfig
+from src.main.utils.config_util import SportsConfig
+
 
 class TestConfig(unittest.TestCase):
 
@@ -18,6 +20,7 @@ class TestConfig(unittest.TestCase):
                 pass
             else:
                 self.assertIsNotNone(value)
+
 
 if __name__ == '__main__':
     unittest.main()

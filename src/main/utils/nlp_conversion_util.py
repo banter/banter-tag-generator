@@ -1,5 +1,6 @@
 import string
 from typing import *
+
 from src.main.utils.config_util import LanguageConfig
 
 ENGLISH_STOP_WORDS = frozenset([
@@ -45,6 +46,7 @@ ENGLISH_STOP_WORDS = frozenset([
     "within", "without", "would", "yet", "you", "your", "yours", "yourself",
     "yourselves", "like"])
 
+
 class NLPConversionUtil(LanguageConfig):
 
     @staticmethod
@@ -58,7 +60,7 @@ class NLPConversionUtil(LanguageConfig):
         return list(dict.fromkeys(list_))
 
     @staticmethod
-    def filter_token_list_by_type(token_list: List[Dict], type:str) -> List[Dict]:
+    def filter_token_list_by_type(token_list: List[Dict], type: str) -> List[Dict]:
         filtered_list = [token for token in token_list if token['type'] == type]
         return filtered_list
 
@@ -66,7 +68,6 @@ class NLPConversionUtil(LanguageConfig):
     def remove_punctuation_from_text(text: str) -> str:
         translator = str.maketrans('', '', string.punctuation)
         return text.translate(translator)
-
 
     @staticmethod
     def remove_duplicates_from_dict_list_based_on_key(list_: List[Dict], analyzed_key: str = "value") -> List[Dict]:
@@ -109,7 +110,7 @@ class NLPConversionUtil(LanguageConfig):
 
     @staticmethod
     # TODO write test
-    def convert_span_list_to_dict_list(span_list: list) -> List[Dict[str,str]]:
+    def convert_span_list_to_dict_list(span_list: list) -> List[Dict[str, str]]:
         """
         :param span_list: Span list created from Standford NLP
         :return: dict_list

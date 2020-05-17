@@ -1,6 +1,7 @@
-from bs4 import BeautifulSoup
-import requests
 import pickle
+
+import requests
+from bs4 import BeautifulSoup
 
 
 # TODO some words are cut off, handling () in web scraping

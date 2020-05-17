@@ -1,11 +1,10 @@
-from bs4 import BeautifulSoup
-import requests
 import pickle
+
+import requests
+from bs4 import BeautifulSoup
 
 
 # TODO some words are cut off, handling () in web scraping
-
-
 
 
 def create_golfer_set(male_url, female_url):
@@ -55,13 +54,12 @@ def create_golfer_set(male_url, female_url):
     return sports_set
 
 
-
-
 def save_list(word_set, file_name):
     word_list = list(word_set)
     with open(f"../resources/reference_dict/{file_name}.data", 'wb') as filehandle:
         # store the data as binary data stream
         pickle.dump(word_list, filehandle)
+
 
 # TODO this is just male golfers
 male_golfer_url = 'https://en.wikipedia.org/wiki/List_of_male_golfers'

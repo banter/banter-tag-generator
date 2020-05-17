@@ -1,5 +1,7 @@
 import unittest
+
 from src.main.tagging_algos.tagging_base_handler import TaggingBaseHandler
+
 
 class TestTaggingBaseHandler(unittest.TestCase):
 
@@ -12,7 +14,7 @@ class TestTaggingBaseHandler(unittest.TestCase):
         sample = {'text': 'Cam Bedrosian', 'type': 'PERSON', 'start_char': 13, 'end_char': 19}
         response = self.base_handler.get_person_tags(sample)
         print("AYOO", response)
-        valid_response = [{'type': 'person', 'value':'Cam Bedrosian'}]
+        valid_response = [{'type': 'person', 'value': 'Cam Bedrosian'}]
         self.assertCountEqual(response, valid_response)
 
     def test_generate_tags_non_specific(self):
@@ -20,6 +22,7 @@ class TestTaggingBaseHandler(unittest.TestCase):
         valid_response = [{'type': 'person', 'value': 'Joe Rogan'}]
         response = self.base_handler.get_basic_tags(sample)
         self.assertEqual(response, valid_response)
+
 
 if __name__ == '__main__':
     unittest.main()

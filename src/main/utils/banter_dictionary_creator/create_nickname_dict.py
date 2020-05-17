@@ -1,8 +1,10 @@
-from bs4 import BeautifulSoup
-import requests
-import pickle
 import json
 import re
+
+import requests
+from bs4 import BeautifulSoup
+
+
 def create_nba_nicknames_dict():
     """
     Source: https://en.wikipedia.org/wiki/List_of_nicknames_used_in_basketball
@@ -64,7 +66,7 @@ def create_nfl_nicknames_dict():
 
     for index, value in enumerate(soup.findAll('tr')):
         try:
-            name_nickname_split: list = value.text.split('\n')[1::2] #Getting Between Values
+            name_nickname_split: list = value.text.split('\n')[1::2]  # Getting Between Values
             first_name = name_nickname_split[1]
 
             # Sample Format ' "Splash Brothers" (Curry and Klay Thompson), "Baby-Faced Assassin", "Chef Curry", "Steph", "The Golden Boy"'
@@ -85,8 +87,6 @@ def create_nfl_nicknames_dict():
             print(e)
 
     return nickname_dict
-
-
 
 
 def create_mlb_nicknames_dict():
@@ -131,10 +131,6 @@ def create_mlb_nicknames_dict():
             print(e)
 
     return nickname_dict
-
-
-
-
 
 
 def save_dict(dictionary, file_name):

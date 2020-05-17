@@ -1,6 +1,8 @@
-from src.main.utils.config_util import SportsConfig
 import json
 import pickle
+
+from src.main.utils.config_util import SportsConfig
+
 
 class NLPResourceUtil(SportsConfig):
 

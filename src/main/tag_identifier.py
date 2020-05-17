@@ -1,10 +1,11 @@
-from typing import *
 import logging.handlers
 import os
-from src.main.tagging_algos.tagging_sports import TaggingSportsHandler
+from typing import *
+
 from src.main.tagging_algos.tagging_base_handler import TaggingBaseHandler
+from src.main.tagging_algos.tagging_sports import TaggingSportsHandler
 from src.main.utils.decorators import debug, timeit
-from src.main.utils.nlp_google_util import GoogleSearchTagGenerator
+
 PARENT_DIR = os.getcwd()
 logger = logging.getLogger(__name__)
 
@@ -23,4 +24,3 @@ class TagIdentifier:
             return self.sport_handler.get_sports_tags(description)
         else:
             return self.base_handler.get_basic_tags(description)
-

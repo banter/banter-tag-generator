@@ -1,9 +1,12 @@
-from src.main.tag_identifier import TagIdentifier
 import unittest
+
+from src.main.tag_identifier import TagIdentifier
+
 test_list = ["Cowboys lose Browns bounce back",
-"Bucs win",
-"TB12 declining?",
-"Burfict suspended"]
+             "Bucs win",
+             "TB12 declining?",
+             "Burfict suspended"]
+
 
 class TestTagIdentifier(unittest.TestCase):
 
@@ -11,5 +14,3 @@ class TestTagIdentifier(unittest.TestCase):
     def setUpClass(self):
         super(TestTagIdentifier, self).setUpClass()
         self.tag_identifier = TagIdentifier()
-
-

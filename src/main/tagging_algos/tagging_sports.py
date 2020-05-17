@@ -1,38 +1,34 @@
-from src.main.utils.decorators import debug, timeit
-from src.main.tagging_algos.tagging_base_handler import TaggingBaseHandler
-from typing import *
-from src.main.utils.nlp_util import NLPUtil
 import logging.handlers
 import os
+from typing import *
+
+from src.main.tagging_algos.tagging_base_handler import TaggingBaseHandler
+from src.main.utils.decorators import debug
+
 PARENT_DIR = os.getcwd()
 logger = logging.getLogger(__name__)
 
+
 class TaggingSportsHandler(TaggingBaseHandler):
 
-
-    def get_sports_tags(self, description: str) -> List[Dict[str,str]]:
+    def get_sports_tags(self, description: str) -> List[Dict[str, str]]:
         sports_tags = self.generate_sports_tags(description)
         return self.util.remove_duplicates_from_dict_list_based_on_key(sports_tags, "value")
 
     @debug
-    def generate_sports_tags(self, description: str) -> List[Dict[str,str]]:
+    def generate_sports_tags(self, description: str) -> List[Dict[str, str]]:
 
         description_tags: List[Dict] = []
-
         key_words = self.util.get_key_word_dict(description)
-
         description_tags += self.check_sport_and_league(description)
 
         for word in key_words:
-
             if word['text'].lower() in self.util.sports_leagues:
                 # Handling sports leagues in other method skipping this
                 continue
             word_tags = self.get_tags_using_sports_dict(word)
-
-            if len(word_tags) == 0 and self.util.is_token_specific_type(word,"PERSON"):
+            if len(word_tags) == 0 and self.util.is_token_specific_type(word, "PERSON"):
                 word_tags += self.get_person_tags(word)
-
             if len(word_tags) == 0:
                 # TODO Uncomment Below
                 ml_dict = {}
@@ -49,7 +45,6 @@ class TaggingSportsHandler(TaggingBaseHandler):
                 #     self.util.save_to_existing_dict_tags(ml_dict,
                 #                                            file_path=r"%s\data\tag_generation_pending_validation" % self.helper.root_dir,
                 #                                            file_name="tags.json")
-
             else:
                 description_tags += word_tags
         return description_tags
@@ -62,7 +57,6 @@ class TaggingSportsHandler(TaggingBaseHandler):
         :param description: String/Text of Summary
         :return: List of tags
         """
-
         sport_and_league_tags: list = []
         matching_league = [league for league in self.util.sports_leagues if league in description.lower()]
         if matching_league:
@@ -94,7 +88,7 @@ class TaggingSportsHandler(TaggingBaseHandler):
         return person_tags
 
     @debug
-    def get_tags_using_sports_dict(self, key_word: Dict)-> List[Dict]:
+    def get_tags_using_sports_dict(self, key_word: Dict) -> List[Dict]:
 
         key_word_tags: list = []
         key_word_tags += self.get_team_and_league_tags_on_team(key_word)
@@ -219,4 +213,3 @@ class TaggingSportsHandler(TaggingBaseHandler):
                 sports_terms_tags.append({"type": "sport", "value": sport})
                 break
         return sports_terms_tags
-

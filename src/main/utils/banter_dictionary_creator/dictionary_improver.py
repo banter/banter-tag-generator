@@ -2,6 +2,7 @@ from utils import HelperClass
 
 helper = HelperClass()
 
+
 def add_unique_last_names_to_dict():
     sports_dir = helper.set_player_dict()
     player_dir = sports_dir['nfl']
@@ -23,4 +24,3 @@ def add_unique_last_names_to_dict():
 
 
 x = add_unique_last_names_to_dict()
-
