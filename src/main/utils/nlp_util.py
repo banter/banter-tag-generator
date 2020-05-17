@@ -11,7 +11,8 @@ from nltk.tokenize import word_tokenize
 
 class NLPUtil(NLPConversionUtil, NLPResourceUtil):
 
-    nlp = stanza.Pipeline(lang='en', processors="TOKENIZE,POS,NER")  # This sets up a default neural pipeline in English
+    nlp = stanza.Pipeline(lang='en', processors="TOKENIZE,POS,NER")
+     # This sets up a default neural pipeline in English
     word_tokenize = word_tokenize
 
     def get_token_dict_from_nlp(self, nlp_response: Document) -> List[Dict[str,str]] :

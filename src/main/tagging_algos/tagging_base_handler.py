@@ -1,0 +1,33 @@
+from typing import *
+from src.main.utils.nlp_util import NLPUtil
+
+class TaggingBaseHandler:
+
+    def __init__(self):
+        self.util = NLPUtil()
+
+    def get_person_tags(self, toke_dict: dict):
+        """
+        # Pass in token and if a full name adding this tag
+        :param toke_dict: Token Dict
+        :return: Tags that are for a specific person
+        """
+        # Getting list of names to see length
+        person_tags = []
+        name: str = toke_dict['text']
+        name_length = len(name.split())
+        if name_length > 1:
+            # Greater than 1 suggesting its a full name
+            person_tags.append({"type": "person", "value": name})
+
+        return person_tags
+
+
+    def get_basic_tags(self, description: str) -> List[Dict[str,str]]:
+
+        basic_tags = self.generate_basic_tags(description)
+        return self.util.remove_duplicates_from_dict_list_based_on_key(basic_tags, "value")
+
+
+    def generate_basic_tags(self, description) -> List[Dict]:
+        return []
