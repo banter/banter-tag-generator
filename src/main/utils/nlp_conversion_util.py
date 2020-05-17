@@ -107,13 +107,6 @@ class NLPConversionUtil(LanguageConfig):
 
         return filtered_token_list, token_set, token_concat_str
 
-
-    @staticmethod
-    # TODO Remove if unnecessary
-    def convert_tuple_list_to_str_list(tuple_list: List[tuple]) -> List[list]:
-        str_list: list = [".".join(map(str, r)) for r in tuple_list]
-        return str_list
-
     @staticmethod
     # TODO write test
     def convert_span_list_to_dict_list(span_list: list) -> List[Dict[str,str]]:
