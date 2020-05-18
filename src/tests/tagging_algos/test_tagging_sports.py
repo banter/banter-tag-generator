@@ -9,6 +9,8 @@ class TestTaggingSportsHandler(unittest.TestCase):
     def setUpClass(self):
         super(TestTaggingSportsHandler, self).setUpClass()
         self.sport_handler = TaggingSportsHandler()
+        self.integration_test_fixture = self.sport_handler.util.read_json_file(f"../resources/fixtures",
+                                                                               "sports_tagging_integration_fixture.json")
 
     def test_generate_sports_tags(self):
         sample = "Hello this is Austin Marchese and this is the Banter Podcast."
@@ -89,6 +91,11 @@ class TestTaggingSportsHandler(unittest.TestCase):
                                                                                   self.sport_handler.util.individual_sports_dict)
         self.assertCountEqual(response, valid_output)
 
+    def test_get_sports_tags(self):
+        for (description, desired_tags) in self.integration_test_fixture.items():
+            response = self.sport_handler.get_sports_tags(description)
+            print(response, description)
+            self.assertCountEqual(response, desired_tags)
 
 if __name__ == '__main__':
     unittest.main()

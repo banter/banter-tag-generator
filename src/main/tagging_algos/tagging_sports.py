@@ -27,8 +27,12 @@ class TaggingSportsHandler(TaggingBaseHandler):
                 # Handling sports leagues in other method skipping this
                 continue
             word_tags = self.get_tags_using_sports_dict(word)
-            if len(word_tags) == 0 and self.util.is_token_specific_type(word, "PERSON"):
-                word_tags += self.get_person_tags(word)
+            if len(word_tags) == 0:
+                if self.util.is_token_specific_type(word, "PERSON"):
+                    word_tags += self.get_person_tags(word)
+                if self.util.is_token_specific_type(word, "ORG"):
+                    word = self.util.remove_non_capitalized_words_from_key_word_text(word)
+                    word_tags += self.get_tags_using_sports_dict(word)
             if len(word_tags) == 0:
                 # TODO Uncomment Below
                 ml_dict = {}

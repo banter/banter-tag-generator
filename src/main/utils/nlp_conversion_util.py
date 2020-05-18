@@ -124,3 +124,19 @@ class NLPConversionUtil(LanguageConfig):
     def append_to_existing_dict(new_key: str, new_value: str, existing_dict: Dict) -> Dict:
         existing_dict[new_key] = new_value
         return existing_dict
+
+    @staticmethod
+    def remove_non_capitalized_words_from_key_word_text(key_word : Dict, ) -> Dict:
+        """
+        Usecase: if in description it says, the Cleveland Browns are going to the super bowl, this is identified
+                as an ORG "the Cleveland Browns" which is not ideal
+        :param key_word: keyword dict
+        :return: keyword dict with non capitalized text removed
+        """
+        key_word["text"] = ' '.join(w for w in key_word["text"].split(' ') if not w.islower())
+        return key_word
+
+    @staticmethod
+    def remove_non_capitalized_words(s: str) -> str:
+        return ' '.join(w for w in s.split(' ') if not w.islower())
+

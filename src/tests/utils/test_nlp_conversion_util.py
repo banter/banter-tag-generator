@@ -42,6 +42,15 @@ class TestNLPConversionUtil(unittest.TestCase):
         response = NLPConversionUtil.append_to_existing_dict("ab", "ce", self.starting_dict)
         self.assertEqual(expected, response)
 
+    def test_remove_word_from_key_word_text(self):
+        sample_dict = {'text': 'the Cleveland Browns', 'type': 'ORG', 'start_char': 46, 'end_char': 66}
+        expected = {'text': 'Cleveland Browns', 'type': 'ORG', 'start_char': 46, 'end_char': 66}
+        response = NLPConversionUtil.remove_non_capitalized_words_from_key_word_text(sample_dict)
+        self.assertEqual(expected, response)
+
+
+    def test_remove_non_capitalized_words(self):
+        self.assertEqual("Abc Def", NLPConversionUtil.remove_non_capitalized_words("Abc Def abd"))
 
 if __name__ == '__main__':
     unittest.main()
