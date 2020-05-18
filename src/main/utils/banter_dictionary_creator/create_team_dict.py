@@ -1,10 +1,11 @@
-from sportsreference.nhl.teams import Teams as NHLTeams
-from sportsreference.nba.teams import Teams as NBATeams
-from sportsreference.nfl.teams import Teams as NFLTeams
+import json
+
 from sportsreference.mlb.teams import Teams as MLBTeams
+from sportsreference.nba.teams import Teams as NBATeams
 from sportsreference.ncaab.teams import Teams as NCAABTeams
 from sportsreference.ncaaf.teams import Teams as NCAAFBTeams
-import json
+from sportsreference.nfl.teams import Teams as NFLTeams
+from sportsreference.nhl.teams import Teams as NHLTeams
 
 
 # TODO Handle Soccer Teams/Players

@@ -1,11 +1,8 @@
-from bs4 import BeautifulSoup
 import requests
-import pickle
+from bs4 import BeautifulSoup
 
 
 # TODO some words are cut off, handling () in web scraping
-
-
 
 
 def create_golfer_set(male_url, female_url):
@@ -14,25 +11,28 @@ def create_golfer_set(male_url, female_url):
     :param url:
     :return:
     """
-    sports_set = set()
     # desktop user-agent
     USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0"
     # mobile user-agent
     MOBILE_USER_AGENT = "Mozilla/5.0 (Linux; Android 7.0; SM-G930V Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.125 Mobile Safari/537.36"
     headers = {"user-agent": USER_AGENT}
     resp = requests.get(male_url, headers=headers)
+    golf_dict = {}
     if resp.status_code == 200:
         print(resp.content)
         soup = BeautifulSoup(resp.content, "html.parser")
 
     for index, value in enumerate(soup.find_all('tr')):
+        if index == 0 or index == 1:
+            print(value)
+            continue
         try:
             golfer = value.text.split('\n')[1].lstrip()
             if ' *' in golfer:
                 golfer = golfer.replace(' *', '')
             if 'HoF' in golfer:
                 golfer = golfer.replace(' HoF', '')
-            sports_set.add(golfer)
+            golf_dict[golfer] = "men's golf"
         except IndexError as err:
             print(err, value)
 
@@ -42,30 +42,34 @@ def create_golfer_set(male_url, female_url):
         soup = BeautifulSoup(resp.content, "html.parser")
 
     for index, value in enumerate(soup.find_all('tr')):
+        if index == 0 or index == 1:
+            print(value)
+            continue
         try:
             golfer = value.text.split('\n')[1].lstrip()
             if ' *' in golfer:
                 golfer = golfer.replace(' *', '')
             if 'HoF' in golfer:
                 golfer = golfer.replace(' HoF', '')
-            sports_set.add(golfer)
+            golf_dict[golfer] = "women's golf"
         except IndexError as err:
             print(err, value)
 
-    return sports_set
+    return golf_dict
 
 
+import json
 
 
-def save_list(word_set, file_name):
-    word_list = list(word_set)
-    with open(f"../resources/reference_dict/{file_name}.data", 'wb') as filehandle:
-        # store the data as binary data stream
-        pickle.dump(word_list, filehandle)
+def save_dict(dictionary, file_name):
+    tmp_json = json.dumps(dictionary)
+    f = open(f"../../resources/reference_dict/{file_name}.json", "w")
+    f.write(tmp_json)
+    f.close()
 
-# TODO this is just male golfers
+
 male_golfer_url = 'https://en.wikipedia.org/wiki/List_of_male_golfers'
 female_golfer_url = 'https://en.wikipedia.org/wiki/List_of_female_golfers'
-golfer_set = create_golfer_set(male_golfer_url, female_golfer_url)
+golfer_dict = create_golfer_set(male_golfer_url, female_golfer_url)
 
-save_list(golfer_set, "golfer_set")
+save_dict(golfer_dict, "golf_player_dict")

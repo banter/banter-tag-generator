@@ -1,8 +1,10 @@
-import requests
-from bs4 import BeautifulSoup
 import logging
 
+import requests
+from bs4 import BeautifulSoup
+
 from src.main.utils.decorators import debug
+
 logger = logging.getLogger(__name__)
 
 
@@ -57,5 +59,3 @@ class GoogleSearchTagGenerator:
 
         logger.info(f"Google Search Result Scraped Text: {tmp_text}")
         return tmp_text
-
-

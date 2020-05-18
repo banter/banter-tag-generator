@@ -1,8 +1,7 @@
-from bs4 import BeautifulSoup
-import requests
-import pickle
 import json
-import re
+
+import requests
+from bs4 import BeautifulSoup
 
 
 def create_nfl_coach_dict():
@@ -64,7 +63,7 @@ def create_nba_coach_dict():
             if 7 < index < 38:
                 name, team = value.text.split('\n')[1::2][0:2]
                 if '*' in name:
-                    name = name.replace('*','')
+                    name = name.replace('*', '')
 
                 coach_dict[name] = team
 
@@ -98,7 +97,7 @@ def create_mlb_coach_dict():
 
     for index, value in enumerate(soup.findAll('tr')):
         try:
-            if 0 < index < 16 or 16 < index < 32 :
+            if 0 < index < 16 or 16 < index < 32:
                 team = value.text.split('\n')[1]
                 try:
                     name = value.text.split('\n')[6]
@@ -117,15 +116,11 @@ def create_mlb_coach_dict():
     return coach_dict
 
 
-
 def save_dict(dictionary, file_name):
     tmp_json = json.dumps(dictionary)
     f = open(f"../resources/reference_dict/{file_name}.json", "w")
     f.write(tmp_json)
     f.close()
-
-
-
 
 # coach_dict = create_nfl_coach_dict()
 # save_dict(coach_dict, "nfl_coach_dict")

@@ -31,6 +31,9 @@ Endpoints:
     - Sample Response:`[{"type": "person", "value": "Jared Goff"}, {"type": "team", "value": "Los Angeles Rams"}, {"type": "league", "value":
 "nfl"}]`
 
+Running Tests:
+
+In root project directory `python -m unittest`
 
 
 
@@ -43,6 +46,9 @@ Local Installation
 If error on torch installation: https://stackoverflow.com/questions/56239310/could-not-find-a-version-that-satisfies-the-requirement-torch-1-0-0
 
 `pip install torch===1.4.0 torchvision===0.5.0 -f https://download.pytorch.org/whl/torch_stable.html`
+
+virtual env activation windows 
+`venv\Scripts\activate.bat`
 
 #Resources 
 
