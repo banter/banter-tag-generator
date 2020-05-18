@@ -1,5 +1,4 @@
 import json
-import pickle
 
 from src.main.utils.config_util import SportsConfig
 
@@ -40,11 +39,8 @@ class NLPResourceUtil(SportsConfig):
         return tmp_dict
 
     def set_sports_terms_dict(self, file_path):
-        tmp_dict = {}
-        for sport in self.sports_with_references:
-            tmp_dict[sport] = self.read_pickled_file(file_path=file_path,
-                                                     file_name=f"{sport}_terms.data")
-        return tmp_dict
+        return self.read_json_file(file_path=file_path,
+                                   file_name=f"sports_terms_dict.json")
 
     def set_nickname_dict(self, file_path):
         tmp_dict = {}
@@ -63,7 +59,7 @@ class NLPResourceUtil(SportsConfig):
     def set_individual_sport_dict(self, file_path):
         tmp_dict = {}
         for sport in self.individual_sports:
-            tmp_dict[sport] = self.read_pickled_file(file_path=file_path, file_name=f"{sport}_athlete_set.data")
+            tmp_dict[sport] = self.read_json_file(file_path=file_path, file_name=f"{sport}_player_dict.json")
         return tmp_dict
 
     def read_json_file(self, file_path, file_name):
@@ -71,11 +67,6 @@ class NLPResourceUtil(SportsConfig):
         with open(f'{file_path}/{file_name}') as json_file:
             # with open(f'../{file_name}') as json_file:
             return json.load(json_file)
-
-    def read_pickled_file(self, file_path, file_name):
-        with open(f'{file_path}/{file_name}', 'rb') as filehandle:
-            # read the data as binary data stream
-            return pickle.load(filehandle)
 
     def save_dict(self, dictionary, file_path, file_name):
         tmp_json = json.dumps(dictionary)

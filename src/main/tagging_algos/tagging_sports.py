@@ -70,23 +70,6 @@ class TaggingSportsHandler(TaggingBaseHandler):
 
         return sport_and_league_tags
 
-    def get_person_tags(self, toke_dict: dict):
-        """
-        # Pass in token and if a full name adding this tag
-        :param toke_dict: Token Dict
-        :return: Tags that are for a specific person
-        """
-
-        # Getting list of names to see length
-        person_tags = []
-        name: str = toke_dict['text']
-        name_length = len(name.split())
-        if name_length > 1:
-            # Greater than 1 suggesting its a full name
-            person_tags.append({"type": "person", "value": name})
-
-        return person_tags
-
     @debug
     def get_tags_using_sports_dict(self, key_word: Dict) -> List[Dict]:
 
@@ -94,7 +77,8 @@ class TaggingSportsHandler(TaggingBaseHandler):
         key_word_tags += self.get_team_and_league_tags_on_team(key_word)
         key_word_tags += self.get_team_player_league_tags_on_player_or_coach(key_word, self.util.sports_player_dict)
         if len(key_word_tags) == 0:
-            key_word_tags += self.get_sport_person_tags_on_indv_sport(key_word, self.util.individual_sports_dict)
+            key_word_tags += self.get_sport_and_person_tags_on_non_team_sport(key_word,
+                                                                              self.util.individual_sports_dict)
         if len(key_word_tags) == 0:
             key_word_tags += self.get_nickname_tags(key_word, self.util.sports_nickname_dict)
         # TODO Dont think sports terms is worth it
@@ -191,7 +175,7 @@ class TaggingSportsHandler(TaggingBaseHandler):
         return org_tags
 
     # TODO Write Test
-    def get_sport_person_tags_on_indv_sport(self, token_dict: dict, individual_sports_dict: dict):
+    def get_sport_and_person_tags_on_non_team_sport(self, token_dict: dict, individual_sports_dict: dict):
 
         individual_sports_tags = []
         person = token_dict['text']
@@ -203,13 +187,7 @@ class TaggingSportsHandler(TaggingBaseHandler):
         return individual_sports_tags
 
     def get_sports_terms_tag(self, token_dict: dict):
-
         sports_terms_tags = []
-        for sport in self.util.sports_terms_dict.keys():
-            # TODO Handle if there are multiple teams with the same name
-            # Todo Handle Case Sensitive
-            if token_dict["text"] in self.util.sports_terms_dict[sport]:
-                logger.debug(f"Term exists in {sport}")
-                sports_terms_tags.append({"type": "sport", "value": sport})
-                break
+        if token_dict["text"] in self.util.sports_terms_dict:
+            sports_terms_tags.append({"type": "sport", "value": self.util.sports_terms_dict[token_dict["text"]]})
         return sports_terms_tags

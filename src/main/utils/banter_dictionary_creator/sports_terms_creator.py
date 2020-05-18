@@ -1,5 +1,3 @@
-import pickle
-
 import requests
 from bs4 import BeautifulSoup
 
@@ -7,8 +5,8 @@ from bs4 import BeautifulSoup
 # TODO some words are cut off, handling () in web scraping
 
 
-def scrape_wiki(url):
-    sports_set = set()
+def scrape_wiki(url, sport):
+    sport_dict = {}
     # desktop user-agent
     USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0"
     # mobile user-agent
@@ -27,17 +25,19 @@ def scrape_wiki(url):
         # Accounting for if terms are in ( ) ex: National Basketball Association (NBA)
         bracket_text = tmp_text[tmp_text.find("(") + 1:tmp_text.find(")")]
         if tmp_text != bracket_text:
-            sports_set.add(bracket_text)
+            # Removing below addition for time being
+            # sport_dict[bracket_text] = sport
+            pass
         # Removing unnecessary Characters
         if "\xa0" in tmp_text:
             tmp_text = tmp_text.split('\xa0')[0]
 
-        sports_set.add(tmp_text)
-    return sports_set
+        sport_dict[tmp_text] = sport
+    return sport_dict
 
 
 def scrape_wiki_baseball(url):
-    sports_set = set()
+    sport_dict = {}
     # desktop user-agent
     USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0"
     # mobile user-agent
@@ -57,43 +57,43 @@ def scrape_wiki_baseball(url):
         # Accounting for if terms are in ( ) ex: National Basketball Association (NBA)
         bracket_text = tmp_text[tmp_text.find("(") + 1:tmp_text.find(")")]
         if tmp_text != bracket_text:
-            sports_set.add(bracket_text)
+            # Removing below addition for time being
+            # sport_dict[bracket_text] = "baseball"
+            pass
         # Removing unnecessary Characters
         if "\xa0" in tmp_text:
             tmp_text = tmp_text.split('\xa0')[0]
 
-        sports_set.add(tmp_text)
-    return sports_set
+        sport_dict[tmp_text] = "baseball"
+    return sport_dict
 
 
-def save_list(word_set, file_name):
-    word_list = list(word_set)
-    with open(f"../resources/reference_dict/{file_name}.data", 'wb') as filehandle:
-        # store the data as binary data stream
-        pickle.dump(word_list, filehandle)
+import json
 
 
-#
-# hockey_url="https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
-# hockey_set = scrape_wiki(hockey_url)
-# save_list(hockey_set, "hockey_terms")
-#
-#
-# basketball_url = "https://en.wikipedia.org/wiki/Glossary_of_basketball_terms"
-# basketball_set = scrape_wiki(basketball_url)
-# save_list(basketball_set, "basketball_terms")
-#
-# american_football_url = 'https://en.wikipedia.org/wiki/Glossary_of_American_football'
-# american_football_set = scrape_wiki(american_football_url)
-# save_list(american_football_set, "american_football_terms")
-#
-#
-# # TODO fix football terms
-# football_url = 'https://en.wikipedia.org/wiki/Glossary_of_association_football_terms'
-# football_set = scrape_wiki(football_url)
-# save_list(football_set, "football_terms")
+def save_dict(dictionary, file_name):
+    tmp_json = json.dumps(dictionary)
+    with open(f"../../resources/reference_dict/{file_name}.json", "w") as json_file:
+        json_file.write(tmp_json)
+        json_file.close()
 
 
+final_dict = {}
+
+basketball_url = "https://en.wikipedia.org/wiki/Glossary_of_basketball_terms"
+basketball_dict = scrape_wiki(basketball_url, "basketball")
+final_dict.update(basketball_dict)
+hockey_url = "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
+hockey_dict = scrape_wiki(hockey_url, "hockey")
+final_dict.update(hockey_dict)
+american_football_url = 'https://en.wikipedia.org/wiki/Glossary_of_American_football'
+american_football_dict = scrape_wiki(american_football_url, "american football")
+final_dict.update(american_football_dict)
+football_url = 'https://en.wikipedia.org/wiki/Glossary_of_association_football_terms'
+football_dict = scrape_wiki(football_url, "football")
+final_dict.update(football_dict)
 baseball_url = 'https://en.wikipedia.org/wiki/Glossary_of_baseball'
-baseball_set = scrape_wiki_baseball(baseball_url)
-save_list(baseball_set, "baseball_terms")
+baseball_dict = scrape_wiki_baseball(baseball_url)
+final_dict.update(baseball_dict)
+
+save_dict(final_dict, "sports_terms_dict")
