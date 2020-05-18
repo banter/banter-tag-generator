@@ -103,7 +103,6 @@ class NLPUtil(NLPConversionUtil, NLPResourceUtil):
             all_tokens_as_string: str = ''
             token_dict_list, token_set, token_concat_str = self.filter_tokens_get_unique_text(token_dict_list,
                                                                                               self.token_types_analyzed)
-
             for token in token_dict_list:
                 all_tokens_as_string += token['text']
             token_dict_list += self.get_important_pos_tags_from_sentence(nlp_response.to_dict(), token_set,

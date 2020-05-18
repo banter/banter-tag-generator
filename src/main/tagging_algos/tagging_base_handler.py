@@ -35,3 +35,6 @@ class TaggingBaseHandler:
             if self.util.is_token_specific_type(word, "PERSON"):
                 description_tags += self.get_person_tags(word)
         return description_tags
+
+    def handle_untagged_key_word(self, key_word: dict):
+        pass

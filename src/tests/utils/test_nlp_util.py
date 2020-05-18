@@ -117,3 +117,9 @@ class TestNLPUtil(unittest.TestCase):
     def test_is_token_specific_type(self):
         token = {"type": "PERSON"}
         self.assertTrue(self.nlp_util.is_token_specific_type(token, "PERSON"))
+
+    def test_get_key_word_dict(self):
+        pass
+        # description = "The other day Tom was walking to the bathroom with Brian with a baseball. Next they visited larkfield road"
+        # response = self.nlp_util.get_key_word_dict(description)
+        # print(response)

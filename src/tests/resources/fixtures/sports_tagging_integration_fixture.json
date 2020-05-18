@@ -1,4 +1,7 @@
 {
   "On This Weeks Episode we are going to discuss Cleveland Browns": [{"type": "team", "value": "Cleveland Browns"}, {"type": "league", "value": "nfl"}],
-  "On This Weeks Episode we are going to discuss the Cleveland Browns": [{"type": "team", "value": "Cleveland Browns"}, {"type": "league", "value": "nfl"}]
+  "On This Weeks Episode we are going to discuss the Cleveland Browns": [{"type": "team", "value": "Cleveland Browns"}, {"type": "league", "value": "nfl"}],
+  "DAL-MIN": [{"type": "team", "value": "Dallas Cowboys"}, {"type": "league", "value": "nfl"}, {"type": "team", "value": "Minnesota Vikings"}],
+  "NYG-DAL": [{"type": "team", "value": "Dallas Cowboys"}, {"type": "league", "value": "nfl"}, {"type": "team", "value": "New York Giants"}],
+  "NYG@DAL": [{"type": "team", "value": "Dallas Cowboys"}, {"type": "league", "value": "nfl"}, {"type": "team", "value": "New York Giants"}]
 }

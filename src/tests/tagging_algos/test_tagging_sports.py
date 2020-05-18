@@ -91,11 +91,33 @@ class TestTaggingSportsHandler(unittest.TestCase):
                                                                                   self.sport_handler.util.individual_sports_dict)
         self.assertCountEqual(response, valid_output)
 
-    def test_get_sports_tags(self):
+    def test_get_sports_tags_specific_test(self):
+        description = "NYG-DAL"
+        desired_tags = [{"type": "team", "value": "Dallas Cowboys"}, {"type": "league", "value": "nfl"}, {"type": "team", "value": "New York Giants"}]
+        response = self.sport_handler.get_sports_tags(description)
+        self.assertCountEqual(response, desired_tags)
+
+    def test_check_if_game_matchup(self):
+        key_word = {'text': "NYG@MIN", 'type': 'ORG', 'start_char': 94, 'end_char': 104}
+        self.assertTrue(self.sport_handler.check_if_game_matchup(key_word))
+
+    def test_get_matchup_tags(self):
+        """
+        Duplicate tags is fine as this is handled in seperate methods
+        """
+        key_word = {'text': "NYG@DAL", 'type': 'ORG', 'start_char': 94, 'end_char': 104}
+        desired_tags = [{"type": "team", "value": "Dallas Cowboys"}, {"type": "league", "value": "nfl"}, {"type": "team", "value": "New York Giants"},{"type": "league", "value": "nfl"}]
+        response = self.sport_handler.get_matchup_tags(key_word)
+        self.assertCountEqual(response, desired_tags)
+
+    # @unittest.skip("Skip when testing locally, this is a full integration test, uncomment in production")
+    def test_get_sports_tags_full_test(self):
         for (description, desired_tags) in self.integration_test_fixture.items():
             response = self.sport_handler.get_sports_tags(description)
             print(response, description)
             self.assertCountEqual(response, desired_tags)
+
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -26,6 +26,17 @@ def getTags():
     return json.dumps(tags)
 
 
+@app.route('/nlp', methods=["GET"])
+def getNLP():
+    description = request.args.get('description')
+    if description is None or len(description) == 0:
+        return "please provide desscription in url", status.HTTP_400_BAD_REQUEST
+    else:
+        pass
+    tags = tag_id.base_handler.util.get_key_word_dict(description)
+    return json.dumps(tags)
+
+
 @app.route('/getTagsFromBody', methods=["GET", "POST"])
 def getTagsFromBody():
     try:
