@@ -8,6 +8,7 @@ from src.main.utils.decorators import debug
 from src.main.utils.nlp_conversion_util import NLPConversionUtil
 from src.main.utils.nlp_resource_util import NLPResourceUtil
 
+from src.main.models.tag_model import TagModel, NLPEntityModel
 
 # TODO Uncomment
 # stanza.download('en')  # download English model
@@ -111,3 +112,11 @@ class NLPUtil(NLPConversionUtil, NLPResourceUtil):
         else:
             print("Description is Too Long")
             return []
+
+    @staticmethod
+    def get_value_of_specified_type(tokens: List[TagModel], type_: str) -> str:
+        for token in tokens:
+            if token['type'] == type_:
+                return token['value']
+        return ''
+        pass

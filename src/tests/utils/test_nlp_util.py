@@ -118,6 +118,15 @@ class TestNLPUtil(unittest.TestCase):
         token = {"type": "PERSON"}
         self.assertTrue(self.nlp_util.is_token_specific_type(token, "PERSON"))
 
+    def test_check_specific_type_in_tokens_return_value(self):
+        tokens = [{'type': 'team', 'value': 'New York Giants'}, {'type': 'league', 'value': 'nfl'}, {'type': 'team', 'value': 'Dallas Cowboys'}, {'type': 'league', 'value': 'nfl'}]
+        response = self.nlp_util.get_value_of_specified_type(tokens, 'league')
+        self.assertEqual('nfl', response)
+
+    def test_check_specific_type_in_tokens_return_value_empty(self):
+        response = self.nlp_util.get_value_of_specified_type([], 'league')
+        self.assertEqual('', response)
+
     def test_get_key_word_dict(self):
         pass
         # description = "The other day Tom was walking to the bathroom with Brian with a baseball. Next they visited larkfield road"

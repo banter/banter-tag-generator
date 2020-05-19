@@ -6,10 +6,11 @@ from src.main.utils.config_util import SportsConfig
 class NLPResourceUtil(SportsConfig):
 
     def __init__(self):
+        self.city_team_dict = self.set_general_dict(self.sports_reference_dir, f"city_team_dict.json")
         self.sports_team_dict = self.set_team_dict(self.sports_reference_dir)
         self.sports_player_dict = self.set_player_dict(self.sports_reference_dir)
         self.individual_sports_dict = self.set_individual_sport_dict(self.sports_reference_dir)
-        self.sports_terms_dict = self.set_sports_terms_dict(self.sports_reference_dir)
+        self.sports_terms_dict = self.set_general_dict(self.sports_reference_dir, f"sports_terms_dict.json")
         self.sports_coach_dict = self.set_coach_dict(self.sports_reference_dir)
         self.sports_nickname_dict = self.set_nickname_dict(self.sports_reference_dir)
 
@@ -38,9 +39,9 @@ class NLPResourceUtil(SportsConfig):
                                                        file_name=f"{league}_player_dict.json")
         return tmp_dict
 
-    def set_sports_terms_dict(self, file_path):
+    def set_general_dict(self, file_path, file_name):
         return self.read_json_file(file_path=file_path,
-                                   file_name=f"sports_terms_dict.json")
+                                   file_name=file_name)
 
     def set_nickname_dict(self, file_path):
         tmp_dict = {}
