@@ -52,5 +52,11 @@ class TestNLPConversionUtil(unittest.TestCase):
     def test_remove_non_capitalized_words(self):
         self.assertEqual("Abc Def", NLPConversionUtil.remove_non_capitalized_words("Abc Def abd"))
 
+    # def test_add_tag_to_tag_list(self):
+    #     tag_list = [{'type': 'team', 'value': 'New York Knicks', 'confidence':1.0}, {'type': 'person', 'value': 'Dennis Smith Jr.', 'confidence':1.0}, {'type': 'league', 'value': 'nba', 'confidence':1.0}, {'type': 'team', 'value': 'Los Angeles Lakers', 'confidence':1.0}, {'type': 'league', 'value': 'nba', 'confidence':1.0}, {'type': 'team', 'value': 'Oklahoma City Thunder', 'confidence':1.0}, {'type': 'league', 'value': 'nba', 'confidence': 1.0}, {'type': 'team', 'value': 'Oklahoma City Thunder', 'confidence':1.0}, {'type': 'person', 'value': 'Terrance Ferguson', 'confidence':1.0}, {'type': 'league', 'value': 'nba', 'confidence':1.0}]
+    #     new_tag_list = NLPConversionUtil.add_tag_to_tag_list(tag_list, type="ab",value="value", confidence=1.0)
+
+
+
 if __name__ == '__main__':
     unittest.main()

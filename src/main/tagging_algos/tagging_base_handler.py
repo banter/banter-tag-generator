@@ -1,7 +1,10 @@
 from typing import *
 
 from src.main.utils.nlp_util import NLPUtil
+from src.main.tagging_algos.tagging_enums.base_tag_types import BaseTagTypes as TagTypes
 
+from src.main.models.tag_model import TagModel, NLPEntityModel
+from src.main.tagging_algos.tagging_enums.confidence_levels import ConfidenceLevels
 
 class TaggingBaseHandler:
 
@@ -15,12 +18,13 @@ class TaggingBaseHandler:
         :return: Tags that are for a specific person
         """
         # Getting list of names to see length
+        method_confidence = ConfidenceLevels.HIGH.value
         person_tags = []
         name: str = toke_dict['text']
         name_length = len(name.split())
         if name_length > 1:
             # Greater than 1 suggesting its a full name
-            person_tags.append({"type": "person", "value": name})
+            person_tags.append({"type": TagTypes.PERSON.value, "value": name, "confidence": method_confidence})
 
         return person_tags
 
@@ -38,3 +42,4 @@ class TaggingBaseHandler:
 
     def handle_untagged_key_word(self, key_word: dict):
         pass
+

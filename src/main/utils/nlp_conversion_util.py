@@ -2,7 +2,7 @@ import string
 from typing import *
 
 from src.main.utils.config_util import LanguageConfig
-
+from src.main.models.tag_model import TagModel, NLPEntityModel
 ENGLISH_STOP_WORDS = frozenset([
     "a", "about", "above", "across", "after", "afterwards", "again", "against",
     "all", "almost", "alone", "along", "already", "also", "although", "always",
@@ -139,4 +139,9 @@ class NLPConversionUtil(LanguageConfig):
     @staticmethod
     def remove_non_capitalized_words(s: str) -> str:
         return ' '.join(w for w in s.split(' ') if not w.islower())
+
+    # @staticmethod
+    # def add_tag_to_tag_list(tag_list: List[TagModel], type: str, value: str, confidence: float) -> List[TagModel]:
+    #     tag_list += {"type": type, "value": value, "confidence": confidence}
+    #     return tag_list
 
