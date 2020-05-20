@@ -19,20 +19,43 @@ def create_player_dict(teams):
 
 def save_dict(dictionary, file_name):
     tmp_json = json.dumps(dictionary)
-    f = open(f"../resources/reference_dict/{file_name}.json", "w")
+    f = open(f"../../resources/reference_dict/{file_name}.json", "w")
     f.write(tmp_json)
     f.close()
 
 
-teams = NHLTeams(2019)
-nhl_dict = create_player_dict(teams)
-save_dict(nhl_dict, "nhl_player_dict")
-teams = NBATeams(2019)
-nba_dict = create_player_dict(teams)
-save_dict(nba_dict, "nba_player_dict")
-teams = NFLTeams(2019)
-nfl_dict = create_player_dict(teams)
-save_dict(nfl_dict, "nfl_player_dict")
-teams = MLBTeams(2019)
-mlb_dict = create_player_dict(teams)
-save_dict(mlb_dict, "mlb_player_dict")
+try:
+    teams = NHLTeams(2020)
+    nhl_dict = create_player_dict(teams)
+    save_dict(nhl_dict, "nhl_player_dict")
+except:
+    teams = NHLTeams(2019)
+    nhl_dict = create_player_dict(teams)
+    save_dict(nhl_dict, "nhl_player_dict")
+
+try:
+    teams = NBATeams(2020)
+    nba_dict = create_player_dict(teams)
+    save_dict(nba_dict, "nba_player_dict")
+except:
+    teams = NBATeams(2019)
+    nba_dict = create_player_dict(teams)
+    save_dict(nba_dict, "nba_player_dict")
+
+try:
+    teams = NFLTeams(2019)
+    nfl_dict = create_player_dict(teams)
+    save_dict(nfl_dict, "nfl_player_dict")
+except:
+    teams = NFLTeams(2019)
+    nfl_dict = create_player_dict(teams)
+    save_dict(nfl_dict, "nfl_player_dict")
+
+try:
+    teams = MLBTeams(2019)
+    mlb_dict = create_player_dict(teams)
+    save_dict(mlb_dict, "mlb_player_dict")
+except:
+    teams = MLBTeams(2019)
+    mlb_dict = create_player_dict(teams)
+    save_dict(mlb_dict, "mlb_player_dict")

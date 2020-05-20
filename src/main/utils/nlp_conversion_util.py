@@ -2,7 +2,7 @@ import string
 from typing import *
 
 from src.main.utils.config_util import LanguageConfig
-from src.main.models.tag_model import TagModel, NLPEntityModel
+
 ENGLISH_STOP_WORDS = frozenset([
     "a", "about", "above", "across", "after", "afterwards", "again", "against",
     "all", "almost", "alone", "along", "already", "also", "although", "always",
@@ -126,7 +126,7 @@ class NLPConversionUtil(LanguageConfig):
         return existing_dict
 
     @staticmethod
-    def remove_non_capitalized_words_from_key_word_text(key_word : Dict, ) -> Dict:
+    def remove_non_capitalized_words_from_key_word_text(key_word: Dict, ) -> Dict:
         """
         Usecase: if in description it says, the Cleveland Browns are going to the super bowl, this is identified
                 as an ORG "the Cleveland Browns" which is not ideal
@@ -144,4 +144,3 @@ class NLPConversionUtil(LanguageConfig):
     # def add_tag_to_tag_list(tag_list: List[TagModel], type: str, value: str, confidence: float) -> List[TagModel]:
     #     tag_list += {"type": type, "value": value, "confidence": confidence}
     #     return tag_list
-

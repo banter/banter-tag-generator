@@ -1,11 +1,108 @@
 {
-  "On This Weeks Episode we are going to discuss Cleveland Browns": [{"type": "team", "value": "Cleveland Browns"}, {"type": "league", "value": "nfl"}],
-  "On This Weeks Episode we are going to discuss the Cleveland Browns": [{"type": "team", "value": "Cleveland Browns"}, {"type": "league", "value": "nfl"}],
-  "On This Weeks Episode we are speaking with Mike Tomlin about the state of the NFL": [{"type": "team", "value": "Pittsburgh Steelers"}, {"type": "league", "value": "nfl"}, {"type": "person", "value": "Mike Tomlin"}],
-  "We look at the 15 teams in the Western Conference, including Dallas' trade options for Dennis Smith Jr., the Lakers' recent struggles, OKC's Terrance Ferguson, and more.": [{"type": "team", "value": "New York Knicks"},{"type": "team", "value": "Dallas Mavericks"}, {"type": "person", "value": "Dennis Smith Jr."},
-  {"type": "league", "value": "nba"}, {"type": "team", "value": "Los Angeles Lakers"},
-  {"type": "team", "value": "Oklahoma City Thunder"}, {"type": "person", "value": "Terrance Ferguson"}],
-  "DAL-MIN": [{"type": "team", "value": "Dallas Cowboys"}, {"type": "league", "value": "nfl"}, {"type": "team", "value": "Minnesota Vikings"}],
-  "NYG-DAL": [{"type": "team", "value": "Dallas Cowboys"}, {"type": "league", "value": "nfl"}, {"type": "team", "value": "New York Giants"}],
-  "NYG@DAL": [{"type": "team", "value": "Dallas Cowboys"}, {"type": "league", "value": "nfl"}, {"type": "team", "value": "New York Giants"}]
+  "On This Weeks Episode we are going to discuss Cleveland Browns": [
+    {
+      "type": "team",
+      "value": "Cleveland Browns"
+    },
+    {
+      "type": "league",
+      "value": "nfl"
+    }
+  ],
+  "On This Weeks Episode we are going to discuss the Cleveland Browns": [
+    {
+      "type": "team",
+      "value": "Cleveland Browns"
+    },
+    {
+      "type": "league",
+      "value": "nfl"
+    }
+  ],
+  "On This Weeks Episode we are speaking with Mike Tomlin about the state of the NFL": [
+    {
+      "type": "team",
+      "value": "Pittsburgh Steelers"
+    },
+    {
+      "type": "league",
+      "value": "nfl"
+    },
+    {
+      "type": "person",
+      "value": "Mike Tomlin"
+    }
+  ],
+  "We look at the 15 teams in the Western Conference, including Dallas' trade options for Dennis Smith Jr., the Lakers' recent struggles, OKC's Terrance Ferguson, and more.": [
+    {
+      "type": "team",
+      "value": "New York Knicks"
+    },
+    {
+      "type": "team",
+      "value": "Dallas Mavericks"
+    },
+    {
+      "type": "person",
+      "value": "Dennis Smith Jr."
+    },
+    {
+      "type": "league",
+      "value": "nba"
+    },
+    {
+      "type": "team",
+      "value": "Los Angeles Lakers"
+    },
+    {
+      "type": "team",
+      "value": "Oklahoma City Thunder"
+    },
+    {
+      "type": "person",
+      "value": "Terrance Ferguson"
+    }
+  ],
+  "DAL-MIN": [
+    {
+      "type": "team",
+      "value": "Dallas Cowboys"
+    },
+    {
+      "type": "league",
+      "value": "nfl"
+    },
+    {
+      "type": "team",
+      "value": "Minnesota Vikings"
+    }
+  ],
+  "NYG-DAL": [
+    {
+      "type": "team",
+      "value": "Dallas Cowboys"
+    },
+    {
+      "type": "league",
+      "value": "nfl"
+    },
+    {
+      "type": "team",
+      "value": "New York Giants"
+    }
+  ],
+  "NYG@DAL": [
+    {
+      "type": "team",
+      "value": "Dallas Cowboys"
+    },
+    {
+      "type": "league",
+      "value": "nfl"
+    },
+    {
+      "type": "team",
+      "value": "New York Giants"
+    }
+  ]
 }

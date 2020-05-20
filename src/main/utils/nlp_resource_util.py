@@ -6,6 +6,7 @@ from src.main.utils.config_util import SportsConfig
 class NLPResourceUtil(SportsConfig):
 
     def __init__(self):
+        self.abbreviation_team_dict = self.set_general_dict(self.sports_reference_dir, f"abbreviation_team_dict.json")
         self.city_team_dict = self.set_general_dict(self.sports_reference_dir, f"city_team_dict.json")
         self.sports_team_dict = self.set_team_dict(self.sports_reference_dir)
         self.sports_player_dict = self.set_player_dict(self.sports_reference_dir)
