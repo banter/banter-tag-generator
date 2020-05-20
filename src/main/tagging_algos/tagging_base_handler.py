@@ -1,15 +1,14 @@
 from typing import *
 
-from src.main.utils.nlp_util import NLPUtil
 from src.main.tagging_algos.tagging_enums.base_tag_types import BaseTagTypes as TagTypes
-
-from src.main.models.tag_model import TagModel, NLPEntityModel
 from src.main.tagging_algos.tagging_enums.confidence_levels import ConfidenceLevels
+from src.main.utils.nlp_util import NLPUtil
+
 
 class TaggingBaseHandler:
-
-    def __init__(self):
-        self.util = NLPUtil()
+    # Class Variable instead of Instance variable, so on initilization,
+    # Dont have to setup, makes init go from 20ms to 0.00ms
+    util = NLPUtil()
 
     def get_person_tags(self, toke_dict: dict):
         """
@@ -42,4 +41,3 @@ class TaggingBaseHandler:
 
     def handle_untagged_key_word(self, key_word: dict):
         pass
-

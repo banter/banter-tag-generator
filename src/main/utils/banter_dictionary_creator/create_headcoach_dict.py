@@ -118,7 +118,7 @@ def create_mlb_coach_dict():
 
 def save_dict(dictionary, file_name):
     tmp_json = json.dumps(dictionary)
-    f = open(f"../resources/reference_dict/{file_name}.json", "w")
+    f = open(f"../../resources/reference_dict/{file_name}.json", "w")
     f.write(tmp_json)
     f.close()
 

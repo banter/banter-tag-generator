@@ -1,7 +1,9 @@
 import unittest
 from typing import *
+
+from src.main.models.tag_model import TagModel
 from src.main.tagging_algos.tagging_base_handler import TaggingBaseHandler
-from src.main.models.tag_model import TagModel, NLPEntityModel
+
 
 class TestTaggingBaseHandler(unittest.TestCase):
 
