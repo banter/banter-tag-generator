@@ -6,7 +6,7 @@ from flask_api import status
 from src.main.tag_identifier import TagIdentifier
 
 app = Flask(__name__)
-
+from src.main.tagging_algos.tagging_enums.optimization_tool_mapping import OptimizationToolMapping
 
 # tag_id = TagIdentifier()
 #
@@ -49,9 +49,13 @@ def getTags():
     if description is None or len(description) == 0:
         return "please provide desscription in url", status.HTTP_400_BAD_REQUEST
     else:
-        pass
-
-    tags = TagIdentifier().generate_tags_on_genre(description, 'sports')
+        subgenre = request.args.get('subgenre')
+        if subgenre == 'football':
+            tags = TagIdentifier().generate_tags_on_genre(description, 'sports', OptimizationToolMapping.FOOTBALL)
+        elif subgenre == 'basketball':
+            tags = TagIdentifier().generate_tags_on_genre(description, 'sports', OptimizationToolMapping.BASKETBALL)
+        else:
+            tags = TagIdentifier().generate_tags_on_genre(description, 'sports')
     return json.dumps(tags)
 
 
