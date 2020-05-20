@@ -3,7 +3,7 @@ import os
 from typing import *
 
 from src.main.tagging_algos.tagging_base_handler import TaggingBaseHandler
-from src.main.tagging_algos.tagging_sports import TaggingSportsHandler
+from src.main.tagging_algos.tagging_sports_handler import TaggingSportsHandler
 from src.main.utils.decorators import debug, timeit
 
 PARENT_DIR = os.getcwd()

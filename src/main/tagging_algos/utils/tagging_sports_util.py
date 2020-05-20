@@ -9,8 +9,11 @@ from src.main.tagging_algos.tagging_enums.optimization_tool_mapping import Optim
 from src.main.tagging_algos.tagging_enums.sports_tag_types import SportsTagTypes as TagType
 from src.main.utils.decorators import debug
 
+PARENT_DIR = os.getcwd()
+logger = logging.getLogger(__name__)
 
-class SportsUtil:
+
+class TaggingSportsUtil(TaggingBaseHandler):
 
     def __init__(self, optimization_tool: OptimizationToolMapping = OptimizationToolMapping.NONE):
         self.optimization_tool = optimization_tool
@@ -186,3 +189,17 @@ class SportsUtil:
                     {'type': TagType.TEAM.value, 'value': self.util.city_team_dict[league][location_entity['text']],
                      "confidence": method_confidence})
         return location_tags
+
+    def set_optimization_tool(self, identifier: str):
+        if self.optimization_tool.name != 'NONE':
+            return
+        elif identifier == 'nba' or identifier == 'basketball':
+            self.optimization_tool = OptimizationToolMapping.BASKETBALL
+        elif identifier == 'nfl' or identifier == 'american football':
+            self.optimization_tool = OptimizationToolMapping.FOOTBALL
+        elif identifier == 'mlb' or identifier == 'baseball':
+            self.optimization_tool = OptimizationToolMapping.BASEBALL
+        elif identifier == 'nhl' or identifier == 'hockey':
+            self.optimization_tool = OptimizationToolMapping.HOCKEY
+
+        return
