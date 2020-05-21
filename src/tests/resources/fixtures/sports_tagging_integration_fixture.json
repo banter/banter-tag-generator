@@ -104,5 +104,34 @@
       "type": "team",
       "value": "New York Giants"
     }
+  ],
+
+
+  "Marty talks with Niall Horan at Augusta about his love for golf":
+          [{
+            "type": "sport",
+            "value": "golf"
+          },
+            {
+              "type": "person",
+              "value": "Niall Horan"
+            }
+          ],
+  "Lakers & Clippers":
+  [
+    {
+      "type": "team",
+      "value": "Los Angeles Lakers"
+    },
+    {
+      "type": "league",
+      "value": "nba"
+    },
+    {
+      "type": "team",
+      "value": "Los Angeles Clippers"
+    }
   ]
+
+
 }

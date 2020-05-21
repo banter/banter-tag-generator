@@ -67,6 +67,7 @@ class TaggingSportsHandler(TaggingSportsUtil):
 
         return key_word_tags
 
+    @debug
     def generate_matchup_tags(self, key_word: Dict) -> List[Dict]:
         """
         Breaking up the matchup i.e MIN@DAL into a list w each team
@@ -79,11 +80,14 @@ class TaggingSportsHandler(TaggingSportsUtil):
         try:
             if '-' in key_word["text"]:
                 matchup: List[str, str] = key_word["text"].split("-")
-            else:
+            elif '@' in key_word["text"]:
                 matchup: List[str, str] = key_word["text"].split("@")
-            key_word["text"] = matchup[0]
+            else:
+                matchup: List[str, str] = key_word["text"].split("&")
+            #Removing whitespace If there were trailing or leading 'Lakers '-----'Lakers'
+            key_word["text"] = matchup[0].strip()
             matchup_tags += self.get_team_and_league_tags_on_team(key_word)
-            key_word["text"] = matchup[1]
+            key_word["text"] = matchup[1].strip()
             matchup_tags += self.get_team_and_league_tags_on_team(key_word)
             return matchup_tags
         except:
@@ -94,7 +98,7 @@ class TaggingSportsHandler(TaggingSportsUtil):
         location_tags: List[TagModel] = []
         # checking Type Value Which is used for specif
         if self.optimization_tool.name != 'NONE':
-            location_tags += self.get_team_tags_from_city_ref_league(location_entities,
+            location_tags += self.get_team_and_league_tags_from_city(location_entities,
                                                                      self.optimization_tool.value["leagues"][0])
         return location_tags
 
@@ -115,8 +119,9 @@ class TaggingSportsHandler(TaggingSportsUtil):
         return word_tags
 
     @staticmethod
+    @debug
     def check_if_game_matchup(key_word) -> bool:
-        if '-' in key_word["text"] or '@' in key_word["text"]:
+        if '-' in key_word["text"] or '@' in key_word["text"] or '&' in key_word["text"]:
             return True
         return False
 

@@ -14,6 +14,11 @@ def create_player_dict(teams):
         roster = team.roster
         for player in roster.players:
             player_dict[player.name] = team.name
+            # if "Jr." in player.name:
+            #     split_name = player.name.split()
+            #     name_no_jr = " ".join(split_name[0:2])
+            #     player_dict[name_no_jr] = team.name
+
     return player_dict
 
 

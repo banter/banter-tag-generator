@@ -179,7 +179,7 @@ class TaggingSportsUtil(TaggingBaseHandler):
             self.set_optimization_tool(TagType.SPORT.value)
         return sports_terms_tags
 
-    def get_team_tags_from_city_ref_league(self, location_entities: List[NLPEntityModel], league: str) -> List[
+    def get_team_and_league_tags_from_city(self, location_entities: List[NLPEntityModel], league: str) -> List[
         TagModel]:
         method_confidence = ConfidenceLevels.LOW.value
         location_tags: List[TagModel] = []
@@ -188,6 +188,10 @@ class TaggingSportsUtil(TaggingBaseHandler):
                 location_tags.append(
                     {'type': TagType.TEAM.value, 'value': self.util.city_team_dict[league][location_entity['text']],
                      "confidence": method_confidence})
+                location_tags.append(
+                    {'type': TagType.LEAGUE.value, 'value': league,
+                     "confidence": method_confidence})
+
         return location_tags
 
     def set_optimization_tool(self, identifier: str):
