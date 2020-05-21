@@ -107,6 +107,11 @@ class TestNLPUtil(unittest.TestCase):
                                                                       "ABCDEFG")
         self.assertEqual(4, len(response))
 
+    def test_get_key_word_dict(self):
+        response = self.nlp_util.get_key_word_dict("The Richie Incognito On Field Scandal")
+        print(response)
+        pass
+
     def test_get_nouns_from_sentence_token_in_concat_str(self):
         token_set = set()
         token_set.add("Jared Goff")

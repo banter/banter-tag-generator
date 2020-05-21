@@ -73,6 +73,7 @@ def getNLP():
 @app.route('/getTagsFromBody', methods=["GET", "POST"])
 def getTagsFromBody():
     try:
+        print(request.json)
         data = request.json
         description = data['description']
     except Exception as e:

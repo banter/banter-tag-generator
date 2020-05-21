@@ -10,7 +10,7 @@ from src.main.utils.nlp_resource_util import NLPResourceUtil
 
 
 # TODO Uncomment
-# stanza.download('en')  # download English model
+stanza.download('en')  # download English model
 
 class NLPUtil(NLPConversionUtil, NLPResourceUtil):
     nlp = stanza.Pipeline(lang='en', processors="TOKENIZE,POS,NER")

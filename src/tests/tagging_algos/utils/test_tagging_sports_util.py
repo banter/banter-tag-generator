@@ -55,6 +55,18 @@ class TestTaggingSportsUtil(unittest.TestCase):
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, valid_response)
 
+    def test_get_team_and_league_tags_on_player_or_coach_player_name_with_jr(self):
+        # This test is on a person whose name NORMALLY has a Jr. But in the event it is not included
+        # We want to pickup on it. Altered ref. dict for people w Jr. to have an additional entry without Jr.
+        # TODO do with Sr. and III
+        sample = {'text': 'Maurice Hurst', 'type': 'PERSON', 'start_char': 13, 'end_char': 19}
+        response = self.sport_util.get_team_player_league_tags_on_player_or_coach(sample,
+                                                                                  self.sport_util.util.sports_player_dict)
+        valid_response = [{'type': 'team', 'value': 'Oakland Raiders'}, {'type': 'league', 'value': 'nfl'},
+                          {'type': 'person', 'value': 'Maurice Hurst'}]
+        response = self.remove_confidence_for_test_verification(response)
+        self.assertCountEqual(response, valid_response)
+
     def test_get_team_and_league_tags_on_player_or_coach_coach(self):
         sample = {'text': 'Mike Tomlin', 'type': 'PERSON', 'start_char': 13, 'end_char': 19}
         response = self.sport_util.get_team_player_league_tags_on_player_or_coach(sample,
@@ -90,8 +102,8 @@ class TestTaggingSportsUtil(unittest.TestCase):
 
     def test_get_team_tag_from_city_ref_league(self):
         location_entity = [{'text': 'Dallas', 'type': 'GPE', 'start_char': 61, 'end_char': 67}]
-        response = self.sport_util.get_team_tags_from_city_ref_league(location_entity, 'nfl')
-        expected = [{"type": "team", "value": "Dallas Cowboys"}]
+        response = self.sport_util.get_team_and_league_tags_from_city(location_entity, 'nfl')
+        expected = [{"type": "team", "value": "Dallas Cowboys"}, {"type": "league", "value": "nfl"},]
         response = self.remove_confidence_for_test_verification(response)
         self.assertEqual(response, expected)
 

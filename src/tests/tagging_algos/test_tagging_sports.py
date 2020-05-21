@@ -75,8 +75,12 @@ class TestTaggingSportsHandler(unittest.TestCase):
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, valid_output)
 
-    def test_check_if_game_matchup(self):
+    def test_check_if_game_matchup_at(self):
         key_word = {'text': "NYG@MIN", 'type': 'ORG', 'start_char': 94, 'end_char': 104}
+        self.assertTrue(self.sport_handler.check_if_game_matchup(key_word))
+
+    def test_check_if_game_matchup_and(self):
+        key_word = {"text": "Lakers & Clippers", "type": "ORG", "start_char": 0, "end_char": 17}
         self.assertTrue(self.sport_handler.check_if_game_matchup(key_word))
 
     def test_generate_matchup_tags(self):
@@ -92,7 +96,7 @@ class TestTaggingSportsHandler(unittest.TestCase):
 
     def test_generate_tags_using_location(self):
         location_entities = [{'text': 'Dallas', 'type': 'GPE', 'start_char': 61, 'end_char': 67}]
-        expected = [{"type": "team", "value": "Dallas Mavericks"}]
+        expected = [{"type": "team", "value": "Dallas Mavericks"}, {"type": "league", "value": "nba"}]
         self.sport_handler.optimization_tool = OptimizationToolMapping.BASKETBALL
         response = self.sport_handler.generate_location_tags(location_entities)
         response = self.remove_confidence_for_test_verification(response)
@@ -107,17 +111,23 @@ class TestTaggingSportsHandler(unittest.TestCase):
             self.assertCountEqual(response, desired_tags)
 
     def test_get_sports_tags_specific_test(self):
-        description = "We look at the 15 teams in the Western Conference, including Dallas' trade options for Dennis Smith Jr., the Lakers' recent struggles, OKC's Terrance Ferguson, and more."
-        desired_tags = [{'type': 'team', 'value': 'New York Knicks'}, {'type': 'team', 'value': 'Dallas Mavericks'},
-                        {'type': 'person', 'value': 'Dennis Smith Jr.'},
-                        {'type': 'league', 'value': 'nba'}, {'type': 'team', 'value': 'Los Angeles Lakers'},
-                        {'type': 'team', 'value': 'Oklahoma City Thunder'},
-                        {'type': 'person', 'value': 'Terrance Ferguson'}]
-        response = self.sport_handler.get_sports_tags(description)
+        description = "Lakers & Clippers"
+        desired_tags= [
+        {
+            "type": "team",
+            "value": "Los Angeles Lakers"
+        },
+        {
+            "type": "league",
+            "value": "nba"
+        },
+        {
+            "type": "team",
+            "value": "Los Angeles Clippers"
+        }]
+        response = self.adj(self.sport_handler.get_sports_tags(description))
         print(response)
-        response = self.sport_handler.get_sports_tags(description)
-        print(response)
-        # self.assertCountEqual(response, desired_tags)
+        self.assertCountEqual(response, desired_tags)
 
 
 if __name__ == '__main__':
