@@ -7,3 +7,7 @@ services:
       - "5000:5000"
     volumes:
       - .:/src
+networks:
+  default:
+    external:
+      name: banter-shared-network
