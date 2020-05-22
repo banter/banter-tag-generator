@@ -47,6 +47,10 @@
       "value": "Dennis Smith Jr."
     },
     {
+      "type": "person",
+      "value": "Dennis Smith"
+    },
+    {
       "type": "league",
       "value": "nba"
     },
@@ -130,6 +134,25 @@
     {
       "type": "team",
       "value": "Los Angeles Clippers"
+    }
+  ],
+  "LeBron James Stars":
+  [
+    {
+      "type": "team",
+      "value": "Los Angeles Lakers"
+    },
+    {
+      "type": "league",
+      "value": "nba"
+    },
+    {
+      "type": "person",
+      "value": "LeBron James"
+    },
+    {
+      "type": "person",
+      "value": "LeBron James Stars"
     }
   ]
 

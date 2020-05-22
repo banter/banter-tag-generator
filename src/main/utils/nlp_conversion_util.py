@@ -2,6 +2,7 @@ import string
 from typing import *
 
 from src.main.utils.config_util import LanguageConfig
+from src.main.models.tag_model import TagModel, NLPEntityModel
 
 ENGLISH_STOP_WORDS = frozenset([
     "a", "about", "above", "across", "after", "afterwards", "again", "against",
@@ -81,8 +82,20 @@ class NLPConversionUtil(LanguageConfig):
                 filterd_list.append(value)
         return filterd_list
 
-    @staticmethod
-    def filter_tokens_get_unique_text(token_dict_list: List[Dict], token_types_analyzed: Set) -> [List[Dict], Set, str]:
+    def remove_extra_word_from_name(self, entity: NLPEntityModel) -> NLPEntityModel:
+        """
+        :param entity:
+        :return: altered name if need be --- Lebron James Starts ---- Lebron James
+        """
+        if entity['type'] == "PERSON":
+            text: List = entity['text'].split()
+            if len(text) == 3:
+                altered_name = " ".join(text[0:2])
+                adjusted_name_tag : NLPEntityModel = {"type": "PERSON", "text": altered_name}
+                return adjusted_name_tag
+        return None
+
+    def filter_tokens_get_unique_text(self,token_dict_list: List[Dict], token_types_analyzed: Set) -> [List[Dict], Set, str]:
         """
         :param token_dict_list: List of tokens
         :param token_types_analyzed: Token Types that we are inerested in i.e. "PEOPLE" and "ORGS"
@@ -105,6 +118,9 @@ class NLPConversionUtil(LanguageConfig):
                     token_set.add(token['text'])
                     token_concat_str += token['text']
                     filtered_token_list.append(token)
+                    adjusted_name_tag = self.remove_extra_word_from_name(token)
+                    if adjusted_name_tag:
+                        filtered_token_list.append(adjusted_name_tag)
 
         return filtered_token_list, token_set, token_concat_str
 
