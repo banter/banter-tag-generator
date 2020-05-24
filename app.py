@@ -42,9 +42,14 @@ def getNLP():
 @app.route('/getTagsFromBody', methods=["GET", "POST"])
 def getTagsFromBody():
     try:
-        request_text = request.data.decode('utf-8')
-        content = json.loads(request_text)
-        description = content['description']
+        # request_text = request.data.decode('utf-8')
+        # print(request_text)
+        # content = json.loads(request_text)
+        # description = content['description']
+        print(request.json)
+        data = request.json
+        print(data)
+        description = data['description']
     except Exception as e:
         print(e)
         return "please provide description in json", status.HTTP_400_BAD_REQUEST
