@@ -4,7 +4,7 @@ from typing import *
 
 from src.main.models.tag_model import TagModel, NLPEntityModel
 from src.main.tagging_algos.tagging_enums.optimization_tool_mapping import OptimizationToolMapping
-from src.main.tagging_algos.utils.tagging_sports_util import TaggingSportsUtil
+from src.main.tagging_algos.tagging_utils.tagging_sports_util import TaggingSportsUtil
 from src.main.utils.decorators import debug
 
 PARENT_DIR = os.getcwd()
@@ -84,7 +84,7 @@ class TaggingSportsHandler(TaggingSportsUtil):
                 matchup: List[str, str] = key_word["text"].split("@")
             else:
                 matchup: List[str, str] = key_word["text"].split("&")
-            #Removing whitespace If there were trailing or leading 'Lakers '-----'Lakers'
+            # Removing whitespace If there were trailing or leading 'Lakers '-----'Lakers'
             key_word["text"] = matchup[0].strip()
             matchup_tags += self.get_team_and_league_tags_on_team(key_word)
             key_word["text"] = matchup[1].strip()

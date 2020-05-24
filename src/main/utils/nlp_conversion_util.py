@@ -1,8 +1,8 @@
 import string
 from typing import *
 
+from src.main.models.tag_model import NLPEntityModel
 from src.main.utils.config_util import LanguageConfig
-from src.main.models.tag_model import TagModel, NLPEntityModel
 
 ENGLISH_STOP_WORDS = frozenset([
     "a", "about", "above", "across", "after", "afterwards", "again", "against",
@@ -91,11 +91,12 @@ class NLPConversionUtil(LanguageConfig):
             text: List = entity['text'].split()
             if len(text) == 3:
                 altered_name = " ".join(text[0:2])
-                adjusted_name_tag : NLPEntityModel = {"type": "PERSON", "text": altered_name}
+                adjusted_name_tag: NLPEntityModel = {"type": "PERSON", "text": altered_name}
                 return adjusted_name_tag
         return None
 
-    def filter_tokens_get_unique_text(self,token_dict_list: List[Dict], token_types_analyzed: Set) -> [List[Dict], Set, str]:
+    def filter_tokens_get_unique_text(self, token_dict_list: List[Dict], token_types_analyzed: Set) -> [List[Dict], Set,
+                                                                                                        str]:
         """
         :param token_dict_list: List of tokens
         :param token_types_analyzed: Token Types that we are inerested in i.e. "PEOPLE" and "ORGS"

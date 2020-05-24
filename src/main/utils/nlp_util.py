@@ -1,3 +1,4 @@
+import os
 from typing import *
 
 import stanza
@@ -7,11 +8,12 @@ from stanza import Document
 from src.main.utils.decorators import debug
 from src.main.utils.nlp_conversion_util import NLPConversionUtil
 from src.main.utils.nlp_resource_util import NLPResourceUtil
-import os
-a=os.popen('hostname').read()
+
+a = os.popen('hostname').read()
 
 if 'Austin' not in a:
     stanza.download('en')  # download English model
+
 
 class NLPUtil(NLPConversionUtil, NLPResourceUtil):
     nlp = stanza.Pipeline(lang='en', processors="TOKENIZE,POS,NER")

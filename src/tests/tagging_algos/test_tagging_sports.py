@@ -55,7 +55,7 @@ class TestTaggingSportsHandler(unittest.TestCase):
         response = self.sport_handler.generate_basic_sport_tags(sample_input)
         print(response)
         valid_response = [{'type': 'team', 'value': 'New England Patriots'}, {'type': 'person', 'value': "Tom Brady"},
-                          {'type': 'league', 'value': 'nfl'}]
+                          {'type': 'league', 'value': 'NFL'}, {"type": "sport", "value": "football"}]
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, valid_response)
 
@@ -64,7 +64,7 @@ class TestTaggingSportsHandler(unittest.TestCase):
         response = self.sport_handler.generate_basic_sport_tags(sample_input)
         print(response)
         valid_response = [{'type': 'team', 'value': 'New England Patriots'}, {'type': 'person', 'value': 'Tom Brady'},
-                          {'type': 'league', 'value': 'nfl'}]
+                          {'type': 'league', 'value': 'NFL'}, {"type": "sport", "value": "football"}]
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, valid_response)
 
@@ -88,15 +88,20 @@ class TestTaggingSportsHandler(unittest.TestCase):
         Duplicate tags is fine as this is handled in seperate methods
         """
         key_word = {'text': "NYG@DAL", 'type': 'ORG', 'start_char': 94, 'end_char': 104}
-        desired_tags = [{"type": "team", "value": "Dallas Cowboys"}, {"type": "league", "value": "nfl"},
-                        {"type": "team", "value": "New York Giants"}, {"type": "league", "value": "nfl"}]
+        desired_tags = [{"type": "team", "value": "Dallas Cowboys"}, {"type": "league", "value": "NFL"},
+                        {"type": "sport", "value": "football"},
+                        {"type": "team", "value": "New York Giants"}, {"type": "league", "value": "NFL"},
+                        {"type": "sport", "value": "football"}]
         response = self.sport_handler.generate_matchup_tags(key_word)
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, desired_tags)
 
     def test_generate_tags_using_location(self):
         location_entities = [{'text': 'Dallas', 'type': 'GPE', 'start_char': 61, 'end_char': 67}]
-        expected = [{"type": "team", "value": "Dallas Mavericks"}, {"type": "league", "value": "nba"}]
+        expected = [{"type": "team", "value": "Dallas Mavericks"}, {"type": "league", "value": "NBA"}, {
+            "type": "sport",
+            "value": "basketball"
+        }]
         self.sport_handler.optimization_tool = OptimizationToolMapping.BASKETBALL
         response = self.sport_handler.generate_location_tags(location_entities)
         response = self.remove_confidence_for_test_verification(response)
@@ -112,19 +117,23 @@ class TestTaggingSportsHandler(unittest.TestCase):
 
     def test_get_sports_tags_specific_test(self):
         description = "Lakers & Clippers"
-        desired_tags= [
-        {
-            "type": "team",
-            "value": "Los Angeles Lakers"
-        },
-        {
-            "type": "league",
-            "value": "nba"
-        },
-        {
-            "type": "team",
-            "value": "Los Angeles Clippers"
-        }]
+        desired_tags = [
+            {
+                "type": "team",
+                "value": "Los Angeles Lakers"
+            },
+            {
+                "type": "league",
+                "value": "NBA"
+            },
+            {
+                "type": "team",
+                "value": "Los Angeles Clippers"
+            },
+            {
+                "type": "sport",
+                "value": "basketball"
+            }]
         response = self.adj(self.sport_handler.get_sports_tags(description))
         print(response)
         self.assertCountEqual(response, desired_tags)

@@ -30,11 +30,14 @@ class TestNLPConversionUtil(unittest.TestCase):
         self.assertEqual(2, len(NLPConversionUtil.remove_duplicates_from_dict_list_based_on_key(sample_dict)))
 
     def test_filter_tokens_get_unique_text(self):
-        sample_dict = [{"type": "PERSON", "text": "Austin"},{"type": "PERSON", "text": "Lebron James Stars"}, {"type": "ORG", "text": "Jesse"},
+        sample_dict = [{"type": "PERSON", "text": "Austin"}, {"type": "PERSON", "text": "Lebron James Stars"},
+                       {"type": "ORG", "text": "Jesse"},
                        {"type": "ORG", "text": "Jesse"}, {"type": "NOT_IMPORTANT", "text": "Jesse"}]
-        response, token_set, token_concat_str = NLPConversionUtil().filter_tokens_get_unique_text(sample_dict, {"PERSON"})
-        self.assertEqual(response, [{'type': 'PERSON', 'text': 'Austin'}, {'type': 'PERSON', 'text': 'Lebron James Stars'},
-                                    {'type': 'PERSON', 'text': 'Lebron James'}])
+        response, token_set, token_concat_str = NLPConversionUtil().filter_tokens_get_unique_text(sample_dict,
+                                                                                                  {"PERSON"})
+        self.assertEqual(response,
+                         [{'type': 'PERSON', 'text': 'Austin'}, {'type': 'PERSON', 'text': 'Lebron James Stars'},
+                          {'type': 'PERSON', 'text': 'Lebron James'}])
         self.assertTrue('Austin' in token_set)
         self.assertTrue('Lebron James Stars' in token_set)
         self.assertEqual(token_concat_str, 'AustinLebron James Stars')

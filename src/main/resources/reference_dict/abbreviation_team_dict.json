@@ -1,5 +1,5 @@
 {
-  "nfl": {
+  "NFL": {
     "ARI": "Arizona Cardinals",
     "ATL": "Atlanta Falcons",
     "BAL": "Baltimore Ravens",
@@ -33,7 +33,7 @@
     "TEN": "Tennessee Titans",
     "WAS": "Washington Redskins"
   },
-  "nba": {
+  "NBA": {
     "ATL": "Atlanta Hawks",
     "BKN": "Brooklyn Nets",
     "BOS": "Boston Celtics",
@@ -65,7 +65,7 @@
     "UTA": "Utah Jazz",
     "WAS": "Washington Wizards"
   },
-  "mlb": {
+  "MLB": {
     "HOU": "Houston Astros",
     "MIL": "Milwaukee Brewers",
     "PHI": "Philadelphia Phillies",
@@ -98,7 +98,7 @@
     "CHA": "Chicago White Sox",
     "CWS": "Chicago White Sox"
   },
-  "nhl": {
+  "NHL": {
     "BOS": "Boston Bruins",
     "ARI": "Arizona Coyotes",
     "BUF": "Buffalo Sabres",

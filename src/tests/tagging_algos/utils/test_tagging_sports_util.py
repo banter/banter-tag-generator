@@ -2,7 +2,7 @@ import unittest
 from typing import *
 
 from src.main.models.tag_model import TagModel
-from src.main.tagging_algos.utils.tagging_sports_util import TaggingSportsUtil
+from src.main.tagging_algos.tagging_utils.tagging_sports_util import TaggingSportsUtil
 
 
 class TestTaggingSportsUtil(unittest.TestCase):
@@ -103,7 +103,7 @@ class TestTaggingSportsUtil(unittest.TestCase):
     def test_get_team_tag_from_city_ref_league(self):
         location_entity = [{'text': 'Dallas', 'type': 'GPE', 'start_char': 61, 'end_char': 67}]
         response = self.sport_util.get_team_and_league_tags_from_city(location_entity, 'nfl')
-        expected = [{"type": "team", "value": "Dallas Cowboys"}, {"type": "league", "value": "nfl"},]
+        expected = [{"type": "team", "value": "Dallas Cowboys"}, {"type": "league", "value": "nfl"}, ]
         response = self.remove_confidence_for_test_verification(response)
         self.assertEqual(response, expected)
 

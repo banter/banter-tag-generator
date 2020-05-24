@@ -86,6 +86,7 @@ final_dict.update(basketball_dict)
 hockey_url = "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
 hockey_dict = scrape_wiki(hockey_url, "hockey")
 final_dict.update(hockey_dict)
+# TODO Football/Soccer Terms
 american_football_url = 'https://en.wikipedia.org/wiki/Glossary_of_American_football'
 american_football_dict = scrape_wiki(american_football_url, "american football")
 final_dict.update(american_football_dict)
