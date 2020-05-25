@@ -55,7 +55,7 @@ class TestTaggingSportsHandler(unittest.TestCase):
         response = self.sport_handler.generate_basic_sport_tags(sample_input)
         print(response)
         valid_response = [{'type': 'team', 'value': 'New England Patriots'}, {'type': 'person', 'value': "Tom Brady"},
-                          {'type': 'league', 'value': 'nfl'}]
+                          {'type': 'league', 'value': 'NFL'}, {"type": "sport", "value": "football"}]
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, valid_response)
 
@@ -64,7 +64,7 @@ class TestTaggingSportsHandler(unittest.TestCase):
         response = self.sport_handler.generate_basic_sport_tags(sample_input)
         print(response)
         valid_response = [{'type': 'team', 'value': 'New England Patriots'}, {'type': 'person', 'value': 'Tom Brady'},
-                          {'type': 'league', 'value': 'nfl'}]
+                          {'type': 'league', 'value': 'NFL'}, {"type": "sport", "value": "football"}]
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, valid_response)
 
@@ -77,26 +77,31 @@ class TestTaggingSportsHandler(unittest.TestCase):
 
     def test_check_if_game_matchup_at(self):
         key_word = {'text': "NYG@MIN", 'type': 'ORG', 'start_char': 94, 'end_char': 104}
-        self.assertTrue(self.sport_handler.check_if_game_matchup(key_word))
+        self.assertTrue(self.sport_handler.is_nlp_entity_a_game_matchup(key_word))
 
     def test_check_if_game_matchup_and(self):
         key_word = {"text": "Lakers & Clippers", "type": "ORG", "start_char": 0, "end_char": 17}
-        self.assertTrue(self.sport_handler.check_if_game_matchup(key_word))
+        self.assertTrue(self.sport_handler.is_nlp_entity_a_game_matchup(key_word))
 
     def test_generate_matchup_tags(self):
         """
         Duplicate tags is fine as this is handled in seperate methods
         """
         key_word = {'text': "NYG@DAL", 'type': 'ORG', 'start_char': 94, 'end_char': 104}
-        desired_tags = [{"type": "team", "value": "Dallas Cowboys"}, {"type": "league", "value": "nfl"},
-                        {"type": "team", "value": "New York Giants"}, {"type": "league", "value": "nfl"}]
+        desired_tags = [{"type": "team", "value": "Dallas Cowboys"}, {"type": "league", "value": "NFL"},
+                        {"type": "sport", "value": "football"},
+                        {"type": "team", "value": "New York Giants"}, {"type": "league", "value": "NFL"},
+                        {"type": "sport", "value": "football"}]
         response = self.sport_handler.generate_matchup_tags(key_word)
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, desired_tags)
 
     def test_generate_tags_using_location(self):
         location_entities = [{'text': 'Dallas', 'type': 'GPE', 'start_char': 61, 'end_char': 67}]
-        expected = [{"type": "team", "value": "Dallas Mavericks"}, {"type": "league", "value": "nba"}]
+        expected = [{"type": "team", "value": "Dallas Mavericks"}, {"type": "league", "value": "NBA"}, {
+            "type": "sport",
+            "value": "basketball"
+        }]
         self.sport_handler.optimization_tool = OptimizationToolMapping.BASKETBALL
         response = self.sport_handler.generate_location_tags(location_entities)
         response = self.remove_confidence_for_test_verification(response)
@@ -111,21 +116,29 @@ class TestTaggingSportsHandler(unittest.TestCase):
             self.assertCountEqual(response, desired_tags)
 
     def test_get_sports_tags_specific_test(self):
-        description = "Lakers & Clippers"
-        desired_tags= [
-        {
-            "type": "team",
-            "value": "Los Angeles Lakers"
-        },
-        {
-            "type": "league",
-            "value": "nba"
-        },
-        {
-            "type": "team",
-            "value": "Los Angeles Clippers"
-        }]
+        description = "NJ Devils Sr. Director of Player Personnel, Dan MacKinnon"
+        desired_tags = [
+            {
+                "type": "team",
+                "value": "New Jersey Devils"
+            },
+            {
+                "type": "person",
+                "value": "Dan MacKinnon"
+            },
+            {
+                "type": "league",
+                "value": "NHL"
+            },
+            {
+                "type": "sport",
+                "value": "hockey"
+            }]
+        description = "NJ Devils"
         response = self.adj(self.sport_handler.get_sports_tags(description))
+        description = "NJ Devils Sr. Director of Player Personnel, Dan MacKinnon"
+        response = self.adj(self.sport_handler.get_sports_tags(description))
+
         print(response)
         self.assertCountEqual(response, desired_tags)
 

@@ -8,6 +8,7 @@ class NLPResourceUtil(SportsConfig):
     def __init__(self):
         self.abbreviation_team_dict = self.set_general_dict(self.sports_reference_dir, f"abbreviation_team_dict.json")
         self.city_team_dict = self.set_general_dict(self.sports_reference_dir, f"city_team_dict.json")
+        self.league_sport_mapping = self.set_general_dict(self.sports_reference_dir, f"league_sport_mapping_dict.json")
         self.sports_team_dict = self.set_team_dict(self.sports_reference_dir)
         self.sports_player_dict = self.set_player_dict(self.sports_reference_dir)
         self.individual_sports_dict = self.set_individual_sport_dict(self.sports_reference_dir)
@@ -21,19 +22,15 @@ class NLPResourceUtil(SportsConfig):
         """
         tmp_dict = {}
         for league in self.sports_leagues:
-            # Dont have football team info (soccer)
-            if league in self.sports_leagues_no_team_ref:
-                pass
-            else:
-                tmp_dict[league] = self.read_json_file(file_path=file_path,
-                                                       file_name=f"{league}_team_dict.json")
+            tmp_dict[league] = self.read_json_file(file_path=file_path,
+                                                   file_name=f"{league}_team_dict.json")
         return tmp_dict
 
     def set_player_dict(self, file_path):
         tmp_dict = {}
         for league in self.sports_leagues:
             # Dont have football (soccer) , ncaab, ncaafb player info
-            if league in self.sports_leagues_no_player_ref:
+            if league in self.sports_no_ref:
                 pass
             else:
                 tmp_dict[league] = self.read_json_file(file_path=file_path,
@@ -46,14 +43,14 @@ class NLPResourceUtil(SportsConfig):
 
     def set_nickname_dict(self, file_path):
         tmp_dict = {}
-        for sport in self.sports_leagues_with_nickname_and_coaches:
+        for sport in self.sports_leagues:
             tmp_dict[sport] = self.read_json_file(file_path=file_path,
                                                   file_name=f"{sport}_nickname_dict.json")
         return tmp_dict
 
     def set_coach_dict(self, file_path):
         tmp_dict = {}
-        for sport in self.sports_leagues_with_nickname_and_coaches:
+        for sport in self.sports_leagues:
             tmp_dict[sport] = self.read_json_file(file_path=file_path,
                                                   file_name=f"{sport}_coach_dict.json")
         return tmp_dict
@@ -65,7 +62,7 @@ class NLPResourceUtil(SportsConfig):
         return tmp_dict
 
     def read_json_file(self, file_path, file_name):
-        # C:\Users\runni_000\PycharmProjects\podcastProject\resources\reference_dict\nba_team_dict.json
+        # C:\Users\runni_000\PycharmProjects\podcastProject\resources\reference_dict\NBA_team_dict.json
         with open(f'{file_path}/{file_name}') as json_file:
             # with open(f'../{file_name}') as json_file:
             return json.load(json_file)

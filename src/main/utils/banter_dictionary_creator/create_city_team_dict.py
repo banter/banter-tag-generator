@@ -4,7 +4,7 @@ x = NLPResourceUtil()
 
 city_team_dict = {}
 final = {}
-for sport in ['nfl', 'nhl', 'nba', 'mlb']:
+for sport in ['NFL', 'NHL', 'NBA', 'MLB']:
     ar = {}
     for index, k in enumerate(x.sports_team_dict[sport].keys()):
         if index % 2 != 0:

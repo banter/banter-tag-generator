@@ -1,5 +1,6 @@
 from typing import *
 
+from src.main.models.tag_model import NLPEntityModel
 from src.main.tagging_algos.tagging_enums.base_tag_types import BaseTagTypes as TagTypes
 from src.main.tagging_algos.tagging_enums.confidence_levels import ConfidenceLevels
 from src.main.utils.nlp_util import NLPUtil
@@ -33,11 +34,11 @@ class TaggingBaseHandler:
 
     def generate_basic_tags(self, description: str) -> List[Dict]:
         description_tags: List[Dict] = []
-        key_words = self.util.get_key_word_dict(description)
-        for word in key_words:
-            if self.util.is_token_specific_type(word, "PERSON"):
-                description_tags += self.get_person_tags(word)
+        nlp_entities = self.util.get_filtered_nlp_entities(description)
+        for nlp_entity in nlp_entities:
+            if self.util.is_nlp_entity_specific_type(nlp_entity, "PERSON"):
+                description_tags += self.get_person_tags(nlp_entity)
         return description_tags
 
-    def handle_untagged_key_word(self, key_word: dict):
+    def handle_untagged_nlp_entity(self, nlp_entity: NLPEntityModel):
         pass

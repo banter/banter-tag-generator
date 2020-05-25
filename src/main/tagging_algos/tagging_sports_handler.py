@@ -4,7 +4,7 @@ from typing import *
 
 from src.main.models.tag_model import TagModel, NLPEntityModel
 from src.main.tagging_algos.tagging_enums.optimization_tool_mapping import OptimizationToolMapping
-from src.main.tagging_algos.utils.tagging_sports_util import TaggingSportsUtil
+from src.main.tagging_algos.tagging_utils.tagging_sports_util import TaggingSportsUtil
 from src.main.utils.decorators import debug
 
 PARENT_DIR = os.getcwd()
@@ -21,74 +21,72 @@ class TaggingSportsHandler(TaggingSportsUtil):
 
     @debug
     def generate_sports_tags(self, description: str) -> List[TagModel]:
-
         description_tags: List[TagModel] = []
         location_entities: List[NLPEntityModel] = []
-        key_words = self.util.get_key_word_dict(description)
+        nlp_entities = self.util.get_filtered_nlp_entities(description)
         description_tags += self.get_sport_and_league_tags_on_description(description)
 
-        for word in key_words:
-            if word['text'].lower() in self.util.sports_leagues:
+        for nlp_entity in nlp_entities:
+            # TODO why cant this just look through description tags
+            if nlp_entity['text'].lower() in self.util.sports_leagues:
                 # Handling sports leagues in other method skipping this
                 continue
-            word_tags = self.generate_basic_sport_tags(word)
-            if len(word_tags) == 0:
-                word_tags += self.handle_untagged_key_word(word)
+            entity_tags = self.generate_basic_sport_tags(nlp_entity)
+            if len(entity_tags) == 0:
+                entity_tags += self.handle_untagged_nlp_entity(nlp_entity)
 
-            if len(word_tags) == 0:
+            if len(entity_tags) == 0:
                 # Checking if it is an untagged location, if it is will use later
-                if self.util.is_token_specific_type(word, "GPE"):
-                    location_entities.append(word)
-            description_tags += word_tags
-
-        # league_discussed: str = self.util.get_value_of_specified_type(description_tags, TagType.LEAGUE.value)
+                if self.util.is_nlp_entity_specific_type(nlp_entity, "GPE"):
+                    location_entities.append(nlp_entity)
+            description_tags += entity_tags
         # If there are untagged location tags, going to check if there is any
         # Reference to a sports league. This way we can use this as context for the discussion
         if len(location_entities) != 0:
             description_tags += self.generate_location_tags(location_entities)
-
         return description_tags
 
     @debug
-    def generate_basic_sport_tags(self, key_word: Dict) -> List[TagModel]:
-        key_word_tags: list = []
-        key_word_tags += self.get_team_and_league_tags_on_team(key_word)
-        key_word_tags += self.get_team_player_league_tags_on_player_or_coach(key_word, self.util.sports_player_dict)
-        if len(key_word_tags) == 0:
-            key_word_tags += self.get_team_player_league_tags_on_player_or_coach(key_word, self.util.sports_coach_dict)
-        if len(key_word_tags) == 0:
-            key_word_tags += self.get_sport_and_person_tags_on_non_team_sport(key_word,
-                                                                              self.util.individual_sports_dict)
-        if len(key_word_tags) == 0:
-            key_word_tags += self.get_team_player_league_tags_on_nickname(key_word, self.util.sports_nickname_dict)
+    def generate_basic_sport_tags(self, nlp_entity: NLPEntityModel) -> List[TagModel]:
+        nlp_entity_tags: list = []
+        nlp_entity_tags += self.get_team_and_league_tags_on_team(nlp_entity)
+        if len(nlp_entity_tags) == 0:
+            nlp_entity_tags += self.get_team_player_league_tags_on_player(nlp_entity, self.util.sports_player_dict)
+        if len(nlp_entity_tags) == 0:
+            nlp_entity_tags += self.get_team_player_league_tags_on_coach(nlp_entity, self.util.sports_coach_dict)
+        if len(nlp_entity_tags) == 0:
+            nlp_entity_tags += self.get_sport_and_person_tags_on_non_team_sport(nlp_entity,
+                                                                                self.util.individual_sports_dict)
+        if len(nlp_entity_tags) == 0:
+            nlp_entity_tags += self.get_team_player_league_tags_on_nickname(nlp_entity, self.util.sports_nickname_dict)
         # TODO Dont think sports terms is worth it
-        if len(key_word_tags) == 0:
-            key_word_tags += self.get_sport_tag_on_sports_terms(key_word)
+        if len(nlp_entity_tags) == 0:
+            nlp_entity_tags += self.get_sport_tag_on_sports_terms(nlp_entity)
 
-        return key_word_tags
+        return nlp_entity_tags
 
     @debug
-    def generate_matchup_tags(self, key_word: Dict) -> List[Dict]:
+    def generate_matchup_tags(self, nlp_entity: Dict) -> List[Dict]:
         """
         Breaking up the matchup i.e MIN@DAL into a list w each team
         then altering the existing keyword dict to get matchup tags
         with the "text" = "DAL"
-        :param key_word:key word dict
+        :param nlp_entity:key word dict
         :return: Return matchup_tags identifies
         """
         matchup_tags = []
         try:
-            if '-' in key_word["text"]:
-                matchup: List[str, str] = key_word["text"].split("-")
-            elif '@' in key_word["text"]:
-                matchup: List[str, str] = key_word["text"].split("@")
+            if '-' in nlp_entity["text"]:
+                matchup: List[str, str] = nlp_entity["text"].split("-")
+            elif '@' in nlp_entity["text"]:
+                matchup: List[str, str] = nlp_entity["text"].split("@")
             else:
-                matchup: List[str, str] = key_word["text"].split("&")
-            #Removing whitespace If there were trailing or leading 'Lakers '-----'Lakers'
-            key_word["text"] = matchup[0].strip()
-            matchup_tags += self.get_team_and_league_tags_on_team(key_word)
-            key_word["text"] = matchup[1].strip()
-            matchup_tags += self.get_team_and_league_tags_on_team(key_word)
+                matchup: List[str, str] = nlp_entity["text"].split("&")
+            # Removing whitespace If there were trailing or leading 'Lakers '-----'Lakers'
+            nlp_entity["text"] = matchup[0].strip()
+            matchup_tags += self.get_team_and_league_tags_on_team(nlp_entity)
+            nlp_entity["text"] = matchup[1].strip()
+            matchup_tags += self.get_team_and_league_tags_on_team(nlp_entity)
             return matchup_tags
         except:
             return []
@@ -103,41 +101,22 @@ class TaggingSportsHandler(TaggingSportsUtil):
         return location_tags
 
     @debug
-    def handle_untagged_key_word(self, key_word: dict) -> List[Dict]:
+    def handle_untagged_nlp_entity(self, nlp_entity: NLPEntityModel) -> List[TagModel]:
         word_tags = []
-        if self.check_if_game_matchup(key_word):
-            word_tags += self.generate_matchup_tags(key_word)
-        if self.util.is_token_specific_type(key_word, "PERSON"):
-            word_tags += self.get_person_tags(key_word)
-        if self.util.is_token_specific_type(key_word, "ORG"):
+        if self.is_nlp_entity_a_game_matchup(nlp_entity):
+            word_tags += self.generate_matchup_tags(nlp_entity)
+        if self.util.is_nlp_entity_specific_type(nlp_entity, "PERSON"):
+            word_tags += self.get_person_tags(nlp_entity)
+        if self.util.is_nlp_entity_specific_type(nlp_entity, "ORG"):
             # TODO process if the key word is the same
-            key_word_adjusted = self.util.remove_non_capitalized_words_from_key_word_text(key_word)
-            word_tags += self.generate_basic_sport_tags(key_word_adjusted)
-        if len(word_tags) == 0:
-            self.sports_ml_algo(key_word)
+            nlp_entity_adjusted = self.util.remove_non_capitalized_words_from_nlp_entity_text(nlp_entity)
+            word_tags += self.generate_basic_sport_tags(nlp_entity_adjusted)
 
         return word_tags
 
-    @staticmethod
     @debug
-    def check_if_game_matchup(key_word) -> bool:
-        if '-' in key_word["text"] or '@' in key_word["text"] or '&' in key_word["text"]:
-            return True
+    def is_nlp_entity_a_game_matchup(self, nlp_entity: NLPEntityModel) -> bool:
+        for indicator in self.util.matchup_indicators:
+            if indicator in nlp_entity["text"]:
+                return True
         return False
-
-    def sports_ml_algo(self, key_word: Dict):
-        # TODO Uncomment Below
-        ml_dict = {}
-        # google_results = self.google_util.get_google_search_results(word['text'])
-        # google_key_words = self.util.get_key_word_dict(google_results)
-        # for google_key_word in google_key_words:
-        #     google_word_tags = self.get_tags_using_sports_dict(google_key_word)
-        #     description_tags += google_word_tags
-        #     # ml_dict = self.util.append_to_existing_dict(google_key_word, ml_dict, google_word_tags)
-        #     # self.util.save_to_existing_dict_tags()
-        # if self.store_ml_data:
-        #
-        #     self.util.save_to_existing_dict_tags(ml_dict,
-        #                                            file_path=r"%s\data\tag_generation_pending_validation" % self.helper.root_dir,
-        #                                            file_name="tags.json")
-        pass

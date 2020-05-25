@@ -31,17 +31,20 @@ class TaggingSportsUtil(TaggingBaseHandler):
         matching_league = [league for league in self.optimization_tool.value["leagues"] if
                            league in description.lower()]
         if matching_league:
-            for index, value in enumerate(matching_league):
+            for index, league in enumerate(matching_league):
                 sport_and_league_tags.append(
-                    {"type": TagType.LEAGUE.value, "value": value, "confidence": method_confidence})
+                    {"type": TagType.LEAGUE.value, "value": league, "confidence": method_confidence})
+                sport_and_league_tags.append(
+                    {"type": TagType.SPORT.value, "value": self.util.league_sport_mapping[league],
+                     "confidence": method_confidence})
                 self.set_optimization_tool(TagType.LEAGUE.value)
 
         # TODO Make General Based on sub category
         matching_sport = [sport for sport in self.util.all_sports if sport in description.lower()]
         if matching_sport:
-            for index, value in enumerate(matching_sport):
+            for index, sport in enumerate(matching_sport):
                 sport_and_league_tags.append(
-                    {"type": TagType.SPORT.value, "value": value, "confidence": method_confidence})
+                    {"type": TagType.SPORT.value, "value": sport, "confidence": method_confidence})
                 self.set_optimization_tool(TagType.SPORT.value)
 
         return sport_and_league_tags
@@ -79,9 +82,17 @@ class TaggingSportsUtil(TaggingBaseHandler):
             tags.append({"type": TagType.TEAM.value, "value": matching_value,
                          "confidence": method_confidence})
             tags.append({"type": TagType.LEAGUE.value, "value": matching_league, "confidence": method_confidence})
+            tags.append({"type": TagType.SPORT.value, "value": self.util.league_sport_mapping[matching_league],
+                         "confidence": method_confidence})
             self.set_optimization_tool(matching_league)
 
         return tags
+
+    def get_team_player_league_tags_on_player(self, nlp_entity: NLPEntityModel, reference_dict: dict) -> List[TagModel]:
+        return self.get_team_player_league_tags_on_player_or_coach(nlp_entity, reference_dict)
+
+    def get_team_player_league_tags_on_coach(self, nlp_entity: NLPEntityModel, reference_dict: dict) -> List[TagModel]:
+        return self.get_team_player_league_tags_on_player_or_coach(nlp_entity, reference_dict)
 
     def get_team_player_league_tags_on_player_or_coach(self, token_dict: dict, reference_dict: dict) -> List[TagModel]:
         """
@@ -104,6 +115,8 @@ class TaggingSportsUtil(TaggingBaseHandler):
                              "confidence": method_confidence})
                 tags.append({"type": TagType.PERSON.value, "value": name, "confidence": method_confidence})
                 tags.append({"type": TagType.LEAGUE.value, "value": league, "confidence": method_confidence})
+                tags.append({"type": TagType.SPORT.value, "value": self.util.league_sport_mapping[league],
+                             "confidence": method_confidence})
                 self.set_optimization_tool(TagType.LEAGUE.value)
                 break
 
@@ -113,6 +126,8 @@ class TaggingSportsUtil(TaggingBaseHandler):
                              "confidence": method_confidence})
                 tags.append({"type": TagType.PERSON.value, "value": name_no_punc, "confidence": method_confidence})
                 tags.append({"type": TagType.LEAGUE.value, "value": league, "confidence": method_confidence})
+                tags.append({"type": TagType.SPORT.value, "value": self.util.league_sport_mapping[league],
+                             "confidence": method_confidence})
                 self.set_optimization_tool(TagType.LEAGUE.value)
                 break
 
@@ -137,6 +152,8 @@ class TaggingSportsUtil(TaggingBaseHandler):
                 tags.append({"type": TagType.PERSON.value, "value": nickname_dict[league][nickname],
                              "confidence": method_confidence})
                 tags.append({"type": TagType.LEAGUE.value, "value": league, "confidence": method_confidence})
+                tags.append({"type": TagType.SPORT.value, "value": self.util.league_sport_mapping[league],
+                             "confidence": method_confidence})
                 self.set_optimization_tool(TagType.LEAGUE.value)
                 if real_name in self.util.sports_player_dict[league]:
                     tags.append({"type": TagType.TEAM.value, "value": self.util.sports_player_dict[league][real_name],
@@ -147,6 +164,8 @@ class TaggingSportsUtil(TaggingBaseHandler):
                 tags.append({"type": TagType.PERSON.value, "value": nickname_dict[league][nickname_no_punc],
                              "confidence": method_confidence})
                 tags.append({"type": TagType.LEAGUE.value, "value": league, "confidence": method_confidence})
+                tags.append({"type": TagType.SPORT.value, "value": self.util.league_sport_mapping[league],
+                             "confidence": method_confidence})
                 self.set_optimization_tool(TagType.LEAGUE.value)
                 if real_name in self.util.sports_player_dict[league]:
                     tags.append({"type": TagType.TEAM.value, "value": self.util.sports_player_dict[league][real_name],
@@ -191,19 +210,21 @@ class TaggingSportsUtil(TaggingBaseHandler):
                 location_tags.append(
                     {'type': TagType.LEAGUE.value, 'value': league,
                      "confidence": method_confidence})
+                location_tags.append({"type": TagType.SPORT.value, "value": self.util.league_sport_mapping[league],
+                                      "confidence": method_confidence})
 
         return location_tags
 
     def set_optimization_tool(self, identifier: str):
         if self.optimization_tool.name != 'NONE':
             return
-        elif identifier == 'nba' or identifier == 'basketball':
+        elif identifier == 'NBA' or identifier == 'basketball':
             self.optimization_tool = OptimizationToolMapping.BASKETBALL
-        elif identifier == 'nfl' or identifier == 'american football':
+        elif identifier == 'NFL' or identifier == 'football':
             self.optimization_tool = OptimizationToolMapping.FOOTBALL
-        elif identifier == 'mlb' or identifier == 'baseball':
+        elif identifier == 'MLB' or identifier == 'baseball':
             self.optimization_tool = OptimizationToolMapping.BASEBALL
-        elif identifier == 'nhl' or identifier == 'hockey':
+        elif identifier == 'NHL' or identifier == 'hockey':
             self.optimization_tool = OptimizationToolMapping.HOCKEY
 
         return

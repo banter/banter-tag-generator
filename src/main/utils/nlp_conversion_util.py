@@ -1,6 +1,7 @@
 import string
 from typing import *
 
+from src.main.models.tag_model import NLPEntityModel
 from src.main.utils.config_util import LanguageConfig
 
 ENGLISH_STOP_WORDS = frozenset([
@@ -81,11 +82,25 @@ class NLPConversionUtil(LanguageConfig):
                 filterd_list.append(value)
         return filterd_list
 
-    @staticmethod
-    def filter_tokens_get_unique_text(token_dict_list: List[Dict], token_types_analyzed: Set) -> [List[Dict], Set, str]:
+    def remove_extra_word_from_name(self, entity: NLPEntityModel) -> NLPEntityModel:
         """
-        :param token_dict_list: List of tokens
-        :param token_types_analyzed: Token Types that we are inerested in i.e. "PEOPLE" and "ORGS"
+        :param entity:
+        :return: altered name if need be --- Lebron James Starts ---- Lebron James
+        """
+        if entity['type'] == "PERSON":
+            text: List = entity['text'].split()
+            if len(text) == 3:
+                altered_name = " ".join(text[0:2])
+                adjusted_name_tag: NLPEntityModel = {"type": "PERSON", "text": altered_name}
+                return adjusted_name_tag
+        return None
+
+    def filter_nlp_entities_and_create_unique_entity_reference(self, nlp_entity_list: List[NLPEntityModel],
+                                                               entities_analyzed: Set) -> [List[Dict], Set,
+                                                                                           str]:
+        """
+        :param nlp_entity_list: List of tokens
+        :param entities_analyzed: Token Types that we are inerested in i.e. "PEOPLE" and "ORGS"
         :return:
         filtered_token_list ---- List of only the important tokens
         token_set ----- A Set of all the tokens that are important, this will be used to ensure no duplicates
@@ -95,18 +110,21 @@ class NLPConversionUtil(LanguageConfig):
                         want to look at either, this is what the concat_str is usefull for
         """
         filtered_token_list: List[Dict] = []
-        token_set: Set = set()
-        token_concat_str: str = ''
-        for token in token_dict_list:
-            if token['text'] in token_set:
+        existing_entity_set: Set = set()
+        existing_entity_str: str = ''
+        for nlp_entity in nlp_entity_list:
+            if nlp_entity['text'] in existing_entity_set:
                 pass
             else:
-                if token['type'] in token_types_analyzed:
-                    token_set.add(token['text'])
-                    token_concat_str += token['text']
-                    filtered_token_list.append(token)
+                if nlp_entity['type'] in entities_analyzed:
+                    existing_entity_set.add(nlp_entity['text'])
+                    existing_entity_str += nlp_entity['text']
+                    filtered_token_list.append(nlp_entity)
+                    adjusted_name_tag = self.remove_extra_word_from_name(nlp_entity)
+                    if adjusted_name_tag:
+                        filtered_token_list.append(adjusted_name_tag)
 
-        return filtered_token_list, token_set, token_concat_str
+        return filtered_token_list, existing_entity_set, existing_entity_str
 
     @staticmethod
     # TODO write test
@@ -126,15 +144,15 @@ class NLPConversionUtil(LanguageConfig):
         return existing_dict
 
     @staticmethod
-    def remove_non_capitalized_words_from_key_word_text(key_word: Dict, ) -> Dict:
+    def remove_non_capitalized_words_from_nlp_entity_text(nlp_entity: NLPEntityModel) -> NLPEntityModel:
         """
         Usecase: if in description it says, the Cleveland Browns are going to the super bowl, this is identified
                 as an ORG "the Cleveland Browns" which is not ideal
-        :param key_word: keyword dict
+        :param nlp_entity: keyword dict
         :return: keyword dict with non capitalized text removed
         """
-        key_word["text"] = ' '.join(w for w in key_word["text"].split(' ') if not w.islower())
-        return key_word
+        nlp_entity["text"] = ' '.join(w for w in nlp_entity["text"].split(' ') if not w.islower())
+        return nlp_entity
 
     @staticmethod
     def remove_non_capitalized_words(s: str) -> str:

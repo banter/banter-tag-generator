@@ -5,12 +5,12 @@ from src.main.utils.config_util import SportsConfig
 
 class OptimizationToolMapping(Enum):
     BASEBALL = {"sport": "baseball",
-                "leagues": ["mlb"]}
+                "leagues": ["MLB"]}
     BASKETBALL = {"sport": "basketball",
-                  "leagues": ["nba"]}
-    FOOTBALL = {"sport": "american football",
-                "leagues": ["nfl"]}
+                  "leagues": ["NBA"]}
+    FOOTBALL = {"sport": "football",
+                "leagues": ["NFL"]}
     HOCKEY = {"sport": "hockey",
-              "leagues": ["nhl"]},
+              "leagues": ["NHL"]}
     NONE = {"sport": "",
             "leagues": SportsConfig.sports_leagues}

@@ -1,5 +1,5 @@
 {
-  "nfl": {
+  "NFL": {
     "Baltimore": "Baltimore Ravens",
     "San Francisco": "San Francisco 49ers",
     "Tampa Bay": "Tampa Bay Buccaneers",
@@ -29,7 +29,7 @@
     "Cincinnati": "Cincinnati Bengals",
     "Washington": "Washington Redskins"
   },
-  "nhl": {
+  "NHL": {
     "Tampa Bay": "Tampa Bay Lightning",
     "Boston": "Boston Bruins",
     "Calgary": "Calgary Flames",
@@ -59,7 +59,7 @@
     "Ottawa": "Ottawa Senators",
     "Vegas": "Vegas Golden Knights"
   },
-  "nba": {
+  "NBA": {
     "Milwaukee": "Milwaukee Bucks",
     "Golden State": "Golden State Warriors",
     "New Orleans": "New Orleans Pelicans",
@@ -89,7 +89,7 @@
     "Memphis": "Memphis Grizzlies",
     "New York": "New York Knicks"
   },
-  "mlb": {
+  "MLB": {
     "Houston": "Houston Astros",
     "Minnesota": "Minnesota Twins",
     "Atlanta": "Atlanta Braves",

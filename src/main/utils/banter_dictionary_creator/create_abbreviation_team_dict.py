@@ -133,10 +133,10 @@ nhl_ab = {
     "WSH": "Washington Capitals",
 }
 
-final = {'nfl': nfl_abreviations,
-         'nba': nba_abr,
-         'mlb': mlb_abv,
-         'nhl': nhl_ab
+final = {'NFL': nfl_abreviations,
+         'NBA': nba_abr,
+         'MLB': mlb_abv,
+         'NHL': nhl_ab
          }
 import json
 
