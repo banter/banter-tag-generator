@@ -8,11 +8,9 @@ from src.main.tag_identifier import TagIdentifier
 app = Flask(__name__)
 from src.main.tagging_algos.tagging_enums.optimization_tool_mapping import OptimizationToolMapping
 
-
 @app.route('/actuator')
 def actuator():
     return "success", status.HTTP_200_OK
-
 
 @app.route('/getTags', methods=["GET"])
 def getTags():
@@ -44,21 +42,14 @@ def getNLP():
 @app.route('/getTagsFromBody', methods=["GET", "POST"])
 def getTagsFromBody():
     try:
-        # request_text = request.data.decode('utf-8')
-        # print(request_text)
-        # content = json.loads(request_text)
-        # description = content['description']
-        print(request.json)
         data = request.json
-        print(data)
         description = data['description']
     except Exception as e:
         print(e)
         return "please provide description in json", status.HTTP_400_BAD_REQUEST
-
     tags = TagIdentifier().generate_tags_on_genre(description, 'sports')
     return json.dumps(tags)
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5005, debug=False)
+    app.run(host="0.0.0.0", debug=False)
