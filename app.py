@@ -8,9 +8,11 @@ from src.main.tag_identifier import TagIdentifier
 app = Flask(__name__)
 from src.main.tagging_algos.tagging_enums.optimization_tool_mapping import OptimizationToolMapping
 
+
 @app.route('/actuator')
 def actuator():
     return "success", status.HTTP_200_OK
+
 
 @app.route('/getTags', methods=["GET"])
 def getTags():
@@ -35,7 +37,7 @@ def getNLP():
         return "please provide desscription in url", status.HTTP_400_BAD_REQUEST
     else:
         pass
-    tags = TagIdentifier().base_handler.util.get_key_word_dict(description)
+    tags = TagIdentifier().base_handler.util.get_filtered_nlp_entities(description)
     return json.dumps(tags)
 
 
@@ -59,4 +61,4 @@ def getTagsFromBody():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=False)
+    app.run(host="0.0.0.0", port=5005, debug=False)

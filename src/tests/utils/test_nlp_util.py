@@ -51,40 +51,52 @@ class TestNLPUtil(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         self.nlp_util = NLPUtil()
-        # self.nlp_response = self.nlp_util("Tom Brady Is the greates of all time. Jared is the quarterback for the Rams")
 
     def test_convert_span_to_dict(self):
         response = self.nlp_util.get_nlp_response("Austin Marchese is the man")
         self.assertIsNotNone(response.entities, "Asserting response for specified text string")
 
-    def test_is_description_above_max_words(self):
-        response = self.nlp_util.is_description_below_max_words("ABC DEF GED", 2)
-        self.assertEqual(False, response)
-
-    def test_is_description_below_max_words(self):
-        response = self.nlp_util.is_description_below_max_words("ABC DEF GED", 4)
+    def test_is_description_too_long_above(self):
+        response = self.nlp_util.is_description_too_long("ABC DEF GED", 2)
         self.assertEqual(True, response)
 
+    def test_is_description_too_long_below(self):
+        response = self.nlp_util.is_description_too_long("ABC DEF GED", 4)
+        self.assertEqual(False, response)
+
     def test_check_if_token_is_relevant_not_relevent(self):
-        self.assertFalse(self.nlp_util.check_if_token_is_relevant(self.sample_token, {"NOUN"}))
+        self.assertFalse(NLPUtil.is_nlp_entity_important_language_type(self.sample_token, {"NOUN"}))
 
     def test_check_if_token_is_relevant_relevent(self):
-        self.assertTrue(self.nlp_util.check_if_token_is_relevant(self.sample_token, {"PROPN"}))
+        self.assertTrue(NLPUtil.is_nlp_entity_important_language_type(self.sample_token, {"PROPN"}))
 
-    def test_check_if_token_is_new_new(self):
+    def test_has_nlp_entity_already_been_analyzed_new(self):
         token_set = set()
         token_set.add("Brian")
-        self.assertTrue(self.nlp_util.check_if_token_is_new(self.sample_token, token_set, "AbcdEfghi"))
+        self.assertFalse(self.nlp_util.has_nlp_entity_already_been_analyzed(self.sample_token, token_set, "AbcdEfghi"))
 
-    def test_check_if_token_is_new_not_new(self):
+    def test_has_nlp_entity_already_been_analyzed_not_new(self):
         token_set = set()
         token_set.add("Tom")
-        self.assertFalse(self.nlp_util.check_if_token_is_new(self.sample_token, token_set, "AbcdEfghi"))
+        self.assertTrue(self.nlp_util.has_nlp_entity_already_been_analyzed(self.sample_token, token_set, "AbcdEfghi"))
 
     def test_check_if_token_is_new_not_new_in_token_concat_str(self):
         token_set = set()
         token_set.add("Brian")
-        self.assertFalse(self.nlp_util.check_if_token_is_new(self.sample_token, token_set, "TomBrianSteve"))
+        self.assertTrue(
+            self.nlp_util.has_nlp_entity_already_been_analyzed(self.sample_token, token_set, "TomBrianSteve"))
+
+    def test_should_nlp_entity_be_analyzed_true(self):
+        token_set = set()
+        token_set.add("Brian")
+        self.assertTrue(
+            self.nlp_util.should_nlp_entity_be_analyzed(self.sample_token, {"PROPN"}, token_set, "AbcdEfghi"))
+
+    def test_should_nlp_entity_be_analyzed_false(self):
+        token_set = set()
+        token_set.add("Brian")
+        self.assertFalse(
+            self.nlp_util.should_nlp_entity_be_analyzed(self.sample_token, {"NOUN"}, token_set, "AbcdEfghi"))
 
     # TODO mock nested method response
     def test_get_nouns_from_sentence(self):
@@ -108,7 +120,7 @@ class TestNLPUtil(unittest.TestCase):
         self.assertEqual(4, len(response))
 
     def test_get_key_word_dict(self):
-        response = self.nlp_util.get_key_word_dict("The Richie Incognito On Field Scandal")
+        response = self.nlp_util.get_filtered_nlp_entities("The Richie Incognito On Field Scandal")
         print(response)
         pass
 
@@ -121,17 +133,17 @@ class TestNLPUtil(unittest.TestCase):
 
     def test_is_token_specific_type(self):
         token = {"type": "PERSON"}
-        self.assertTrue(self.nlp_util.is_token_specific_type(token, "PERSON"))
+        self.assertTrue(self.nlp_util.is_nlp_entity_specific_type(token, "PERSON"))
 
-    def test_check_specific_type_in_tokens_return_value(self):
-        tokens = [{'type': 'team', 'value': 'New York Giants'}, {'type': 'league', 'value': 'nfl'},
-                  {'type': 'team', 'value': 'Dallas Cowboys'}, {'type': 'league', 'value': 'nfl'}]
-        response = self.nlp_util.get_value_of_specified_type(tokens, 'league')
-        self.assertEqual('nfl', response)
-
-    def test_check_specific_type_in_tokens_return_value_empty(self):
-        response = self.nlp_util.get_value_of_specified_type([], 'league')
-        self.assertEqual('', response)
+    # def test_check_specific_type_in_tokens_return_value(self):
+    #     tokens = [{'type': 'team', 'value': 'New York Giants'}, {'type': 'league', 'value': 'nfl'},
+    #               {'type': 'team', 'value': 'Dallas Cowboys'}, {'type': 'league', 'value': 'nfl'}]
+    #     response = self.nlp_util.get_value_of_specified_type(tokens, 'league')
+    #     self.assertEqual('nfl', response)
+    #
+    # def test_check_specific_type_in_tokens_return_value_empty(self):
+    #     response = self.nlp_util.get_value_of_specified_type([], 'league')
+    #     self.assertEqual('', response)
 
     def test_get_key_word_dict(self):
         pass

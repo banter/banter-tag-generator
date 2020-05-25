@@ -33,8 +33,9 @@ class TestNLPConversionUtil(unittest.TestCase):
         sample_dict = [{"type": "PERSON", "text": "Austin"}, {"type": "PERSON", "text": "Lebron James Stars"},
                        {"type": "ORG", "text": "Jesse"},
                        {"type": "ORG", "text": "Jesse"}, {"type": "NOT_IMPORTANT", "text": "Jesse"}]
-        response, token_set, token_concat_str = NLPConversionUtil().filter_tokens_get_unique_text(sample_dict,
-                                                                                                  {"PERSON"})
+        response, token_set, token_concat_str = NLPConversionUtil().filter_nlp_entities_and_create_unique_entity_reference(
+            sample_dict,
+            {"PERSON"})
         self.assertEqual(response,
                          [{'type': 'PERSON', 'text': 'Austin'}, {'type': 'PERSON', 'text': 'Lebron James Stars'},
                           {'type': 'PERSON', 'text': 'Lebron James'}])
@@ -56,7 +57,7 @@ class TestNLPConversionUtil(unittest.TestCase):
     def test_remove_word_from_key_word_text(self):
         sample_dict = {'text': 'the Cleveland Browns', 'type': 'ORG', 'start_char': 46, 'end_char': 66}
         expected = {'text': 'Cleveland Browns', 'type': 'ORG', 'start_char': 46, 'end_char': 66}
-        response = NLPConversionUtil.remove_non_capitalized_words_from_key_word_text(sample_dict)
+        response = NLPConversionUtil.remove_non_capitalized_words_from_nlp_entity_text(sample_dict)
         self.assertEqual(expected, response)
 
     def test_remove_non_capitalized_words(self):

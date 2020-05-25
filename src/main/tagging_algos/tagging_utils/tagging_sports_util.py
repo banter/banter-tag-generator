@@ -88,6 +88,12 @@ class TaggingSportsUtil(TaggingBaseHandler):
 
         return tags
 
+    def get_team_player_league_tags_on_player(self, nlp_entity: NLPEntityModel, reference_dict: dict) -> List[TagModel]:
+        return self.get_team_player_league_tags_on_player_or_coach(nlp_entity, reference_dict)
+
+    def get_team_player_league_tags_on_coach(self, nlp_entity: NLPEntityModel, reference_dict: dict) -> List[TagModel]:
+        return self.get_team_player_league_tags_on_player_or_coach(nlp_entity, reference_dict)
+
     def get_team_player_league_tags_on_player_or_coach(self, token_dict: dict, reference_dict: dict) -> List[TagModel]:
         """
         Used to check if person is either a player or coach

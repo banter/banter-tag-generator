@@ -11,6 +11,6 @@ class OptimizationToolMapping(Enum):
     FOOTBALL = {"sport": "football",
                 "leagues": ["NFL"]}
     HOCKEY = {"sport": "hockey",
-              "leagues": ["NHL"]},
+              "leagues": ["NHL"]}
     NONE = {"sport": "",
             "leagues": SportsConfig.sports_leagues}

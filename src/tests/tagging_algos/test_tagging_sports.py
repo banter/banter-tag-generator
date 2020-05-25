@@ -77,11 +77,11 @@ class TestTaggingSportsHandler(unittest.TestCase):
 
     def test_check_if_game_matchup_at(self):
         key_word = {'text': "NYG@MIN", 'type': 'ORG', 'start_char': 94, 'end_char': 104}
-        self.assertTrue(self.sport_handler.check_if_game_matchup(key_word))
+        self.assertTrue(self.sport_handler.is_nlp_entity_a_game_matchup(key_word))
 
     def test_check_if_game_matchup_and(self):
         key_word = {"text": "Lakers & Clippers", "type": "ORG", "start_char": 0, "end_char": 17}
-        self.assertTrue(self.sport_handler.check_if_game_matchup(key_word))
+        self.assertTrue(self.sport_handler.is_nlp_entity_a_game_matchup(key_word))
 
     def test_generate_matchup_tags(self):
         """
@@ -116,25 +116,29 @@ class TestTaggingSportsHandler(unittest.TestCase):
             self.assertCountEqual(response, desired_tags)
 
     def test_get_sports_tags_specific_test(self):
-        description = "Lakers & Clippers"
+        description = "NJ Devils Sr. Director of Player Personnel, Dan MacKinnon"
         desired_tags = [
             {
                 "type": "team",
-                "value": "Los Angeles Lakers"
+                "value": "New Jersey Devils"
+            },
+            {
+                "type": "person",
+                "value": "Dan MacKinnon"
             },
             {
                 "type": "league",
-                "value": "NBA"
-            },
-            {
-                "type": "team",
-                "value": "Los Angeles Clippers"
+                "value": "NHL"
             },
             {
                 "type": "sport",
-                "value": "basketball"
+                "value": "hockey"
             }]
+        description = "NJ Devils"
         response = self.adj(self.sport_handler.get_sports_tags(description))
+        description = "NJ Devils Sr. Director of Player Personnel, Dan MacKinnon"
+        response = self.adj(self.sport_handler.get_sports_tags(description))
+
         print(response)
         self.assertCountEqual(response, desired_tags)
 
