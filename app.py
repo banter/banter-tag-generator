@@ -76,4 +76,8 @@ def getTagsFromBody():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5005, debug=False)
+    a = os.popen('hostname').read()
+    if 'Austin' not in a:
+        app.run(host="0.0.0.0", port=5000, debug=False)
+    else:
+        app.run(host="0.0.0.0", port=5005, debug=False)
