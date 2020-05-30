@@ -108,18 +108,26 @@ class NLPUtil(NLPConversionUtil, NLPResourceUtil):
 
     # TODO Write Test
     @debug
-    def get_filtered_nlp_entities(self, str_: str) -> List[NLPEntityModel]:
+    def get_normalized_and_filtered_nlp_entities(self, str_: str) -> List[NLPEntityModel]:
+        """
+        :param str_: description
+        :return: Normalized Filtered Tokens
+        """
         if self.is_description_too_long(str_, self.max_description):
             print("Description is Too Long")
             return []
         else:
             nlp_response = self.get_nlp_response(str_)
             nlp_entities = self.get_nlp_entities_from_nlp_response(nlp_response)
+
             nlp_entities, existing_entity_set, existing_entity_str = self.filter_nlp_entities_and_create_unique_entity_reference(
                 nlp_entities,
                 self.token_types_analyzed)
             nlp_entities += self.get_important_pos_tags_from_sentence(nlp_response.to_dict(), existing_entity_set,
                                                                       existing_entity_str)
+
+            nlp_entities = self.normalize_entity_list(nlp_entities)
+            print(nlp_entities)
             return nlp_entities
 
     # @staticmethod

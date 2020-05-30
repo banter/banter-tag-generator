@@ -10,7 +10,7 @@
     },
     {
       "type": "sport",
-      "value": "football"
+      "value": "Football"
     }
   ],
   "On This Weeks Episode we are going to discuss the Cleveland Browns": [
@@ -24,7 +24,7 @@
     },
     {
       "type": "sport",
-      "value": "football"
+      "value": "Football"
     }
   ],
   "On This Weeks Episode we are speaking with Mike Tomlin about the state of the NFL": [
@@ -42,7 +42,7 @@
     },
     {
       "type": "sport",
-      "value": "football"
+      "value": "Football"
     }
   ],
   "We look at the 15 teams in the Western Conference, including Dallas' trade options for Dennis Smith Jr., the Lakers'' recent struggles, OKC's Terrance Ferguson, and more.": [
@@ -53,10 +53,6 @@
     {
       "type": "team",
       "value": "Dallas Mavericks"
-    },
-    {
-      "type": "person",
-      "value": "Dennis Smith Jr."
     },
     {
       "type": "person",
@@ -80,7 +76,7 @@
     },
     {
       "type": "sport",
-      "value": "basketball"
+      "value": "Basketball"
     }
   ],
   "DAL-MIN": [
@@ -98,7 +94,7 @@
     },
     {
       "type": "sport",
-      "value": "football"
+      "value": "Football"
     }
   ],
   "NYG-DAL": [
@@ -116,7 +112,7 @@
     },
     {
       "type": "sport",
-      "value": "football"
+      "value": "Football"
     }
   ],
   "NYG@DAL": [
@@ -134,13 +130,13 @@
     },
     {
       "type": "sport",
-      "value": "football"
+      "value": "Football"
     }
   ],
   "Marty talks with Niall Horan at Augusta about his love for golf": [
     {
       "type": "sport",
-      "value": "golf"
+      "value": "Golf"
     },
     {
       "type": "person",
@@ -162,7 +158,7 @@
     },
     {
       "type": "sport",
-      "value": "basketball"
+      "value": "Basketball"
     }
   ],
   "LeBron James Stars": [
@@ -176,15 +172,15 @@
     },
     {
       "type": "person",
-      "value": "LeBron James"
+      "value": "Lebron James"
     },
     {
       "type": "person",
-      "value": "LeBron James Stars"
+      "value": "Lebron James Stars"
     },
     {
       "type": "sport",
-      "value": "basketball"
+      "value": "Basketball"
     }
   ]
 }

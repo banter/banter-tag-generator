@@ -4,6 +4,12 @@ import re
 import requests
 from bs4 import BeautifulSoup
 
+from src.main.utils.nlp_conversion_util import NLPConversionUtil
+import os
+from os.path import dirname, realpath
+
+BASEDIR = os.path.abspath(os.path.dirname(os.path.dirname(dirname(realpath(__file__)))))
+SAVE_LOCATION = '%s/resources/reference_dict' % BASEDIR
 
 def create_nba_nicknames_dict():
     """
@@ -34,7 +40,7 @@ def create_nba_nicknames_dict():
             # Splitting between quotes, and taking odd values
             nick_names = name_nickname_split[1].split('"')[1::2]
             for i in nick_names:
-                nickname_dict[i] = first_name
+                nickname_dict[NLPConversionUtil().normalize_text(i)] = NLPConversionUtil.normalize_text(first_name)
 
         except Exception as e:
             print(e)
@@ -76,12 +82,14 @@ def create_nfl_nicknames_dict():
                 if ' or ' in nick_names:
                     nick_names = nick_names.split(' or ')
                     for i in nick_names:
-                        nickname_dict[i] = first_name
+                        nickname_dict[NLPConversionUtil().normalize_text(i)] = NLPConversionUtil.normalize_text(
+                            first_name)
 
                 if '/' in nick_names:
                     nick_names = nick_names.split('/')
                     for i in nick_names:
-                        nickname_dict[i] = first_name
+                        nickname_dict[NLPConversionUtil().normalize_text(i)] = NLPConversionUtil.normalize_text(
+                            first_name)
 
         except Exception as e:
             print(e)
@@ -125,26 +133,25 @@ def create_mlb_nicknames_dict():
             if '"' in name_nickname_split[1]:
                 nick_names = name_nickname_split[1].split('"')[1::2]
                 for i in nick_names:
-                    nickname_dict[i] = first_name
+                    nickname_dict[NLPConversionUtil().normalize_text(i)] = NLPConversionUtil.normalize_text(first_name)
 
         except Exception as e:
             print(e)
 
     return nickname_dict
 
-
 def save_dict(dictionary, file_name):
     tmp_json = json.dumps(dictionary)
-    f = open(f"../../resources/reference_dict/{file_name}.json", "w")
+    f = open(f"{SAVE_LOCATION}/{file_name}.json", "w")
     f.write(tmp_json)
     f.close()
 
+def create_nickname_dict():
+    nickname_dict = create_nba_nicknames_dict()
+    save_dict(nickname_dict, "NBA_nickname_dict")
 
-nickname_dict = create_nba_nicknames_dict()
-save_dict(nickname_dict, "nba_nickname_dict")
+    mlb_nickname_dict = create_mlb_nicknames_dict()
+    save_dict(mlb_nickname_dict, "MLB_nickname_dict")
 
-mlb_nickname_dict = create_mlb_nicknames_dict()
-save_dict(mlb_nickname_dict, "mlb_nickname_dict")
-
-nfl_nickname_dict = create_nfl_nicknames_dict()
-save_dict(nfl_nickname_dict, "nfl_nickname_dict")
+    nfl_nickname_dict = create_nfl_nicknames_dict()
+    save_dict(nfl_nickname_dict, "NFL_nickname_dict")

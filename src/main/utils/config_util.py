@@ -31,6 +31,8 @@ class LanguageConfig:
     language_types_analyzed: Set[str] = set(json.loads(CONFIG.get(SECTION, "LANGUAGE_TYPES_ANALYZED")))
     # TODO Consider max descrition size to consider
     max_description: int = int(CONFIG.get(SECTION, "MAX_DESCRIPTION_LENGTH"))
+    punctuation_to_keep_in_normalized_text: List[str] = json.loads(CONFIG.get(SECTION, "MATCHUP_INDICATORS"))
+    entity_prefix_list: List[str] = json.loads(CONFIG.get(SECTION, "ENTITY_PREFIX_LIST"))
 
 
 class DbConfig:

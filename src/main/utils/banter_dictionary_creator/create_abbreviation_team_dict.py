@@ -1,3 +1,9 @@
+import json
+import os
+from os.path import dirname, realpath
+
+from src.main.utils.nlp_conversion_util import NLPConversionUtil
+
 nfl_abreviations = {
     "ARI": "Arizona Cardinals",
     "ATL": "Atlanta Falcons",
@@ -64,7 +70,6 @@ nba_abr = {
     "UTA": "Utah Jazz",
     "WAS": "Washington Wizards"
 }
-
 mlb_abv = {
     "HOU": "Houston Astros",
     "MIL": "Milwaukee Brewers",
@@ -98,7 +103,6 @@ mlb_abv = {
     "CHA": "Chicago White Sox",
     "CWS": "Chicago White Sox",
 }
-
 nhl_ab = {
     "BOS": "Boston Bruins",
     "ARI": "Arizona Coyotes",
@@ -133,19 +137,38 @@ nhl_ab = {
     "WSH": "Washington Capitals",
 }
 
-final = {'NFL': nfl_abreviations,
-         'NBA': nba_abr,
-         'MLB': mlb_abv,
-         'NHL': nhl_ab
-         }
-import json
+# 2 levels up
+BASEDIR = os.path.abspath(os.path.dirname(os.path.dirname(dirname(realpath(__file__)))))
+SAVE_LOCATION = '%s/resources/reference_dict' % BASEDIR
 
 
 def save_dict(dictionary, file_name):
     tmp_json = json.dumps(dictionary)
-    f = open(f"../../resources/reference_dict/{file_name}.json", "w")
+    f = open(f"{SAVE_LOCATION}/{file_name}.json", "w")
     f.write(tmp_json)
     f.close()
 
 
-save_dict(final, "abbreviation_team_dict")
+def create_abbreviation_team_dict(is_team_upper_case: bool = False):
+    if is_team_upper_case:
+        nfl_dict = dict((NLPConversionUtil().normalize_text(k), v.upper()) for k, v in nfl_abreviations.items())
+        nba_dict = dict((NLPConversionUtil().normalize_text(k), v.upper()) for k, v in nba_abr.items())
+        mlb_dict = dict((NLPConversionUtil().normalize_text(k), v.upper()) for k, v in mlb_abv.items())
+        nhl_dict = dict((NLPConversionUtil().normalize_text(k), v.upper()) for k, v in nhl_ab.items())
+        final = {'NFL': nfl_dict,
+                 'NBA': nba_dict,
+                 'MLB': mlb_dict,
+                 'NHL': nhl_dict
+                 }
+        save_dict(final, "abbreviation_team_dict")
+    else:
+        nfl_dict = dict((NLPConversionUtil().normalize_text(k), v) for k, v in nfl_abreviations.items())
+        nba_dict = dict((NLPConversionUtil().normalize_text(k), v) for k, v in nba_abr.items())
+        mlb_dict = dict((NLPConversionUtil().normalize_text(k), v) for k, v in mlb_abv.items())
+        nhl_dict = dict((NLPConversionUtil().normalize_text(k), v) for k, v in nhl_ab.items())
+        final = {'NFL': nfl_dict,
+                 'NBA': nba_dict,
+                 'MLB': mlb_dict,
+                 'NHL': nhl_dict
+                 }
+        save_dict(final, "abbreviation_team_dict")

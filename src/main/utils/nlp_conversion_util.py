@@ -1,7 +1,8 @@
+import re
 import string
 from typing import *
 
-from src.main.models.tag_model import NLPEntityModel
+from src.main.models.tag_model import TagModel, NLPEntityModel
 from src.main.utils.config_util import LanguageConfig
 
 ENGLISH_STOP_WORDS = frozenset([
@@ -47,8 +48,14 @@ ENGLISH_STOP_WORDS = frozenset([
     "within", "without", "would", "yet", "you", "your", "yours", "yourself",
     "yourselves", "like"])
 
+# Editing punctuation so normalization doesnt remove matchup text punctuation
+punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
+for char in LanguageConfig().punctuation_to_keep_in_normalized_text:
+    punctuation = punctuation.replace(char, '')
+
 
 class NLPConversionUtil(LanguageConfig):
+    altered_punctuation = punctuation
 
     @staticmethod
     def remove_stop_words_and_punctuation(list_: list) -> list:
@@ -69,6 +76,29 @@ class NLPConversionUtil(LanguageConfig):
     def remove_punctuation_from_text(text: str) -> str:
         translator = str.maketrans('', '', string.punctuation)
         return text.translate(translator)
+
+    def alter_tags_to_proper_response_format(self, tags: List[TagModel], analyed_key: str = "value") -> List[TagModel]:
+        return self.conver_non_league_tags_to_Title_Case_and_format_names(
+            self.remove_duplicates_from_dict_list_based_on_key(tags, analyed_key))
+
+    def conver_non_league_tags_to_Title_Case_and_format_names(self, tags: List[TagModel]):
+        for tag in tags:
+            tag_type = tag["type"]
+            if tag_type != "league":
+                if tag_type == "person":
+                    tag["value"] = self.format_name(tag["value"])
+                else:
+                    tag["value"] = tag["value"].title()
+        return tags
+
+    @staticmethod
+    def format_name(name: str):
+        name_list = name.split(' ')
+        if len(name_list[0]) == 2:
+            formatted_name = name_list[0] + ' ' + ' '.join(name_list[1:]).title()
+            return formatted_name
+        else:
+            return name.title()
 
     @staticmethod
     def remove_duplicates_from_dict_list_based_on_key(list_: List[Dict], analyzed_key: str = "value") -> List[Dict]:
@@ -154,11 +184,32 @@ class NLPConversionUtil(LanguageConfig):
         nlp_entity["text"] = ' '.join(w for w in nlp_entity["text"].split(' ') if not w.islower())
         return nlp_entity
 
+    def remove_prefix_from_word(self, nlp_entity: NLPEntityModel):
+        nlp_entity["text"] = ' '.join(w for w in nlp_entity["text"].split(' ') if not w in self.entity_prefix_list)
+        return nlp_entity
+
     @staticmethod
     def remove_non_capitalized_words(s: str) -> str:
         return ' '.join(w for w in s.split(' ') if not w.islower())
 
-    # @staticmethod
-    # def add_tag_to_tag_list(tag_list: List[TagModel], type: str, value: str, confidence: float) -> List[TagModel]:
-    #     tag_list += {"type": type, "value": value, "confidence": confidence}
-    #     return tag_list
+    def normalize_text(self, text: str):
+        """
+        Performance --- 1000000 runs takes 3.8s locally
+        Return a normalized name, removing jr, sr, III, II, also removing all punctuation, leading and trailing whitespace and making it uppercase
+        :param text: name -- A.J. Green Sr. Jr. jr III
+        :return: AJ GREEN
+        """
+        # removing 's from text
+        clean_text = re.sub(r"(\'s\b)+\ *", " ", text)
+        return re.sub('(\\s((?i)jr|sr|III|II|jnr|snr)[.]?)', '',
+                      clean_text.translate(str.maketrans('', '', self.altered_punctuation)).upper()).strip()
+
+    def normalize_nlp_entity(self, nlp_entity: NLPEntityModel):
+        nlp_entity["text"] = self.normalize_text(nlp_entity["text"])
+        return nlp_entity
+
+    def normalize_entity_list(self, nlp_entities: List[NLPEntityModel]) -> List[NLPEntityModel]:
+        return [self.normalize_nlp_entity(nlp_entity) for nlp_entity in nlp_entities]
+
+    def is_adjusted_entity_different(self, nlp_entity: NLPEntityModel, adjusted_nlp_entity: NLPEntityModel):
+        return nlp_entity == adjusted_nlp_entity

@@ -1,9 +1,13 @@
+import os
 import unittest
+from os.path import dirname, realpath
 from typing import *
 
 from src.main.models.tag_model import TagModel
 from src.main.tagging_algos.tagging_enums.optimization_tool_mapping import OptimizationToolMapping
 from src.main.tagging_algos.tagging_sports_handler import TaggingSportsHandler
+
+BASEDIR = os.path.abspath(os.path.dirname(dirname(realpath(__file__))))
 
 
 class TestTaggingSportsHandler(unittest.TestCase):
@@ -12,8 +16,11 @@ class TestTaggingSportsHandler(unittest.TestCase):
     def setUpClass(self):
         super(TestTaggingSportsHandler, self).setUpClass()
         self.sport_handler = TaggingSportsHandler()
-        self.integration_test_fixture = self.sport_handler.util.read_json_file(f"../resources/fixtures",
+        FIXTURE_LOCATION = '%s/resources/fixtures' % BASEDIR
+        self.integration_test_fixture = self.sport_handler.util.read_json_file(FIXTURE_LOCATION,
                                                                                "sports_tagging_integration_fixture.json")
+        self.normalization_test_fixture = self.sport_handler.util.read_json_file(FIXTURE_LOCATION,
+                                                                                 "sports_tagging_normalization_fixture.json")
 
     def setUp(self) -> None:
         self.sport_handler = TaggingSportsHandler()
@@ -26,9 +33,7 @@ class TestTaggingSportsHandler(unittest.TestCase):
         :param response: Response from method being tested
         :return: response without confidence level
         """
-        for tag in response:
-            del tag['confidence']
-        return response
+        return self.remove_confidence_for_test_verification(response)
 
     def remove_confidence_for_test_verification(self, response: List[TagModel]):
         """
@@ -51,26 +56,26 @@ class TestTaggingSportsHandler(unittest.TestCase):
         self.assertEqual(response, [])
 
     def test_tag_generator_punctuation(self):
-        sample_input = {'text': "Tom Brady'", 'type': 'PERSON', 'start_char': 94, 'end_char': 104}
+        sample_input = {'text': "TOM BRADY'", 'type': 'PERSON', 'start_char': 94, 'end_char': 104}
         response = self.sport_handler.generate_basic_sport_tags(sample_input)
         print(response)
-        valid_response = [{'type': 'team', 'value': 'New England Patriots'}, {'type': 'person', 'value': "Tom Brady"},
-                          {'type': 'league', 'value': 'NFL'}, {"type": "sport", "value": "football"}]
+        valid_response = [{'type': 'team', 'value': 'NEW ENGLAND PATRIOTS'}, {'type': 'person', 'value': "TOM BRADY"},
+                          {'type': 'league', 'value': 'NFL'}, {"type": "sport", "value": "FOOTBALL"}]
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, valid_response)
 
     def test_tag_generator_no_punctuation(self):
-        sample_input = {'text': "Tom Brady", 'type': 'PERSON', 'start_char': 94, 'end_char': 104}
+        sample_input = {'text': "TOM BRADY", 'type': 'PERSON', 'start_char': 94, 'end_char': 104}
         response = self.sport_handler.generate_basic_sport_tags(sample_input)
         print(response)
-        valid_response = [{'type': 'team', 'value': 'New England Patriots'}, {'type': 'person', 'value': 'Tom Brady'},
-                          {'type': 'league', 'value': 'NFL'}, {"type": "sport", "value": "football"}]
+        valid_response = [{'type': 'team', 'value': 'NEW ENGLAND PATRIOTS'}, {'type': 'person', 'value': 'TOM BRADY'},
+                          {'type': 'league', 'value': 'NFL'}, {"type": "sport", "value": "FOOTBALL"}]
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, valid_response)
 
     def test_integration_generate_sports_tags(self):
         sample = "Hello this is Austin Marchese and this is the Banter Podcast."
-        valid_output = [{'type': 'person', 'value': 'Austin Marchese'}]
+        valid_output = [{'type': 'person', 'value': 'AUSTIN MARCHESE'}]
         response = self.sport_handler.generate_sports_tags(sample)
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, valid_output)
@@ -88,19 +93,19 @@ class TestTaggingSportsHandler(unittest.TestCase):
         Duplicate tags is fine as this is handled in seperate methods
         """
         key_word = {'text': "NYG@DAL", 'type': 'ORG', 'start_char': 94, 'end_char': 104}
-        desired_tags = [{"type": "team", "value": "Dallas Cowboys"}, {"type": "league", "value": "NFL"},
-                        {"type": "sport", "value": "football"},
-                        {"type": "team", "value": "New York Giants"}, {"type": "league", "value": "NFL"},
-                        {"type": "sport", "value": "football"}]
+        desired_tags = [{"type": "team", "value": "DALLAS COWBOYS"}, {"type": "league", "value": "NFL"},
+                        {"type": "sport", "value": "FOOTBALL"},
+                        {"type": "team", "value": "NEW YORK GIANTS"}, {"type": "league", "value": "NFL"},
+                        {"type": "sport", "value": "FOOTBALL"}]
         response = self.sport_handler.generate_matchup_tags(key_word)
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, desired_tags)
 
     def test_generate_tags_using_location(self):
-        location_entities = [{'text': 'Dallas', 'type': 'GPE', 'start_char': 61, 'end_char': 67}]
-        expected = [{"type": "team", "value": "Dallas Mavericks"}, {"type": "league", "value": "NBA"}, {
+        location_entities = [{'text': 'DALLAS', 'type': 'GPE', 'start_char': 61, 'end_char': 67}]
+        expected = [{"type": "team", "value": "DALLAS MAVERICKS"}, {"type": "league", "value": "NBA"}, {
             "type": "sport",
-            "value": "basketball"
+            "value": "BASKETBALL"
         }]
         self.sport_handler.optimization_tool = OptimizationToolMapping.BASKETBALL
         response = self.sport_handler.generate_location_tags(location_entities)
@@ -115,6 +120,13 @@ class TestTaggingSportsHandler(unittest.TestCase):
             response = self.remove_confidence_for_test_verification(response)
             self.assertCountEqual(response, desired_tags)
 
+    def test_get_sports_tags_normalized_text_test(self):
+        for (description, desired_tags) in self.normalization_test_fixture.items():
+            response = self.sport_handler.get_sports_tags(description)
+            print(response, description)
+            response = self.remove_confidence_for_test_verification(response)
+            self.assertCountEqual(response, desired_tags)
+
     def test_get_sports_tags_specific_test(self):
         description = "NJ Devils Sr. Director of Player Personnel, Dan MacKinnon"
         desired_tags = [
@@ -124,7 +136,7 @@ class TestTaggingSportsHandler(unittest.TestCase):
             },
             {
                 "type": "person",
-                "value": "Dan MacKinnon"
+                "value": "Dan Mackinnon"
             },
             {
                 "type": "league",
@@ -132,14 +144,9 @@ class TestTaggingSportsHandler(unittest.TestCase):
             },
             {
                 "type": "sport",
-                "value": "hockey"
+                "value": "Hockey"
             }]
-        description = "NJ Devils"
         response = self.adj(self.sport_handler.get_sports_tags(description))
-        description = "NJ Devils Sr. Director of Player Personnel, Dan MacKinnon"
-        response = self.adj(self.sport_handler.get_sports_tags(description))
-
-        print(response)
         self.assertCountEqual(response, desired_tags)
 
 

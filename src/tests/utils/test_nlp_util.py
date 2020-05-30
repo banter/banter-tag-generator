@@ -49,8 +49,8 @@ class TestNLPUtil(unittest.TestCase):
                                      'misc': 'start_char=71|end_char=75'}]]
 
     @classmethod
-    def setUpClass(self):
-        self.nlp_util = NLPUtil()
+    def setUpClass(cls):
+        cls.nlp_util = NLPUtil()
 
     def test_convert_span_to_dict(self):
         response = self.nlp_util.get_nlp_response("Austin Marchese is the man")
@@ -119,10 +119,16 @@ class TestNLPUtil(unittest.TestCase):
                                                                       "ABCDEFG")
         self.assertEqual(4, len(response))
 
-    def test_get_key_word_dict(self):
-        response = self.nlp_util.get_filtered_nlp_entities("The Richie Incognito On Field Scandal")
+    def test_get_normalized_and_filtered_nlp_entities(self):
+        # IMPROVE
+        response = self.nlp_util.get_normalized_and_filtered_nlp_entities(
+            'On This Weeks Episode we are going to discuss the Cleveland Browns')
         print(response)
-        pass
+        expected = [{'end_char': 66,
+                     'start_char': 46,
+                     'text': 'THE CLEVELAND BROWNS',
+                     'type': 'ORG'}]
+        self.assertEqual(response, expected)
 
     def test_get_nouns_from_sentence_token_in_concat_str(self):
         token_set = set()

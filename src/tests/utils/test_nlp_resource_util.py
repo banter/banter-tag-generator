@@ -17,7 +17,7 @@ class TestNLPResourceUtil(unittest.TestCase):
             self.assertIsNotNone(self.nlp_resource.__getattribute__(member))
 
     def test_sports_terms_dict(self):
-        self.assertEqual(2047, len(self.nlp_resource.__getattribute__("sports_terms_dict")))
+        self.assertEqual(2048, len(self.nlp_resource.__getattribute__("sports_terms_dict")))
 
 
 if __name__ == '__main__':

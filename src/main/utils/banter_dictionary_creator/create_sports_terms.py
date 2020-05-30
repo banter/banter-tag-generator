@@ -1,7 +1,13 @@
 import requests
 from bs4 import BeautifulSoup
 
+import json
 
+import os
+from os.path import dirname, realpath
+
+BASEDIR = os.path.abspath(os.path.dirname(os.path.dirname(dirname(realpath(__file__)))))
+SAVE_LOCATION = '%s/resources/reference_dict' % BASEDIR
 # TODO some words are cut off, handling () in web scraping
 
 
@@ -64,37 +70,36 @@ def scrape_wiki_baseball(url):
         if "\xa0" in tmp_text:
             tmp_text = tmp_text.split('\xa0')[0]
 
-        sport_dict[tmp_text] = "baseball"
+        sport_dict[tmp_text] = "BASEBALL"
     return sport_dict
-
-
-import json
-
 
 def save_dict(dictionary, file_name):
     tmp_json = json.dumps(dictionary)
-    with open(f"../../resources/reference_dict/{file_name}.json", "w") as json_file:
+    with open(f"{SAVE_LOCATION}/{file_name}.json", "w") as json_file:
         json_file.write(tmp_json)
         json_file.close()
 
+def create_sports_terms():
+    final_dict = {}
+    basketball_url = "https://en.wikipedia.org/wiki/Glossary_of_basketball_terms"
+    basketball_dict = scrape_wiki(basketball_url, "BASKETBALL")
+    final_dict.update(basketball_dict)
+    hockey_url = "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
+    hockey_dict = scrape_wiki(hockey_url, "HOCKEY")
+    final_dict.update(hockey_dict)
+    # TODO Football/Soccer Terms
+    american_football_url = 'https://en.wikipedia.org/wiki/Glossary_of_American_football'
+    american_football_dict = scrape_wiki(american_football_url, "FOOTBALL")
+    final_dict.update(american_football_dict)
+    football_url = 'https://en.wikipedia.org/wiki/Glossary_of_association_football_terms'
+    football_dict = scrape_wiki(football_url, "SOCCER")
+    final_dict.update(football_dict)
+    baseball_url = 'https://en.wikipedia.org/wiki/Glossary_of_baseball'
+    baseball_dict = scrape_wiki_baseball(baseball_url)
+    final_dict.update(baseball_dict)
 
-final_dict = {}
+    save_dict(final_dict, "sports_terms_dict")
 
-basketball_url = "https://en.wikipedia.org/wiki/Glossary_of_basketball_terms"
-basketball_dict = scrape_wiki(basketball_url, "basketball")
-final_dict.update(basketball_dict)
-hockey_url = "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
-hockey_dict = scrape_wiki(hockey_url, "hockey")
-final_dict.update(hockey_dict)
-# TODO Football/Soccer Terms
-american_football_url = 'https://en.wikipedia.org/wiki/Glossary_of_American_football'
-american_football_dict = scrape_wiki(american_football_url, "american football")
-final_dict.update(american_football_dict)
-football_url = 'https://en.wikipedia.org/wiki/Glossary_of_association_football_terms'
-football_dict = scrape_wiki(football_url, "football")
-final_dict.update(football_dict)
-baseball_url = 'https://en.wikipedia.org/wiki/Glossary_of_baseball'
-baseball_dict = scrape_wiki_baseball(baseball_url)
-final_dict.update(baseball_dict)
 
-save_dict(final_dict, "sports_terms_dict")
+if __name__ == '__main__':
+    create_sports_terms()

@@ -1,11 +1,17 @@
+import json
 import requests
 from bs4 import BeautifulSoup
 
+from src.main.utils.nlp_conversion_util import NLPConversionUtil
+
+import os
+from os.path import dirname, realpath
+
+BASEDIR = os.path.abspath(os.path.dirname(os.path.dirname(dirname(realpath(__file__)))))
+SAVE_LOCATION = '%s/resources/reference_dict' % BASEDIR
 
 # TODO some words are cut off, handling () in web scraping
-
-
-def create_golfer_set(male_url, female_url):
+def create_golfer_dict(male_url, female_url):
     """
     Creating Golfer Set male and female
     :param url:
@@ -32,7 +38,7 @@ def create_golfer_set(male_url, female_url):
                 golfer = golfer.replace(' *', '')
             if 'HoF' in golfer:
                 golfer = golfer.replace(' HoF', '')
-            golf_dict[golfer] = "men's golf"
+            golf_dict[NLPConversionUtil().normalize_text(golfer)] = "MEN'S GOLF"
         except IndexError as err:
             print(err, value)
 
@@ -51,25 +57,22 @@ def create_golfer_set(male_url, female_url):
                 golfer = golfer.replace(' *', '')
             if 'HoF' in golfer:
                 golfer = golfer.replace(' HoF', '')
-            golf_dict[golfer] = "women's golf"
+
+            golf_dict[NLPConversionUtil().normalize_text(golfer)] = "WOMEN'S GOLF"
         except IndexError as err:
             print(err, value)
 
     return golf_dict
 
-
-import json
-
-
 def save_dict(dictionary, file_name):
     tmp_json = json.dumps(dictionary)
-    f = open(f"../../resources/reference_dict/{file_name}.json", "w")
+    f = open(f"{SAVE_LOCATION}/{file_name}.json", "w")
     f.write(tmp_json)
     f.close()
 
+def create_golf_player_dict():
+    male_golfer_url = 'https://en.wikipedia.org/wiki/List_of_male_golfers'
+    female_golfer_url = 'https://en.wikipedia.org/wiki/List_of_female_golfers'
+    golfer_dict = create_golfer_dict(male_golfer_url, female_golfer_url)
 
-male_golfer_url = 'https://en.wikipedia.org/wiki/List_of_male_golfers'
-female_golfer_url = 'https://en.wikipedia.org/wiki/List_of_female_golfers'
-golfer_dict = create_golfer_set(male_golfer_url, female_golfer_url)
-
-save_dict(golfer_dict, "golf_player_dict")
+    save_dict(golfer_dict, "GOLF_player_dict")

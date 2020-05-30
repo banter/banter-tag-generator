@@ -30,11 +30,11 @@ class TaggingBaseHandler:
 
     def get_basic_tags(self, description: str) -> List[Dict[str, str]]:
         basic_tags = self.generate_basic_tags(description)
-        return self.util.remove_duplicates_from_dict_list_based_on_key(basic_tags, "value")
+        return self.util.alter_tags_to_proper_response_format(basic_tags, "value")
 
     def generate_basic_tags(self, description: str) -> List[Dict]:
         description_tags: List[Dict] = []
-        nlp_entities = self.util.get_filtered_nlp_entities(description)
+        nlp_entities = self.util.get_normalized_and_filtered_nlp_entities(description)
         for nlp_entity in nlp_entities:
             if self.util.is_nlp_entity_specific_type(nlp_entity, "PERSON"):
                 description_tags += self.get_person_tags(nlp_entity)

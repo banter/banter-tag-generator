@@ -24,24 +24,29 @@ class TestNLPConversionUtil(unittest.TestCase):
         sample_str = "My name's austin"
         self.assertEqual("My names austin", NLPConversionUtil.remove_punctuation_from_text(sample_str))
 
+    def test_remove_prefix_from_word(self):
+        nlp_entity = {"type": "ORG", "text": "THE CLEVELAND BROWNS"}
+        self.assertEqual({"type": "ORG", "text": "CLEVELAND BROWNS"},
+                         NLPConversionUtil().remove_prefix_from_word(nlp_entity))
+
     def test_remove_duplicates_from_dict_list(self):
         sample_dict = [{"type": "name", "value": "Austin"}, {"type": "name", "value": "Jesse"},
                        {"type": "name", "value": "Jesse"}]
         self.assertEqual(2, len(NLPConversionUtil.remove_duplicates_from_dict_list_based_on_key(sample_dict)))
 
     def test_filter_tokens_get_unique_text(self):
-        sample_dict = [{"type": "PERSON", "text": "Austin"}, {"type": "PERSON", "text": "Lebron James Stars"},
-                       {"type": "ORG", "text": "Jesse"},
-                       {"type": "ORG", "text": "Jesse"}, {"type": "NOT_IMPORTANT", "text": "Jesse"}]
+        sample_dict = [{"type": "PERSON", "text": "AUSTIN"}, {"type": "PERSON", "text": "LEBRON JAMES STARS"},
+                       {"type": "ORG", "text": "JESSE"},
+                       {"type": "ORG", "text": "JESSE"}, {"type": "NOT_IMPORTANT", "text": "JESSE"}]
         response, token_set, token_concat_str = NLPConversionUtil().filter_nlp_entities_and_create_unique_entity_reference(
             sample_dict,
             {"PERSON"})
         self.assertEqual(response,
-                         [{'type': 'PERSON', 'text': 'Austin'}, {'type': 'PERSON', 'text': 'Lebron James Stars'},
-                          {'type': 'PERSON', 'text': 'Lebron James'}])
-        self.assertTrue('Austin' in token_set)
-        self.assertTrue('Lebron James Stars' in token_set)
-        self.assertEqual(token_concat_str, 'AustinLebron James Stars')
+                         [{'type': 'PERSON', 'text': 'AUSTIN'}, {'type': 'PERSON', 'text': 'LEBRON JAMES STARS'},
+                          {'type': 'PERSON', 'text': 'LEBRON JAMES'}])
+        self.assertTrue('AUSTIN' in token_set)
+        self.assertTrue('LEBRON JAMES STARS' in token_set)
+        self.assertEqual(token_concat_str, 'AUSTINLEBRON JAMES STARS')
 
     def test_remove_extra_word_from_name(self):
         sample_dict = {"type": "PERSON", "text": "Lebron James Stars"}
@@ -63,9 +68,51 @@ class TestNLPConversionUtil(unittest.TestCase):
     def test_remove_non_capitalized_words(self):
         self.assertEqual("Abc Def", NLPConversionUtil.remove_non_capitalized_words("Abc Def abd"))
 
-    # def test_add_tag_to_tag_list(self):
-    #     tag_list = [{'type': 'team', 'value': 'New York Knicks', 'confidence':1.0}, {'type': 'person', 'value': 'Dennis Smith Jr.', 'confidence':1.0}, {'type': 'league', 'value': 'nba', 'confidence':1.0}, {'type': 'team', 'value': 'Los Angeles Lakers', 'confidence':1.0}, {'type': 'league', 'value': 'nba', 'confidence':1.0}, {'type': 'team', 'value': 'Oklahoma City Thunder', 'confidence':1.0}, {'type': 'league', 'value': 'nba', 'confidence': 1.0}, {'type': 'team', 'value': 'Oklahoma City Thunder', 'confidence':1.0}, {'type': 'person', 'value': 'Terrance Ferguson', 'confidence':1.0}, {'type': 'league', 'value': 'nba', 'confidence':1.0}]
-    #     new_tag_list = NLPConversionUtil.add_tag_to_tag_list(tag_list, type="ab",value="value", confidence=1.0)
+    def test_normalize_name(self):
+        self.assertEqual("AJ GREEN", NLPConversionUtil().normalize_text("A.J. GreEn Jr. Sr. III ii, iii '!?"))
+        self.assertEqual("LEBRON JAMES", NLPConversionUtil().normalize_text(" Lebron JAmes "))
+        self.assertEqual("LAURIE AYTON", NLPConversionUtil().normalize_text("Laurie Ayton Jnr Snr jnr. snr."))
+        self.assertEqual("NYG@MIN", NLPConversionUtil().normalize_text("NYG@MIN"))
+        self.assertEqual("AJ GREEN", NLPConversionUtil().normalize_text("A.J. Green's"))
+
+    def test_normalize_names_in_entity_list(self):
+        sample_dict = [{"type": "PERSON", "text": "Austin"}, {"type": "PERSON", "text": "Lebron James Stars"},
+                       {"type": "PERSON", "text": "Lebron James Jr. Sr. iii, III"},
+                       {"type": "ORG", "text": "Jesse"},
+                       {"type": "ORG", "text": "Jesse"}, {"type": "NOT_IMPORTANT", "text": "Jesse"}]
+        response = NLPConversionUtil().normalize_entity_list(sample_dict)
+        expected = [{'type': 'PERSON', 'text': 'AUSTIN'}, {'type': 'PERSON', 'text': 'LEBRON JAMES STARS'},
+                    {'type': 'PERSON', 'text': 'LEBRON JAMES'}, {"type": "ORG", "text": "JESSE"},
+                    {"type": "ORG", "text": "JESSE"}, {"type": "NOT_IMPORTANT", "text": "JESSE"}]
+        self.assertEqual(response, expected)
+
+    def test_convert_tags_to_capital_case(self):
+        tag = [{"type": "person", "value": "LEBRON JAMES"}]
+        expected = [{"type": "person", "value": "Lebron James"}]
+        response = NLPConversionUtil().conver_non_league_tags_to_Title_Case_and_format_names(tag)
+        self.assertEqual(expected, response)
+        tag = [{"type": "league", "value": "NFL"}]
+        expected = [{"type": "league", "value": "NFL"}]
+        response = NLPConversionUtil().conver_non_league_tags_to_Title_Case_and_format_names(tag)
+        self.assertEqual(expected, response)
+
+    def test_format_names(self):
+        response = NLPConversionUtil().format_name("AJ GREEN")
+        expected = "AJ Green"
+        self.assertEqual(expected, response)
+        response = NLPConversionUtil().format_name("LEBRON JAMES")
+        expected = "Lebron James"
+        self.assertEqual(expected, response)
+        response = NLPConversionUtil().format_name("AJ GREEN JAMES")
+        expected = "AJ Green James"
+        self.assertEqual(expected, response)
+
+    def test_alter_tags_to_proper_response_format(self):
+        tag = [{"type": "person", "value": "LEBRON JAMES"}, {"type": "person", "value": "LEBRON JAMES"},
+               {"type": "team", "value": "LOS ANGELES LAKERS"}]
+        expected = [{"type": "person", "value": "Lebron James"}, {"type": "team", "value": "Los Angeles Lakers"}]
+        response = NLPConversionUtil().alter_tags_to_proper_response_format(tag)
+        self.assertEqual(expected, response)
 
 
 if __name__ == '__main__':

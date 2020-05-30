@@ -1,6 +1,6 @@
 {
-  "NBA": "basketball",
-  "NFL": "football",
-  "MLB": "baseball",
-  "NHL": "hockey"
+  "NBA": "BASKETBALL",
+  "NFL": "FOOTBALL",
+  "MLB": "BASEBALL",
+  "NHL": "HOCKEY"
 }

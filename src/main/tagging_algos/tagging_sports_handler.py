@@ -17,13 +17,13 @@ class TaggingSportsHandler(TaggingSportsUtil):
                         optimization_tool: OptimizationToolMapping = OptimizationToolMapping.NONE) -> List[TagModel]:
         self.optimization_tool = optimization_tool
         sports_tags = self.generate_sports_tags(description)
-        return self.util.remove_duplicates_from_dict_list_based_on_key(sports_tags, "value")
+        return self.util.alter_tags_to_proper_response_format(sports_tags, "value")
 
     @debug
     def generate_sports_tags(self, description: str) -> List[TagModel]:
         description_tags: List[TagModel] = []
         location_entities: List[NLPEntityModel] = []
-        nlp_entities = self.util.get_filtered_nlp_entities(description)
+        nlp_entities = self.util.get_normalized_and_filtered_nlp_entities(description)
         description_tags += self.get_sport_and_league_tags_on_description(description)
 
         for nlp_entity in nlp_entities:
@@ -108,9 +108,9 @@ class TaggingSportsHandler(TaggingSportsUtil):
         if self.util.is_nlp_entity_specific_type(nlp_entity, "PERSON"):
             word_tags += self.get_person_tags(nlp_entity)
         if self.util.is_nlp_entity_specific_type(nlp_entity, "ORG"):
-            # TODO process if the key word is the same
-            nlp_entity_adjusted = self.util.remove_non_capitalized_words_from_nlp_entity_text(nlp_entity)
-            word_tags += self.generate_basic_sport_tags(nlp_entity_adjusted)
+            adjusted_nlp_entity = self.util.remove_prefix_from_word(nlp_entity)
+            if self.util.is_adjusted_entity_different(nlp_entity, adjusted_nlp_entity):
+                word_tags += self.generate_basic_sport_tags(adjusted_nlp_entity)
 
         return word_tags
 
