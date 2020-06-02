@@ -6,4 +6,4 @@ WORKDIR /src
 
 RUN pip install -r requirements.txt --default-timeout=10000 --no-cache-dir -v
 
-CMD python app.py
+CMD waitress-serve --listen 0.0.0.0:5000 wsgi:app

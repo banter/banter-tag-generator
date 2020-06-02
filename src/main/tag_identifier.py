@@ -1,15 +1,8 @@
-import logging.handlers
-import os
 from typing import *
-
 from src.main.tagging_algos.tagging_base_handler import TaggingBaseHandler
 from src.main.tagging_algos.tagging_enums.optimization_tool_mapping import OptimizationToolMapping
 from src.main.tagging_algos.tagging_sports_handler import TaggingSportsHandler
 from src.main.utils.decorators import debug, timeit
-
-PARENT_DIR = os.getcwd()
-logger = logging.getLogger(__name__)
-
 
 class TagIdentifier:
 
