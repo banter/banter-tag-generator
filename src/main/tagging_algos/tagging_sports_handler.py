@@ -1,4 +1,3 @@
-import logging.handlers
 import os
 from typing import *
 
@@ -6,9 +5,6 @@ from src.main.models.tag_model import TagModel, NLPEntityModel
 from src.main.tagging_algos.tagging_enums.optimization_tool_mapping import OptimizationToolMapping
 from src.main.tagging_algos.tagging_utils.tagging_sports_util import TaggingSportsUtil
 from src.main.utils.decorators import debug
-
-PARENT_DIR = os.getcwd()
-logger = logging.getLogger(__name__)
 
 
 class TaggingSportsHandler(TaggingSportsUtil):

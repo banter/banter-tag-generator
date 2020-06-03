@@ -1,20 +1,10 @@
-'venv'
-'venv/'
-venv
 venv/
-data
 data/
 PoC/
-PoC
-
-'.idea'
-'.idea/workspace.xml'
-.idea
+.idea/
 
 script.py
-
 setup.py
-
 local_script.py
 
 # Compiled python modules.
@@ -25,3 +15,5 @@ local_script.py
 
 # Python egg metadata, regenerated from source files by setuptools.
 /*.egg-info
+
+

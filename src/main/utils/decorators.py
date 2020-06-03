@@ -1,15 +1,6 @@
 import functools
 import time
 import logging
-import os
-from os.path import dirname, realpath
-
-BASEDIR = os.path.abspath(os.path.dirname(os.path.dirname(dirname(realpath(__file__)))))
-logging.basicConfig(
-    level=logging.INFO,
-    filename= f"%s/log.log" % BASEDIR
-)
-
 def timeit(method):
     def timed(*args, **kw):
         ts = time.time()
@@ -33,11 +24,8 @@ def debug(func):
         args_repr = [repr(a) for a in args]  # 1
         kwargs_repr = [f"{k}={v!r}" for k, v in kwargs.items()]  # 2
         signature = ", ".join(args_repr + kwargs_repr)  # 3
-        logging.info(f"Calling {func.__name__}({signature})")
-        print(f"Calling {func.__name__}({signature})")
+        logging.debug(f"Calling {func.__name__}({signature})")
         value = func(*args, **kwargs)
-        logging.info(f"{func.__name__!r} returned {value!r}")  # 4
-        print(f"{func.__name__!r} returned {value!r}")  # 4
+        logging.debug(f"{func.__name__!r} returned {value!r}")  # 4
         return value
-
     return wrapper_debug

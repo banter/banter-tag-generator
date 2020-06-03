@@ -9,10 +9,6 @@ from src.main.tagging_algos.tagging_enums.optimization_tool_mapping import Optim
 from src.main.tagging_algos.tagging_enums.sports_tag_types import SportsTagTypes as TagType
 from src.main.utils.decorators import debug
 
-PARENT_DIR = os.getcwd()
-logger = logging.getLogger(__name__)
-
-
 class TaggingSportsUtil(TaggingBaseHandler):
 
     def __init__(self, optimization_tool: OptimizationToolMapping = OptimizationToolMapping.NONE):
@@ -56,7 +52,7 @@ class TaggingSportsUtil(TaggingBaseHandler):
         # Sometime names have punctuation that will screw it up, checking if it without punctuation is contained
         # IN List
         team_name_no_punc = self.util.remove_punctuation_from_text(team_name)
-        logger.debug(f"Team Name: {team_name}, Team Name no Punc: {team_name_no_punc}")
+        logging.debug(f"Team Name: {team_name}, Team Name no Punc: {team_name_no_punc}")
         matching_value: str = ''
         matching_league: str = ''
         for league in self.optimization_tool.value["leagues"]:
@@ -70,7 +66,7 @@ class TaggingSportsUtil(TaggingBaseHandler):
                 matching_league = league
                 break
             if team_name in self.util.abbreviation_team_dict[league]:
-                logger.debug(f"Team Exists in {league}")
+                logging.debug(f"Team Exists in {league}")
                 matching_value = self.util.abbreviation_team_dict[league][team_name]
                 matching_league = league
                 break
@@ -110,7 +106,7 @@ class TaggingSportsUtil(TaggingBaseHandler):
         for league in self.optimization_tool.value['leagues']:
 
             if name in reference_dict[league]:
-                logger.debug(f"Coach Exists in {league}")
+                logging.debug(f"Coach Exists in {league}")
                 tags.append({"type": TagType.TEAM.value, "value": reference_dict[league][name],
                              "confidence": method_confidence})
                 tags.append({"type": TagType.PERSON.value, "value": name, "confidence": method_confidence})
@@ -121,7 +117,7 @@ class TaggingSportsUtil(TaggingBaseHandler):
                 break
 
             if name_no_punc in reference_dict[league]:
-                logger.debug(f"Coach Exists in {league}")
+                logging.debug(f"Coach Exists in {league}")
                 tags.append({"type": TagType.TEAM.value, "value": reference_dict[league][name_no_punc],
                              "confidence": method_confidence})
                 tags.append({"type": TagType.PERSON.value, "value": name_no_punc, "confidence": method_confidence})

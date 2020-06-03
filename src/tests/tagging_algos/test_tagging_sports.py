@@ -127,6 +127,13 @@ class TestTaggingSportsHandler(unittest.TestCase):
             response = self.remove_confidence_for_test_verification(response)
             self.assertCountEqual(response, desired_tags)
 
+    def test_get_sports_tags_empty_description(self):
+        description = ""
+        desired_tags = []
+        response = self.adj(self.sport_handler.get_sports_tags(description))
+        self.assertCountEqual(response, desired_tags)
+
+
     def test_get_sports_tags_specific_test(self):
         description = "NJ Devils Sr. Director of Player Personnel, Dan MacKinnon"
         desired_tags = [
