@@ -57,11 +57,15 @@ class TestNLPUtil(unittest.TestCase):
         self.assertIsNotNone(response.entities, "Asserting response for specified text string")
 
     def test_is_description_too_long_above(self):
-        response = self.nlp_util.is_description_too_long("ABC DEF GED", 2)
+        response = self.nlp_util.is_description_too_long_or_empty("ABC DEF GED", 2)
+        self.assertEqual(True, response)
+
+    def test_is_description_too_long_empty(self):
+        response = self.nlp_util.is_description_too_long_or_empty("", 2)
         self.assertEqual(True, response)
 
     def test_is_description_too_long_below(self):
-        response = self.nlp_util.is_description_too_long("ABC DEF GED", 4)
+        response = self.nlp_util.is_description_too_long_or_empty("ABC DEF GED", 4)
         self.assertEqual(False, response)
 
     def test_check_if_token_is_relevant_not_relevent(self):

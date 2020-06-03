@@ -33,7 +33,9 @@ class NLPUtil(NLPConversionUtil, NLPResourceUtil):
         return self.nlp(str_)
 
     @staticmethod
-    def is_description_too_long(str_: str, max_words: int) -> bool:
+    def is_description_too_long_or_empty(str_: str, max_words: int) -> bool:
+        if len(str_) == 0:
+            return True
         return len(str_.split(' ')) > max_words
 
     @staticmethod
@@ -113,7 +115,7 @@ class NLPUtil(NLPConversionUtil, NLPResourceUtil):
         :param str_: description
         :return: Normalized Filtered Tokens
         """
-        if self.is_description_too_long(str_, self.max_description):
+        if self.is_description_too_long_or_empty(str_, self.max_description):
             print("Description is Too Long")
             return []
         else:
