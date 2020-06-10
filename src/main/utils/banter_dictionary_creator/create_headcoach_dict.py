@@ -1,14 +1,15 @@
 import json
+import os
+from os.path import dirname, realpath
 
 import requests
 from bs4 import BeautifulSoup
 
 from src.main.utils.nlp_conversion_util import NLPConversionUtil
-import os
-from os.path import dirname, realpath
 
 BASEDIR = os.path.abspath(os.path.dirname(os.path.dirname(dirname(realpath(__file__)))))
 SAVE_LOCATION = '%s/resources/reference_dict' % BASEDIR
+
 
 def create_nfl_coach_dict():
     """
@@ -121,11 +122,13 @@ def create_mlb_coach_dict():
             print(e)
     return coach_dict
 
+
 def save_dict(dictionary, file_name):
     tmp_json = json.dumps(dictionary)
     f = open(f"{SAVE_LOCATION}/{file_name}.json", "w")
     f.write(tmp_json)
     f.close()
+
 
 def create_headcoach_dict(is_team_upper_case=False):
     if is_team_upper_case:

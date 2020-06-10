@@ -1,532 +1,2397 @@
 {
-  "GIANNIS ANTETOKOUNMPO": "MILWAUKEE BUCKS",
-  "ERIC BLEDSOE": "MILWAUKEE BUCKS",
-  "MALCOLM BROGDON": "MILWAUKEE BUCKS",
-  "STERLING BROWN": "MILWAUKEE BUCKS",
-  "ISAIAH CANAAN": "PHOENIX SUNS",
-  "BONZIE COLSON": "MILWAUKEE BUCKS",
-  "PAT CONNAUGHTON": "MILWAUKEE BUCKS",
-  "MATTHEW DELLAVEDOVA": "CLEVELAND CAVALIERS",
-  "DONTE DIVINCENZO": "MILWAUKEE BUCKS",
-  "TREVON DUVAL": "MILWAUKEE BUCKS",
-  "TIM FRAZIER": "NEW ORLEANS PELICANS",
-  "PAU GASOL": "SAN ANTONIO SPURS",
-  "JOHN HENSON": "MILWAUKEE BUCKS",
-  "GEORGE HILL": "CLEVELAND CAVALIERS",
-  "ERSAN \u0130LYASOVA": "MILWAUKEE BUCKS",
-  "BROOK LOPEZ": "MILWAUKEE BUCKS",
-  "THON MAKER": "DETROIT PISTONS",
-  "KHRIS MIDDLETON": "MILWAUKEE BUCKS",
-  "NIKOLA MIROTI\u0106": "NEW ORLEANS PELICANS",
-  "JAYLEN MORRIS": "MILWAUKEE BUCKS",
-  "JASON SMITH": "WASHINGTON WIZARDS",
-  "TONY SNELL": "MILWAUKEE BUCKS",
-  "DJ WILSON": "MILWAUKEE BUCKS",
-  "CHRISTIAN WOOD": "NEW ORLEANS PELICANS",
-  "JORDAN BELL": "GOLDEN STATE WARRIORS",
-  "ANDREW BOGUT": "GOLDEN STATE WARRIORS",
-  "QUINN COOK": "GOLDEN STATE WARRIORS",
-  "DEMARCUS COUSINS": "GOLDEN STATE WARRIORS",
-  "STEPHEN CURRY": "GOLDEN STATE WARRIORS",
-  "MARCUS DERRICKSON": "GOLDEN STATE WARRIORS",
-  "KEVIN DURANT": "GOLDEN STATE WARRIORS",
-  "JACOB EVANS": "GOLDEN STATE WARRIORS",
-  "DRAYMOND GREEN": "GOLDEN STATE WARRIORS",
-  "ANDRE IGUODALA": "GOLDEN STATE WARRIORS",
-  "JONAS JEREBKO": "GOLDEN STATE WARRIORS",
-  "DAMIAN JONES": "GOLDEN STATE WARRIORS",
-  "DAMION LEE": "GOLDEN STATE WARRIORS",
-  "SHAUN LIVINGSTON": "GOLDEN STATE WARRIORS",
-  "KEVON LOONEY": "GOLDEN STATE WARRIORS",
-  "ALFONZO MCKINNIE": "GOLDEN STATE WARRIORS",
-  "KLAY THOMPSON": "GOLDEN STATE WARRIORS",
-  "DAIRIS BERT\u0100NS": "NEW ORLEANS PELICANS",
-  "IAN CLARK": "NEW ORLEANS PELICANS",
-  "ANTHONY DAVIS": "NEW ORLEANS PELICANS",
-  "CHEICK DIALLO": "NEW ORLEANS PELICANS",
-  "ANDREW HARRISON": "MEMPHIS GRIZZLIES",
-  "SOLOMON HILL": "NEW ORLEANS PELICANS",
-  "JRUE HOLIDAY": "NEW ORLEANS PELICANS",
-  "FRANK JACKSON": "NEW ORLEANS PELICANS",
-  "STANLEY JOHNSON": "DETROIT PISTONS",
-  "WESLEY JOHNSON": "WASHINGTON WIZARDS",
-  "DARIUS MILLER": "NEW ORLEANS PELICANS",
-  "ETWAUN MOORE": "NEW ORLEANS PELICANS",
-  "JAHLIL OKAFOR": "NEW ORLEANS PELICANS",
-  "ELFRID PAYTON": "NEW ORLEANS PELICANS",
-  "JULIUS RANDLE": "NEW ORLEANS PELICANS",
-  "KENRICH WILLIAMS": "NEW ORLEANS PELICANS",
-  "JONAH BOLDEN": "PHILADELPHIA 76ERS",
-  "COREY BREWER": "SACRAMENTO KINGS",
-  "JIMMY BUTLER": "MINNESOTA TIMBERWOLVES",
-  "WILSON CHANDLER": "LOS ANGELES CLIPPERS",
-  "ROBERT COVINGTON": "MINNESOTA TIMBERWOLVES",
-  "JOEL EMBIID": "PHILADELPHIA 76ERS",
-  "JAMES ENNIS": "HOUSTON ROCKETS",
-  "MARKELLE FULTZ": "PHILADELPHIA 76ERS",
-  "TOBIAS HARRIS": "LOS ANGELES CLIPPERS",
-  "HAYWOOD HIGHSMITH": "PHILADELPHIA 76ERS",
-  "DEMETRIUS JACKSON": "PHILADELPHIA 76ERS",
-  "AMIR JOHNSON": "PHILADELPHIA 76ERS",
-  "FURKAN KORKMAZ": "PHILADELPHIA 76ERS",
-  "BOBAN MARJANOVI\u0106": "LOS ANGELES CLIPPERS",
-  "TJ MCCONNELL": "PHILADELPHIA 76ERS",
-  "SHAKE MILTON": "PHILADELPHIA 76ERS",
-  "GREG MONROE": "BOSTON CELTICS",
-  "MIKE MUSCALA": "LOS ANGELES LAKERS",
-  "JUSTIN PATTON": "PHILADELPHIA 76ERS",
-  "JJ REDICK": "PHILADELPHIA 76ERS",
-  "DARIO \u0160ARI\u0106": "MINNESOTA TIMBERWOLVES",
-  "MIKE SCOTT": "LOS ANGELES CLIPPERS",
-  "LANDRY SHAMET": "LOS ANGELES CLIPPERS",
-  "BEN SIMMONS": "PHILADELPHIA 76ERS",
-  "JONATHON SIMMONS": "ORLANDO MAGIC",
-  "ZHAIRE SMITH": "PHILADELPHIA 76ERS",
-  "PATRICK BEVERLEY": "LOS ANGELES CLIPPERS",
-  "AVERY BRADLEY": "MEMPHIS GRIZZLIES",
-  "\u00c1NGEL DELGADO": "LOS ANGELES CLIPPERS",
-  "DANILO GALLINARI": "LOS ANGELES CLIPPERS",
-  "SHAI GILGEOUSALEXANDER": "LOS ANGELES CLIPPERS",
-  "MARCIN GORTAT": "LOS ANGELES CLIPPERS",
-  "JAMYCHAL GREEN": "MEMPHIS GRIZZLIES",
-  "MONTREZL HARRELL": "LOS ANGELES CLIPPERS",
-  "LUC MBAH A MOUTE": "LOS ANGELES CLIPPERS",
-  "JOHNATHAN MOTLEY": "LOS ANGELES CLIPPERS",
-  "JEROME ROBINSON": "LOS ANGELES CLIPPERS",
-  "GARRETT TEMPLE": "MEMPHIS GRIZZLIES",
-  "MILO\u0160 TEODOSI\u0106": "LOS ANGELES CLIPPERS",
-  "SINDARIUS THORNWELL": "LOS ANGELES CLIPPERS",
-  "TYRONE WALLACE": "LOS ANGELES CLIPPERS",
-  "LOU WILLIAMS": "LOS ANGELES CLIPPERS",
-  "IVICA ZUBAC": "LOS ANGELES LAKERS",
-  "ALFAROUQ AMINU": "PORTLAND TRAIL BLAZERS",
-  "WADE BALDWIN": "PORTLAND TRAIL BLAZERS",
-  "ZACH COLLINS": "PORTLAND TRAIL BLAZERS",
-  "SETH CURRY": "PORTLAND TRAIL BLAZERS",
-  "MAURICE HARKLESS": "PORTLAND TRAIL BLAZERS",
-  "RODNEY HOOD": "CLEVELAND CAVALIERS",
-  "ENES KANTER": "NEW YORK KNICKS",
-  "SKAL LABISSI\u00c8RE": "SACRAMENTO KINGS",
-  "JAKE LAYMAN": "PORTLAND TRAIL BLAZERS",
-  "MEYERS LEONARD": "PORTLAND TRAIL BLAZERS",
-  "DAMIAN LILLARD": "PORTLAND TRAIL BLAZERS",
-  "CJ MCCOLLUM": "PORTLAND TRAIL BLAZERS",
-  "JUSUF NURKI\u0106": "PORTLAND TRAIL BLAZERS",
-  "ANFERNEE SIMONS": "PORTLAND TRAIL BLAZERS",
-  "NIK STAUSKAS": "CLEVELAND CAVALIERS",
-  "CALEB SWANIGAN": "SACRAMENTO KINGS",
-  "GARY TRENT": "PORTLAND TRAIL BLAZERS",
-  "EVAN TURNER": "PORTLAND TRAIL BLAZERS",
-  "\u00c1LEX ABRINES": "OKLAHOMA CITY THUNDER",
-  "STEVEN ADAMS": "OKLAHOMA CITY THUNDER",
-  "DEONTE BURTON": "OKLAHOMA CITY THUNDER",
-  "TYLER DAVIS": "OKLAHOMA CITY THUNDER",
-  "HAMIDOU DIALLO": "OKLAHOMA CITY THUNDER",
-  "JAWUN EVANS": "PHOENIX SUNS",
-  "RAYMOND FELTON": "OKLAHOMA CITY THUNDER",
-  "TERRANCE FERGUSON": "OKLAHOMA CITY THUNDER",
-  "PAUL GEORGE": "OKLAHOMA CITY THUNDER",
-  "JERAMI GRANT": "OKLAHOMA CITY THUNDER",
-  "DONTE GRANTHAM": "OKLAHOMA CITY THUNDER",
-  "TIMOTH\u00c9 LUWAWUCABARROT": "CHICAGO BULLS",
-  "MARKIEFF MORRIS": "WASHINGTON WIZARDS",
-  "ABDEL NADER": "OKLAHOMA CITY THUNDER",
-  "NERLENS NOEL": "OKLAHOMA CITY THUNDER",
-  "PATRICK PATTERSON": "OKLAHOMA CITY THUNDER",
-  "DENNIS SCHR\u00d6DER": "OKLAHOMA CITY THUNDER",
-  "RUSSELL WESTBROOK": "OKLAHOMA CITY THUNDER",
-  "OG ANUNOBY": "TORONTO RAPTORS",
-  "CHRIS BOUCHER": "TORONTO RAPTORS",
-  "LORENZO BROWN": "TORONTO RAPTORS",
-  "MARC GASOL": "MEMPHIS GRIZZLIES",
-  "DANNY GREEN": "TORONTO RAPTORS",
-  "SERGE IBAKA": "TORONTO RAPTORS",
-  "KAWHI LEONARD": "TORONTO RAPTORS",
-  "JEREMY LIN": "ATLANTA HAWKS",
-  "KYLE LOWRY": "TORONTO RAPTORS",
-  "JORDAN LOYD": "TORONTO RAPTORS",
-  "PATRICK MCCAW": "CLEVELAND CAVALIERS",
-  "JODIE MEEKS": "TORONTO RAPTORS",
-  "CJ MILES": "MEMPHIS GRIZZLIES",
-  "MALCOLM MILLER": "TORONTO RAPTORS",
-  "ERIC MORELAND": "PHOENIX SUNS",
-  "NORMAN POWELL": "TORONTO RAPTORS",
-  "MALACHI RICHARDSON": "TORONTO RAPTORS",
-  "PASCAL SIAKAM": "TORONTO RAPTORS",
-  "JONAS VALAN\u010cI\u016aNAS": "MEMPHIS GRIZZLIES",
-  "FRED VANVLEET": "TORONTO RAPTORS",
-  "DELON WRIGHT": "MEMPHIS GRIZZLIES",
-  "MARVIN BAGLEY": "SACRAMENTO KINGS",
-  "HARRISON BARNES": "DALLAS MAVERICKS",
-  "NEMANJA BJELICA": "SACRAMENTO KINGS",
-  "BOGDAN BOGDANOVI\u0106": "SACRAMENTO KINGS",
-  "ALEC BURKS": "CLEVELAND CAVALIERS",
-  "WILLIE CAULEYSTEIN": "SACRAMENTO KINGS",
-  "YOGI FERRELL": "SACRAMENTO KINGS",
-  "DEAARON FOX": "SACRAMENTO KINGS",
-  "HARRY GILES": "SACRAMENTO KINGS",
-  "BUDDY HIELD": "SACRAMENTO KINGS",
-  "JUSTIN JACKSON": "DALLAS MAVERICKS",
-  "BJ JOHNSON": "ATLANTA HAWKS",
-  "KOSTA KOUFOS": "SACRAMENTO KINGS",
-  "FRANK MASON": "SACRAMENTO KINGS",
-  "BEN MCLEMORE": "SACRAMENTO KINGS",
-  "IMAN SHUMPERT": "HOUSTON ROCKETS",
-  "TROY WILLIAMS": "SACRAMENTO KINGS",
-  "TREVOR ARIZA": "PHOENIX SUNS",
-  "RON BAKER": "NEW YORK KNICKS",
-  "BRADLEY BEAL": "WASHINGTON WIZARDS",
-  "TROY BROWN": "WASHINGTON WIZARDS",
-  "THOMAS BRYANT": "WASHINGTON WIZARDS",
-  "SAM DEKKER": "CLEVELAND CAVALIERS",
-  "JEFF GREEN": "WASHINGTON WIZARDS",
-  "DWIGHT HOWARD": "WASHINGTON WIZARDS",
-  "JOHN JENKINS": "NEW YORK KNICKS",
-  "IAN MAHINMI": "WASHINGTON WIZARDS",
-  "JORDAN MCRAE": "WASHINGTON WIZARDS",
-  "KELLY OUBRE": "PHOENIX SUNS",
-  "JABARI PARKER": "CHICAGO BULLS",
-  "GARY PAYTON": "WASHINGTON WIZARDS",
-  "OTTO PORTER": "CHICAGO BULLS",
-  "BOBBY PORTIS": "CHICAGO BULLS",
-  "CHASSON RANDLE": "WASHINGTON WIZARDS",
-  "AUSTIN RIVERS": "HOUSTON ROCKETS",
-  "DEVIN ROBINSON": "WASHINGTON WIZARDS",
-  "TOM\u00c1\u0160 SATORANSK\u00dd": "WASHINGTON WIZARDS",
-  "JOHN WALL": "WASHINGTON WIZARDS",
-  "OKARO WHITE": "WASHINGTON WIZARDS",
-  "CARMELO ANTHONY": "HOUSTON ROCKETS",
-  "CLINT CAPELA": "HOUSTON ROCKETS",
-  "MICHAEL CARTERWILLIAMS": "ORLANDO MAGIC",
-  "CHRIS CHIOZZA": "HOUSTON ROCKETS",
-  "MARQUESE CHRISS": "CLEVELAND CAVALIERS",
-  "GARY CLARK": "HOUSTON ROCKETS",
-  "VINCE EDWARDS": "HOUSTON ROCKETS",
-  "KENNETH FARIED": "BROOKLYN NETS",
-  "ERIC GORDON": "HOUSTON ROCKETS",
-  "GERALD GREEN": "HOUSTON ROCKETS",
-  "JAMES HARDEN": "HOUSTON ROCKETS",
-  "ISAIAH HARTENSTEIN": "HOUSTON ROCKETS",
-  "NEN\u00ca": "HOUSTON ROCKETS",
-  "DANUEL HOUSE": "HOUSTON ROCKETS",
-  "TERRENCE JONES": "HOUSTON ROCKETS",
-  "BRANDON KNIGHT": "CLEVELAND CAVALIERS",
-  "JAMES NUNNALLY": "MINNESOTA TIMBERWOLVES",
-  "CHRIS PAUL": "HOUSTON ROCKETS",
-  "ZHOU QI": "HOUSTON ROCKETS",
-  "PJ TUCKER": "HOUSTON ROCKETS",
-  "JAYLEN ADAMS": "ATLANTA HAWKS",
-  "JUSTIN ANDERSON": "ATLANTA HAWKS",
-  "KENT BAZEMORE": "ATLANTA HAWKS",
-  "DEANDRE BEMBRY": "ATLANTA HAWKS",
-  "VINCE CARTER": "ATLANTA HAWKS",
-  "JOHN COLLINS": "ATLANTA HAWKS",
-  "DEYONTA DAVIS": "ATLANTA HAWKS",
-  "DEWAYNE DEDMON": "ATLANTA HAWKS",
-  "TYLER DORSEY": "MEMPHIS GRIZZLIES",
-  "DANIEL HAMILTON": "ATLANTA HAWKS",
-  "KEVIN HUERTER": "ATLANTA HAWKS",
-  "ISAAC HUMPHRIES": "ATLANTA HAWKS",
-  "ALEX LEN": "ATLANTA HAWKS",
-  "MILES PLUMLEE": "ATLANTA HAWKS",
-  "ALEX POYTHRESS": "ATLANTA HAWKS",
-  "JORDAN SIBERT": "ATLANTA HAWKS",
-  "OMARI SPELLMAN": "ATLANTA HAWKS",
-  "TAUREAN PRINCE": "ATLANTA HAWKS",
-  "TRAE YOUNG": "ATLANTA HAWKS",
-  "TYLER ZELLER": "MEMPHIS GRIZZLIES",
-  "KEITA BATESDIOP": "MINNESOTA TIMBERWOLVES",
-  "JERRYD BAYLESS": "MINNESOTA TIMBERWOLVES",
-  "MITCH CREEK": "BROOKLYN NETS",
-  "LUOL DENG": "MINNESOTA TIMBERWOLVES",
-  "GORGUI DIENG": "MINNESOTA TIMBERWOLVES",
-  "TAJ GIBSON": "MINNESOTA TIMBERWOLVES",
-  "TYUS JONES": "MINNESOTA TIMBERWOLVES",
-  "JOSH OKOGIE": "MINNESOTA TIMBERWOLVES",
-  "CAMERON REYNOLDS": "MINNESOTA TIMBERWOLVES",
-  "DERRICK ROSE": "MINNESOTA TIMBERWOLVES",
-  "JEFF TEAGUE": "MINNESOTA TIMBERWOLVES",
-  "JARED TERRELL": "MINNESOTA TIMBERWOLVES",
-  "ANTHONY TOLLIVER": "MINNESOTA TIMBERWOLVES",
-  "KARLANTHONY TOWNS": "MINNESOTA TIMBERWOLVES",
-  "ANDREW WIGGINS": "MINNESOTA TIMBERWOLVES",
-  "CJ WILLIAMS": "MINNESOTA TIMBERWOLVES",
-  "ARON BAYNES": "BOSTON CELTICS",
-  "JAYLEN BROWN": "BOSTON CELTICS",
-  "PJ DOZIER": "BOSTON CELTICS",
-  "GORDON HAYWARD": "BOSTON CELTICS",
-  "AL HORFORD": "BOSTON CELTICS",
-  "RJ HUNTER": "BOSTON CELTICS",
-  "KYRIE IRVING": "BOSTON CELTICS",
-  "MARCUS MORRIS": "BOSTON CELTICS",
-  "SEMI OJELEYE": "BOSTON CELTICS",
-  "TERRY ROZIER": "BOSTON CELTICS",
-  "MARCUS SMART": "BOSTON CELTICS",
-  "JAYSON TATUM": "BOSTON CELTICS",
-  "DANIEL THEIS": "BOSTON CELTICS",
-  "BRAD WANAMAKER": "BOSTON CELTICS",
-  "ROBERT WILLIAMS": "BOSTON CELTICS",
-  "GUERSCHON YABUSELE": "BOSTON CELTICS",
-  "JARRETT ALLEN": "BROOKLYN NETS",
-  "DEMARRE CARROLL": "BROOKLYN NETS",
-  "ALLEN CRABBE": "BROOKLYN NETS",
-  "ED DAVIS": "BROOKLYN NETS",
-  "SPENCER DINWIDDIE": "BROOKLYN NETS",
-  "JARED DUDLEY": "BROOKLYN NETS",
-  "TREVEON GRAHAM": "BROOKLYN NETS",
-  "JOE HARRIS": "BROOKLYN NETS",
-  "RONDAE HOLLISJEFFERSON": "BROOKLYN NETS",
-  "RODIONS KURUCS": "BROOKLYN NETS",
-  "CARIS LEVERT": "BROOKLYN NETS",
-  "TAHJERE MCCALL": "BROOKLYN NETS",
-  "D\u017dANAN MUSA": "BROOKLYN NETS",
-  "SHABAZZ NAPIER": "BROOKLYN NETS",
-  "THEO PINSON": "BROOKLYN NETS",
-  "DANGELO RUSSELL": "BROOKLYN NETS",
-  "ALAN WILLIAMS": "BROOKLYN NETS",
-  "LONZO BALL": "LOS ANGELES LAKERS",
-  "MICHAEL BEASLEY": "LOS ANGELES LAKERS",
-  "ISAAC BONGA": "LOS ANGELES LAKERS",
-  "REGGIE BULLOCK": "DETROIT PISTONS",
-  "KENTAVIOUS CALDWELLPOPE": "LOS ANGELES LAKERS",
-  "ALEX CARUSO": "LOS ANGELES LAKERS",
-  "TYSON CHANDLER": "PHOENIX SUNS",
-  "JOSH HART": "LOS ANGELES LAKERS",
-  "ANDRE INGRAM": "LOS ANGELES LAKERS",
-  "BRANDON INGRAM": "LOS ANGELES LAKERS",
-  "LEBRON JAMES": "LOS ANGELES LAKERS",
-  "JEMERRIO JONES": "LOS ANGELES LAKERS",
-  "KYLE KUZMA": "LOS ANGELES LAKERS",
-  "SCOTT MACHADO": "LOS ANGELES LAKERS",
-  "JAVALE MCGEE": "LOS ANGELES LAKERS",
-  "SVIATOSLAV MYKHAILIUK": "DETROIT PISTONS",
-  "RAJON RONDO": "LOS ANGELES LAKERS",
-  "LANCE STEPHENSON": "LOS ANGELES LAKERS",
-  "MORITZ WAGNER": "LOS ANGELES LAKERS",
-  "JOHNATHAN WILLIAMS": "LOS ANGELES LAKERS",
-  "GRAYSON ALLEN": "UTAH JAZZ",
-  "TONY BRADLEY": "UTAH JAZZ",
-  "TYLER CAVANAUGH": "UTAH JAZZ",
-  "JAE CROWDER": "UTAH JAZZ",
-  "DANTE EXUM": "UTAH JAZZ",
-  "DERRICK FAVORS": "UTAH JAZZ",
-  "RUDY GOBERT": "UTAH JAZZ",
-  "JOE INGLES": "UTAH JAZZ",
-  "KYLE KORVER": "CLEVELAND CAVALIERS",
-  "DONOVAN MITCHELL": "UTAH JAZZ",
-  "NAZ MITROULONG": "UTAH JAZZ",
-  "RAUL NETO": "UTAH JAZZ",
-  "GEORGES NIANG": "UTAH JAZZ",
-  "ROYCE ONEALE": "UTAH JAZZ",
-  "RICKY RUBIO": "UTAH JAZZ",
-  "THABO SEFOLOSHA": "UTAH JAZZ",
-  "EKPE UDOH": "UTAH JAZZ",
-  "LAMARCUS ALDRIDGE": "SAN ANTONIO SPURS",
-  "MARCO BELINELLI": "SAN ANTONIO SPURS",
-  "D\u0100VIS BERT\u0100NS": "SAN ANTONIO SPURS",
-  "DANTE CUNNINGHAM": "SAN ANTONIO SPURS",
-  "DEMAR DEROZAN": "SAN ANTONIO SPURS",
-  "DREW EUBANKS": "SAN ANTONIO SPURS",
-  "BRYN FORBES": "SAN ANTONIO SPURS",
-  "RUDY GAY": "SAN ANTONIO SPURS",
-  "CHIMEZIE METU": "SAN ANTONIO SPURS",
-  "PATTY MILLS": "SAN ANTONIO SPURS",
-  "DONATAS MOTIEJ\u016aNAS": "SAN ANTONIO SPURS",
-  "JAKOB POELTL": "SAN ANTONIO SPURS",
-  "QUINCY PONDEXTER": "SAN ANTONIO SPURS",
-  "LONNIE WALKER": "SAN ANTONIO SPURS",
-  "DERRICK WHITE": "SAN ANTONIO SPURS",
-  "DWAYNE BACON": "CHARLOTTE HORNETS",
-  "NICOLAS BATUM": "CHARLOTTE HORNETS",
-  "BISMACK BIYOMBO": "CHARLOTTE HORNETS",
-  "MILES BRIDGES": "CHARLOTTE HORNETS",
-  "JOE CHEALEY": "CHARLOTTE HORNETS",
-  "DEVONTE GRAHAM": "CHARLOTTE HORNETS",
-  "WILLY HERNANG\u00d3MEZ": "CHARLOTTE HORNETS",
-  "FRANK KAMINSKY": "CHARLOTTE HORNETS",
-  "MICHAEL KIDDGILCHRIST": "CHARLOTTE HORNETS",
-  "JEREMY LAMB": "CHARLOTTE HORNETS",
-  "SHELVIN MACK": "MEMPHIS GRIZZLIES",
-  "JP MACURA": "CHARLOTTE HORNETS",
-  "MALIK MONK": "CHARLOTTE HORNETS",
-  "TONY PARKER": "CHARLOTTE HORNETS",
-  "KEMBA WALKER": "CHARLOTTE HORNETS",
-  "MARVIN WILLIAMS": "CHARLOTTE HORNETS",
-  "CODY ZELLER": "CHARLOTTE HORNETS",
-  "DEVAUGHN AKOONPURCELL": "DENVER NUGGETS",
-  "WILL BARTON": "DENVER NUGGETS",
-  "MALIK BEASLEY": "DENVER NUGGETS",
-  "TORREY CRAIG": "DENVER NUGGETS",
-  "BRANDON GOODWIN": "DENVER NUGGETS",
-  "GARY HARRIS": "DENVER NUGGETS",
-  "JUAN HERNANG\u00d3MEZ": "DENVER NUGGETS",
-  "NIKOLA JOKI\u0106": "DENVER NUGGETS",
-  "TYLER LYDON": "DENVER NUGGETS",
-  "TREY LYLES": "DENVER NUGGETS",
-  "PAUL MILLSAP": "DENVER NUGGETS",
-  "MONTE MORRIS": "DENVER NUGGETS",
-  "JAMAL MURRAY": "DENVER NUGGETS",
-  "MASON PLUMLEE": "DENVER NUGGETS",
-  "ISAIAH THOMAS": "DENVER NUGGETS",
-  "JARRED VANDERBILT": "DENVER NUGGETS",
-  "THOMAS WELSH": "DENVER NUGGETS",
-  "NICK YOUNG": "DENVER NUGGETS",
-  "KOSTAS ANTETOKOUNMPO": "DALLAS MAVERICKS",
-  "JJ BAREA": "DALLAS MAVERICKS",
-  "RYAN BROEKHOFF": "DALLAS MAVERICKS",
-  "JALEN BRUNSON": "DALLAS MAVERICKS",
-  "TREY BURKE": "NEW YORK KNICKS",
-  "LUKA DON\u010cI\u0106": "DALLAS MAVERICKS",
-  "DORIAN FINNEYSMITH": "DALLAS MAVERICKS",
-  "TIM HARDAWAY": "NEW YORK KNICKS",
-  "DEVIN HARRIS": "DALLAS MAVERICKS",
-  "DEANDRE JORDAN": "NEW YORK KNICKS",
-  "MAXI KLEBER": "DALLAS MAVERICKS",
-  "COURTNEY LEE": "NEW YORK KNICKS",
-  "DARYL MACON": "DALLAS MAVERICKS",
-  "WESLEY MATTHEWS": "NEW YORK KNICKS",
-  "SALAH MEJRI": "DALLAS MAVERICKS",
-  "DIRK NOWITZKI": "DALLAS MAVERICKS",
-  "DWIGHT POWELL": "DALLAS MAVERICKS",
-  "DENNIS SMITH": "NEW YORK KNICKS",
-  "RAY SPALDING": "PHOENIX SUNS",
-  "IKE ANIGBOGU": "INDIANA PACERS",
-  "BOJAN BOGDANOVI\u0106": "INDIANA PACERS",
-  "DARREN COLLISON": "INDIANA PACERS",
-  "TYREKE EVANS": "INDIANA PACERS",
-  "AARON HOLIDAY": "INDIANA PACERS",
-  "ALIZE JOHNSON": "INDIANA PACERS",
-  "CORY JOSEPH": "INDIANA PACERS",
-  "TJ LEAF": "INDIANA PACERS",
-  "DOUG MCDERMOTT": "INDIANA PACERS",
-  "KYLE OQUINN": "INDIANA PACERS",
-  "VICTOR OLADIPO": "INDIANA PACERS",
-  "DAVON REED": "INDIANA PACERS",
-  "DOMANTAS SABONIS": "INDIANA PACERS",
-  "EDMOND SUMNER": "INDIANA PACERS",
-  "MYLES TURNER": "INDIANA PACERS",
-  "THADDEUS YOUNG": "INDIANA PACERS",
-  "QUINCY ACY": "PHOENIX SUNS",
-  "RYAN ANDERSON": "MIAMI HEAT",
-  "DEANDRE AYTON": "PHOENIX SUNS",
-  "DRAGAN BENDER": "PHOENIX SUNS",
-  "DEVIN BOOKER": "PHOENIX SUNS",
-  "MIKAL BRIDGES": "PHOENIX SUNS",
-  "JAMAL CRAWFORD": "PHOENIX SUNS",
-  "TROY DANIELS": "PHOENIX SUNS",
-  "JIMMER FREDETTE": "PHOENIX SUNS",
-  "RICHAUN HOLMES": "PHOENIX SUNS",
-  "JOSH JACKSON": "PHOENIX SUNS",
-  "TYLER JOHNSON": "MIAMI HEAT",
-  "GEORGE KING": "PHOENIX SUNS",
-  "DEANTHONY MELTON": "PHOENIX SUNS",
-  "ELIE OKOBO": "PHOENIX SUNS",
-  "EMANUEL TERRY": "MIAMI HEAT",
-  "TJ WARREN": "PHOENIX SUNS",
-  "DJ AUGUSTIN": "ORLANDO MAGIC",
-  "MO BAMBA": "ORLANDO MAGIC",
-  "KHEM BIRCH": "ORLANDO MAGIC",
-  "ISAIAH BRISCOE": "ORLANDO MAGIC",
-  "TROY CAUPAIN": "ORLANDO MAGIC",
-  "EVAN FOURNIER": "ORLANDO MAGIC",
-  "MELVIN FRAZIER": "ORLANDO MAGIC",
-  "AARON GORDON": "ORLANDO MAGIC",
-  "JERIAN GRANT": "ORLANDO MAGIC",
-  "JONATHAN ISAAC": "ORLANDO MAGIC",
-  "WESLEY IWUNDU": "ORLANDO MAGIC",
-  "AMILE JEFFERSON": "ORLANDO MAGIC",
-  "JARELL MARTIN": "ORLANDO MAGIC",
-  "TERRENCE ROSS": "ORLANDO MAGIC",
-  "NIKOLA VU\u010cEVI\u0106": "ORLANDO MAGIC",
-  "BRUCE BROWN": "DETROIT PISTONS",
-  "JOS\u00c9 CALDER\u00d3N": "DETROIT PISTONS",
-  "ANDRE DRUMMOND": "DETROIT PISTONS",
-  "HENRY ELLENSON": "NEW YORK KNICKS",
-  "WAYNE ELLINGTON": "MIAMI HEAT",
-  "LANGSTON GALLOWAY": "DETROIT PISTONS",
-  "BLAKE GRIFFIN": "DETROIT PISTONS",
-  "REGGIE JACKSON": "DETROIT PISTONS",
-  "LUKE KENNARD": "DETROIT PISTONS",
-  "JON LEUER": "DETROIT PISTONS",
-  "ZACH LOFTON": "DETROIT PISTONS",
-  "KALIN LUCAS": "DETROIT PISTONS",
-  "ZAZA PACHULIA": "DETROIT PISTONS",
-  "GLENN ROBINSON": "DETROIT PISTONS",
-  "ISH SMITH": "DETROIT PISTONS",
-  "KHYRI THOMAS": "DETROIT PISTONS",
-  "BAM ADEBAYO": "MIAMI HEAT",
-  "GORAN DRAGI\u0106": "MIAMI HEAT",
-  "UDONIS HASLEM": "MIAMI HEAT",
-  "JAMES JOHNSON": "MIAMI HEAT",
-  "DERRICK JONES": "MIAMI HEAT",
-  "YANTE MATEN": "MIAMI HEAT",
-  "RODNEY MCGRUDER": "MIAMI HEAT",
-  "KELLY OLYNYK": "MIAMI HEAT",
-  "JOSH RICHARDSON": "MIAMI HEAT",
-  "DUNCAN ROBINSON": "MIAMI HEAT",
-  "DWYANE WADE": "MIAMI HEAT",
-  "DION WAITERS": "MIAMI HEAT",
-  "HASSAN WHITESIDE": "MIAMI HEAT",
-  "JUSTISE WINSLOW": "MIAMI HEAT",
-  "RAWLE ALKINS": "CHICAGO BULLS",
-  "RYAN ARCIDIACONO": "CHICAGO BULLS",
-  "ANTONIO BLAKENEY": "CHICAGO BULLS",
-  "WENDELL CARTER": "CHICAGO BULLS",
-  "KRIS DUNN": "CHICAGO BULLS",
-  "CRISTIANO FEL\u00cdCIO": "CHICAGO BULLS",
-  "SHAQUILLE HARRISON": "CHICAGO BULLS",
-  "JUSTIN HOLIDAY": "MEMPHIS GRIZZLIES",
-  "CHANDLER HUTCHISON": "CHICAGO BULLS",
-  "ZACH LAVINE": "CHICAGO BULLS",
-  "WALT LEMON": "CHICAGO BULLS",
-  "ROBIN LOPEZ": "CHICAGO BULLS",
-  "LAURI MARKKANEN": "CHICAGO BULLS",
-  "CAMERON PAYNE": "CLEVELAND CAVALIERS",
-  "BRANDON SAMPSON": "CHICAGO BULLS",
-  "JAKARR SAMPSON": "CHICAGO BULLS",
-  "WAYNE SELDEN": "MEMPHIS GRIZZLIES",
-  "TYLER ULIS": "CHICAGO BULLS",
-  "KADEEM ALLEN": "NEW YORK KNICKS",
-  "DAMYEAN DOTSON": "NEW YORK KNICKS",
-  "BILLY GARRETT": "NEW YORK KNICKS",
-  "MARIO HEZONJA": "NEW YORK KNICKS",
-  "ISAIAH HICKS": "NEW YORK KNICKS",
-  "KEVIN KNOX": "NEW YORK KNICKS",
-  "LUKE KORNET": "NEW YORK KNICKS",
-  "EMMANUEL MUDIAY": "NEW YORK KNICKS",
-  "FRANK NTILIKINA": "NEW YORK KNICKS",
-  "MITCHELL ROBINSON": "NEW YORK KNICKS",
-  "LANCE THOMAS": "NEW YORK KNICKS",
-  "ALLONZO TRIER": "NEW YORK KNICKS",
-  "NOAH VONLEH": "NEW YORK KNICKS",
-  "DENG ADEL": "CLEVELAND CAVALIERS",
-  "JARON BLOSSOMGAME": "CLEVELAND CAVALIERS",
-  "JORDAN CLARKSON": "CLEVELAND CAVALIERS",
-  "CHANNING FRYE": "CLEVELAND CAVALIERS",
-  "JOHN HOLLAND": "CLEVELAND CAVALIERS",
-  "JALEN JONES": "CLEVELAND CAVALIERS",
-  "KEVIN LOVE": "CLEVELAND CAVALIERS",
-  "LARRY NANCE": "CLEVELAND CAVALIERS",
-  "DAVID NWABA": "CLEVELAND CAVALIERS",
-  "CEDI OSMAN": "CLEVELAND CAVALIERS",
-  "COLLIN SEXTON": "CLEVELAND CAVALIERS",
-  "KOBI SIMMONS": "CLEVELAND CAVALIERS",
-  "JR SMITH": "CLEVELAND CAVALIERS",
-  "TRISTAN THOMPSON": "CLEVELAND CAVALIERS",
-  "ANTE \u017dI\u017dI\u0106": "CLEVELAND CAVALIERS",
-  "KYLE ANDERSON": "MEMPHIS GRIZZLIES",
-  "DILLON BROOKS": "MEMPHIS GRIZZLIES",
-  "MARSHON BROOKS": "MEMPHIS GRIZZLIES",
-  "BRUNO CABOCLO": "MEMPHIS GRIZZLIES",
-  "JEVON CARTER": "MEMPHIS GRIZZLIES",
-  "OMRI CASSPI": "MEMPHIS GRIZZLIES",
-  "MIKE CONLEY": "MEMPHIS GRIZZLIES",
-  "DUSTY HANNAHS": "MEMPHIS GRIZZLIES",
-  "JAREN JACKSON": "MEMPHIS GRIZZLIES",
-  "JOAKIM NOAH": "MEMPHIS GRIZZLIES",
-  "CHANDLER PARSONS": "MEMPHIS GRIZZLIES",
-  "IVAN RABB": "MEMPHIS GRIZZLIES",
-  "DJ STEPHENS": "MEMPHIS GRIZZLIES",
-  "JULIAN WASHBURN": "MEMPHIS GRIZZLIES",
-  "YUTA WATANABE": "MEMPHIS GRIZZLIES"
+  "MAXI KLEBER": {
+    "display": "Maxi Kleber",
+    "team": "DALLAS MAVERICKS",
+    "position": "PF"
+  },
+  "DELON WRIGHT": {
+    "display": "Delon Wright",
+    "team": "DALLAS MAVERICKS",
+    "position": "PG"
+  },
+  "DORIAN FINNEY-SMITH": {
+    "display": "Dorian Finney-Smith",
+    "team": "DALLAS MAVERICKS",
+    "position": "SF"
+  },
+  "TIM HARDAWAY": {
+    "display": "Tim Hardaway Jr.",
+    "team": "DALLAS MAVERICKS",
+    "position": "SG"
+  },
+  "SETH CURRY": {
+    "display": "Seth Curry",
+    "team": "DALLAS MAVERICKS",
+    "position": "SG"
+  },
+  "JUSTIN JACKSON": {
+    "display": "Justin Jackson",
+    "team": "DALLAS MAVERICKS",
+    "position": "SF"
+  },
+  "JALEN BRUNSON": {
+    "display": "Jalen Brunson",
+    "team": "DALLAS MAVERICKS",
+    "position": "PG"
+  },
+  "LUKA DON\u010cI\u0106": {
+    "display": "Luka Don\u010di\u0107",
+    "team": "DALLAS MAVERICKS",
+    "position": "SG"
+  },
+  "DWIGHT POWELL": {
+    "display": "Dwight Powell",
+    "team": "DALLAS MAVERICKS",
+    "position": "C"
+  },
+  "BOBAN MARJANOVI\u0106": {
+    "display": "Boban Marjanovi\u0107",
+    "team": "DALLAS MAVERICKS",
+    "position": "C"
+  },
+  "JJ BAREA": {
+    "display": "J.J. Barea",
+    "team": "DALLAS MAVERICKS",
+    "position": "PG"
+  },
+  "COURTNEY LEE": {
+    "display": "Courtney Lee",
+    "team": "DALLAS MAVERICKS",
+    "position": "SG"
+  },
+  "WILLIE CAULEY-STEIN": {
+    "display": "Willie Cauley-Stein",
+    "team": "DALLAS MAVERICKS",
+    "position": "C"
+  },
+  "MICHAEL KIDD-GILCHRIST": {
+    "display": "Michael Kidd-Gilchrist",
+    "team": "DALLAS MAVERICKS",
+    "position": "PF"
+  },
+  "ANTONIUS CLEVELAND": {
+    "display": "Antonius Cleveland",
+    "team": "DALLAS MAVERICKS",
+    "position": "SG"
+  },
+  "JOSH REAVES": {
+    "display": "Josh Reaves",
+    "team": "DALLAS MAVERICKS",
+    "position": "SG"
+  },
+  "WESLEY MATTHEWS": {
+    "display": "Wesley Matthews",
+    "team": "MILWAUKEE BUCKS",
+    "position": "SF-SG"
+  },
+  "BROOK LOPEZ": {
+    "display": "Brook Lopez",
+    "team": "MILWAUKEE BUCKS",
+    "position": "C"
+  },
+  "PAT CONNAUGHTON": {
+    "display": "Pat Connaughton",
+    "team": "MILWAUKEE BUCKS",
+    "position": "SG"
+  },
+  "ROBIN LOPEZ": {
+    "display": "Robin Lopez",
+    "team": "MILWAUKEE BUCKS",
+    "position": "C"
+  },
+  "DONTE DIVINCENZO": {
+    "display": "Donte DiVincenzo",
+    "team": "MILWAUKEE BUCKS",
+    "position": "SG"
+  },
+  "GIANNIS ANTETOKOUNMPO": {
+    "display": "Giannis Antetokounmpo",
+    "team": "MILWAUKEE BUCKS",
+    "position": "PF"
+  },
+  "ERIC BLEDSOE": {
+    "display": "Eric Bledsoe",
+    "team": "MILWAUKEE BUCKS",
+    "position": "PG"
+  },
+  "ERSAN \u0130LYASOVA": {
+    "display": "Ersan \u0130lyasova",
+    "team": "MILWAUKEE BUCKS",
+    "position": "PF"
+  },
+  "KHRIS MIDDLETON": {
+    "display": "Khris Middleton",
+    "team": "MILWAUKEE BUCKS",
+    "position": "SF"
+  },
+  "GEORGE HILL": {
+    "display": "George Hill",
+    "team": "MILWAUKEE BUCKS",
+    "position": "PG"
+  },
+  "KYLE KORVER": {
+    "display": "Kyle Korver",
+    "team": "MILWAUKEE BUCKS",
+    "position": "SG-PF"
+  },
+  "STERLING BROWN": {
+    "display": "Sterling Brown",
+    "team": "MILWAUKEE BUCKS",
+    "position": "SG"
+  },
+  "DJ WILSON": {
+    "display": "D.J. Wilson",
+    "team": "MILWAUKEE BUCKS",
+    "position": "PF"
+  },
+  "THANASIS ANTETOKOUNMPO": {
+    "display": "Thanasis Antetokounmpo",
+    "team": "MILWAUKEE BUCKS",
+    "position": "SF"
+  },
+  "MARVIN WILLIAMS": {
+    "display": "Marvin Williams",
+    "team": "MILWAUKEE BUCKS",
+    "position": "PF"
+  },
+  "FRANK MASON": {
+    "display": "Frank Mason III",
+    "team": "MILWAUKEE BUCKS",
+    "position": "PG"
+  },
+  "CAMERON REYNOLDS": {
+    "display": "Cameron Reynolds",
+    "team": "MILWAUKEE BUCKS",
+    "position": "SG"
+  },
+  "PJ TUCKER": {
+    "display": "P.J. Tucker",
+    "team": "HOUSTON ROCKETS",
+    "position": "PF"
+  },
+  "BEN MCLEMORE": {
+    "display": "Ben McLemore",
+    "team": "HOUSTON ROCKETS",
+    "position": "SG"
+  },
+  "JAMES HARDEN": {
+    "display": "James Harden",
+    "team": "HOUSTON ROCKETS",
+    "position": "PG"
+  },
+  "AUSTIN RIVERS": {
+    "display": "Austin Rivers",
+    "team": "HOUSTON ROCKETS",
+    "position": "SG"
+  },
+  "DANUEL HOUSE": {
+    "display": "Danuel House",
+    "team": "HOUSTON ROCKETS",
+    "position": "SF"
+  },
+  "RUSSELL WESTBROOK": {
+    "display": "Russell Westbrook",
+    "team": "HOUSTON ROCKETS",
+    "position": "PG"
+  },
+  "THABO SEFOLOSHA": {
+    "display": "Thabo Sefolosha",
+    "team": "HOUSTON ROCKETS",
+    "position": "SF"
+  },
+  "ERIC GORDON": {
+    "display": "Eric Gordon",
+    "team": "HOUSTON ROCKETS",
+    "position": "SG"
+  },
+  "CHRIS CLEMONS": {
+    "display": "Chris Clemons",
+    "team": "HOUSTON ROCKETS",
+    "position": "SG"
+  },
+  "TYSON CHANDLER": {
+    "display": "Tyson Chandler",
+    "team": "HOUSTON ROCKETS",
+    "position": "C"
+  },
+  "ISAIAH HARTENSTEIN": {
+    "display": "Isaiah Hartenstein",
+    "team": "HOUSTON ROCKETS",
+    "position": "PF"
+  },
+  "ROBERT COVINGTON": {
+    "display": "Robert Covington",
+    "team": "HOUSTON ROCKETS",
+    "position": "SF"
+  },
+  "JEFF GREEN": {
+    "display": "Jeff Green",
+    "team": "HOUSTON ROCKETS",
+    "position": "PF"
+  },
+  "DEMARRE CARROLL": {
+    "display": "DeMarre Carroll",
+    "team": "HOUSTON ROCKETS",
+    "position": "PF"
+  },
+  "BRUNO CABOCLO": {
+    "display": "Bruno Caboclo",
+    "team": "HOUSTON ROCKETS",
+    "position": "SF"
+  },
+  "WILLIAM HOWARD": {
+    "display": "William Howard",
+    "team": "HOUSTON ROCKETS",
+    "position": "SG"
+  },
+  "ANFERNEE SIMONS": {
+    "display": "Anfernee Simons",
+    "team": "PORTLAND TRAIL BLAZERS",
+    "position": "SG"
+  },
+  "CJ MCCOLLUM": {
+    "display": "CJ McCollum",
+    "team": "PORTLAND TRAIL BLAZERS",
+    "position": "SG"
+  },
+  "HASSAN WHITESIDE": {
+    "display": "Hassan Whiteside",
+    "team": "PORTLAND TRAIL BLAZERS",
+    "position": "C"
+  },
+  "DAMIAN LILLARD": {
+    "display": "Damian Lillard",
+    "team": "PORTLAND TRAIL BLAZERS",
+    "position": "PG"
+  },
+  "GARY TRENT": {
+    "display": "Gary Trent Jr.",
+    "team": "PORTLAND TRAIL BLAZERS",
+    "position": "SG"
+  },
+  "CARMELO ANTHONY": {
+    "display": "Carmelo Anthony",
+    "team": "PORTLAND TRAIL BLAZERS",
+    "position": "PF"
+  },
+  "NASSIR LITTLE": {
+    "display": "Nassir Little",
+    "team": "PORTLAND TRAIL BLAZERS",
+    "position": "PF"
+  },
+  "MARIO HEZONJA": {
+    "display": "Mario Hezonja",
+    "team": "PORTLAND TRAIL BLAZERS",
+    "position": "SF"
+  },
+  "TREVOR ARIZA": {
+    "display": "Trevor Ariza",
+    "team": "PORTLAND TRAIL BLAZERS",
+    "position": "SF"
+  },
+  "RODNEY HOOD": {
+    "display": "Rodney Hood",
+    "team": "PORTLAND TRAIL BLAZERS",
+    "position": "SG"
+  },
+  "CALEB SWANIGAN": {
+    "display": "Caleb Swanigan",
+    "team": "PORTLAND TRAIL BLAZERS",
+    "position": "PF"
+  },
+  "JAYLEN HOARD": {
+    "display": "Jaylen Hoard",
+    "team": "PORTLAND TRAIL BLAZERS",
+    "position": "SF"
+  },
+  "MOSES BROWN": {
+    "display": "Moses Brown",
+    "team": "PORTLAND TRAIL BLAZERS",
+    "position": "C"
+  },
+  "ZACH COLLINS": {
+    "display": "Zach Collins",
+    "team": "PORTLAND TRAIL BLAZERS",
+    "position": "C"
+  },
+  "JUSUF NURKI\u0106": {
+    "display": "Jusuf Nurki\u0107",
+    "team": "PORTLAND TRAIL BLAZERS",
+    "position": "C"
+  },
+  "DEANDRE HUNTER": {
+    "display": "De'Andre Hunter",
+    "team": "ATLANTA HAWKS",
+    "position": "SF"
+  },
+  "TRAE YOUNG": {
+    "display": "Trae Young",
+    "team": "ATLANTA HAWKS",
+    "position": "PG"
+  },
+  "VINCE CARTER": {
+    "display": "Vince Carter",
+    "team": "ATLANTA HAWKS",
+    "position": "PF"
+  },
+  "CAM REDDISH": {
+    "display": "Cam Reddish",
+    "team": "ATLANTA HAWKS",
+    "position": "SF"
+  },
+  "KEVIN HUERTER": {
+    "display": "Kevin Huerter",
+    "team": "ATLANTA HAWKS",
+    "position": "SG"
+  },
+  "BRUNO FERNANDO": {
+    "display": "Bruno Fernando",
+    "team": "ATLANTA HAWKS",
+    "position": "C"
+  },
+  "DAMIAN JONES": {
+    "display": "Damian Jones",
+    "team": "ATLANTA HAWKS",
+    "position": "C"
+  },
+  "DEANDRE BEMBRY": {
+    "display": "DeAndre' Bembry",
+    "team": "ATLANTA HAWKS",
+    "position": "SG"
+  },
+  "JOHN COLLINS": {
+    "display": "John Collins",
+    "team": "ATLANTA HAWKS",
+    "position": "PF"
+  },
+  "BRANDON GOODWIN": {
+    "display": "Brandon Goodwin",
+    "team": "ATLANTA HAWKS",
+    "position": "PG"
+  },
+  "JEFF TEAGUE": {
+    "display": "Jeff Teague",
+    "team": "ATLANTA HAWKS",
+    "position": "PG"
+  },
+  "TREVEON GRAHAM": {
+    "display": "Treveon Graham",
+    "team": "ATLANTA HAWKS",
+    "position": "SG"
+  },
+  "DEWAYNE DEDMON": {
+    "display": "Dewayne Dedmon",
+    "team": "ATLANTA HAWKS",
+    "position": "C"
+  },
+  "CHARLIE BROWN": {
+    "display": "Charlie Brown",
+    "team": "ATLANTA HAWKS",
+    "position": "SG"
+  },
+  "CLINT CAPELA": {
+    "display": "Clint Capela",
+    "team": "ATLANTA HAWKS",
+    "position": "C"
+  },
+  "SKAL LABISSI\u00c8RE": {
+    "display": "Skal Labissi\u00e8re",
+    "team": "ATLANTA HAWKS",
+    "position": "PF"
+  },
+  "JOSH HART": {
+    "display": "Josh Hart",
+    "team": "NEW ORLEANS PELICANS",
+    "position": "SG"
+  },
+  "BRANDON INGRAM": {
+    "display": "Brandon Ingram",
+    "team": "NEW ORLEANS PELICANS",
+    "position": "SF"
+  },
+  "LONZO BALL": {
+    "display": "Lonzo Ball",
+    "team": "NEW ORLEANS PELICANS",
+    "position": "PG"
+  },
+  "JAXSON HAYES": {
+    "display": "Jaxson Hayes",
+    "team": "NEW ORLEANS PELICANS",
+    "position": "C"
+  },
+  "JRUE HOLIDAY": {
+    "display": "Jrue Holiday",
+    "team": "NEW ORLEANS PELICANS",
+    "position": "SG"
+  },
+  "JJ REDICK": {
+    "display": "J.J. Redick",
+    "team": "NEW ORLEANS PELICANS",
+    "position": "SG"
+  },
+  "NICOL\u00d2 MELLI": {
+    "display": "Nicol\u00f2 Melli",
+    "team": "NEW ORLEANS PELICANS",
+    "position": "C"
+  },
+  "ETWAUN MOORE": {
+    "display": "E'Twaun Moore",
+    "team": "NEW ORLEANS PELICANS",
+    "position": "SG"
+  },
+  "FRANK JACKSON": {
+    "display": "Frank Jackson",
+    "team": "NEW ORLEANS PELICANS",
+    "position": "PG"
+  },
+  "DERRICK FAVORS": {
+    "display": "Derrick Favors",
+    "team": "NEW ORLEANS PELICANS",
+    "position": "C"
+  },
+  "NICKEIL ALEXANDER-WALKER": {
+    "display": "Nickeil Alexander-Walker",
+    "team": "NEW ORLEANS PELICANS",
+    "position": "SG"
+  },
+  "KENRICH WILLIAMS": {
+    "display": "Kenrich Williams",
+    "team": "NEW ORLEANS PELICANS",
+    "position": "SF"
+  },
+  "JAHLIL OKAFOR": {
+    "display": "Jahlil Okafor",
+    "team": "NEW ORLEANS PELICANS",
+    "position": "C"
+  },
+  "ZION WILLIAMSON": {
+    "display": "Zion Williamson",
+    "team": "NEW ORLEANS PELICANS",
+    "position": "PF"
+  },
+  "ZYLAN CHEATHAM": {
+    "display": "Zylan Cheatham",
+    "team": "NEW ORLEANS PELICANS",
+    "position": "SF"
+  },
+  "JOSH GRAY": {
+    "display": "Josh Gray",
+    "team": "NEW ORLEANS PELICANS",
+    "position": "PG"
+  },
+  "DARIUS MILLER": {
+    "display": "Darius Miller",
+    "team": "NEW ORLEANS PELICANS",
+    "position": "SF"
+  },
+  "IVICA ZUBAC": {
+    "display": "Ivica Zubac",
+    "team": "LOS ANGELES CLIPPERS",
+    "position": "C"
+  },
+  "MONTREZL HARRELL": {
+    "display": "Montrezl Harrell",
+    "team": "LOS ANGELES CLIPPERS",
+    "position": "C"
+  },
+  "LOU WILLIAMS": {
+    "display": "Lou Williams",
+    "team": "LOS ANGELES CLIPPERS",
+    "position": "SG"
+  },
+  "JAMYCHAL GREEN": {
+    "display": "JaMychal Green",
+    "team": "LOS ANGELES CLIPPERS",
+    "position": "PF"
+  },
+  "KAWHI LEONARD": {
+    "display": "Kawhi Leonard",
+    "team": "LOS ANGELES CLIPPERS",
+    "position": "SF"
+  },
+  "PATRICK PATTERSON": {
+    "display": "Patrick Patterson",
+    "team": "LOS ANGELES CLIPPERS",
+    "position": "PF"
+  },
+  "RODNEY MCGRUDER": {
+    "display": "Rodney McGruder",
+    "team": "LOS ANGELES CLIPPERS",
+    "position": "SG"
+  },
+  "PATRICK BEVERLEY": {
+    "display": "Patrick Beverley",
+    "team": "LOS ANGELES CLIPPERS",
+    "position": "PG"
+  },
+  "LANDRY SHAMET": {
+    "display": "Landry Shamet",
+    "team": "LOS ANGELES CLIPPERS",
+    "position": "SG"
+  },
+  "PAUL GEORGE": {
+    "display": "Paul George",
+    "team": "LOS ANGELES CLIPPERS",
+    "position": "SF"
+  },
+  "TERANCE MANN": {
+    "display": "Terance Mann",
+    "team": "LOS ANGELES CLIPPERS",
+    "position": "SG"
+  },
+  "JOHNATHAN MOTLEY": {
+    "display": "Johnathan Motley",
+    "team": "LOS ANGELES CLIPPERS",
+    "position": "PF"
+  },
+  "AMIR COFFEY": {
+    "display": "Amir Coffey",
+    "team": "LOS ANGELES CLIPPERS",
+    "position": "SG"
+  },
+  "MARCUS MORRIS": {
+    "display": "Marcus Morris",
+    "team": "LOS ANGELES CLIPPERS",
+    "position": "PF"
+  },
+  "MFIONDU KABENGELE": {
+    "display": "Mfiondu Kabengele",
+    "team": "LOS ANGELES CLIPPERS",
+    "position": "C"
+  },
+  "REGGIE JACKSON": {
+    "display": "Reggie Jackson",
+    "team": "LOS ANGELES CLIPPERS",
+    "position": "PG"
+  },
+  "JOAKIM NOAH": {
+    "display": "Joakim Noah",
+    "team": "LOS ANGELES CLIPPERS",
+    "position": "C"
+  },
+  "TROY BROWN": {
+    "display": "Troy Brown Jr.",
+    "team": "WASHINGTON WIZARDS",
+    "position": "SF"
+  },
+  "ISH SMITH": {
+    "display": "Ish Smith",
+    "team": "WASHINGTON WIZARDS",
+    "position": "PG"
+  },
+  "ISAAC BONGA": {
+    "display": "Isaac Bonga",
+    "team": "WASHINGTON WIZARDS",
+    "position": "PG"
+  },
+  "BRADLEY BEAL": {
+    "display": "Bradley Beal",
+    "team": "WASHINGTON WIZARDS",
+    "position": "SG"
+  },
+  "D\u0100VIS BERT\u0100NS": {
+    "display": "D\u0101vis Bert\u0101ns",
+    "team": "WASHINGTON WIZARDS",
+    "position": "PF"
+  },
+  "RUI HACHIMURA": {
+    "display": "Rui Hachimura",
+    "team": "WASHINGTON WIZARDS",
+    "position": "PF"
+  },
+  "THOMAS BRYANT": {
+    "display": "Thomas Bryant",
+    "team": "WASHINGTON WIZARDS",
+    "position": "C"
+  },
+  "IAN MAHINMI": {
+    "display": "Ian Mahinmi",
+    "team": "WASHINGTON WIZARDS",
+    "position": "C"
+  },
+  "MORITZ WAGNER": {
+    "display": "Moritz Wagner",
+    "team": "WASHINGTON WIZARDS",
+    "position": "C"
+  },
+  "GARY PAYTON": {
+    "display": "Gary Payton II",
+    "team": "WASHINGTON WIZARDS",
+    "position": "PG"
+  },
+  "ADMIRAL SCHOFIELD": {
+    "display": "Admiral Schofield",
+    "team": "WASHINGTON WIZARDS",
+    "position": "SF"
+  },
+  "AN\u017dEJS PASE\u010c\u0145IKS": {
+    "display": "An\u017eejs Pase\u010d\u0146iks",
+    "team": "WASHINGTON WIZARDS",
+    "position": "C"
+  },
+  "GARRISON MATHEWS": {
+    "display": "Garrison Mathews",
+    "team": "WASHINGTON WIZARDS",
+    "position": "SG"
+  },
+  "SHABAZZ NAPIER": {
+    "display": "Shabazz Napier",
+    "team": "WASHINGTON WIZARDS",
+    "position": "PG"
+  },
+  "JEROME ROBINSON": {
+    "display": "Jerome Robinson",
+    "team": "WASHINGTON WIZARDS",
+    "position": "SG"
+  },
+  "JOHNATHAN WILLIAMS": {
+    "display": "Johnathan Williams",
+    "team": "WASHINGTON WIZARDS",
+    "position": "C"
+  },
+  "JOHN WALL": {
+    "display": "John Wall",
+    "team": "WASHINGTON WIZARDS",
+    "position": "PG"
+  },
+  "DILLON BROOKS": {
+    "display": "Dillon Brooks",
+    "team": "MEMPHIS GRIZZLIES",
+    "position": "SF"
+  },
+  "TYUS JONES": {
+    "display": "Tyus Jones",
+    "team": "MEMPHIS GRIZZLIES",
+    "position": "PG"
+  },
+  "JONAS VALAN\u010cI\u016aNAS": {
+    "display": "Jonas Valan\u010di\u016bnas",
+    "team": "MEMPHIS GRIZZLIES",
+    "position": "C"
+  },
+  "JA MORANT": {
+    "display": "Ja Morant",
+    "team": "MEMPHIS GRIZZLIES",
+    "position": "PG"
+  },
+  "KYLE ANDERSON": {
+    "display": "Kyle Anderson",
+    "team": "MEMPHIS GRIZZLIES",
+    "position": "SF"
+  },
+  "JAREN JACKSON": {
+    "display": "Jaren Jackson Jr.",
+    "team": "MEMPHIS GRIZZLIES",
+    "position": "PF"
+  },
+  "DEANTHONY MELTON": {
+    "display": "De'Anthony Melton",
+    "team": "MEMPHIS GRIZZLIES",
+    "position": "PG"
+  },
+  "BRANDON CLARKE": {
+    "display": "Brandon Clarke",
+    "team": "MEMPHIS GRIZZLIES",
+    "position": "PF"
+  },
+  "MARKO GUDURIC": {
+    "display": "Marko Guduric",
+    "team": "MEMPHIS GRIZZLIES",
+    "position": "SG"
+  },
+  "GRAYSON ALLEN": {
+    "display": "Grayson Allen",
+    "team": "MEMPHIS GRIZZLIES",
+    "position": "SG"
+  },
+  "JOSH JACKSON": {
+    "display": "Josh Jackson",
+    "team": "MEMPHIS GRIZZLIES",
+    "position": "SG"
+  },
+  "YUTA WATANABE": {
+    "display": "Yuta Watanabe",
+    "team": "MEMPHIS GRIZZLIES",
+    "position": "SF"
+  },
+  "JOHN KONCHAR": {
+    "display": "John Konchar",
+    "team": "MEMPHIS GRIZZLIES",
+    "position": "SG"
+  },
+  "GORGUI DIENG": {
+    "display": "Gorgui Dieng",
+    "team": "MEMPHIS GRIZZLIES",
+    "position": "C"
+  },
+  "JUSTISE WINSLOW": {
+    "display": "Justise Winslow",
+    "team": "MEMPHIS GRIZZLIES",
+    "position": "SF"
+  },
+  "MIKAL BRIDGES": {
+    "display": "Mikal Bridges",
+    "team": "PHOENIX SUNS",
+    "position": "SF"
+  },
+  "DEVIN BOOKER": {
+    "display": "Devin Booker",
+    "team": "PHOENIX SUNS",
+    "position": "SG"
+  },
+  "DARIO \u0160ARI\u0106": {
+    "display": "Dario \u0160ari\u0107",
+    "team": "PHOENIX SUNS",
+    "position": "PF"
+  },
+  "RICKY RUBIO": {
+    "display": "Ricky Rubio",
+    "team": "PHOENIX SUNS",
+    "position": "PG"
+  },
+  "KELLY OUBRE": {
+    "display": "Kelly Oubre Jr.",
+    "team": "PHOENIX SUNS",
+    "position": "SF"
+  },
+  "ELIE OKOBO": {
+    "display": "Elie Okobo",
+    "team": "PHOENIX SUNS",
+    "position": "PG"
+  },
+  "JEVON CARTER": {
+    "display": "Jevon Carter",
+    "team": "PHOENIX SUNS",
+    "position": "PG"
+  },
+  "CAMERON JOHNSON": {
+    "display": "Cameron Johnson",
+    "team": "PHOENIX SUNS",
+    "position": "PF"
+  },
+  "CHEICK DIALLO": {
+    "display": "Cheick Diallo",
+    "team": "PHOENIX SUNS",
+    "position": "PF"
+  },
+  "ARON BAYNES": {
+    "display": "Aron Baynes",
+    "team": "PHOENIX SUNS",
+    "position": "C"
+  },
+  "FRANK KAMINSKY": {
+    "display": "Frank Kaminsky",
+    "team": "PHOENIX SUNS",
+    "position": "C"
+  },
+  "DEANDRE AYTON": {
+    "display": "Deandre Ayton",
+    "team": "PHOENIX SUNS",
+    "position": "C"
+  },
+  "TY JEROME": {
+    "display": "Ty Jerome",
+    "team": "PHOENIX SUNS",
+    "position": "PG"
+  },
+  "JALEN LECQUE": {
+    "display": "Jalen Lecque",
+    "team": "PHOENIX SUNS",
+    "position": "PG"
+  },
+  "TARIQ OWENS": {
+    "display": "Tariq Owens",
+    "team": "PHOENIX SUNS",
+    "position": "PF"
+  },
+  "BAM ADEBAYO": {
+    "display": "Bam Adebayo",
+    "team": "MIAMI HEAT",
+    "position": "C"
+  },
+  "DUNCAN ROBINSON": {
+    "display": "Duncan Robinson",
+    "team": "MIAMI HEAT",
+    "position": "PF"
+  },
+  "KELLY OLYNYK": {
+    "display": "Kelly Olynyk",
+    "team": "MIAMI HEAT",
+    "position": "PF"
+  },
+  "JIMMY BUTLER": {
+    "display": "Jimmy Butler",
+    "team": "MIAMI HEAT",
+    "position": "SF-SG"
+  },
+  "GORAN DRAGI\u0106": {
+    "display": "Goran Dragi\u0107",
+    "team": "MIAMI HEAT",
+    "position": "PG"
+  },
+  "DERRICK JONES": {
+    "display": "Derrick Jones Jr.",
+    "team": "MIAMI HEAT",
+    "position": "SF"
+  },
+  "MEYERS LEONARD": {
+    "display": "Meyers Leonard",
+    "team": "MIAMI HEAT",
+    "position": "C"
+  },
+  "TYLER HERRO": {
+    "display": "Tyler Herro",
+    "team": "MIAMI HEAT",
+    "position": "SG"
+  },
+  "CHRIS SILVA": {
+    "display": "Chris Silva",
+    "team": "MIAMI HEAT",
+    "position": "PF"
+  },
+  "ANDRE IGUODALA": {
+    "display": "Andre Iguodala",
+    "team": "MIAMI HEAT",
+    "position": "SF"
+  },
+  "JAE CROWDER": {
+    "display": "Jae Crowder",
+    "team": "MIAMI HEAT",
+    "position": "SF"
+  },
+  "SOLOMON HILL": {
+    "display": "Solomon Hill",
+    "team": "MIAMI HEAT",
+    "position": "SF"
+  },
+  "GABE VINCENT": {
+    "display": "Gabe Vincent",
+    "team": "MIAMI HEAT",
+    "position": "PG"
+  },
+  "KZ OKPALA": {
+    "display": "KZ Okpala",
+    "team": "MIAMI HEAT",
+    "position": "SF"
+  },
+  "UDONIS HASLEM": {
+    "display": "Udonis Haslem",
+    "team": "MIAMI HEAT",
+    "position": "C"
+  },
+  "JARRETT CULVER": {
+    "display": "Jarrett Culver",
+    "team": "MINNESOTA TIMBERWOLVES",
+    "position": "SG"
+  },
+  "JOSH OKOGIE": {
+    "display": "Josh Okogie",
+    "team": "MINNESOTA TIMBERWOLVES",
+    "position": "SG"
+  },
+  "KARL-ANTHONY TOWNS": {
+    "display": "Karl-Anthony Towns",
+    "team": "MINNESOTA TIMBERWOLVES",
+    "position": "C"
+  },
+  "KELAN MARTIN": {
+    "display": "Kelan Martin",
+    "team": "MINNESOTA TIMBERWOLVES",
+    "position": "SF"
+  },
+  "NAZ REID": {
+    "display": "Naz Reid",
+    "team": "MINNESOTA TIMBERWOLVES",
+    "position": "C"
+  },
+  "JORDAN MCLAUGHLIN": {
+    "display": "Jordan McLaughlin",
+    "team": "MINNESOTA TIMBERWOLVES",
+    "position": "PG"
+  },
+  "JAKE LAYMAN": {
+    "display": "Jake Layman",
+    "team": "MINNESOTA TIMBERWOLVES",
+    "position": "SF"
+  },
+  "JAYLEN NOWELL": {
+    "display": "Jaylen Nowell",
+    "team": "MINNESOTA TIMBERWOLVES",
+    "position": "SG"
+  },
+  "MALIK BEASLEY": {
+    "display": "Malik Beasley",
+    "team": "MINNESOTA TIMBERWOLVES",
+    "position": "SG"
+  },
+  "JUAN HERNANG\u00d3MEZ": {
+    "display": "Juan Hernang\u00f3mez",
+    "team": "MINNESOTA TIMBERWOLVES",
+    "position": "PF"
+  },
+  "JAMES JOHNSON": {
+    "display": "James Johnson",
+    "team": "MINNESOTA TIMBERWOLVES",
+    "position": "PF"
+  },
+  "DANGELO RUSSELL": {
+    "display": "D'Angelo Russell",
+    "team": "MINNESOTA TIMBERWOLVES",
+    "position": "PG"
+  },
+  "JARRED VANDERBILT": {
+    "display": "Jarred Vanderbilt",
+    "team": "MINNESOTA TIMBERWOLVES",
+    "position": "PF"
+  },
+  "JACOB EVANS": {
+    "display": "Jacob Evans",
+    "team": "MINNESOTA TIMBERWOLVES",
+    "position": "SG"
+  },
+  "EVAN TURNER": {
+    "display": "Evan Turner",
+    "team": "MINNESOTA TIMBERWOLVES",
+    "position": "PG"
+  },
+  "OMARI SPELLMAN": {
+    "display": "Omari Spellman",
+    "team": "MINNESOTA TIMBERWOLVES",
+    "position": "PF"
+  },
+  "BRAD WANAMAKER": {
+    "display": "Brad Wanamaker",
+    "team": "BOSTON CELTICS",
+    "position": "PG"
+  },
+  "GRANT WILLIAMS": {
+    "display": "Grant Williams",
+    "team": "BOSTON CELTICS",
+    "position": "PF"
+  },
+  "SEMI OJELEYE": {
+    "display": "Semi Ojeleye",
+    "team": "BOSTON CELTICS",
+    "position": "PF"
+  },
+  "JAYSON TATUM": {
+    "display": "Jayson Tatum",
+    "team": "BOSTON CELTICS",
+    "position": "SF"
+  },
+  "DANIEL THEIS": {
+    "display": "Daniel Theis",
+    "team": "BOSTON CELTICS",
+    "position": "C"
+  },
+  "MARCUS SMART": {
+    "display": "Marcus Smart",
+    "team": "BOSTON CELTICS",
+    "position": "SG"
+  },
+  "ENES KANTER": {
+    "display": "Enes Kanter",
+    "team": "BOSTON CELTICS",
+    "position": "C"
+  },
+  "KEMBA WALKER": {
+    "display": "Kemba Walker",
+    "team": "BOSTON CELTICS",
+    "position": "PG"
+  },
+  "JAYLEN BROWN": {
+    "display": "Jaylen Brown",
+    "team": "BOSTON CELTICS",
+    "position": "SG"
+  },
+  "GORDON HAYWARD": {
+    "display": "Gordon Hayward",
+    "team": "BOSTON CELTICS",
+    "position": "PF"
+  },
+  "JAVONTE GREEN": {
+    "display": "Javonte Green",
+    "team": "BOSTON CELTICS",
+    "position": "SF"
+  },
+  "CARSEN EDWARDS": {
+    "display": "Carsen Edwards",
+    "team": "BOSTON CELTICS",
+    "position": "SG"
+  },
+  "ROMEO LANGFORD": {
+    "display": "Romeo Langford",
+    "team": "BOSTON CELTICS",
+    "position": "SG"
+  },
+  "ROBERT WILLIAMS": {
+    "display": "Robert Williams",
+    "team": "BOSTON CELTICS",
+    "position": "C"
+  },
+  "VINCENT POIRIER": {
+    "display": "Vincent Poirier",
+    "team": "BOSTON CELTICS",
+    "position": "C"
+  },
+  "TREMONT WATERS": {
+    "display": "Tremont Waters",
+    "team": "BOSTON CELTICS",
+    "position": "PG"
+  },
+  "TACKO FALL": {
+    "display": "Tacko Fall",
+    "team": "BOSTON CELTICS",
+    "position": "C"
+  },
+  "TERENCE DAVIS": {
+    "display": "Terence Davis",
+    "team": "TORONTO RAPTORS",
+    "position": "SG"
+  },
+  "OG ANUNOBY": {
+    "display": "OG Anunoby",
+    "team": "TORONTO RAPTORS",
+    "position": "SF"
+  },
+  "CHRIS BOUCHER": {
+    "display": "Chris Boucher",
+    "team": "TORONTO RAPTORS",
+    "position": "PF"
+  },
+  "PASCAL SIAKAM": {
+    "display": "Pascal Siakam",
+    "team": "TORONTO RAPTORS",
+    "position": "PF"
+  },
+  "KYLE LOWRY": {
+    "display": "Kyle Lowry",
+    "team": "TORONTO RAPTORS",
+    "position": "PG"
+  },
+  "RONDAE HOLLIS-JEFFERSON": {
+    "display": "Rondae Hollis-Jefferson",
+    "team": "TORONTO RAPTORS",
+    "position": "SF"
+  },
+  "SERGE IBAKA": {
+    "display": "Serge Ibaka",
+    "team": "TORONTO RAPTORS",
+    "position": "C"
+  },
+  "FRED VANVLEET": {
+    "display": "Fred VanVleet",
+    "team": "TORONTO RAPTORS",
+    "position": "PG"
+  },
+  "NORMAN POWELL": {
+    "display": "Norman Powell",
+    "team": "TORONTO RAPTORS",
+    "position": "SG"
+  },
+  "PATRICK MCCAW": {
+    "display": "Patrick McCaw",
+    "team": "TORONTO RAPTORS",
+    "position": "SG"
+  },
+  "MARC GASOL": {
+    "display": "Marc Gasol",
+    "team": "TORONTO RAPTORS",
+    "position": "C"
+  },
+  "MATT THOMAS": {
+    "display": "Matt Thomas",
+    "team": "TORONTO RAPTORS",
+    "position": "SG"
+  },
+  "MALCOLM MILLER": {
+    "display": "Malcolm Miller",
+    "team": "TORONTO RAPTORS",
+    "position": "SF"
+  },
+  "STANLEY JOHNSON": {
+    "display": "Stanley Johnson",
+    "team": "TORONTO RAPTORS",
+    "position": "SF"
+  },
+  "OSHAE BRISSETT": {
+    "display": "Oshae Brissett",
+    "team": "TORONTO RAPTORS",
+    "position": "SF"
+  },
+  "DEWAN HERNANDEZ": {
+    "display": "Dewan Hernandez",
+    "team": "TORONTO RAPTORS",
+    "position": "C"
+  },
+  "PAUL WATSON": {
+    "display": "Paul Watson",
+    "team": "TORONTO RAPTORS",
+    "position": "SF-SG"
+  },
+  "KENTAVIOUS CALDWELL-POPE": {
+    "display": "Kentavious Caldwell-Pope",
+    "team": "LOS ANGELES LAKERS",
+    "position": "SG"
+  },
+  "DWIGHT HOWARD": {
+    "display": "Dwight Howard",
+    "team": "LOS ANGELES LAKERS",
+    "position": "C"
+  },
+  "DANNY GREEN": {
+    "display": "Danny Green",
+    "team": "LOS ANGELES LAKERS",
+    "position": "SG"
+  },
+  "JAVALE MCGEE": {
+    "display": "JaVale McGee",
+    "team": "LOS ANGELES LAKERS",
+    "position": "C"
+  },
+  "LEBRON JAMES": {
+    "display": "LeBron James",
+    "team": "LOS ANGELES LAKERS",
+    "position": "SF"
+  },
+  "ALEX CARUSO": {
+    "display": "Alex Caruso",
+    "team": "LOS ANGELES LAKERS",
+    "position": "PG"
+  },
+  "ANTHONY DAVIS": {
+    "display": "Anthony Davis",
+    "team": "LOS ANGELES LAKERS",
+    "position": "C"
+  },
+  "KYLE KUZMA": {
+    "display": "Kyle Kuzma",
+    "team": "LOS ANGELES LAKERS",
+    "position": "PF"
+  },
+  "AVERY BRADLEY": {
+    "display": "Avery Bradley",
+    "team": "LOS ANGELES LAKERS",
+    "position": "SG"
+  },
+  "RAJON RONDO": {
+    "display": "Rajon Rondo",
+    "team": "LOS ANGELES LAKERS",
+    "position": "PG"
+  },
+  "JARED DUDLEY": {
+    "display": "Jared Dudley",
+    "team": "LOS ANGELES LAKERS",
+    "position": "PF"
+  },
+  "QUINN COOK": {
+    "display": "Quinn Cook",
+    "team": "LOS ANGELES LAKERS",
+    "position": "PG"
+  },
+  "MARKIEFF MORRIS": {
+    "display": "Markieff Morris",
+    "team": "LOS ANGELES LAKERS",
+    "position": "PF"
+  },
+  "KOSTAS ANTETOKOUNMPO": {
+    "display": "Kostas Antetokounmpo",
+    "team": "LOS ANGELES LAKERS",
+    "position": "PF"
+  },
+  "TALEN HORTON-TUCKER": {
+    "display": "Talen Horton-Tucker",
+    "team": "LOS ANGELES LAKERS",
+    "position": "SG"
+  },
+  "DION WAITERS": {
+    "display": "Dion Waiters",
+    "team": "LOS ANGELES LAKERS",
+    "position": "SG"
+  },
+  "NIKOLA JOKI\u0106": {
+    "display": "Nikola Joki\u0107",
+    "team": "DENVER NUGGETS",
+    "position": "C"
+  },
+  "MONTE MORRIS": {
+    "display": "Monte Morris",
+    "team": "DENVER NUGGETS",
+    "position": "PG"
+  },
+  "JERAMI GRANT": {
+    "display": "Jerami Grant",
+    "team": "DENVER NUGGETS",
+    "position": "PF"
+  },
+  "WILL BARTON": {
+    "display": "Will Barton",
+    "team": "DENVER NUGGETS",
+    "position": "SF"
+  },
+  "GARY HARRIS": {
+    "display": "Gary Harris",
+    "team": "DENVER NUGGETS",
+    "position": "SG"
+  },
+  "JAMAL MURRAY": {
+    "display": "Jamal Murray",
+    "team": "DENVER NUGGETS",
+    "position": "PG"
+  },
+  "MASON PLUMLEE": {
+    "display": "Mason Plumlee",
+    "team": "DENVER NUGGETS",
+    "position": "C"
+  },
+  "TORREY CRAIG": {
+    "display": "Torrey Craig",
+    "team": "DENVER NUGGETS",
+    "position": "SF"
+  },
+  "PAUL MILLSAP": {
+    "display": "Paul Millsap",
+    "team": "DENVER NUGGETS",
+    "position": "PF"
+  },
+  "PJ DOZIER": {
+    "display": "PJ Dozier",
+    "team": "DENVER NUGGETS",
+    "position": "SG"
+  },
+  "VLATKO \u010cAN\u010cAR": {
+    "display": "Vlatko \u010can\u010dar",
+    "team": "DENVER NUGGETS",
+    "position": "SF"
+  },
+  "NOAH VONLEH": {
+    "display": "Noah Vonleh",
+    "team": "DENVER NUGGETS",
+    "position": "PF"
+  },
+  "KEITA BATES-DIOP": {
+    "display": "Keita Bates-Diop",
+    "team": "DENVER NUGGETS",
+    "position": "SF"
+  },
+  "TROY DANIELS": {
+    "display": "Troy Daniels",
+    "team": "DENVER NUGGETS",
+    "position": "SG"
+  },
+  "PATTY MILLS": {
+    "display": "Patty Mills",
+    "team": "SAN ANTONIO SPURS",
+    "position": "PG"
+  },
+  "BRYN FORBES": {
+    "display": "Bryn Forbes",
+    "team": "SAN ANTONIO SPURS",
+    "position": "SG"
+  },
+  "TREY LYLES": {
+    "display": "Trey Lyles",
+    "team": "SAN ANTONIO SPURS",
+    "position": "PF"
+  },
+  "DEMAR DEROZAN": {
+    "display": "DeMar DeRozan",
+    "team": "SAN ANTONIO SPURS",
+    "position": "SG"
+  },
+  "DERRICK WHITE": {
+    "display": "Derrick White",
+    "team": "SAN ANTONIO SPURS",
+    "position": "PG"
+  },
+  "RUDY GAY": {
+    "display": "Rudy Gay",
+    "team": "SAN ANTONIO SPURS",
+    "position": "PF"
+  },
+  "JAKOB POELTL": {
+    "display": "Jakob Poeltl",
+    "team": "SAN ANTONIO SPURS",
+    "position": "C"
+  },
+  "LAMARCUS ALDRIDGE": {
+    "display": "LaMarcus Aldridge",
+    "team": "SAN ANTONIO SPURS",
+    "position": "C"
+  },
+  "LONNIE WALKER": {
+    "display": "Lonnie Walker",
+    "team": "SAN ANTONIO SPURS",
+    "position": "SG"
+  },
+  "MARCO BELINELLI": {
+    "display": "Marco Belinelli",
+    "team": "SAN ANTONIO SPURS",
+    "position": "SG"
+  },
+  "CHIMEZIE METU": {
+    "display": "Chimezie Metu",
+    "team": "SAN ANTONIO SPURS",
+    "position": "PF"
+  },
+  "DREW EUBANKS": {
+    "display": "Drew Eubanks",
+    "team": "SAN ANTONIO SPURS",
+    "position": "PF"
+  },
+  "KELDON JOHNSON": {
+    "display": "Keldon Johnson",
+    "team": "SAN ANTONIO SPURS",
+    "position": "SF"
+  },
+  "QUINNDARY WEATHERSPOON": {
+    "display": "Quinndary Weatherspoon",
+    "team": "SAN ANTONIO SPURS",
+    "position": "SG"
+  },
+  "LUKA \u0160AMANI\u0106": {
+    "display": "Luka \u0160amani\u0107",
+    "team": "SAN ANTONIO SPURS",
+    "position": "PF"
+  },
+  "TOBIAS HARRIS": {
+    "display": "Tobias Harris",
+    "team": "PHILADELPHIA 76ERS",
+    "position": "PF"
+  },
+  "FURKAN KORKMAZ": {
+    "display": "Furkan Korkmaz",
+    "team": "PHILADELPHIA 76ERS",
+    "position": "SG"
+  },
+  "MIKE SCOTT": {
+    "display": "Mike Scott",
+    "team": "PHILADELPHIA 76ERS",
+    "position": "PF"
+  },
+  "AL HORFORD": {
+    "display": "Al Horford",
+    "team": "PHILADELPHIA 76ERS",
+    "position": "C"
+  },
+  "MATISSE THYBULLE": {
+    "display": "Matisse Thybulle",
+    "team": "PHILADELPHIA 76ERS",
+    "position": "SG"
+  },
+  "BEN SIMMONS": {
+    "display": "Ben Simmons",
+    "team": "PHILADELPHIA 76ERS",
+    "position": "PG"
+  },
+  "RAUL NETO": {
+    "display": "Raul Neto",
+    "team": "PHILADELPHIA 76ERS",
+    "position": "PG"
+  },
+  "JOSH RICHARDSON": {
+    "display": "Josh Richardson",
+    "team": "PHILADELPHIA 76ERS",
+    "position": "SG"
+  },
+  "JOEL EMBIID": {
+    "display": "Joel Embiid",
+    "team": "PHILADELPHIA 76ERS",
+    "position": "C"
+  },
+  "SHAKE MILTON": {
+    "display": "Shake Milton",
+    "team": "PHILADELPHIA 76ERS",
+    "position": "SG"
+  },
+  "KYLE OQUINN": {
+    "display": "Kyle O'Quinn",
+    "team": "PHILADELPHIA 76ERS",
+    "position": "C"
+  },
+  "NORVEL PELLE": {
+    "display": "Norvel Pelle",
+    "team": "PHILADELPHIA 76ERS",
+    "position": "C"
+  },
+  "GLENN ROBINSON": {
+    "display": "Glenn Robinson III",
+    "team": "PHILADELPHIA 76ERS",
+    "position": "SF"
+  },
+  "ALEC BURKS": {
+    "display": "Alec Burks",
+    "team": "PHILADELPHIA 76ERS",
+    "position": "SG"
+  },
+  "ZHAIRE SMITH": {
+    "display": "Zhaire Smith",
+    "team": "PHILADELPHIA 76ERS",
+    "position": "SG"
+  },
+  "MARIAL SHAYOK": {
+    "display": "Marial Shayok",
+    "team": "PHILADELPHIA 76ERS",
+    "position": "SG"
+  },
+  "JUSTIN HOLIDAY": {
+    "display": "Justin Holiday",
+    "team": "INDIANA PACERS",
+    "position": "SG"
+  },
+  "TJ MCCONNELL": {
+    "display": "T.J. McConnell",
+    "team": "INDIANA PACERS",
+    "position": "PG"
+  },
+  "DOMANTAS SABONIS": {
+    "display": "Domantas Sabonis",
+    "team": "INDIANA PACERS",
+    "position": "C"
+  },
+  "DOUG MCDERMOTT": {
+    "display": "Doug McDermott",
+    "team": "INDIANA PACERS",
+    "position": "SF"
+  },
+  "TJ WARREN": {
+    "display": "T.J. Warren",
+    "team": "INDIANA PACERS",
+    "position": "SF"
+  },
+  "AARON HOLIDAY": {
+    "display": "Aaron Holiday",
+    "team": "INDIANA PACERS",
+    "position": "PG"
+  },
+  "MYLES TURNER": {
+    "display": "Myles Turner",
+    "team": "INDIANA PACERS",
+    "position": "C"
+  },
+  "GOGA BITADZE": {
+    "display": "Goga Bitadze",
+    "team": "INDIANA PACERS",
+    "position": "C"
+  },
+  "MALCOLM BROGDON": {
+    "display": "Malcolm Brogdon",
+    "team": "INDIANA PACERS",
+    "position": "SG"
+  },
+  "JEREMY LAMB": {
+    "display": "Jeremy Lamb",
+    "team": "INDIANA PACERS",
+    "position": "SG"
+  },
+  "JAKARR SAMPSON": {
+    "display": "JaKarr Sampson",
+    "team": "INDIANA PACERS",
+    "position": "SF"
+  },
+  "EDMOND SUMNER": {
+    "display": "Edmond Sumner",
+    "team": "INDIANA PACERS",
+    "position": "PG"
+  },
+  "TJ LEAF": {
+    "display": "T.J. Leaf",
+    "team": "INDIANA PACERS",
+    "position": "PF"
+  },
+  "VICTOR OLADIPO": {
+    "display": "Victor Oladipo",
+    "team": "INDIANA PACERS",
+    "position": "SG"
+  },
+  "ALIZE JOHNSON": {
+    "display": "Alize Johnson",
+    "team": "INDIANA PACERS",
+    "position": "PF"
+  },
+  "BRIAN BOWEN": {
+    "display": "Brian Bowen",
+    "team": "INDIANA PACERS",
+    "position": "SG"
+  },
+  "NAZ MITROU-LONG": {
+    "display": "Naz Mitrou-Long",
+    "team": "INDIANA PACERS",
+    "position": "SG"
+  },
+  "JOE INGLES": {
+    "display": "Joe Ingles",
+    "team": "UTAH JAZZ",
+    "position": "PF"
+  },
+  "ROYCE ONEALE": {
+    "display": "Royce O'Neale",
+    "team": "UTAH JAZZ",
+    "position": "SF"
+  },
+  "DONOVAN MITCHELL": {
+    "display": "Donovan Mitchell",
+    "team": "UTAH JAZZ",
+    "position": "SG"
+  },
+  "BOJAN BOGDANOVI\u0106": {
+    "display": "Bojan Bogdanovi\u0107",
+    "team": "UTAH JAZZ",
+    "position": "SF"
+  },
+  "RUDY GOBERT": {
+    "display": "Rudy Gobert",
+    "team": "UTAH JAZZ",
+    "position": "C"
+  },
+  "GEORGES NIANG": {
+    "display": "Georges Niang",
+    "team": "UTAH JAZZ",
+    "position": "PF"
+  },
+  "TONY BRADLEY": {
+    "display": "Tony Bradley",
+    "team": "UTAH JAZZ",
+    "position": "C"
+  },
+  "EMMANUEL MUDIAY": {
+    "display": "Emmanuel Mudiay",
+    "team": "UTAH JAZZ",
+    "position": "PG"
+  },
+  "MIKE CONLEY": {
+    "display": "Mike Conley",
+    "team": "UTAH JAZZ",
+    "position": "PG"
+  },
+  "JORDAN CLARKSON": {
+    "display": "Jordan Clarkson",
+    "team": "UTAH JAZZ",
+    "position": "SG"
+  },
+  "ED DAVIS": {
+    "display": "Ed Davis",
+    "team": "UTAH JAZZ",
+    "position": "C"
+  },
+  "JUWAN MORGAN": {
+    "display": "Juwan Morgan",
+    "team": "UTAH JAZZ",
+    "position": "PF"
+  },
+  "RAYJON TUCKER": {
+    "display": "Rayjon Tucker",
+    "team": "UTAH JAZZ",
+    "position": "SG"
+  },
+  "NIGEL WILLIAMS-GOSS": {
+    "display": "Nigel Williams-Goss",
+    "team": "UTAH JAZZ",
+    "position": "PG"
+  },
+  "MIYE ONI": {
+    "display": "Miye Oni",
+    "team": "UTAH JAZZ",
+    "position": "SG"
+  },
+  "JARRELL BRANTLEY": {
+    "display": "Jarrell Brantley",
+    "team": "UTAH JAZZ",
+    "position": "PF"
+  },
+  "JUSTIN WRIGHT-FOREMAN": {
+    "display": "Justin Wright-Foreman",
+    "team": "UTAH JAZZ",
+    "position": "PG"
+  },
+  "SHAI GILGEOUS-ALEXANDER": {
+    "display": "Shai Gilgeous-Alexander",
+    "team": "OKLAHOMA CITY THUNDER",
+    "position": "PG"
+  },
+  "DENNIS SCHR\u00d6DER": {
+    "display": "Dennis Schr\u00f6der",
+    "team": "OKLAHOMA CITY THUNDER",
+    "position": "PG"
+  },
+  "CHRIS PAUL": {
+    "display": "Chris Paul",
+    "team": "OKLAHOMA CITY THUNDER",
+    "position": "PG"
+  },
+  "STEVEN ADAMS": {
+    "display": "Steven Adams",
+    "team": "OKLAHOMA CITY THUNDER",
+    "position": "C"
+  },
+  "DANILO GALLINARI": {
+    "display": "Danilo Gallinari",
+    "team": "OKLAHOMA CITY THUNDER",
+    "position": "SF"
+  },
+  "NERLENS NOEL": {
+    "display": "Nerlens Noel",
+    "team": "OKLAHOMA CITY THUNDER",
+    "position": "C"
+  },
+  "DARIUS BAZLEY": {
+    "display": "Darius Bazley",
+    "team": "OKLAHOMA CITY THUNDER",
+    "position": "PF"
+  },
+  "TERRANCE FERGUSON": {
+    "display": "Terrance Ferguson",
+    "team": "OKLAHOMA CITY THUNDER",
+    "position": "SG"
+  },
+  "ABDEL NADER": {
+    "display": "Abdel Nader",
+    "team": "OKLAHOMA CITY THUNDER",
+    "position": "SF"
+  },
+  "MIKE MUSCALA": {
+    "display": "Mike Muscala",
+    "team": "OKLAHOMA CITY THUNDER",
+    "position": "PF"
+  },
+  "HAMIDOU DIALLO": {
+    "display": "Hamidou Diallo",
+    "team": "OKLAHOMA CITY THUNDER",
+    "position": "SG"
+  },
+  "DEONTE BURTON": {
+    "display": "Deonte Burton",
+    "team": "OKLAHOMA CITY THUNDER",
+    "position": "SG"
+  },
+  "LUGUENTZ DORT": {
+    "display": "Luguentz Dort",
+    "team": "OKLAHOMA CITY THUNDER",
+    "position": "SG"
+  },
+  "KEVIN HERVEY": {
+    "display": "Kevin Hervey",
+    "team": "OKLAHOMA CITY THUNDER",
+    "position": "PF"
+  },
+  "ISAIAH ROBY": {
+    "display": "Isaiah Roby",
+    "team": "OKLAHOMA CITY THUNDER",
+    "position": "SF"
+  },
+  "SPENCER DINWIDDIE": {
+    "display": "Spencer Dinwiddie",
+    "team": "BROOKLYN NETS",
+    "position": "PG"
+  },
+  "TAUREAN PRINCE": {
+    "display": "Taurean Prince",
+    "team": "BROOKLYN NETS",
+    "position": "SF"
+  },
+  "JARRETT ALLEN": {
+    "display": "Jarrett Allen",
+    "team": "BROOKLYN NETS",
+    "position": "C"
+  },
+  "JOE HARRIS": {
+    "display": "Joe Harris",
+    "team": "BROOKLYN NETS",
+    "position": "SG"
+  },
+  "DEANDRE JORDAN": {
+    "display": "DeAndre Jordan",
+    "team": "BROOKLYN NETS",
+    "position": "C"
+  },
+  "GARRETT TEMPLE": {
+    "display": "Garrett Temple",
+    "team": "BROOKLYN NETS",
+    "position": "SG"
+  },
+  "CARIS LEVERT": {
+    "display": "Caris LeVert",
+    "team": "BROOKLYN NETS",
+    "position": "SF"
+  },
+  "TIMOTH\u00c9 LUWAWU-CABARROT": {
+    "display": "Timoth\u00e9 Luwawu-Cabarrot",
+    "team": "BROOKLYN NETS",
+    "position": "SF"
+  },
+  "RODIONS KURUCS": {
+    "display": "Rodions Kurucs",
+    "team": "BROOKLYN NETS",
+    "position": "SF"
+  },
+  "WILSON CHANDLER": {
+    "display": "Wilson Chandler",
+    "team": "BROOKLYN NETS",
+    "position": "PF-SF"
+  },
+  "D\u017dANAN MUSA": {
+    "display": "D\u017eanan Musa",
+    "team": "BROOKLYN NETS",
+    "position": "SG"
+  },
+  "THEO PINSON": {
+    "display": "Theo Pinson",
+    "team": "BROOKLYN NETS",
+    "position": "SG"
+  },
+  "KYRIE IRVING": {
+    "display": "Kyrie Irving",
+    "team": "BROOKLYN NETS",
+    "position": "PG"
+  },
+  "NICOLAS CLAXTON": {
+    "display": "Nicolas Claxton",
+    "team": "BROOKLYN NETS",
+    "position": "PF"
+  },
+  "CHRIS CHIOZZA": {
+    "display": "Chris Chiozza",
+    "team": "BROOKLYN NETS",
+    "position": "PG"
+  },
+  "JEREMIAH MARTIN": {
+    "display": "Jeremiah Martin",
+    "team": "BROOKLYN NETS",
+    "position": "PG"
+  },
+  "KEVIN DURANT": {
+    "display": "Kevin Durant",
+    "team": "BROOKLYN NETS",
+    "position": "SF"
+  },
+  "LANGSTON GALLOWAY": {
+    "display": "Langston Galloway",
+    "team": "DETROIT PISTONS",
+    "position": "SG"
+  },
+  "CHRISTIAN WOOD": {
+    "display": "Christian Wood",
+    "team": "DETROIT PISTONS",
+    "position": "PF"
+  },
+  "THON MAKER": {
+    "display": "Thon Maker",
+    "team": "DETROIT PISTONS",
+    "position": "C-PF"
+  },
+  "TONY SNELL": {
+    "display": "Tony Snell",
+    "team": "DETROIT PISTONS",
+    "position": "SF"
+  },
+  "BRUCE BROWN": {
+    "display": "Bruce Brown",
+    "team": "DETROIT PISTONS",
+    "position": "SG"
+  },
+  "SVIATOSLAV MYKHAILIUK": {
+    "display": "Sviatoslav Mykhailiuk",
+    "team": "DETROIT PISTONS",
+    "position": "SF"
+  },
+  "DERRICK ROSE": {
+    "display": "Derrick Rose",
+    "team": "DETROIT PISTONS",
+    "position": "PG"
+  },
+  "SEKOU DOUMBOUYA": {
+    "display": "Sekou Doumbouya",
+    "team": "DETROIT PISTONS",
+    "position": "SF"
+  },
+  "LUKE KENNARD": {
+    "display": "Luke Kennard",
+    "team": "DETROIT PISTONS",
+    "position": "SG"
+  },
+  "BLAKE GRIFFIN": {
+    "display": "Blake Griffin",
+    "team": "DETROIT PISTONS",
+    "position": "PF"
+  },
+  "JOHN HENSON": {
+    "display": "John Henson",
+    "team": "DETROIT PISTONS",
+    "position": "C"
+  },
+  "LOUIS KING": {
+    "display": "Louis King",
+    "team": "DETROIT PISTONS",
+    "position": "SF"
+  },
+  "JORDAN BONE": {
+    "display": "Jordan Bone",
+    "team": "DETROIT PISTONS",
+    "position": "PG"
+  },
+  "BRANDON KNIGHT": {
+    "display": "Brandon Knight",
+    "team": "DETROIT PISTONS",
+    "position": "PG"
+  },
+  "KHYRI THOMAS": {
+    "display": "Khyri Thomas",
+    "team": "DETROIT PISTONS",
+    "position": "SG"
+  },
+  "JORDAN MCRAE": {
+    "display": "Jordan McRae",
+    "team": "DETROIT PISTONS",
+    "position": "SG"
+  },
+  "BOBBY PORTIS": {
+    "display": "Bobby Portis",
+    "team": "NEW YORK KNICKS",
+    "position": "PF"
+  },
+  "KEVIN KNOX": {
+    "display": "Kevin Knox",
+    "team": "NEW YORK KNICKS",
+    "position": "PF"
+  },
+  "JULIUS RANDLE": {
+    "display": "Julius Randle",
+    "team": "NEW YORK KNICKS",
+    "position": "PF"
+  },
+  "TAJ GIBSON": {
+    "display": "Taj Gibson",
+    "team": "NEW YORK KNICKS",
+    "position": "PF"
+  },
+  "MITCHELL ROBINSON": {
+    "display": "Mitchell Robinson",
+    "team": "NEW YORK KNICKS",
+    "position": "C"
+  },
+  "FRANK NTILIKINA": {
+    "display": "Frank Ntilikina",
+    "team": "NEW YORK KNICKS",
+    "position": "PG"
+  },
+  "RJ BARRETT": {
+    "display": "RJ Barrett",
+    "team": "NEW YORK KNICKS",
+    "position": "SG"
+  },
+  "DAMYEAN DOTSON": {
+    "display": "Damyean Dotson",
+    "team": "NEW YORK KNICKS",
+    "position": "SG"
+  },
+  "ELFRID PAYTON": {
+    "display": "Elfrid Payton",
+    "team": "NEW YORK KNICKS",
+    "position": "PG"
+  },
+  "WAYNE ELLINGTON": {
+    "display": "Wayne Ellington",
+    "team": "NEW YORK KNICKS",
+    "position": "SG"
+  },
+  "DENNIS SMITH": {
+    "display": "Dennis Smith Jr.",
+    "team": "NEW YORK KNICKS",
+    "position": "PG"
+  },
+  "REGGIE BULLOCK": {
+    "display": "Reggie Bullock",
+    "team": "NEW YORK KNICKS",
+    "position": "SG"
+  },
+  "ALLONZO TRIER": {
+    "display": "Allonzo Trier",
+    "team": "NEW YORK KNICKS",
+    "position": "SG"
+  },
+  "MAURICE HARKLESS": {
+    "display": "Maurice Harkless",
+    "team": "NEW YORK KNICKS",
+    "position": "SF"
+  },
+  "KADEEM ALLEN": {
+    "display": "Kadeem Allen",
+    "team": "NEW YORK KNICKS",
+    "position": "SG"
+  },
+  "IGNAS BRAZDEIKIS": {
+    "display": "Ignas Brazdeikis",
+    "team": "NEW YORK KNICKS",
+    "position": "SF"
+  },
+  "BUDDY HIELD": {
+    "display": "Buddy Hield",
+    "team": "SACRAMENTO KINGS",
+    "position": "SG"
+  },
+  "HARRISON BARNES": {
+    "display": "Harrison Barnes",
+    "team": "SACRAMENTO KINGS",
+    "position": "PF-SF"
+  },
+  "NEMANJA BJELICA": {
+    "display": "Nemanja Bjelica",
+    "team": "SACRAMENTO KINGS",
+    "position": "PF"
+  },
+  "CORY JOSEPH": {
+    "display": "Cory Joseph",
+    "team": "SACRAMENTO KINGS",
+    "position": "PG"
+  },
+  "BOGDAN BOGDANOVI\u0106": {
+    "display": "Bogdan Bogdanovi\u0107",
+    "team": "SACRAMENTO KINGS",
+    "position": "SG"
+  },
+  "DEAARON FOX": {
+    "display": "De'Aaron Fox",
+    "team": "SACRAMENTO KINGS",
+    "position": "PG"
+  },
+  "YOGI FERRELL": {
+    "display": "Yogi Ferrell",
+    "team": "SACRAMENTO KINGS",
+    "position": "PG"
+  },
+  "RICHAUN HOLMES": {
+    "display": "Richaun Holmes",
+    "team": "SACRAMENTO KINGS",
+    "position": "C"
+  },
+  "HARRY GILES": {
+    "display": "Harry Giles",
+    "team": "SACRAMENTO KINGS",
+    "position": "PF"
+  },
+  "JUSTIN JAMES": {
+    "display": "Justin James",
+    "team": "SACRAMENTO KINGS",
+    "position": "SG"
+  },
+  "KENT BAZEMORE": {
+    "display": "Kent Bazemore",
+    "team": "SACRAMENTO KINGS",
+    "position": "SG"
+  },
+  "MARVIN BAGLEY": {
+    "display": "Marvin Bagley III",
+    "team": "SACRAMENTO KINGS",
+    "position": "PF"
+  },
+  "ALEX LEN": {
+    "display": "Alex Len",
+    "team": "SACRAMENTO KINGS",
+    "position": "C"
+  },
+  "DAQUAN JEFFRIES": {
+    "display": "DaQuan Jeffries",
+    "team": "SACRAMENTO KINGS",
+    "position": "SG"
+  },
+  "KYLE GUY": {
+    "display": "Kyle Guy",
+    "team": "SACRAMENTO KINGS",
+    "position": "SG"
+  },
+  "JABARI PARKER": {
+    "display": "Jabari Parker",
+    "team": "SACRAMENTO KINGS",
+    "position": "PF"
+  },
+  "COLLIN SEXTON": {
+    "display": "Collin Sexton",
+    "team": "CLEVELAND CAVALIERS",
+    "position": "PG"
+  },
+  "CEDI OSMAN": {
+    "display": "Cedi Osman",
+    "team": "CLEVELAND CAVALIERS",
+    "position": "SF"
+  },
+  "DARIUS GARLAND": {
+    "display": "Darius Garland",
+    "team": "CLEVELAND CAVALIERS",
+    "position": "PG"
+  },
+  "TRISTAN THOMPSON": {
+    "display": "Tristan Thompson",
+    "team": "CLEVELAND CAVALIERS",
+    "position": "C"
+  },
+  "MATTHEW DELLAVEDOVA": {
+    "display": "Matthew Dellavedova",
+    "team": "CLEVELAND CAVALIERS",
+    "position": "PG"
+  },
+  "KEVIN LOVE": {
+    "display": "Kevin Love",
+    "team": "CLEVELAND CAVALIERS",
+    "position": "PF"
+  },
+  "LARRY NANCE": {
+    "display": "Larry Nance Jr.",
+    "team": "CLEVELAND CAVALIERS",
+    "position": "C"
+  },
+  "KEVIN PORTER": {
+    "display": "Kevin Porter Jr.",
+    "team": "CLEVELAND CAVALIERS",
+    "position": "SF"
+  },
+  "ALFONZO MCKINNIE": {
+    "display": "Alfonzo McKinnie",
+    "team": "CLEVELAND CAVALIERS",
+    "position": "SF"
+  },
+  "DANTE EXUM": {
+    "display": "Dante Exum",
+    "team": "CLEVELAND CAVALIERS",
+    "position": "PG"
+  },
+  "ANTE \u017dI\u017dI\u0106": {
+    "display": "Ante \u017di\u017ei\u0107",
+    "team": "CLEVELAND CAVALIERS",
+    "position": "C"
+  },
+  "DEAN WADE": {
+    "display": "Dean Wade",
+    "team": "CLEVELAND CAVALIERS",
+    "position": "PF"
+  },
+  "ANDRE DRUMMOND": {
+    "display": "Andre Drummond",
+    "team": "CLEVELAND CAVALIERS",
+    "position": "C"
+  },
+  "MATT MOONEY": {
+    "display": "Matt Mooney",
+    "team": "CLEVELAND CAVALIERS",
+    "position": "SG"
+  },
+  "COBY WHITE": {
+    "display": "Coby White",
+    "team": "CHICAGO BULLS",
+    "position": "SG"
+  },
+  "TOM\u00c1\u0160 SATORANSK\u00dd": {
+    "display": "Tom\u00e1\u0161 Satoransk\u00fd",
+    "team": "CHICAGO BULLS",
+    "position": "PG"
+  },
+  "THADDEUS YOUNG": {
+    "display": "Thaddeus Young",
+    "team": "CHICAGO BULLS",
+    "position": "PF"
+  },
+  "ZACH LAVINE": {
+    "display": "Zach LaVine",
+    "team": "CHICAGO BULLS",
+    "position": "SG"
+  },
+  "RYAN ARCIDIACONO": {
+    "display": "Ryan Arcidiacono",
+    "team": "CHICAGO BULLS",
+    "position": "PG"
+  },
+  "KRIS DUNN": {
+    "display": "Kris Dunn",
+    "team": "CHICAGO BULLS",
+    "position": "PG"
+  },
+  "LAURI MARKKANEN": {
+    "display": "Lauri Markkanen",
+    "team": "CHICAGO BULLS",
+    "position": "PF"
+  },
+  "WENDELL CARTER": {
+    "display": "Wendell Carter Jr.",
+    "team": "CHICAGO BULLS",
+    "position": "C"
+  },
+  "DANIEL GAFFORD": {
+    "display": "Daniel Gafford",
+    "team": "CHICAGO BULLS",
+    "position": "C"
+  },
+  "SHAQUILLE HARRISON": {
+    "display": "Shaquille Harrison",
+    "team": "CHICAGO BULLS",
+    "position": "SG"
+  },
+  "LUKE KORNET": {
+    "display": "Luke Kornet",
+    "team": "CHICAGO BULLS",
+    "position": "PF"
+  },
+  "CHANDLER HUTCHISON": {
+    "display": "Chandler Hutchison",
+    "team": "CHICAGO BULLS",
+    "position": "SF"
+  },
+  "CRISTIANO FEL\u00cdCIO": {
+    "display": "Cristiano Fel\u00edcio",
+    "team": "CHICAGO BULLS",
+    "position": "C"
+  },
+  "OTTO PORTER": {
+    "display": "Otto Porter",
+    "team": "CHICAGO BULLS",
+    "position": "SF"
+  },
+  "ADAM MOKOKA": {
+    "display": "Adam Mokoka",
+    "team": "CHICAGO BULLS",
+    "position": "SG"
+  },
+  "MAX STRUS": {
+    "display": "Max Strus",
+    "team": "CHICAGO BULLS",
+    "position": "SG"
+  },
+  "MARKELLE FULTZ": {
+    "display": "Markelle Fultz",
+    "team": "ORLANDO MAGIC",
+    "position": "SG"
+  },
+  "TERRENCE ROSS": {
+    "display": "Terrence Ross",
+    "team": "ORLANDO MAGIC",
+    "position": "SG"
+  },
+  "EVAN FOURNIER": {
+    "display": "Evan Fournier",
+    "team": "ORLANDO MAGIC",
+    "position": "SG"
+  },
+  "MO BAMBA": {
+    "display": "Mo Bamba",
+    "team": "ORLANDO MAGIC",
+    "position": "C"
+  },
+  "AARON GORDON": {
+    "display": "Aaron Gordon",
+    "team": "ORLANDO MAGIC",
+    "position": "PF"
+  },
+  "NIKOLA VU\u010cEVI\u0106": {
+    "display": "Nikola Vu\u010devi\u0107",
+    "team": "ORLANDO MAGIC",
+    "position": "C"
+  },
+  "DJ AUGUSTIN": {
+    "display": "D.J. Augustin",
+    "team": "ORLANDO MAGIC",
+    "position": "PG"
+  },
+  "WESLEY IWUNDU": {
+    "display": "Wesley Iwundu",
+    "team": "ORLANDO MAGIC",
+    "position": "SF"
+  },
+  "MICHAEL CARTER-WILLIAMS": {
+    "display": "Michael Carter-Williams",
+    "team": "ORLANDO MAGIC",
+    "position": "PG"
+  },
+  "KHEM BIRCH": {
+    "display": "Khem Birch",
+    "team": "ORLANDO MAGIC",
+    "position": "C"
+  },
+  "JONATHAN ISAAC": {
+    "display": "Jonathan Isaac",
+    "team": "ORLANDO MAGIC",
+    "position": "PF"
+  },
+  "AL-FAROUQ AMINU": {
+    "display": "Al-Farouq Aminu",
+    "team": "ORLANDO MAGIC",
+    "position": "PF"
+  },
+  "GARY CLARK": {
+    "display": "Gary Clark",
+    "team": "ORLANDO MAGIC",
+    "position": "PF"
+  },
+  "MELVIN FRAZIER": {
+    "display": "Melvin Frazier",
+    "team": "ORLANDO MAGIC",
+    "position": "SG"
+  },
+  "JAMES ENNIS": {
+    "display": "James Ennis",
+    "team": "ORLANDO MAGIC",
+    "position": "SF"
+  },
+  "BJ JOHNSON": {
+    "display": "B.J. Johnson",
+    "team": "ORLANDO MAGIC",
+    "position": "SF"
+  },
+  "VIC LAW": {
+    "display": "Vic Law",
+    "team": "ORLANDO MAGIC",
+    "position": "SF"
+  },
+  "ERIC PASCHALL": {
+    "display": "Eric Paschall",
+    "team": "GOLDEN STATE WARRIORS",
+    "position": "PF"
+  },
+  "MARQUESE CHRISS": {
+    "display": "Marquese Chriss",
+    "team": "GOLDEN STATE WARRIORS",
+    "position": "PF"
+  },
+  "JORDAN POOLE": {
+    "display": "Jordan Poole",
+    "team": "GOLDEN STATE WARRIORS",
+    "position": "SG"
+  },
+  "DAMION LEE": {
+    "display": "Damion Lee",
+    "team": "GOLDEN STATE WARRIORS",
+    "position": "SG"
+  },
+  "KY BOWMAN": {
+    "display": "Ky Bowman",
+    "team": "GOLDEN STATE WARRIORS",
+    "position": "PG"
+  },
+  "DRAYMOND GREEN": {
+    "display": "Draymond Green",
+    "team": "GOLDEN STATE WARRIORS",
+    "position": "PF"
+  },
+  "KEVON LOONEY": {
+    "display": "Kevon Looney",
+    "team": "GOLDEN STATE WARRIORS",
+    "position": "C"
+  },
+  "ALEN SMAILAGI\u0106": {
+    "display": "Alen Smailagi\u0107",
+    "team": "GOLDEN STATE WARRIORS",
+    "position": "PF"
+  },
+  "JUAN TOSCANO-ANDERSON": {
+    "display": "Juan Toscano-Anderson",
+    "team": "GOLDEN STATE WARRIORS",
+    "position": "SF"
+  },
+  "ANDREW WIGGINS": {
+    "display": "Andrew Wiggins",
+    "team": "GOLDEN STATE WARRIORS",
+    "position": "SF"
+  },
+  "DRAGAN BENDER": {
+    "display": "Dragan Bender",
+    "team": "GOLDEN STATE WARRIORS",
+    "position": "PF"
+  },
+  "MYCHAL MULDER": {
+    "display": "Mychal Mulder",
+    "team": "GOLDEN STATE WARRIORS",
+    "position": "SG"
+  },
+  "STEPHEN CURRY": {
+    "display": "Stephen Curry",
+    "team": "GOLDEN STATE WARRIORS",
+    "position": "PG"
+  },
+  "CHASSON RANDLE": {
+    "display": "Chasson Randle",
+    "team": "GOLDEN STATE WARRIORS",
+    "position": "PG"
+  },
+  "KLAY THOMPSON": {
+    "display": "Klay Thompson",
+    "team": "GOLDEN STATE WARRIORS",
+    "position": "SG"
+  },
+  "MILES BRIDGES": {
+    "display": "Miles Bridges",
+    "team": "CHARLOTTE HORNETS",
+    "position": "SF"
+  },
+  "DEVONTE GRAHAM": {
+    "display": "Devonte' Graham",
+    "team": "CHARLOTTE HORNETS",
+    "position": "PG"
+  },
+  "TERRY ROZIER": {
+    "display": "Terry Rozier",
+    "team": "CHARLOTTE HORNETS",
+    "position": "PG"
+  },
+  "PJ WASHINGTON": {
+    "display": "P.J. Washington",
+    "team": "CHARLOTTE HORNETS",
+    "position": "PF"
+  },
+  "CODY ZELLER": {
+    "display": "Cody Zeller",
+    "team": "CHARLOTTE HORNETS",
+    "position": "C"
+  },
+  "MALIK MONK": {
+    "display": "Malik Monk",
+    "team": "CHARLOTTE HORNETS",
+    "position": "SG"
+  },
+  "BISMACK BIYOMBO": {
+    "display": "Bismack Biyombo",
+    "team": "CHARLOTTE HORNETS",
+    "position": "C"
+  },
+  "CODY MARTIN": {
+    "display": "Cody Martin",
+    "team": "CHARLOTTE HORNETS",
+    "position": "SF"
+  },
+  "DWAYNE BACON": {
+    "display": "Dwayne Bacon",
+    "team": "CHARLOTTE HORNETS",
+    "position": "SG"
+  },
+  "WILLY HERNANG\u00d3MEZ": {
+    "display": "Willy Hernang\u00f3mez",
+    "team": "CHARLOTTE HORNETS",
+    "position": "C"
+  },
+  "NICOLAS BATUM": {
+    "display": "Nicolas Batum",
+    "team": "CHARLOTTE HORNETS",
+    "position": "SF"
+  },
+  "CALEB MARTIN": {
+    "display": "Caleb Martin",
+    "team": "CHARLOTTE HORNETS",
+    "position": "SF"
+  },
+  "JALEN MCDANIELS": {
+    "display": "Jalen McDaniels",
+    "team": "CHARLOTTE HORNETS",
+    "position": "PF"
+  },
+  "JOE CHEALEY": {
+    "display": "Joe Chealey",
+    "team": "CHARLOTTE HORNETS",
+    "position": "PG"
+  },
+  "KOBI SIMMONS": {
+    "display": "Kobi Simmons",
+    "team": "CHARLOTTE HORNETS",
+    "position": "PG"
+  },
+  "RAY SPALDING": {
+    "display": "Ray Spalding",
+    "team": "CHARLOTTE HORNETS",
+    "position": "PF"
+  }
 }

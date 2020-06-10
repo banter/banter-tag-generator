@@ -1,4 +1,6 @@
 import json
+import os
+from os.path import dirname, realpath
 
 from sportsreference.mlb.teams import Teams as MLBTeams
 from sportsreference.nba.teams import Teams as NBATeams
@@ -7,11 +9,9 @@ from sportsreference.nhl.teams import Teams as NHLTeams
 
 from src.main.utils.nlp_conversion_util import NLPConversionUtil
 
-import os
-from os.path import dirname, realpath
-
 BASEDIR = os.path.abspath(os.path.dirname(os.path.dirname(dirname(realpath(__file__)))))
 SAVE_LOCATION = '%s/resources/reference_dict' % BASEDIR
+
 
 # TODO Handle Soccer Teams/Players
 
@@ -48,11 +48,13 @@ def create_college_dict(teams):
         team_dict[team.abbreviation] = team.name
     return team_dict
 
+
 def save_dict(dictionary, file_name):
     tmp_json = json.dumps(dictionary)
     f = open(f"{SAVE_LOCATION}/{file_name}.json", "w")
     f.write(tmp_json)
     f.close()
+
 
 def create_team_dict(is_team_upper_case: False):
     if is_team_upper_case:

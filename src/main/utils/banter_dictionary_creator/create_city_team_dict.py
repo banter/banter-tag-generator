@@ -1,9 +1,9 @@
 import json
+import os
+from os.path import dirname, realpath
 
 from src.main.utils.nlp_conversion_util import NLPConversionUtil
 from src.main.utils.nlp_resource_util import NLPResourceUtil
-import os
-from os.path import dirname, realpath
 
 BASEDIR = os.path.abspath(os.path.dirname(os.path.dirname(dirname(realpath(__file__)))))
 SAVE_LOCATION = '%s/resources/reference_dict' % BASEDIR
@@ -157,6 +157,7 @@ def create_new_city_team_dict():
         # manually adding the knicks
         final['NBA']['New York'] = 'New York Knicks'
         return final
+
 
 def save_dict(dictionary, file_name):
     tmp_json = json.dumps(dictionary)
