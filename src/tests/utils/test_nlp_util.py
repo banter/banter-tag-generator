@@ -60,7 +60,7 @@ class TestNLPUtil(unittest.TestCase):
         self.assertEqual(True, response)
 
     def test_is_description_too_long_below(self):
-        response = self.nlp_util.is_description_too_long_or_empty("ABC DEF GED", 4)
+        response = self.nlp_util.is_description_too_long_or_empty("ABC", 4)
         self.assertEqual(False, response)
 
     def test_check_if_token_is_relevant_not_relevent(self):

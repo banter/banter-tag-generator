@@ -33,10 +33,10 @@ class NLPUtil(NLPConversionUtil, NLPResourceUtil):
         return self.nlp(str_)
 
     @staticmethod
-    def is_description_too_long_or_empty(str_: str, max_words: int) -> bool:
-        if len(str_) == 0:
+    def is_description_too_long_or_empty(description: str, max_length: int) -> bool:
+        if len(description) == 0:
             return True
-        return len(str_.split(' ')) > max_words
+        return len(description) > max_length
 
     @staticmethod
     def is_nlp_entity_specific_type(nlp_entity: NLPEntityModel, type: str) -> bool:
