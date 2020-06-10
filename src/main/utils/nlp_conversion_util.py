@@ -56,6 +56,7 @@ for char in LanguageConfig().punctuation_to_keep_in_normalized_text:
 
 class NLPConversionUtil(LanguageConfig):
     altered_punctuation = punctuation
+    capitalized_tag_types = ['league', 'position']
 
     @staticmethod
     def remove_stop_words_and_punctuation(list_: list) -> list:
@@ -84,7 +85,7 @@ class NLPConversionUtil(LanguageConfig):
     def conver_non_league_tags_to_Title_Case_and_format_names(self, tags: List[TagModel]):
         for tag in tags:
             tag_type = tag["type"]
-            if tag_type != "league":
+            if tag_type not in self.capitalized_tag_types:
                 if tag_type == "person":
                     tag["value"] = self.format_name(tag["value"])
                 else:
@@ -101,10 +102,15 @@ class NLPConversionUtil(LanguageConfig):
             return name.title()
 
     @staticmethod
-    def remove_duplicates_from_dict_list_based_on_key(list_: List[Dict], analyzed_key: str = "value") -> List[Dict]:
+    def sort_tags_primary_at_top(tags: List[TagModel]) -> List[TagModel]:
+        return sorted(tags, key=lambda i: i['isPrimary'], reverse=True)
+
+    def remove_duplicates_from_dict_list_based_on_key(self, list_: List[Dict], analyzed_key: str = "value") -> List[
+        Dict]:
+        sorted_list = self.sort_tags_primary_at_top(list_)
         filterd_list: List[Dict] = []
         token_set: Set = set()
-        for value in list_:
+        for value in sorted_list:
             if value[analyzed_key] in token_set:
                 pass
             else:
