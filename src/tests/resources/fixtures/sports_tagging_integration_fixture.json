@@ -2,185 +2,339 @@
   "On This Weeks Episode we are going to discuss Cleveland Browns": [
     {
       "type": "team",
-      "value": "Cleveland Browns"
+      "value": "Cleveland Browns",
+      "isPrimary": true
     },
     {
       "type": "league",
-      "value": "NFL"
+      "value": "NFL",
+      "isPrimary": false
     },
     {
       "type": "sport",
-      "value": "Football"
+      "value": "Football",
+      "isPrimary": false
     }
   ],
   "On This Weeks Episode we are going to discuss the Cleveland Browns": [
     {
       "type": "team",
-      "value": "Cleveland Browns"
+      "value": "Cleveland Browns",
+      "isPrimary": true
     },
     {
       "type": "league",
-      "value": "NFL"
+      "value": "NFL",
+      "isPrimary": false
     },
     {
       "type": "sport",
-      "value": "Football"
+      "value": "Football",
+      "isPrimary": false
     }
   ],
   "On This Weeks Episode we are speaking with Mike Tomlin about the state of the NFL": [
     {
       "type": "team",
-      "value": "Pittsburgh Steelers"
+      "value": "Pittsburgh Steelers",
+      "isPrimary": false
     },
     {
       "type": "league",
-      "value": "NFL"
+      "value": "NFL",
+      "isPrimary": true
     },
     {
       "type": "person",
-      "value": "Mike Tomlin"
+      "value": "Mike Tomlin",
+      "isPrimary": true
     },
     {
       "type": "sport",
-      "value": "Football"
+      "value": "Football",
+      "isPrimary": false
     }
   ],
-  "We look at the 15 teams in the Western Conference, including Dallas' trade options for Dennis Smith Jr., the Lakers'' recent struggles, OKC's Terrance Ferguson, and more.": [
+  "We look at the 15 teams in the Western Conference, including Dallas' trade options for Dennis Smith Jr., the Lakers' recent struggles, OKC's Terrance Ferguson, and more.": [
     {
       "type": "team",
-      "value": "New York Knicks"
+      "value": "New York Knicks",
+      "isPrimary": false
     },
     {
       "type": "team",
-      "value": "Dallas Mavericks"
+      "value": "Dallas Mavericks",
+      "isPrimary": true
     },
     {
       "type": "person",
-      "value": "Dennis Smith"
+      "value": "Dennis Smith",
+      "isPrimary": true
+    },
+    {
+      "type": "position",
+      "value": "PG",
+      "isPrimary": false
     },
     {
       "type": "league",
-      "value": "NBA"
+      "value": "NBA",
+      "isPrimary": false
     },
     {
       "type": "team",
-      "value": "Los Angeles Lakers"
+      "value": "Los Angeles Lakers",
+      "isPrimary": true
     },
     {
       "type": "team",
-      "value": "Oklahoma City Thunder"
+      "value": "Oklahoma City Thunder",
+      "isPrimary": true
     },
     {
       "type": "person",
-      "value": "Terrance Ferguson"
+      "value": "Terrance Ferguson",
+      "isPrimary": true
+    },
+    {
+      "type": "position",
+      "value": "SG",
+      "isPrimary": false
     },
     {
       "type": "sport",
-      "value": "Basketball"
+      "value": "Basketball",
+      "isPrimary": false
     }
   ],
   "DAL-MIN": [
     {
       "type": "team",
-      "value": "Dallas Cowboys"
+      "value": "Dallas Cowboys",
+      "isPrimary": true
     },
     {
       "type": "league",
-      "value": "NFL"
+      "value": "NFL",
+      "isPrimary": false
     },
     {
       "type": "team",
-      "value": "Minnesota Vikings"
+      "value": "Minnesota Vikings",
+      "isPrimary": true
     },
     {
       "type": "sport",
-      "value": "Football"
+      "value": "Football",
+      "isPrimary": false
     }
   ],
   "NYG-DAL": [
     {
       "type": "team",
-      "value": "Dallas Cowboys"
+      "value": "Dallas Cowboys",
+      "isPrimary": true
     },
     {
       "type": "league",
-      "value": "NFL"
+      "value": "NFL",
+      "isPrimary": false
     },
     {
       "type": "team",
-      "value": "New York Giants"
+      "value": "New York Giants",
+      "isPrimary": true
     },
     {
       "type": "sport",
-      "value": "Football"
+      "value": "Football",
+      "isPrimary": false
     }
   ],
   "NYG@DAL": [
     {
       "type": "team",
-      "value": "Dallas Cowboys"
+      "value": "Dallas Cowboys",
+      "isPrimary": true
     },
     {
       "type": "league",
-      "value": "NFL"
+      "value": "NFL",
+      "isPrimary": false
     },
     {
       "type": "team",
-      "value": "New York Giants"
+      "value": "New York Giants",
+      "isPrimary": true
     },
     {
       "type": "sport",
-      "value": "Football"
+      "value": "Football",
+      "isPrimary": false
     }
   ],
   "Marty talks with Niall Horan at Augusta about his love for golf": [
     {
       "type": "sport",
-      "value": "Golf"
+      "value": "Golf",
+      "isPrimary": true
     },
     {
       "type": "person",
-      "value": "Niall Horan"
+      "value": "Niall Horan",
+      "isPrimary": true
     }
   ],
   "Lakers & Clippers": [
     {
       "type": "team",
-      "value": "Los Angeles Lakers"
+      "value": "Los Angeles Lakers",
+      "isPrimary": true
     },
     {
       "type": "league",
-      "value": "NBA"
+      "value": "NBA",
+      "isPrimary": false
     },
     {
       "type": "team",
-      "value": "Los Angeles Clippers"
+      "value": "Los Angeles Clippers",
+      "isPrimary": true
     },
     {
       "type": "sport",
-      "value": "Basketball"
+      "value": "Basketball",
+      "isPrimary": false
     }
   ],
   "LeBron James Stars": [
     {
       "type": "team",
-      "value": "Los Angeles Lakers"
+      "value": "Los Angeles Lakers",
+      "isPrimary": false
     },
     {
       "type": "league",
-      "value": "NBA"
+      "value": "NBA",
+      "isPrimary": false
     },
     {
       "type": "person",
-      "value": "Lebron James"
+      "value": "Lebron James",
+      "isPrimary": true
+    },
+    {
+      "type": "position",
+      "value": "SF",
+      "isPrimary": false
     },
     {
       "type": "person",
-      "value": "Lebron James Stars"
+      "value": "Lebron James Stars",
+      "isPrimary": true
     },
     {
       "type": "sport",
-      "value": "Basketball"
+      "value": "Basketball",
+      "isPrimary": false
+    }
+  ],
+  "Yohann Auvitu": [
+    {
+      "type": "person",
+      "value": "Yohann Auvitu",
+      "isPrimary": true
+    }
+  ],
+  "Today we are going to discuss the nba, the NFL, the Nhl, and the mLB": [
+    {
+      "type": "league",
+      "value": "NBA",
+      "isPrimary": true
+    },
+    {
+      "type": "league",
+      "value": "MLB",
+      "isPrimary": true
+    },
+    {
+      "type": "league",
+      "value": "NFL",
+      "isPrimary": true
+    },
+    {
+      "type": "league",
+      "value": "NHL",
+      "isPrimary": true
+    },
+    {
+      "type": "sport",
+      "value": "Football",
+      "isPrimary": false
+    },
+    {
+      "type": "sport",
+      "value": "Basketball",
+      "isPrimary": false
+    },
+    {
+      "type": "sport",
+      "value": "Hockey",
+      "isPrimary": false
+    },
+    {
+      "type": "sport",
+      "value": "Baseball",
+      "isPrimary": false
+    }
+  ],
+  "Today we are going to discuss Tom Brady's assention into stardom.": [
+    {
+      "type": "team",
+      "value": "New England Patriots",
+      "isPrimary": false
+    },
+    {
+      "type": "person",
+      "value": "Tom Brady",
+      "isPrimary": true
+    },
+    {
+      "type": "position",
+      "value": "QB",
+      "isPrimary": false
+    },
+    {
+      "type": "league",
+      "value": "NFL",
+      "isPrimary": false
+    },
+    {
+      "type": "sport",
+      "value": "Football",
+      "isPrimary": false
+    }
+  ],
+  "NJ Devils Sr. Director of Player Personnel, Dan MacKinnon": [
+    {
+      "type": "team",
+      "value": "New Jersey Devils",
+      "isPrimary": true
+    },
+    {
+      "type": "person",
+      "value": "Dan Mackinnon",
+      "isPrimary": true
+    },
+    {
+      "type": "league",
+      "value": "NHL",
+      "isPrimary": false
+    },
+    {
+      "type": "sport",
+      "value": "Hockey",
+      "isPrimary": false
     }
   ]
 }

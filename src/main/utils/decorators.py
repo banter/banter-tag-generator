@@ -1,6 +1,8 @@
 import functools
-import time
 import logging
+import time
+
+
 def timeit(method):
     def timed(*args, **kw):
         ts = time.time()
@@ -16,6 +18,7 @@ def timeit(method):
 
     return timed
 
+
 def debug(func):
     """Print the function signature and return value"""
 
@@ -28,4 +31,5 @@ def debug(func):
         value = func(*args, **kwargs)
         logging.debug(f"{func.__name__!r} returned {value!r}")  # 4
         return value
+
     return wrapper_debug

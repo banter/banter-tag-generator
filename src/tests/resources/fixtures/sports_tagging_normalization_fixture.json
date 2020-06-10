@@ -2,73 +2,109 @@
   "A.J Green on and off the field issues": [
     {
       "type": "team",
-      "value": "Cincinnati Bengals"
+      "value": "Cincinnati Bengals",
+      "isPrimary": false
     },
     {
       "type": "league",
-      "value": "NFL"
+      "value": "NFL",
+      "isPrimary": false
     },
     {
       "type": "person",
-      "value": "AJ Green"
+      "value": "AJ Green",
+      "isPrimary": true
+    },
+    {
+      "type": "position",
+      "value": "WR",
+      "isPrimary": false
     },
     {
       "type": "sport",
-      "value": "Football"
+      "value": "Football",
+      "isPrimary": false
     }
   ],
   "A.J. Green on and off the field issues": [
     {
       "type": "team",
-      "value": "Cincinnati Bengals"
+      "value": "Cincinnati Bengals",
+      "isPrimary": false
     },
     {
       "type": "league",
-      "value": "NFL"
+      "value": "NFL",
+      "isPrimary": false
     },
     {
       "type": "person",
-      "value": "AJ Green"
+      "value": "AJ Green",
+      "isPrimary": true
+    },
+    {
+      "type": "position",
+      "value": "WR",
+      "isPrimary": false
     },
     {
       "type": "sport",
-      "value": "Football"
+      "value": "Football",
+      "isPrimary": false
     }
   ],
   "AJ Green on and off the field issues": [
     {
       "type": "team",
-      "value": "Cincinnati Bengals"
+      "value": "Cincinnati Bengals",
+      "isPrimary": false
     },
     {
       "type": "league",
-      "value": "NFL"
+      "value": "NFL",
+      "isPrimary": false
     },
     {
       "type": "person",
-      "value": "AJ Green"
+      "value": "AJ Green",
+      "isPrimary": true
+    },
+    {
+      "type": "position",
+      "value": "WR",
+      "isPrimary": false
     },
     {
       "type": "sport",
-      "value": "Football"
+      "value": "Football",
+      "isPrimary": false
     }
   ],
   "A.J. Green's on and off the field issues": [
     {
       "type": "team",
-      "value": "Cincinnati Bengals"
+      "value": "Cincinnati Bengals",
+      "isPrimary": false
     },
     {
       "type": "league",
-      "value": "NFL"
+      "value": "NFL",
+      "isPrimary": false
     },
     {
       "type": "person",
-      "value": "AJ Green"
+      "value": "AJ Green",
+      "isPrimary": true
+    },
+    {
+      "type": "position",
+      "value": "WR",
+      "isPrimary": false
     },
     {
       "type": "sport",
-      "value": "Football"
+      "value": "Football",
+      "isPrimary": false
     }
   ]
 }

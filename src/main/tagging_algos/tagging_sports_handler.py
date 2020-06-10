@@ -1,4 +1,3 @@
-import os
 from typing import *
 
 from src.main.models.tag_model import TagModel, NLPEntityModel
@@ -55,9 +54,9 @@ class TaggingSportsHandler(TaggingSportsUtil):
                                                                                 self.util.individual_sports_dict)
         if len(nlp_entity_tags) == 0:
             nlp_entity_tags += self.get_team_player_league_tags_on_nickname(nlp_entity, self.util.sports_nickname_dict)
-        # TODO Dont think sports terms is worth it
-        if len(nlp_entity_tags) == 0:
-            nlp_entity_tags += self.get_sport_tag_on_sports_terms(nlp_entity)
+        # TODO Dont think sports terms is worth it, removing for now
+        # if len(nlp_entity_tags) == 0:
+        #     nlp_entity_tags += self.get_sport_tag_on_sports_terms(nlp_entity)
 
         return nlp_entity_tags
 

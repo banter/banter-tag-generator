@@ -3,7 +3,8 @@ from mypy_extensions import TypedDict
 TagModel = TypedDict('TagModel', {
     'type': str,
     'value': str,
-    'confidence': int
+    'confidence': int,
+    'isPrimary': bool
 })
 
 NLPEntityModel = TypedDict('NLPEntityModel', {
