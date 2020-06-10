@@ -1,7 +1,8 @@
 from typing import *
 
 from src.main.models.tag_model import NLPEntityModel
-from src.main.tagging_algos.tagging_enums.base_tag_types import BaseTagTypes as TagTypes
+from src.main.tagging_algos.tagging_enums.base_tag_enums import BaseTagTypes as TagTypes
+from src.main.tagging_algos.tagging_enums.base_tag_enums import TagKeys
 from src.main.tagging_algos.tagging_enums.confidence_levels import ConfidenceLevels
 from src.main.utils.nlp_util import NLPUtil
 
@@ -11,21 +12,24 @@ class TaggingBaseHandler:
     # Dont have to setup, makes init go from 20ms to 0.00ms
     util = NLPUtil()
 
-    def get_person_tags(self, toke_dict: dict):
+    def get_person_tags(self, nlp_entity: NLPEntityModel):
         """
         # Pass in token and if a full name adding this tag
-        :param toke_dict: Token Dict
+        :param nlp_entity: Token Dict
         :return: Tags that are for a specific person
         """
         # Getting list of names to see length
         method_confidence = ConfidenceLevels.HIGH.value
         person_tags = []
-        name: str = toke_dict['text']
+        name: str = nlp_entity['text']
         name_length = len(name.split())
         if name_length > 1:
             # Greater than 1 suggesting its a full name
-            person_tags.append({"type": TagTypes.PERSON.value, "value": name, "confidence": method_confidence})
-
+            person_tags.append({TagKeys.TYPE.value: TagTypes.PERSON.value,
+                                TagKeys.VALUE.value: name,
+                                TagKeys.CONFIDENCE.value: method_confidence,
+                                TagKeys.ISPRIMARY.value: True
+                                })
         return person_tags
 
     def get_basic_tags(self, description: str) -> List[Dict[str, str]]:

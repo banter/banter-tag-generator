@@ -6,3 +6,4 @@ class SportsTagTypes(Enum):
     PERSON = "person"
     LEAGUE = "league"
     SPORT = "sport"
+    POSITION = "position"

@@ -5,6 +5,7 @@ import logging
 import os.path
 from logging.handlers import TimedRotatingFileHandler
 
+
 def initialize_logger(output_dir):
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)

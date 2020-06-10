@@ -2,11 +2,6 @@ import unittest
 
 from src.main.utils.nlp_util import NLPUtil
 
-test_list = ["Cowboys lose Browns bounce back",
-             "Bucs win",
-             "TB12 declining?",
-             "Burfict suspended"]
-
 
 class TestNLPUtil(unittest.TestCase):
     starting_dict = {"ab": "cd"}

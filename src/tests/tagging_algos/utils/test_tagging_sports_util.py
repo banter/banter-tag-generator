@@ -41,20 +41,23 @@ class TestTaggingSportsUtil(unittest.TestCase):
         sample = {'text': 'BROWNS', 'type': 'ORG', 'start_char': 13, 'end_char': 19}
         response = self.sport_util.get_team_and_league_tags_on_team(sample)
         print(response)
-        valid_response = [{'type': 'team', 'value': 'CLEVELAND BROWNS'}, {'type': 'league', 'value': 'NFL'},
-                          {'type': 'sport', 'value': 'FOOTBALL'}]
+        valid_response = [{'type': 'team', 'value': 'CLEVELAND BROWNS', 'isPrimary': True},
+                          {'type': 'league', 'value': 'NFL', 'isPrimary': False},
+                          {'type': 'sport', 'value': 'FOOTBALL', 'isPrimary': False}]
         response = self.remove_confidence_for_test_verification(response)
         self.assertEqual(response, valid_response)
 
     def test_get_sport_and_league_tags_on_description(self):
         description = 'Marty talks with Niall Horan at Augusta about his love for golf'
-        valid_response = [{'type': 'sport', 'value': 'GOLF'}]
+        valid_response = [{'type': 'sport', 'value': 'GOLF', 'isPrimary': True}]
         response = self.sport_util.get_sport_and_league_tags_on_description(description)
         self.assertEqual(self.remove_confidence_for_test_verification(response), valid_response)
 
         description = 'Marty talks with Niall Horan at Augusta about his love for nfl NBA'
-        valid_response = [{'type': 'league', 'value': 'NFL'}, {'type': 'sport', 'value': 'FOOTBALL'},
-                          {'type': 'league', 'value': 'NBA'}, {'type': 'sport', 'value': 'BASKETBALL'}, ]
+        valid_response = [{'type': 'league', 'value': 'NFL', 'isPrimary': True},
+                          {'type': 'sport', 'value': 'FOOTBALL', 'isPrimary': False},
+                          {'type': 'league', 'value': 'NBA', 'isPrimary': True},
+                          {'type': 'sport', 'value': 'BASKETBALL', 'isPrimary': False}, ]
         response = self.sport_util.get_sport_and_league_tags_on_description(description)
         self.assertEqual(self.remove_confidence_for_test_verification(response), valid_response)
 
@@ -62,17 +65,48 @@ class TestTaggingSportsUtil(unittest.TestCase):
         sample = {'text': 'YANKEES', 'type': 'ORG', 'start_char': 13, 'end_char': 19}
         response = self.sport_util.get_team_and_league_tags_on_team(sample)
         print(response)
-        valid_response = [{'type': 'team', 'value': 'NEW YORK YANKEES'}, {'type': 'league', 'value': 'MLB'},
-                          {'type': 'sport', 'value': 'BASEBALL'}]
+        valid_response = [{'type': 'team', 'value': 'NEW YORK YANKEES', 'isPrimary': True},
+                          {'type': 'league', 'value': 'MLB', 'isPrimary': False},
+                          {'type': 'sport', 'value': 'BASEBALL', 'isPrimary': False}]
         response = self.remove_confidence_for_test_verification(response)
         self.assertEqual(response, valid_response)
 
-    def test_get_team_and_league_tags_on_player_or_coach_player(self):
+    def test_get_team_and_league_tags_on_player_or_coach_player_single_position(self):
         sample = {'text': 'CAM BEDROSIAN', 'type': 'PERSON', 'start_char': 13, 'end_char': 19}
         response = self.sport_util.get_team_player_league_tags_on_player_or_coach(sample,
-                                                                                  self.sport_util.util.sports_player_dict)
-        valid_response = [{'type': 'team', 'value': 'LOS ANGELES ANGELS'}, {'type': 'league', 'value': 'MLB'},
-                          {'type': 'person', 'value': 'CAM BEDROSIAN'}, {'type': 'sport', 'value': 'BASEBALL'}]
+                                                                                  self.sport_util.util.sports_player_dict,
+                                                                                  is_tag_for_player=True)
+        valid_response = [{'type': 'team', 'value': 'LOS ANGELES ANGELS', 'isPrimary': False},
+                          {'type': 'league', 'value': 'MLB', 'isPrimary': False},
+                          {'type': 'position', 'value': 'P', 'isPrimary': False},
+                          {'type': 'person', 'value': 'CAM BEDROSIAN', 'isPrimary': True},
+                          {'type': 'sport', 'value': 'BASEBALL', 'isPrimary': False}]
+        response = self.remove_confidence_for_test_verification(response)
+        self.assertCountEqual(response, valid_response)
+
+    def test_get_team_and_league_tags_on_player_or_coach_player_multi_position(self):
+        sample = {'text': 'GIO URSHELA', 'type': 'PERSON', 'start_char': 13, 'end_char': 19}
+        response = self.sport_util.get_team_player_league_tags_on_player_or_coach(sample,
+                                                                                  self.sport_util.util.sports_player_dict,
+                                                                                  is_tag_for_player=True)
+        valid_response = [{'type': 'team', 'value': 'NEW YORK YANKEES', 'isPrimary': False},
+                          {'type': 'league', 'value': 'MLB', 'isPrimary': False},
+                          {'type': 'position', 'value': '3B', 'isPrimary': False},
+                          {'type': 'person', 'value': 'GIO URSHELA', 'isPrimary': True},
+                          {'type': 'sport', 'value': 'BASEBALL', 'isPrimary': False}]
+        response = self.remove_confidence_for_test_verification(response)
+        self.assertCountEqual(response, valid_response)
+
+    def test_get_team_and_league_tags_on_player_or_coach_player_multi_position_outfield(self):
+        sample = {'text': 'JAKE MARISNICK', 'type': 'PERSON', 'start_char': 13, 'end_char': 19}
+        response = self.sport_util.get_team_player_league_tags_on_player_or_coach(sample,
+                                                                                  self.sport_util.util.sports_player_dict,
+                                                                                  is_tag_for_player=True)
+        valid_response = [{'type': 'team', 'value': 'HOUSTON ASTROS', 'isPrimary': False},
+                          {'type': 'league', 'value': 'MLB', 'isPrimary': False},
+                          {'type': 'position', 'value': 'OF', 'isPrimary': False},
+                          {'type': 'person', 'value': 'JAKE MARISNICK', 'isPrimary': True},
+                          {'type': 'sport', 'value': 'BASEBALL', 'isPrimary': False}]
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, valid_response)
 
@@ -82,18 +116,24 @@ class TestTaggingSportsUtil(unittest.TestCase):
         # TODO do with Sr. and III
         sample = {'text': 'MAURICE HURST', 'type': 'PERSON', 'start_char': 13, 'end_char': 19}
         response = self.sport_util.get_team_player_league_tags_on_player_or_coach(sample,
-                                                                                  self.sport_util.util.sports_player_dict)
-        valid_response = [{'type': 'team', 'value': 'OAKLAND RAIDERS'}, {'type': 'league', 'value': 'NFL'},
-                          {'type': 'person', 'value': 'MAURICE HURST'}, {'type': 'sport', 'value': 'FOOTBALL'}]
+                                                                                  self.sport_util.util.sports_player_dict,
+                                                                                  is_tag_for_player=True)
+        valid_response = [{'type': 'team', 'value': 'OAKLAND RAIDERS', 'isPrimary': False},
+                          {'type': 'league', 'value': 'NFL', 'isPrimary': False},
+                          {'type': 'person', 'value': 'MAURICE HURST', 'isPrimary': True},
+                          {'type': 'sport', 'value': 'FOOTBALL', 'isPrimary': False}]
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, valid_response)
 
     def test_get_team_and_league_tags_on_player_or_coach_coach(self):
         sample = {'text': 'MIKE TOMLIN', 'type': 'PERSON', 'start_char': 13, 'end_char': 19}
         response = self.sport_util.get_team_player_league_tags_on_player_or_coach(sample,
-                                                                                  self.sport_util.util.sports_coach_dict)
-        valid_response = [{'type': 'team', 'value': 'PITTSBURGH STEELERS'}, {'type': 'league', 'value': 'NFL'},
-                          {'type': 'person', 'value': 'MIKE TOMLIN'}, {'type': 'sport', 'value': 'FOOTBALL'}]
+                                                                                  self.sport_util.util.sports_coach_dict,
+                                                                                  is_tag_for_player=False)
+        valid_response = [{'type': 'team', 'value': 'PITTSBURGH STEELERS', 'isPrimary': False},
+                          {'type': 'league', 'value': 'NFL', 'isPrimary': False},
+                          {'type': 'person', 'value': 'MIKE TOMLIN', 'isPrimary': True},
+                          {'type': 'sport', 'value': 'FOOTBALL', 'isPrimary': False}]
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, valid_response)
 
@@ -101,13 +141,14 @@ class TestTaggingSportsUtil(unittest.TestCase):
         sample = {'text': 'caught napping', 'type': 'UNKNOWN', 'start_char': 13, 'end_char': 19}
         response = self.sport_util.get_sport_tag_on_sports_terms(sample)
         print(response)
-        valid_response = [{'type': 'sport', 'value': 'BASEBALL'}]
+        valid_response = [{'type': 'sport', 'value': 'BASEBALL', 'isPrimary': True}]
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, valid_response)
 
     def test_get_sport_and_person_tags_on_non_team_sport(self):
         sample_input = {'text': "JORDAN SPIETH", 'type': 'PERSON', 'start_char': 94, 'end_char': 104}
-        valid_output = [{'type': 'person', 'value': 'JORDAN SPIETH'}, {'type': 'sport', 'value': 'GOLF'}]
+        valid_output = [{'type': 'person', 'value': 'JORDAN SPIETH', 'isPrimary': True},
+                        {'type': 'sport', 'value': 'GOLF', 'isPrimary': False}]
         response = self.sport_util.get_sport_and_person_tags_on_non_team_sport(sample_input,
                                                                                self.sport_util.util.individual_sports_dict)
         response = self.remove_confidence_for_test_verification(response)
@@ -115,7 +156,8 @@ class TestTaggingSportsUtil(unittest.TestCase):
 
     def test_get_sport_and_person_tags_on_non_team_sport_foreign_name(self):
         sample_input = {'text': "BENJAMÍN ALVARADO", 'type': 'PERSON', 'start_char': 94, 'end_char': 104}
-        valid_output = [{'type': 'person', 'value': 'BENJAMÍN ALVARADO'}, {'type': 'sport', 'value': 'GOLF'}]
+        valid_output = [{'type': 'person', 'value': 'BENJAMÍN ALVARADO', 'isPrimary': True},
+                        {'type': 'sport', 'value': 'GOLF', 'isPrimary': False}]
         response = self.sport_util.get_sport_and_person_tags_on_non_team_sport(sample_input,
                                                                                self.sport_util.util.individual_sports_dict)
         response = self.remove_confidence_for_test_verification(response)
@@ -124,8 +166,9 @@ class TestTaggingSportsUtil(unittest.TestCase):
     def test_get_team_tag_from_city_ref_league(self):
         location_entity = [{'text': 'DALLAS', 'type': 'GPE', 'start_char': 61, 'end_char': 67}]
         response = self.sport_util.get_team_and_league_tags_from_city(location_entity, 'NFL')
-        expected = [{"type": "team", "value": "DALLAS COWBOYS"}, {"type": "league", "value": "NFL"},
-                    {'type': 'sport', 'value': 'FOOTBALL'}]
+        expected = [{"type": "team", "value": "DALLAS COWBOYS", 'isPrimary': True},
+                    {"type": "league", "value": "NFL", 'isPrimary': False},
+                    {'type': 'sport', 'value': 'FOOTBALL', 'isPrimary': False}]
         response = self.remove_confidence_for_test_verification(response)
         self.assertEqual(response, expected)
 
@@ -133,8 +176,9 @@ class TestTaggingSportsUtil(unittest.TestCase):
         entity = {'text': 'DEVILS', 'type': 'PROPN'}
         self.sport_util.optimization_tool = OptimizationToolMapping.HOCKEY
         response = self.sport_util.get_team_and_league_tags_on_team(entity)
-        expected = [{"type": "team", "value": "NEW JERSEY DEVILS"}, {"type": "league", "value": "NHL"},
-                    {'type': 'sport', 'value': 'HOCKEY'}]
+        expected = [{"type": "team", "value": "NEW JERSEY DEVILS", 'isPrimary': True},
+                    {"type": "league", "value": "NHL", 'isPrimary': False},
+                    {'type': 'sport', 'value': 'HOCKEY', 'isPrimary': False}]
         response = self.remove_confidence_for_test_verification(response)
         self.assertEqual(response, expected)
         return
@@ -143,18 +187,20 @@ class TestTaggingSportsUtil(unittest.TestCase):
         entity = {"text": "BLACK JESUS", "type": "PERSON", "start_char": 1, "end_char": 12}
         response = self.ignore_confidence(self.sport_util.get_team_player_league_tags_on_nickname(entity,
                                                                                                   self.sport_util.util.sports_nickname_dict))
-        expected = [{'type': 'person', 'value': 'EARL MONROE'}, {'type': 'league', 'value': 'NBA'},
-                    {'type': 'sport', 'value': 'BASKETBALL'}]
+        expected = [{'type': 'person', 'value': 'EARL MONROE', 'isPrimary': True},
+                    {'type': 'league', 'value': 'NBA', 'isPrimary': False},
+                    {'type': 'sport', 'value': 'BASKETBALL', 'isPrimary': False}]
         self.assertCountEqual(response, expected)
 
     def test_get_nickname_tags_active_player(self):
         entity = {"text": "KING JAMES", "type": "PERSON", "start_char": 1, "end_char": 12}
         response = self.ignore_confidence(self.sport_util.get_team_player_league_tags_on_nickname(entity,
                                                                                                   self.sport_util.util.sports_nickname_dict))
-        expected = [{'type': 'person', 'value': 'LEBRON JAMES'},
-                    {'type': 'league', 'value': 'NBA'},
-                    {'type': 'team', 'value': 'LOS ANGELES LAKERS'},
-                    {'type': 'sport', 'value': 'BASKETBALL'}]
+        expected = [{'type': 'person', 'value': 'LEBRON JAMES', 'isPrimary': True},
+                    {'type': 'league', 'value': 'NBA', 'isPrimary': False},
+                    {'type': 'position', 'value': 'SF', 'isPrimary': False},
+                    {'type': 'team', 'value': 'LOS ANGELES LAKERS', 'isPrimary': False},
+                    {'type': 'sport', 'value': 'BASKETBALL', 'isPrimary': False}]
         self.assertCountEqual(response, expected)
 
     def test_set_sub_genre_mapping(self):

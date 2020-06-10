@@ -1,8 +1,10 @@
 from typing import *
+
 from src.main.tagging_algos.tagging_base_handler import TaggingBaseHandler
 from src.main.tagging_algos.tagging_enums.optimization_tool_mapping import OptimizationToolMapping
 from src.main.tagging_algos.tagging_sports_handler import TaggingSportsHandler
 from src.main.utils.decorators import debug, timeit
+
 
 class TagIdentifier:
 

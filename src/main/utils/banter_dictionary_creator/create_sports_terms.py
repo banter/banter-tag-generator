@@ -1,13 +1,14 @@
-import requests
-from bs4 import BeautifulSoup
-
 import json
-
 import os
 from os.path import dirname, realpath
 
+import requests
+from bs4 import BeautifulSoup
+
 BASEDIR = os.path.abspath(os.path.dirname(os.path.dirname(dirname(realpath(__file__)))))
 SAVE_LOCATION = '%s/resources/reference_dict' % BASEDIR
+
+
 # TODO some words are cut off, handling () in web scraping
 
 
@@ -73,11 +74,13 @@ def scrape_wiki_baseball(url):
         sport_dict[tmp_text] = "BASEBALL"
     return sport_dict
 
+
 def save_dict(dictionary, file_name):
     tmp_json = json.dumps(dictionary)
     with open(f"{SAVE_LOCATION}/{file_name}.json", "w") as json_file:
         json_file.write(tmp_json)
         json_file.close()
+
 
 def create_sports_terms():
     final_dict = {}

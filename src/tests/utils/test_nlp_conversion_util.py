@@ -30,9 +30,48 @@ class TestNLPConversionUtil(unittest.TestCase):
                          NLPConversionUtil().remove_prefix_from_word(nlp_entity))
 
     def test_remove_duplicates_from_dict_list(self):
-        sample_dict = [{"type": "name", "value": "Austin"}, {"type": "name", "value": "Jesse"},
-                       {"type": "name", "value": "Jesse"}]
-        self.assertEqual(2, len(NLPConversionUtil.remove_duplicates_from_dict_list_based_on_key(sample_dict)))
+        sample_dict = [{"type": "name", "value": "Austin", "isPrimary": True},
+                       {"type": "name", "value": "Jesse", "isPrimary": True},
+                       {"type": "name", "value": "Jesse", "isPrimary": True}]
+        self.assertEqual(2, len(NLPConversionUtil().remove_duplicates_from_dict_list_based_on_key(sample_dict)))
+
+    def test_remove_duplicates_from_dict_list_multiple_tags_one_is_primary(self):
+        sample_dict = [{"type": "name", "value": "Austin", "isPrimary": False},
+                       {"type": "name", "value": "Jesse", "isPrimary": False},
+                       {"type": "name", "value": "Jesse", "isPrimary": True},
+                       {"type": "name", "value": "Austin", "isPrimary": True}, ]
+        expected = [{"type": "name", "value": "Jesse", "isPrimary": True},
+                    {"type": "name", "value": "Austin", "isPrimary": True}]
+        response = NLPConversionUtil().remove_duplicates_from_dict_list_based_on_key(sample_dict)
+        self.assertEqual(expected, response)
+
+    def test_remove_duplicates_from_dict_list_multiple_tags_neither_primary(self):
+        sample_dict = [{"type": "name", "value": "Austin", "isPrimary": True},
+                       {"type": "name", "value": "Jesse", "isPrimary": False},
+                       {"type": "name", "value": "Jesse", "isPrimary": False}]
+        expected = [{"type": "name", "value": "Austin", "isPrimary": True},
+                    {"type": "name", "value": "Jesse", "isPrimary": False}]
+        response = NLPConversionUtil().remove_duplicates_from_dict_list_based_on_key(sample_dict)
+        self.assertEqual(expected, response)
+
+    def test_remove_duplicates_from_dict_list_multiple_tags_true_is_at_end(self):
+        sample_dict = [{"type": "name", "value": "Austin", "isPrimary": False},
+                       {"type": "name", "value": "Jesse", "isPrimary": False},
+                       {"type": "name", "value": "Jesse", "isPrimary": False},
+                       {"type": "name", "value": "Austin", "isPrimary": True}]
+        expected = [{"type": "name", "value": "Austin", "isPrimary": True},
+                    {"type": "name", "value": "Jesse", "isPrimary": False}]
+        response = NLPConversionUtil().remove_duplicates_from_dict_list_based_on_key(sample_dict)
+        self.assertEqual(expected, response)
+
+    def test_remove_duplicates_from_dict_list_multiple_tags_both_are_primary(self):
+        sample_dict = [{"type": "name", "value": "Austin", "isPrimary": True},
+                       {"type": "name", "value": "Jesse", "isPrimary": True},
+                       {"type": "name", "value": "Jesse", "isPrimary": True}]
+        expected = [{"type": "name", "value": "Austin", "isPrimary": True},
+                    {"type": "name", "value": "Jesse", "isPrimary": True}]
+        response = NLPConversionUtil().remove_duplicates_from_dict_list_based_on_key(sample_dict)
+        self.assertEqual(expected, response)
 
     def test_filter_tokens_get_unique_text(self):
         sample_dict = [{"type": "PERSON", "text": "AUSTIN"}, {"type": "PERSON", "text": "LEBRON JAMES STARS"},
@@ -74,6 +113,7 @@ class TestNLPConversionUtil(unittest.TestCase):
         self.assertEqual("LAURIE AYTON", NLPConversionUtil().normalize_text("Laurie Ayton Jnr Snr jnr. snr."))
         self.assertEqual("NYG@MIN", NLPConversionUtil().normalize_text("NYG@MIN"))
         self.assertEqual("AJ GREEN", NLPConversionUtil().normalize_text("A.J. Green's"))
+        self.assertEqual("TALEN HORTON-TUCKER", NLPConversionUtil().normalize_text("Talen Horton-Tucker"))
 
     def test_normalize_names_in_entity_list(self):
         sample_dict = [{"type": "PERSON", "text": "Austin"}, {"type": "PERSON", "text": "Lebron James Stars"},
@@ -95,6 +135,10 @@ class TestNLPConversionUtil(unittest.TestCase):
         expected = [{"type": "league", "value": "NFL"}]
         response = NLPConversionUtil().conver_non_league_tags_to_Title_Case_and_format_names(tag)
         self.assertEqual(expected, response)
+        tag = [{"type": "position", "value": "RB"}]
+        expected = [{"type": "position", "value": "RB"}]
+        response = NLPConversionUtil().conver_non_league_tags_to_Title_Case_and_format_names(tag)
+        self.assertEqual(expected, response)
 
     def test_format_names(self):
         response = NLPConversionUtil().format_name("AJ GREEN")
@@ -108,9 +152,11 @@ class TestNLPConversionUtil(unittest.TestCase):
         self.assertEqual(expected, response)
 
     def test_alter_tags_to_proper_response_format(self):
-        tag = [{"type": "person", "value": "LEBRON JAMES"}, {"type": "person", "value": "LEBRON JAMES"},
-               {"type": "team", "value": "LOS ANGELES LAKERS"}]
-        expected = [{"type": "person", "value": "Lebron James"}, {"type": "team", "value": "Los Angeles Lakers"}]
+        tag = [{"type": "person", "value": "LEBRON JAMES", "isPrimary": False},
+               {"type": "person", "value": "LEBRON JAMES", "isPrimary": True},
+               {"type": "team", "value": "LOS ANGELES LAKERS", "isPrimary": True}]
+        expected = [{"type": "person", "value": "Lebron James", "isPrimary": True},
+                    {"type": "team", "value": "Los Angeles Lakers", "isPrimary": True}]
         response = NLPConversionUtil().alter_tags_to_proper_response_format(tag)
         self.assertEqual(expected, response)
 

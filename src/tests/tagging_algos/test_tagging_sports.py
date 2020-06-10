@@ -15,6 +15,8 @@ class TestTaggingSportsHandler(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         super(TestTaggingSportsHandler, self).setUpClass()
+        # Allowing for test console to not limit output length
+        self.maxDiff = None
         self.sport_handler = TaggingSportsHandler()
         FIXTURE_LOCATION = '%s/resources/fixtures' % BASEDIR
         self.integration_test_fixture = self.sport_handler.util.read_json_file(FIXTURE_LOCATION,
@@ -55,27 +57,21 @@ class TestTaggingSportsHandler(unittest.TestCase):
         response = self.sport_handler.generate_sports_tags(sample)
         self.assertEqual(response, [])
 
-    def test_tag_generator_punctuation(self):
-        sample_input = {'text': "TOM BRADY'", 'type': 'PERSON', 'start_char': 94, 'end_char': 104}
-        response = self.sport_handler.generate_basic_sport_tags(sample_input)
-        print(response)
-        valid_response = [{'type': 'team', 'value': 'NEW ENGLAND PATRIOTS'}, {'type': 'person', 'value': "TOM BRADY"},
-                          {'type': 'league', 'value': 'NFL'}, {"type": "sport", "value": "FOOTBALL"}]
-        response = self.remove_confidence_for_test_verification(response)
-        self.assertCountEqual(response, valid_response)
-
-    def test_tag_generator_no_punctuation(self):
+    def test_tag_generator_name(self):
         sample_input = {'text': "TOM BRADY", 'type': 'PERSON', 'start_char': 94, 'end_char': 104}
         response = self.sport_handler.generate_basic_sport_tags(sample_input)
         print(response)
-        valid_response = [{'type': 'team', 'value': 'NEW ENGLAND PATRIOTS'}, {'type': 'person', 'value': 'TOM BRADY'},
-                          {'type': 'league', 'value': 'NFL'}, {"type": "sport", "value": "FOOTBALL"}]
+        valid_response = [{'type': 'team', 'value': 'NEW ENGLAND PATRIOTS', 'isPrimary': False},
+                          {'type': 'person', 'value': 'TOM BRADY', 'isPrimary': True},
+                          {'type': 'position', 'value': 'QB', 'isPrimary': False},
+                          {'type': 'league', 'value': 'NFL', 'isPrimary': False},
+                          {"type": "sport", "value": "FOOTBALL", 'isPrimary': False}]
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, valid_response)
 
     def test_integration_generate_sports_tags(self):
         sample = "Hello this is Austin Marchese and this is the Banter Podcast."
-        valid_output = [{'type': 'person', 'value': 'AUSTIN MARCHESE'}]
+        valid_output = [{'type': 'person', 'value': 'AUSTIN MARCHESE', 'isPrimary': True}]
         response = self.sport_handler.generate_sports_tags(sample)
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, valid_output)
@@ -93,32 +89,25 @@ class TestTaggingSportsHandler(unittest.TestCase):
         Duplicate tags is fine as this is handled in seperate methods
         """
         key_word = {'text': "NYG@DAL", 'type': 'ORG', 'start_char': 94, 'end_char': 104}
-        desired_tags = [{"type": "team", "value": "DALLAS COWBOYS"}, {"type": "league", "value": "NFL"},
-                        {"type": "sport", "value": "FOOTBALL"},
-                        {"type": "team", "value": "NEW YORK GIANTS"}, {"type": "league", "value": "NFL"},
-                        {"type": "sport", "value": "FOOTBALL"}]
+        desired_tags = [{"type": "team", "value": "DALLAS COWBOYS", 'isPrimary': True},
+                        {"type": "league", "value": "NFL", 'isPrimary': False},
+                        {"type": "sport", "value": "FOOTBALL", 'isPrimary': False},
+                        {"type": "team", "value": "NEW YORK GIANTS", 'isPrimary': True},
+                        {"type": "league", "value": "NFL", 'isPrimary': False},
+                        {"type": "sport", "value": "FOOTBALL", 'isPrimary': False}]
         response = self.sport_handler.generate_matchup_tags(key_word)
         response = self.remove_confidence_for_test_verification(response)
         self.assertCountEqual(response, desired_tags)
 
     def test_generate_tags_using_location(self):
         location_entities = [{'text': 'DALLAS', 'type': 'GPE', 'start_char': 61, 'end_char': 67}]
-        expected = [{"type": "team", "value": "DALLAS MAVERICKS"}, {"type": "league", "value": "NBA"}, {
-            "type": "sport",
-            "value": "BASKETBALL"
-        }]
+        expected = [{"type": "team", "value": "DALLAS MAVERICKS", 'isPrimary': True},
+                    {"type": "league", "value": "NBA", 'isPrimary': False},
+                    {"type": "sport", "value": "BASKETBALL", 'isPrimary': False}]
         self.sport_handler.optimization_tool = OptimizationToolMapping.BASKETBALL
         response = self.sport_handler.generate_location_tags(location_entities)
         response = self.remove_confidence_for_test_verification(response)
         self.assertEqual(expected, response)
-
-    # @unittest.skip("Skip when testing locally, this is a full integration test, uncomment in production")
-    def test_get_sports_tags_full_test(self):
-        for (description, desired_tags) in self.integration_test_fixture.items():
-            response = self.sport_handler.get_sports_tags(description)
-            print(response, description)
-            response = self.remove_confidence_for_test_verification(response)
-            self.assertCountEqual(response, desired_tags)
 
     def test_get_sports_tags_normalized_text_test(self):
         for (description, desired_tags) in self.normalization_test_fixture.items():
@@ -133,28 +122,25 @@ class TestTaggingSportsHandler(unittest.TestCase):
         response = self.adj(self.sport_handler.get_sports_tags(description))
         self.assertCountEqual(response, desired_tags)
 
-
+    # TODO RIght now we have it tagging Lebron James Stars and Lebron James both as primary
     def test_get_sports_tags_specific_test(self):
-        description = "NJ Devils Sr. Director of Player Personnel, Dan MacKinnon"
-        desired_tags = [
-            {
-                "type": "team",
-                "value": "New Jersey Devils"
-            },
-            {
-                "type": "person",
-                "value": "Dan Mackinnon"
-            },
-            {
-                "type": "league",
-                "value": "NHL"
-            },
-            {
-                "type": "sport",
-                "value": "Hockey"
-            }]
+        description = "On This Weeks Episode we are speaking with Mike Tomlin about the state of the NFL"
+        desired_tags = [{'type': 'league', 'value': 'NFL', 'isPrimary': True},
+                        {'type': 'person', 'value': 'Mike Tomlin', 'isPrimary': True},
+                        {'type': 'sport', 'value': 'Football', 'isPrimary': False},
+                        {'type': 'team', 'value': 'Pittsburgh Steelers', 'isPrimary': False}]
         response = self.adj(self.sport_handler.get_sports_tags(description))
+        print(response, desired_tags)
         self.assertCountEqual(response, desired_tags)
+
+        # @unittest.skip("Skip when testing locally, this is a full integration test, uncomment in production")
+
+    def test_get_sports_tags_full_test(self):
+        for (description, desired_tags) in self.integration_test_fixture.items():
+            response = self.sport_handler.get_sports_tags(description)
+            print(response, desired_tags, description)
+            response = self.remove_confidence_for_test_verification(response)
+            self.assertCountEqual(response, desired_tags)
 
 
 if __name__ == '__main__':

@@ -1,14 +1,15 @@
 import json
+import os
+from os.path import dirname, realpath
+
 import requests
 from bs4 import BeautifulSoup
 
 from src.main.utils.nlp_conversion_util import NLPConversionUtil
 
-import os
-from os.path import dirname, realpath
-
 BASEDIR = os.path.abspath(os.path.dirname(os.path.dirname(dirname(realpath(__file__)))))
 SAVE_LOCATION = '%s/resources/reference_dict' % BASEDIR
+
 
 # TODO some words are cut off, handling () in web scraping
 def create_golfer_dict(male_url, female_url):
@@ -64,11 +65,13 @@ def create_golfer_dict(male_url, female_url):
 
     return golf_dict
 
+
 def save_dict(dictionary, file_name):
     tmp_json = json.dumps(dictionary)
     f = open(f"{SAVE_LOCATION}/{file_name}.json", "w")
     f.write(tmp_json)
     f.close()
+
 
 def create_golf_player_dict():
     male_golfer_url = 'https://en.wikipedia.org/wiki/List_of_male_golfers'

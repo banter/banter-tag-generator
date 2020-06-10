@@ -1,0 +1,58 @@
+{
+  "HoopAu00": {
+    "league": "NFL",
+    "response": "TE"
+  },
+  "SambTy00": {
+    "league": "NFL",
+    "response": ""
+  },
+  "AddaJa00": {
+    "league": "NFL",
+    "response": ""
+  },
+  "WattJ.00": {
+    "league": "NFL",
+    "response": ""
+  },
+  "ReidJu00": {
+    "league": "NFL",
+    "response": ""
+  },
+  "CrosMa20": {
+    "league": "NFL",
+    "response": "K"
+  },
+  "CousKi00": {
+    "league": "NFL",
+    "response": "QB"
+  },
+  "jamesle01": {
+    "league": "NBA",
+    "response": "SF"
+  },
+  "fergute01": {
+    "league": "NBA",
+    "response": "SG"
+  },
+  "antetgi01": {
+    "league": "NBA",
+    "response": "PF"
+  },
+  "correca01": {
+    "league": "MLB",
+    "response": "SS"
+  },
+  "marisja01": {
+    "league": "MLB",
+    "response": "OF"
+  },
+  "brantmi02": {
+    "league": "MLB",
+    "response": "OF"
+  },
+  "robingl02": {
+    "league": "NBA",
+    "response": "SF"
+  }
+}
