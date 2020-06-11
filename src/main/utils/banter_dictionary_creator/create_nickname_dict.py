@@ -7,10 +7,19 @@ import requests
 from bs4 import BeautifulSoup
 
 from src.main.utils.nlp_conversion_util import NLPConversionUtil
+from src.main.utils.nlp_resource_util import NLPResourceUtil
 
 BASEDIR = os.path.abspath(os.path.dirname(os.path.dirname(dirname(realpath(__file__)))))
 SAVE_LOCATION = '%s/resources/reference_dict' % BASEDIR
 
+MLB_NICKNAMES_TO_KEEP = []
+
+NBA_NICKNAMES_TO_KEEP = ["MELO", "HOODIE MELO", "BLACK MAMBA",
+                         "KB24", "CHEF CURRY","KD", "DURANTULA",
+                         "DR J", "KG", "PG13", "D12", "UNCLE DREW",
+                         "KING JAMES", "LBJ", "BRON BRON", "AIR JORDAN",
+                         "MJ", "THE CLAW", "SHAQ", "CP3","DWADE"]
+NFL_NICKNAMES_TO_KEEP = []
 
 def create_nba_nicknames_dict():
     """
@@ -148,13 +157,34 @@ def save_dict(dictionary, file_name):
     f.write(tmp_json)
     f.close()
 
+def keep_useful_nicknames(nickname_dict, nicknames_to_keep):
+
+    clean_dict = {}
+    for name in nicknames_to_keep:
+        if name in nickname_dict:
+            clean_dict[name] = nickname_dict[name]
+
+    return clean_dict
+
+
 
 def create_nickname_dict():
-    nickname_dict = create_nba_nicknames_dict()
-    save_dict(nickname_dict, "NBA_nickname_dict")
-
+    nicknames_to_keep = ["HAMMERIN HANK","BIG PAPI","FLYIN HAWAIIAN",
+                         "THE CUBAN MISSILE","THE TODDFATHER","MR OCTOBER",
+                         "THE CAPTAIN", "PUDGE", "BIG UNIT"]
     mlb_nickname_dict = create_mlb_nicknames_dict()
+    mlb_nickname_dict = keep_useful_nicknames(mlb_nickname_dict, nicknames_to_keep)
     save_dict(mlb_nickname_dict, "MLB_nickname_dict")
 
     nfl_nickname_dict = create_nfl_nicknames_dict()
     save_dict(nfl_nickname_dict, "NFL_nickname_dict")
+
+
+    nickname_dict = create_nba_nicknames_dict()
+    save_dict(nickname_dict, "NBA_nickname_dict")
+
+
+
+if __name__ == '__main__':
+    nba_nickname = keep_useful_nicknames(NLPResourceUtil().sports_nickname_dict["NBA"], NBA_NICKNAMES_TO_KEEP)
+    save_dict(nba_nickname, "NBA_nickname_dict")

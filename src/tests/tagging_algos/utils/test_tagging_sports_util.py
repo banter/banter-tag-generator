@@ -184,12 +184,14 @@ class TestTaggingSportsUtil(unittest.TestCase):
         return
 
     def test_get_nickname_tags_non_active_player(self):
-        entity = {"text": "BLACK JESUS", "type": "PERSON", "start_char": 1, "end_char": 12}
+        entity = {"text": "MELO", "type": "PERSON", "start_char": 1, "end_char": 12}
         response = self.ignore_confidence(self.sport_util.get_team_player_league_tags_on_nickname(entity,
                                                                                                   self.sport_util.util.sports_nickname_dict))
-        expected = [{'type': 'person', 'value': 'EARL MONROE', 'isPrimary': True},
+        expected = [{'type': 'person', 'value': 'CARMELO ANTHONY', 'isPrimary': True},
                     {'type': 'league', 'value': 'NBA', 'isPrimary': False},
-                    {'type': 'sport', 'value': 'BASKETBALL', 'isPrimary': False}]
+                    {'type': 'sport', 'value': 'BASKETBALL', 'isPrimary': False},
+                    {'type': 'team', 'value': 'PORTLAND TRAIL BLAZERS', 'isPrimary': False},
+                    {'type': 'position', 'value': 'PF', 'isPrimary': False}]
         self.assertCountEqual(response, expected)
 
     def test_get_nickname_tags_active_player(self):
