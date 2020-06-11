@@ -15,11 +15,12 @@ SAVE_LOCATION = '%s/resources/reference_dict' % BASEDIR
 MLB_NICKNAMES_TO_KEEP = []
 
 NBA_NICKNAMES_TO_KEEP = ["MELO", "HOODIE MELO", "BLACK MAMBA",
-                         "KB24", "CHEF CURRY","KD", "DURANTULA",
+                         "KB24", "CHEF CURRY", "KD", "DURANTULA",
                          "DR J", "KG", "PG13", "D12", "UNCLE DREW",
                          "KING JAMES", "LBJ", "BRON BRON", "AIR JORDAN",
-                         "MJ", "THE CLAW", "SHAQ", "CP3","DWADE"]
+                         "MJ", "THE CLAW", "SHAQ", "CP3", "DWADE"]
 NFL_NICKNAMES_TO_KEEP = []
+
 
 def create_nba_nicknames_dict():
     """
@@ -157,8 +158,8 @@ def save_dict(dictionary, file_name):
     f.write(tmp_json)
     f.close()
 
-def keep_useful_nicknames(nickname_dict, nicknames_to_keep):
 
+def keep_useful_nicknames(nickname_dict, nicknames_to_keep):
     clean_dict = {}
     for name in nicknames_to_keep:
         if name in nickname_dict:
@@ -167,10 +168,9 @@ def keep_useful_nicknames(nickname_dict, nicknames_to_keep):
     return clean_dict
 
 
-
 def create_nickname_dict():
-    nicknames_to_keep = ["HAMMERIN HANK","BIG PAPI","FLYIN HAWAIIAN",
-                         "THE CUBAN MISSILE","THE TODDFATHER","MR OCTOBER",
+    nicknames_to_keep = ["HAMMERIN HANK", "BIG PAPI", "FLYIN HAWAIIAN",
+                         "THE CUBAN MISSILE", "THE TODDFATHER", "MR OCTOBER",
                          "THE CAPTAIN", "PUDGE", "BIG UNIT"]
     mlb_nickname_dict = create_mlb_nicknames_dict()
     mlb_nickname_dict = keep_useful_nicknames(mlb_nickname_dict, nicknames_to_keep)
@@ -179,10 +179,8 @@ def create_nickname_dict():
     nfl_nickname_dict = create_nfl_nicknames_dict()
     save_dict(nfl_nickname_dict, "NFL_nickname_dict")
 
-
     nickname_dict = create_nba_nicknames_dict()
     save_dict(nickname_dict, "NBA_nickname_dict")
-
 
 
 if __name__ == '__main__':
