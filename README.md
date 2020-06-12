@@ -1,13 +1,13 @@
 "# banter_tag_gen"
 
-#Run th App
+#Run th App locally
 - `docker-compose up`
 
 Note:
 - This initial startup will take some time, if MemoryError, increase memory allocation for each container on the docker vm.
 - Downloading: Python Packages, English model for neural pipeline and Setting default neural pipeline in english
 - `docker-machine create -d virtualbox --virtualbox-cpu-count=2 --virtualbox-memory=4096 --virtualbox-disk-size=50000 default`    
-
+- uses docker-and-local-requirements.txt, this is different than the AWS container 
 
 Endpoints:
 
