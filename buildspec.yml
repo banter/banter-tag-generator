@@ -1,0 +1,35 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.7
+    commands:
+  pre_build:
+    commands:
+      - echo "[+] Running tests..."
+  build:
+    commands:
+      # run the build
+      - echo "[+] Installing dependencies...."
+      - python3 -m venv venv
+      - ls -l
+      - . venv/bin/activate
+      - pip3 install -r requirements.txt --default-timeout=10000 --no-cache-dir -v
+      - ls -l
+      - echo "[+] After installing dep...."
+artifacts:
+  files:
+    - start-service.sh
+    - stop-service.sh
+    - remove-archives.sh
+    - restart-codedeploy-agent.sh
+    - create-swap.sh
+    - appspec.yml
+    - 'logs/**/*'
+    - app.py
+    - requirements.txt
+    - 'setup/**'
+    - 'src/**/*'
+    - 'venv/**/*'
+    - 'node_modules/**/*'
