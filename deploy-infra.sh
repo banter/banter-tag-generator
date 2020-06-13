@@ -16,7 +16,7 @@ CODEPIPELINE_BUCKET="$STACK_NAME-$REGION-codepipeline-$AWS_ACCOUNT_ID"
 GH_ACCESS_TOKEN=$(cat ~/.github/banter-tag-generator-access-token)
 GH_OWNER=$(cat ~/.github/banter-tag-generator-owner)
 GH_REPO=$(cat ~/.github/banter-tag-generator-repo)
-GH_BRANCH=feature/deploy
+GH_BRANCH=master
 
 # Deploys static resources
 echo -e "\n\n=========== Deploying setup.yml ==========="
