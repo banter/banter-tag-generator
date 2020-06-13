@@ -28,6 +28,7 @@ artifacts:
     - appspec.yml
     - 'logs/**/*'
     - app.py
+    - waitress_serve.py
     - requirements.txt
     - 'setup/**'
     - 'src/**/*'
