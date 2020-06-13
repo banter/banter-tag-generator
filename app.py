@@ -1,7 +1,5 @@
 import json
-
 from flask import Flask, request
-
 from flask_api import status
 from src.main.tag_identifier import TagIdentifier
 from src.main.tagging_algos.tagging_enums.optimization_tool_mapping import OptimizationToolMapping
@@ -9,11 +7,21 @@ from src.main.utils.logger_initializer import *
 app = Flask(__name__)
 PARENT_DIR = os.getcwd()
 initialize_logger(PARENT_DIR)
+hostname = os.popen('hostname').read()
+# If on docker or local log to logs directory, if on AWS ec2 log to logs folder outside project
+if 'ec2' in hostname:
+    initialize_logger('../')
+else:
+    initialize_logger(PARENT_DIR)
 
 @app.route('/actuator')
 def actuator():
     logging.info("actuator")
-    return "success", status.HTTP_200_OK
+    return "success!", status.HTTP_200_OK
+
+@app.route('/')
+def healthcheck():
+    return "healthcheck", status.HTTP_200_OK
 
 @app.route('/getTags', methods=["GET"])
 def getTags():
@@ -68,8 +76,8 @@ def getTagsFromBody():
 
 
 if __name__ == "__main__":
-    a = os.popen('hostname').read()
-    if 'Austin' not in a:
+    hostname = os.popen('hostname').read()
+    if 'Austin' not in hostname:
         app.run(host="0.0.0.0", port=5000, debug=False)
     else:
         app.run(host="0.0.0.0", port=5005, debug=False)

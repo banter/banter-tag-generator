@@ -10,7 +10,7 @@ rm -rf master.zip
 cd banter-tag-generator-master
 python3 -m venv venv
 source venv/bin/activate
-pip3 install -r requirements.txt --default-timeout=10000 --no-cache-dir -v
+pip3 install -r docker-and-local-requirements.txt --default-timeout=10000 --no-cache-dir -v
 pip install stanza==1.0.1 --no-cache-dir -v
 pip install nltk==3.5 --no-cache-dir -v
 pip install waitress==1.4.3
