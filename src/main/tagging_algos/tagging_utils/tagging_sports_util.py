@@ -118,11 +118,20 @@ class TaggingSportsUtil(TaggingBaseHandler):
             if name in reference_dict[league]:
                 logging.debug(f"Player or Coach Exists in {league}: {name}")
                 if is_tag_for_player:
+                    # Referencing the player tags display value, this is not all Caps but is specific for the person
+                    # As a result, person tags for specific Players will be specific to their name i.e. LeBron James
+                    # But all other tags and all other PERSON tags will be CAPS, i.e. AUSTIN MARCHESE
+                    display_name = reference_dict[league][name]["display"]
                     tags.append({TagKeys.TYPE.value: TagType.TEAM.value,
                                  TagKeys.VALUE.value: reference_dict[league][name][TagType.TEAM.value],
                                  TagKeys.CONFIDENCE.value: method_confidence,
                                  TagKeys.ISPRIMARY.value: False})
+                    tags.append({TagKeys.TYPE.value: TagType.PERSON.value,
+                                 TagKeys.VALUE.value: display_name,
+                                 TagKeys.CONFIDENCE.value: method_confidence,
+                                 TagKeys.ISPRIMARY.value: True})
                     position = reference_dict[league][name][TagType.POSITION.value]
+
                     if position != '':
                         tags.append(
                             {TagKeys.TYPE.value: TagType.POSITION.value,
@@ -135,10 +144,10 @@ class TaggingSportsUtil(TaggingBaseHandler):
                                  TagKeys.VALUE.value: reference_dict[league][name],
                                  TagKeys.CONFIDENCE.value: method_confidence,
                                  TagKeys.ISPRIMARY.value: False})
-                tags.append({TagKeys.TYPE.value: TagType.PERSON.value,
-                             TagKeys.VALUE.value: name,
-                             TagKeys.CONFIDENCE.value: method_confidence,
-                             TagKeys.ISPRIMARY.value: True})
+                    tags.append({TagKeys.TYPE.value: TagType.PERSON.value,
+                                 TagKeys.VALUE.value: name,
+                                 TagKeys.CONFIDENCE.value: method_confidence,
+                                 TagKeys.ISPRIMARY.value: True})
                 tags.append({TagKeys.TYPE.value: TagType.LEAGUE.value,
                              TagKeys.VALUE.value: league,
                              TagKeys.CONFIDENCE.value: method_confidence,
@@ -166,10 +175,6 @@ class TaggingSportsUtil(TaggingBaseHandler):
         for league in self.optimization_tool.value["leagues"]:
             if nickname in nickname_dict[league]:
                 real_name = nickname_dict[league][nickname]
-                tags.append({TagKeys.TYPE.value: TagType.PERSON.value,
-                             TagKeys.VALUE.value: nickname_dict[league][nickname],
-                             TagKeys.CONFIDENCE.value: method_confidence,
-                             TagKeys.ISPRIMARY.value: True})
                 tags.append({TagKeys.TYPE.value: TagType.LEAGUE.value,
                              TagKeys.VALUE.value: league,
                              TagKeys.CONFIDENCE.value: method_confidence,
@@ -180,6 +185,11 @@ class TaggingSportsUtil(TaggingBaseHandler):
                              TagKeys.ISPRIMARY.value: False})
                 self.set_optimization_tool(TagType.LEAGUE.value)
                 if real_name in self.util.sports_player_dict[league]:
+                    display_name = self.util.sports_player_dict[league][real_name]["display"]
+                    tags.append({TagKeys.TYPE.value: TagType.PERSON.value,
+                                 TagKeys.VALUE.value: display_name,
+                                 TagKeys.CONFIDENCE.value: method_confidence,
+                                 TagKeys.ISPRIMARY.value: True})
                     tags.append({TagKeys.TYPE.value: TagType.TEAM.value,
                                  TagKeys.VALUE.value: self.util.sports_player_dict[league][real_name][
                                      TagType.TEAM.value],
@@ -192,7 +202,11 @@ class TaggingSportsUtil(TaggingBaseHandler):
                                          TagType.POSITION.value],
                                      TagKeys.CONFIDENCE.value: method_confidence,
                                      TagKeys.ISPRIMARY.value: False})
-
+                else:
+                    tags.append({TagKeys.TYPE.value: TagType.PERSON.value,
+                                 TagKeys.VALUE.value: nickname_dict[league][nickname],
+                                 TagKeys.CONFIDENCE.value: method_confidence,
+                                 TagKeys.ISPRIMARY.value: True})
                 break
         return tags
 
