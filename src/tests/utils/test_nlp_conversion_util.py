@@ -131,6 +131,10 @@ class TestNLPConversionUtil(unittest.TestCase):
         expected = [{"type": "person", "value": "Lebron James"}]
         response = NLPConversionUtil().conver_non_league_tags_to_Title_Case_and_format_names(tag)
         self.assertEqual(expected, response)
+        tag = [{"type": "person", "value": "LeBron James"}]
+        expected = [{"type": "person", "value": "LeBron James"}]
+        response = NLPConversionUtil().conver_non_league_tags_to_Title_Case_and_format_names(tag)
+        self.assertEqual(expected, response)
         tag = [{"type": "league", "value": "NFL"}]
         expected = [{"type": "league", "value": "NFL"}]
         response = NLPConversionUtil().conver_non_league_tags_to_Title_Case_and_format_names(tag)

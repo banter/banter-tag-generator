@@ -87,7 +87,10 @@ class NLPConversionUtil(LanguageConfig):
             tag_type = tag["type"]
             if tag_type not in self.capitalized_tag_types:
                 if tag_type == "person":
-                    tag["value"] = self.format_name(tag["value"])
+                    if tag["value"].upper() == tag["value"]:
+                        tag["value"] = self.format_name(tag["value"])
+                    else:
+                        pass
                 else:
                     tag["value"] = tag["value"].title()
         return tags
