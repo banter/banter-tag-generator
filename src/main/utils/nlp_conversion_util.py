@@ -48,6 +48,14 @@ ENGLISH_STOP_WORDS = frozenset([
     "within", "without", "would", "yet", "you", "your", "yours", "yourself",
     "yourselves", "like"])
 
+SPORTS_POSITIONS = frozenset(['QB', 'RB', 'WR', 'TE', 'K', "DE", "DT", "LG", "RG", "RT", "LT", "CB", "FS", "LOLB", "MLB",
+                              "ROLB",
+                              # Basketball
+                              "PG", "SG", "C", "SF", "PF",
+                              # Baseball
+                              "P", "1B", "2B", "3B", "SS", "LF", "RF", "CF", "OF",
+                              # Hockey?
+                              "G", "LD", "LW", "RW", "RD"])
 # Editing punctuation so normalization doesnt remove matchup text punctuation
 punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
 for char in LanguageConfig().punctuation_to_keep_in_normalized_text:
@@ -60,6 +68,31 @@ class NLPConversionUtil(LanguageConfig):
 
     @staticmethod
     def remove_stop_words_and_punctuation(list_: list) -> list:
+        clean_data = [word for word in list_ if
+                      not word in ENGLISH_STOP_WORDS and not word in string.punctuation]
+        return clean_data
+
+
+    @staticmethod
+    def remove_leading_or_trailing_stop_words(nlp_entity: NLPEntityModel) -> list:
+        nlp_entity_word_list = nlp_entity["text"].split()
+        if len(nlp_entity_word_list) > 1 :
+            first_word, last_word = nlp_entity_word_list[0].lower(),nlp_entity_word_list[-1].lower()
+            if first_word in ENGLISH_STOP_WORDS or first_word in SPORTS_POSITIONS:
+                del nlp_entity_word_list[0]
+            if last_word in ENGLISH_STOP_WORDS or first_word in SPORTS_POSITIONS:
+                del nlp_entity_word_list[-1]
+        nlp_entity["text"] = " ".join(nlp_entity_word_list)
+        return nlp_entity
+
+    @staticmethod
+    def remove_stop_words_from_entity(nlp_entity: NLPEntityModel) -> list:
+        clean_entity = [word for word in nlp_entity["text"].lower().split() if
+                      not word in ENGLISH_STOP_WORDS]
+        return clean_entity
+
+    @staticmethod
+    def remove_stop_words_from_name(list_: list) -> list:
         clean_data = [word for word in list_ if
                       not word in ENGLISH_STOP_WORDS and not word in string.punctuation]
         return clean_data
@@ -121,6 +154,20 @@ class NLPConversionUtil(LanguageConfig):
                 filterd_list.append(value)
         return filterd_list
 
+    def remove_stop_words_from_nlp_entity_and_create_potential_tags(self, entity: NLPEntityModel) -> List[NLPEntityModel]:
+        """
+        :param entity:
+        :return: altered name if need be --- Lebron James Starts ---- Lebron James
+        """
+        entity = self.remove_stop_words_from_nlp_entity()
+        if entity['type'] == "PERSON":
+            text: List = entity['text'].split()
+            if len(text) == 3:
+                altered_name = " ".join(text[0:2])
+                adjusted_name_tag: NLPEntityModel = {"type": "PERSON", "text": altered_name}
+                return adjusted_name_tag
+        return None
+
     def remove_extra_word_from_name(self, entity: NLPEntityModel) -> NLPEntityModel:
         """
         :param entity:
@@ -154,14 +201,14 @@ class NLPConversionUtil(LanguageConfig):
         for nlp_entity in nlp_entity_list:
             if nlp_entity['text'] in existing_entity_set:
                 pass
-            else:
-                if nlp_entity['type'] in entities_analyzed:
-                    existing_entity_set.add(nlp_entity['text'])
-                    existing_entity_str += nlp_entity['text']
-                    filtered_token_list.append(nlp_entity)
-                    adjusted_name_tag = self.remove_extra_word_from_name(nlp_entity)
-                    if adjusted_name_tag:
-                        filtered_token_list.append(adjusted_name_tag)
+            elif nlp_entity['type'] in entities_analyzed:
+                existing_entity_set.add(nlp_entity['text'])
+                existing_entity_str += nlp_entity['text']
+                filtered_token_list.append(nlp_entity)
+                adjusted_name_tag = self.remove_stop_words_from_nlp_entity_and_create_potential_tags(nlp_entity)
+                adjusted_name_tag = self.remove_extra_word_from_name(nlp_entity)
+                if adjusted_name_tag:
+                    filtered_token_list.append(adjusted_name_tag)
 
         return filtered_token_list, existing_entity_set, existing_entity_str
 

@@ -28,6 +28,13 @@ class TestTaggingBaseHandler(unittest.TestCase):
         valid_response = [{'type': 'person', 'value': 'Cam Bedrosian', 'isPrimary': True}]
         self.assertCountEqual(response, valid_response)
 
+    def test_get_person_tags_multiple(self):
+        sample = {'text': 'LeBron James Stars', 'type': 'PERSON', 'start_char': 13, 'end_char': 19}
+        response = self.base_handler.get_person_tags(sample)
+        response = self.remove_confidence_for_test_verification(response)
+        valid_response = [{'type': 'person', 'value': 'Cam Bedrosian', 'isPrimary': True}]
+        self.assertCountEqual(response, valid_response)
+
     def test_generate_tags_non_specific(self):
         sample = "Hello this is Joe Rogan and im glad to be on the Banter Podcast."
         valid_response = [{'type': 'person', 'value': 'Joe Rogan', 'isPrimary': True}]

@@ -93,21 +93,6 @@ class NLPUtil(NLPConversionUtil, NLPResourceUtil):
                     important_nlp_entity_list.append(nlp_entity)
         return important_nlp_entity_list
 
-    def get_entity_list_manually(self, _str: str):
-        """
-        This is used to determine the tokens without using standford nlp
-        :return: dict
-        """
-        # Tokenizing Data, breaks up into words/ phrases
-        entity_list = []
-        token_list = self.word_tokenize(_str)
-        # Removing Stop words and punctuation from data
-        clean_token_list = self.remove_stop_words_and_punctuation(token_list)
-
-        for word in clean_token_list:
-            entity_list.append({"text": word, "type": "UNKNOWN"})
-        return entity_list
-
     # TODO Write Test
     @debug
     def get_normalized_and_filtered_nlp_entities(self, str_: str) -> List[NLPEntityModel]:
@@ -124,7 +109,7 @@ class NLPUtil(NLPConversionUtil, NLPResourceUtil):
 
             nlp_entities, existing_entity_set, existing_entity_str = self.filter_nlp_entities_and_create_unique_entity_reference(
                 nlp_entities,
-                self.token_types_analyzed)
+                self.entity_types_analyzed)
             nlp_entities += self.get_important_pos_tags_from_sentence(nlp_response.to_dict(), existing_entity_set,
                                                                       existing_entity_str)
 

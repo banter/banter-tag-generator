@@ -16,6 +16,27 @@ class TestNLPConversionUtil(unittest.TestCase):
         word_list = ['abcd', "a", "'", "austin"]
         self.assertEqual(4, len(NLPConversionUtil.remove_duplicates_from_list(word_list)))
 
+    def test_remove_leading_or_trailing_stop_words(self):
+        nlp_entity = {"type": "ORG", "text": "THE CLEVELAND BROWNS"}
+        self.assertEqual({"type": "ORG", "text": "CLEVELAND BROWNS"},
+                     NLPConversionUtil().remove_leading_or_trailing_stop_words(nlp_entity))
+        nlp_entity = {"type": "ORG", "text": "A CLEVELAND BROWNS"}
+        self.assertEqual({"type": "ORG", "text": "CLEVELAND BROWNS"},
+                     NLPConversionUtil().remove_leading_or_trailing_stop_words(nlp_entity))
+        nlp_entity = {"type": "ORG", "text": "A CLEVELAND"}
+        self.assertEqual({"type": "ORG", "text": "CLEVELAND"},
+                     NLPConversionUtil().remove_leading_or_trailing_stop_words(nlp_entity))
+        nlp_entity = {"type": "ORG", "text": "A CLEVELAND A"}
+        self.assertEqual({"type": "ORG", "text": "CLEVELAND"},
+                         NLPConversionUtil().remove_leading_or_trailing_stop_words(nlp_entity))
+        nlp_entity = {"type": "ORG", "text": "CLEVELAND"}
+        self.assertEqual({"type": "ORG", "text": "CLEVELAND"},
+                     NLPConversionUtil().remove_leading_or_trailing_stop_words(nlp_entity))
+        nlp_entity = {"type": "ORG", "text": "of CLEVELAND"}
+        self.assertEqual({"type": "ORG", "text": "CLEVELAND"},
+                     NLPConversionUtil().remove_leading_or_trailing_stop_words(nlp_entity))
+
+
     def test_filter_token_list_by_type(self):
         word_list = [{"type": 'PERSON'}, {"type": 'ORG'}, {"type": 'ORG'}]
         self.assertEqual(1, len(NLPConversionUtil.filter_token_list_by_type(word_list, "PERSON")))
@@ -86,6 +107,17 @@ class TestNLPConversionUtil(unittest.TestCase):
         self.assertTrue('AUSTIN' in token_set)
         self.assertTrue('LEBRON JAMES STARS' in token_set)
         self.assertEqual(token_concat_str, 'AUSTINLEBRON JAMES STARS')
+
+    def test_clean_nlp_entity_and_create_potential_tags(self):
+        sample_dict = {"type": "PERSON", "text": "Lebron James Stars Again"}
+        expected_response = [{"type": "PERSON", "text": "Lebron James"},{"type": "PERSON", "text": "Stars Again"},
+                             {"type": "PERSON", "text": "James Stars"}]
+        response = NLPConversionUtil().remove_stop_words_from_nlp_entity_and_create_potential_tags(sample_dict)
+        self.assertCountEqual(response, expected_response)
+        sample_dict = {"type": "PERSON", "text": "Lebron James"}
+        expected_response = [{"type": "PERSON", "text": "Lebron James"}]
+        response = NLPConversionUtil().remove_stop_words_from_nlp_entity_and_create_potential_tags(sample_dict)
+        self.assertCountEqual(response, expected_response)
 
     def test_remove_extra_word_from_name(self):
         sample_dict = {"type": "PERSON", "text": "Lebron James Stars"}

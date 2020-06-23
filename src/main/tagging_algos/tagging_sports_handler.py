@@ -103,6 +103,7 @@ class TaggingSportsHandler(TaggingSportsUtil):
         if self.util.is_nlp_entity_specific_type(nlp_entity, "PERSON"):
             word_tags += self.get_person_tags(nlp_entity)
         if self.util.is_nlp_entity_specific_type(nlp_entity, "ORG"):
+            # FIXME all filtering of words should be done in the begining
             adjusted_nlp_entity = self.util.remove_prefix_from_word(nlp_entity)
             if self.util.is_adjusted_entity_different(nlp_entity, adjusted_nlp_entity):
                 word_tags += self.generate_basic_sport_tags(adjusted_nlp_entity)

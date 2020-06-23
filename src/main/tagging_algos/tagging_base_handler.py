@@ -5,13 +5,14 @@ from src.main.tagging_algos.tagging_enums.base_tag_enums import BaseTagTypes as 
 from src.main.tagging_algos.tagging_enums.base_tag_enums import TagKeys
 from src.main.tagging_algos.tagging_enums.confidence_levels import ConfidenceLevels
 from src.main.utils.nlp_util import NLPUtil
-
+from src.main.utils.decorators import debug
 
 class TaggingBaseHandler:
     # Class Variable instead of Instance variable, so on initilization,
     # Dont have to setup, makes init go from 20ms to 0.00ms
     util = NLPUtil()
 
+    @debug
     def get_person_tags(self, nlp_entity: NLPEntityModel):
         """
         # Pass in token and if a full name adding this tag

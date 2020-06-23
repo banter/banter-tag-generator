@@ -229,6 +229,6 @@ def create_player_dict(modify_existing: bool, is_team_upper_case: False):
 
 
 if __name__ == '__main__':
-    teams = MLBTeams(2019)
-    mlb_dict = create_player_dict_on_teams(teams, 'MLB')
-    save_dict(mlb_dict, "MLB_player_dict")
+    teams = NFLTeams(2020)
+    mlb_dict = create_player_dict_on_teams(teams, 'NFL')
+    save_dict(mlb_dict, "NFL_player_dict")

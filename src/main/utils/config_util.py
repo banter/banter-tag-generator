@@ -26,7 +26,7 @@ class SportsConfig:
 
 class LanguageConfig:
     # TODO Consider EVENTS
-    token_types_analyzed = set(json.loads(CONFIG.get(SECTION, "ENTITY_TYPES_ANALYZED")))
+    entity_types_analyzed = set(json.loads(CONFIG.get(SECTION, "ENTITY_TYPES_ANALYZED")))
     # TODO Consider NOUNS?
     language_types_analyzed: Set[str] = set(json.loads(CONFIG.get(SECTION, "LANGUAGE_TYPES_ANALYZED")))
     # TODO Consider max descrition size to consider
