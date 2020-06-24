@@ -129,6 +129,16 @@ class TestNLPUtil(unittest.TestCase):
                      'type': 'ORG'}]
         self.assertEqual(response, expected)
 
+    def test_get_normalized_and_filtered_nlp_entities_manual(self):
+        response = self.nlp_util.get_normalized_and_filtered_nlp_entities(
+            'Magic')
+        print(response)
+        expected = [{'end_char': 0,
+                     'start_char': 0,
+                     'text': 'MAGIC',
+                     'type': 'MANUAL'}]
+        self.assertEqual(response, expected)
+
     def test_get_nouns_from_sentence_token_in_concat_str(self):
         token_set = set()
         token_set.add("Jared Goff")

@@ -57,6 +57,18 @@ def getNLP():
     return json.dumps(tags)
 
 
+@app.route('/rawnlp', methods=["GET"])
+def rawNLP():
+    description = request.args.get('description')
+    if description is None or len(description) == 0:
+        return "please provide desscription in url", status.HTTP_400_BAD_REQUEST
+    else:
+        pass
+    nlp_response = TagIdentifier().base_handler.util.get_nlp_response(description)
+    nlp_entities = TagIdentifier().base_handler.util.get_nlp_entities_from_nlp_response(nlp_response)
+    response = [{"NLP Response": str(nlp_response), "NLP Entities": nlp_entities}]
+    return json.dumps(response)
+
 @app.route('/getTagsFromBody', methods=["GET", "POST"])
 def getTagsFromBody():
     try:

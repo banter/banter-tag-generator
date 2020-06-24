@@ -118,19 +118,26 @@ class NLPUtil(NLPConversionUtil, NLPResourceUtil):
         if self.is_description_too_long_or_empty(str_, self.max_description):
             print("Description is Too Long")
             return []
+        elif len(str_.split()) == 1:
+            nlp_response = self.get_nlp_response(str_)
+            nlp_entities : List[NLPEntityModel] = [{
+                'text': str_,
+                'type': "MANUAL",
+                'start_char': 0,
+                'end_char': 0
+            }]
         else:
             nlp_response = self.get_nlp_response(str_)
             nlp_entities = self.get_nlp_entities_from_nlp_response(nlp_response)
 
-            nlp_entities, existing_entity_set, existing_entity_str = self.filter_nlp_entities_and_create_unique_entity_reference(
-                nlp_entities,
-                self.token_types_analyzed)
-            nlp_entities += self.get_important_pos_tags_from_sentence(nlp_response.to_dict(), existing_entity_set,
-                                                                      existing_entity_str)
+        nlp_entities, existing_entity_set, existing_entity_str = self.filter_nlp_entities_and_create_unique_entity_reference(
+            nlp_entities,
+            self.token_types_analyzed)
+        nlp_entities += self.get_important_pos_tags_from_sentence(nlp_response.to_dict(), existing_entity_set,
+                                                                  existing_entity_str)
 
-            nlp_entities = self.normalize_entity_list(nlp_entities)
-            print(nlp_entities)
-            return nlp_entities
+        nlp_entities = self.normalize_entity_list(nlp_entities)
+        return nlp_entities
 
     # @staticmethod
     # # TODO Handle multiple leagues discussed

@@ -218,6 +218,7 @@ def create_player_dict(modify_existing: bool, is_team_upper_case: False):
             # SPOT FIX
             nfl_dict["AJ GREEN"] = {"display": "A.J. Green", "team": "CINCINNATI BENGALS",
                                     "position": "WR"}
+            del nfl_dict["MICHAEL JORDAN"]
             save_dict(nfl_dict, "NFL_player_dict")
         except:
             teams = NFLTeams(2019)
@@ -225,6 +226,7 @@ def create_player_dict(modify_existing: bool, is_team_upper_case: False):
             # SPOT FIX
             nfl_dict["AJ GREEN"] = {"display": "A.J. Green", "team": "CINCINNATI BENGALS",
                                     "position": "WR"}
+            del nfl_dict["MICHAEL JORDAN"]
             save_dict(nfl_dict, "NFL_player_dict")
 
 
