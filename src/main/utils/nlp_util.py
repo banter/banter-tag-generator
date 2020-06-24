@@ -137,7 +137,6 @@ class NLPUtil(NLPConversionUtil, NLPResourceUtil):
                                                                   existing_entity_str)
 
         nlp_entities = self.normalize_entity_list(nlp_entities)
-        print(nlp_entities)
         return nlp_entities
 
     # @staticmethod
