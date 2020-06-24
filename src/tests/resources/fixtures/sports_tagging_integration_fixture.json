@@ -1,4 +1,58 @@
 {
+  "Magic": [
+
+    {
+      "type": "team",
+      "value": "Orlando Magic",
+      "isPrimary": true
+    },
+    {
+      "type": "league",
+      "value": "NBA",
+      "isPrimary": false
+    },
+    {
+      "type": "sport",
+      "value": "Basketball",
+      "isPrimary": false
+    }
+  ],
+  "Bucks": [
+
+    {
+      "type": "team",
+      "value": "Milwaukee Bucks",
+      "isPrimary": true
+    },
+    {
+      "type": "league",
+      "value": "NBA",
+      "isPrimary": false
+    },
+    {
+      "type": "sport",
+      "value": "Basketball",
+      "isPrimary": false
+    }
+  ],
+  "Yankees": [
+
+    {
+      "type": "team",
+      "value": "New York Yankees",
+      "isPrimary": true
+    },
+    {
+      "type": "league",
+      "value": "MLB",
+      "isPrimary": false
+    },
+    {
+      "type": "sport",
+      "value": "Baseball",
+      "isPrimary": false
+    }
+  ],
   "On This Weeks Episode we are going to discuss Cleveland Browns": [
     {
       "type": "team",

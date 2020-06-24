@@ -133,8 +133,7 @@ class TestTaggingSportsHandler(unittest.TestCase):
         print(response, desired_tags)
         self.assertCountEqual(response, desired_tags)
 
-        # @unittest.skip("Skip when testing locally, this is a full integration test, uncomment in production")
-
+    # @unittest.skip("Skip when testing locally, this is a full integration test, uncomment in production")
     def test_get_sports_tags_full_test(self):
         for (description, desired_tags) in self.integration_test_fixture.items():
             response = self.sport_handler.get_sports_tags(description)
