@@ -1,19 +1,20 @@
-from src.main.utils.nlp_resource_util import NLPResourceUtil
-from sportsreference.nfl.roster import Roster as NFLRoster
-from sportsreference.mlb.roster import Roster as MLBRoster
-from sportsreference.nba.roster import Roster as NBARoster
-from sportsreference.nhl.roster import Roster as NHLRoster
-
-from sportsreference.nfl.teams import Teams as NFLTeams
-from sportsreference.mlb.teams import Teams as MLBTeams
-from sportsreference.nba.teams import Teams as NBATeams
-from sportsreference.nhl.teams import Teams as NHLTeams
-from src.main.utils.banter_dictionary_creator.sports_reference_player_scraper import \
-    SportsReferencePlayerScraper
 import json
 import os
 from os.path import dirname, realpath
+
+from sportsreference.mlb.roster import Roster as MLBRoster
+from sportsreference.mlb.teams import Teams as MLBTeams
+from sportsreference.nba.roster import Roster as NBARoster
+from sportsreference.nba.teams import Teams as NBATeams
+from sportsreference.nfl.roster import Roster as NFLRoster
+from sportsreference.nfl.teams import Teams as NFLTeams
+from sportsreference.nhl.roster import Roster as NHLRoster
+from sportsreference.nhl.teams import Teams as NHLTeams
+
+from src.main.utils.banter_dictionary_creator.sports_reference_player_scraper import \
+    SportsReferencePlayerScraper
 from src.main.utils.nlp_conversion_util import NLPConversionUtil
+from src.main.utils.nlp_resource_util import NLPResourceUtil
 
 # TODO Handle Soccer Teams/Players
 nlp_resource_util = NLPResourceUtil()
@@ -22,6 +23,7 @@ MLB_OUTFIELD_POSITIONS = ['LF', 'RF', 'OF', 'CF']
 FANTASY_FOOTBALL_POSITIONS = ['QB', 'RB', 'WR', 'TE', 'K']
 NBA_POSITIONS = ['PG', 'SG', 'SF', 'PF', 'C']
 SAVE_LOCATION = '%s/resources/reference_dict' % BASEDIR
+
 
 class Player:
     def __init__(self, display: str, team: str, position: str, player_id: str):
@@ -40,7 +42,7 @@ class Player:
 
 class SportsReferenceRosterScraper(SportsReferencePlayerScraper):
 
-    def __init__(self, league: str, get_rosters: bool =False):
+    def __init__(self, league: str, get_rosters: bool = False):
         super().__init__(league)
         self.league = league.upper()
         self.valid_team_names = set()
@@ -87,14 +89,14 @@ class SportsReferenceRosterScraper(SportsReferencePlayerScraper):
 
     def get_team_roster(self, team_abbreviation):
         try:
-                team_roster = self.Roster_Package(team_abbreviation, '2020', slim=False)
-                if len(team_roster.players) == 0:
-                    print(f"No Roster available for 2020 for:{team_abbreviation}")
-                    team_roster = self.Roster_Package(team_abbreviation, '2019', slim=False)
-        except:
+            team_roster = self.Roster_Package(team_abbreviation, '2020', slim=False)
+            if len(team_roster.players) == 0:
+                print(f"No Roster available for 2020 for:{team_abbreviation}")
                 team_roster = self.Roster_Package(team_abbreviation, '2019', slim=False)
-                if len(team_roster.players) == 0:
-                    team_roster = self.Roster_Package(team_abbreviation, '2018', slim=False)
+        except:
+            team_roster = self.Roster_Package(team_abbreviation, '2019', slim=False)
+            if len(team_roster.players) == 0:
+                team_roster = self.Roster_Package(team_abbreviation, '2018', slim=False)
         return team_roster
 
     def create_league_player_dict(self):
@@ -123,7 +125,7 @@ class SportsReferenceRosterScraper(SportsReferencePlayerScraper):
                 # TODO add ability to scrape for name
                 if player.name == None:
                     continue
-                position = self.get_position(player, league=league)
+                position = self.get_position(player)
                 player_instance = Player(display=player.name, team=team_name, position=position,
                                          player_id=player.player_id)
                 # Checking Duplicate Names
@@ -132,7 +134,7 @@ class SportsReferenceRosterScraper(SportsReferencePlayerScraper):
                 else:
                     team_player_dict[NLPConversionUtil().normalize_text(player_instance.display)] = vars(
                         player_instance)
-            except AttributeError as err :
+            except AttributeError as err:
                 # Some players have a name as None in sportsreference dict
                 print(team_name, err)
         return team_player_dict
@@ -144,7 +146,7 @@ class SportsReferenceRosterScraper(SportsReferencePlayerScraper):
             # teams in the same season ex: MLB moralke01, so we are pulling from web page directly if this happens
             print("This is the Same person!", existing_player, vars(player_instance))
             current_team = self._scrape_sports_reference_for_players_team(player_instance.player_id)
-            print(current_team)
+            print("Current Team Scraped from Sports Reference:", current_team)
             if current_team in self._get_valid_team_names():
                 formatted_team = NLPConversionUtil().normalize_text(current_team)
                 self.league_roster_dict[NLPConversionUtil().normalize_text(player_instance.display)]["team"] \
@@ -152,10 +154,13 @@ class SportsReferenceRosterScraper(SportsReferencePlayerScraper):
             else:
                 del self.league_roster_dict[NLPConversionUtil().normalize_text(player_instance.display)]
         else:
-            print("These are different people, welcome to the Michael Jordan Data quality issue",
+            print("These are different people, welcome to the Michael Jordan Data quality issue, removing this "
+                  "person from Banter reference dictionary",
                   existing_player, vars(player_instance))
             self.duplicate_names.append(vars(player_instance))
-            self.duplicate_names.append(self.league_roster_dict[NLPConversionUtil().normalize_text(player_instance.display)])
+            self.duplicate_names.append(
+                self.league_roster_dict[NLPConversionUtil().normalize_text(player_instance.display)])
+            del self.league_roster_dict[NLPConversionUtil().normalize_text(player_instance.display)]
 
     def save_dict(self, dictionary, file_name):
         tmp_json = json.dumps(dictionary)
@@ -206,7 +211,8 @@ class SportsReferenceRosterScraper(SportsReferencePlayerScraper):
 
     def _manually_fix_nfl_dict(self, league_roster_dict):
         self._manually_fix_nfl_delete_from_dict(league_roster_dict)
-        fixed_dict = self._manually_fix_nfl_delete_from_dict(league_roster_dict)
+        removed_dict = self._manually_fix_nfl_delete_from_dict(league_roster_dict)
+        fixed_dict = self._manually_fix_nfl_add_to_dict(removed_dict)
         return fixed_dict
 
     def _manually_fix_mlb_dict(self, league_roster_dict):
@@ -218,6 +224,16 @@ class SportsReferenceRosterScraper(SportsReferencePlayerScraper):
     def _manually_fix_nfl_delete_from_dict(self, league_roster_dict):
         try:
             del league_roster_dict["MICHAEL JORDAN"]
+            return league_roster_dict
+        except:
+            return league_roster_dict
+
+    def _manually_fix_nfl_add_to_dict(self, league_roster_dict):
+        try:
+            league_roster_dict["MICHAEL THOMAS"] = {"display": "Michael Thomas", "team": "NEW ORLEANS SAINTS",
+                                                    "position": "WR", "player_id": "ThomMi05"}
+            league_roster_dict["JOSH ALLEN"] = {'display': 'Josh Allen', 'team': 'BUFFALO BILLS', 'position': 'QB',
+                                                'player_id': 'AlleJo02'}
             return league_roster_dict
         except:
             return league_roster_dict

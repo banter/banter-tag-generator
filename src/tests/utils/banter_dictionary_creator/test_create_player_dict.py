@@ -2,7 +2,7 @@ import os
 import unittest
 from os.path import dirname, realpath
 
-from src.main.utils.banter_dictionary_creator.create_player_dict import PositionGenerator
+from src.main.utils.banter_dictionary_creator.sports_reference_player_scraper import SportsReferencePlayerScraper
 from src.main.utils.nlp_resource_util import NLPResourceUtil
 
 BASEDIR = os.path.abspath(os.path.dirname(dirname(dirname(realpath(__file__)))))
@@ -44,63 +44,63 @@ class TestCreatePlayerDict(unittest.TestCase):
                 player = MLBPlayer(player_id)
             else:
                 player = NHLPlayer(player_id)
-            position = PositionGenerator().get_position(player, league_and_response['league'])
+            position = SportsReferencePlayerScraper(league_and_response['league']).get_position(player)
             print(player_id, league_and_response, position)
             self.assertCountEqual(position, league_and_response['response'])
 
     def test_lebron(self):
         lebron = NBAPlayer('jamesle01')
-        position = PositionGenerator().get_position(lebron, 'NBA')
+        position = SportsReferencePlayerScraper('NBA').get_position(lebron)
         self.assertEqual(position, 'SF')
 
     def test_terrance_ferg(self):
         terrance_fergeson = NBAPlayer('fergute01')
-        position = PositionGenerator().get_position(terrance_fergeson, 'NBA')
+        position = SportsReferencePlayerScraper('NBA').get_position(terrance_fergeson)
         self.assertEqual(position, 'SG')
 
     def test_PositionGenerator(self):
         player = TestPlayer(['SS', '2B', 'RF'])
-        position = PositionGenerator().get_position(player, 'MLB')
+        position = SportsReferencePlayerScraper('MLB').get_position(player)
         self.assertEqual(position, 'SS')
 
     def test_get_position_of(self):
         player = TestPlayer(['CF', 'OF', 'RF'])
-        position = PositionGenerator().get_position(player, 'MLB')
+        position = SportsReferencePlayerScraper('MLB').get_position(player)
         self.assertEqual(position, 'OF')
 
     def test_get_position_outfield_not_main_position(self):
         player = TestPlayer(['1B', 'OF', 'RF'])
-        position = PositionGenerator().get_position(player, 'MLB')
+        position = SportsReferencePlayerScraper('MLB').get_position(player)
         self.assertEqual(position, '1B')
 
     def test_get_position_bball(self):
         cp3 = NBAPlayer('paulch01')
-        position = PositionGenerator().get_position(cp3, 'NBA')
+        position = SportsReferencePlayerScraper('NBA').get_position(cp3)
         self.assertEqual(position, 'PG')
 
     def test_get_position_football(self):
         player = TestPlayer('QB/RB/DT')
-        position = PositionGenerator().get_position(player, 'NFL')
+        position = SportsReferencePlayerScraper('NFL').get_position(player)
         self.assertEqual(position, 'QB')
 
     def test_get_position_NFL_non_fantasy(self):
         player = TestPlayer('DT')
-        position = PositionGenerator().get_position(player, 'NFL')
+        position = SportsReferencePlayerScraper('NFL').get_position(player)
         self.assertEqual(position, '')
 
     def test_get_position_NFL_after_empty(self):
         player = TestPlayer(['', 'RB', ''])
-        position = PositionGenerator().get_position(player, 'NFL')
+        position = SportsReferencePlayerScraper('NFL').get_position(player)
         self.assertEqual(position, 'RB')
 
     def test_get_position_NFL_after_empty_non_fantasy_position(self):
         player = TestPlayer(['', 'DT', ''])
-        position = PositionGenerator().get_position(player, 'NFL')
+        position = SportsReferencePlayerScraper('NFL').get_position(player)
         self.assertEqual(position, '')
 
     def test_get_position_no_position(self):
         player = TestPlayerNoPosition()
-        position = PositionGenerator().get_position(player, 'MLB')
+        position = SportsReferencePlayerScraper('NFL').get_position(player)
         self.assertEqual(position, '')
 
 

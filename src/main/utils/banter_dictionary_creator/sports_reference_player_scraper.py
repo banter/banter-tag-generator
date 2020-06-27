@@ -1,15 +1,19 @@
-import requests
-from bs4 import BeautifulSoup
 import os
 from os.path import dirname, realpath
+
+import requests
+from bs4 import BeautifulSoup
+
 BASEDIR = os.path.abspath(os.path.dirname(os.path.dirname(dirname(realpath(__file__)))))
 FANTASY_FOOTBALL_POSITIONS = ['QB', 'RB', 'WR', 'TE', 'K']
 MLB_OUTFIELD_POSITIONS = ['LF', 'RF', 'OF', 'CF']
 NBA_POSITIONS = ['PG', 'SG', 'SF', 'PF', 'C']
 
+
 class SportsReferencePlayerScraper:
 
-    def __init__(self, league):
+    def __init__(self, league: str):
+        self.league = league.upper()
         if league == 'MLB':
             self.sports_reference_url = "https://www.baseball-reference.com/players/"
             self.url_ending = 'shtml'
@@ -23,12 +27,12 @@ class SportsReferencePlayerScraper:
         elif league == 'NHL':
             self.sports_reference_url = ""
 
-    def get_position(self, player, league):
-        if league == 'MLB':
+    def get_position(self, player):
+        if self.league == 'MLB':
             return self.get_position_mlb(player)
-        elif league == 'NFL':
+        elif self.league == 'NFL':
             return self.get_position_nfl(player)
-        elif league == 'NBA':
+        elif self.league == 'NBA':
             return self.get_position_nba(player)
         else:
             return ''

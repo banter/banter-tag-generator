@@ -61,7 +61,7 @@ class TestTaggingSportsHandler(unittest.TestCase):
         sample_input = {'text': "TOM BRADY", 'type': 'PERSON', 'start_char': 94, 'end_char': 104}
         response = self.sport_handler.generate_basic_sport_tags(sample_input)
         print(response)
-        valid_response = [{'type': 'team', 'value': 'NEW ENGLAND PATRIOTS', 'isPrimary': False},
+        valid_response = [{'type': 'team', 'value': 'TAMPA BAY BUCCANEERS', 'isPrimary': False},
                           {'type': 'person', 'value': 'Tom Brady', 'isPrimary': True},
                           {'type': 'position', 'value': 'QB', 'isPrimary': False},
                           {'type': 'league', 'value': 'NFL', 'isPrimary': False},
