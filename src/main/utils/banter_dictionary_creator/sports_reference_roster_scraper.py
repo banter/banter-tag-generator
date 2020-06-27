@@ -60,7 +60,7 @@ class SportsReferenceRosterScraper(SportsReferencePlayerScraper):
         self.duplicate_names: list = []
         if get_rosters:
             self.create_league_player_dict()
-            self.league_roster_dict = self._manually_fix_roster_dict(self.league, self.league_roster_dict)
+            self.league_roster_dict = self.manually_fix_roster_dict(self.league, self.league_roster_dict)
 
     def _get_valid_team_names(self) -> set:
         """
@@ -107,7 +107,6 @@ class SportsReferenceRosterScraper(SportsReferencePlayerScraper):
             # Combining Dictionaries
             print("Finishing:", team_details, "Amount of Players on Roster:", len(team_player_dict))
             self.league_roster_dict = {**self.league_roster_dict, **team_player_dict}
-        self._manual_delete_from_dict()
         return
 
     def create_team_player_dict(self, team_roster, team_name, league):
@@ -120,6 +119,10 @@ class SportsReferenceRosterScraper(SportsReferencePlayerScraper):
         team_player_dict: dict = {}
         for player in team_roster.players:
             try:
+                # If the player doesn't have a name
+                # TODO add ability to scrape for name
+                if player.name == None:
+                    continue
                 position = self.get_position(player, league=league)
                 player_instance = Player(display=player.name, team=team_name, position=position,
                                          player_id=player.player_id)
@@ -129,18 +132,17 @@ class SportsReferenceRosterScraper(SportsReferencePlayerScraper):
                 else:
                     team_player_dict[NLPConversionUtil().normalize_text(player_instance.display)] = vars(
                         player_instance)
-            except:
+            except AttributeError as err :
                 # Some players have a name as None in sportsreference dict
-                print(team_name)
+                print(team_name, err)
         return team_player_dict
 
-    # TODO write unit test
     def handle_duplicate_names(self, player_instance: Player):
-        existing_player: Player = self.league_roster_dict[NLPConversionUtil().normalize_text(player_instance.display)]
-        if existing_player.player_id == player_instance.player_id:
-            print("This is the Same person!", vars(existing_player), vars(player_instance))
+        existing_player: dict = self.league_roster_dict[NLPConversionUtil().normalize_text(player_instance.display)]
+        if existing_player["player_id"] == player_instance.player_id:
             # Getting the current team from sports reference, this issue happens when a player is on different
-            # teams in the same season ex: MLB moralke01
+            # teams in the same season ex: MLB moralke01, so we are pulling from web page directly if this happens
+            print("This is the Same person!", existing_player, vars(player_instance))
             current_team = self._scrape_sports_reference_for_players_team(player_instance.player_id)
             print(current_team)
             if current_team in self._get_valid_team_names():
@@ -148,16 +150,12 @@ class SportsReferenceRosterScraper(SportsReferencePlayerScraper):
                 self.league_roster_dict[NLPConversionUtil().normalize_text(player_instance.display)]["team"] \
                     = formatted_team
             else:
-                print(current_team)
-                pass
-                # TODO Consider maybe we want to just delete this person from the roster
-                # del self.league_roster_dict[NLPConversionUtil().normalize_text(player_instance.display)]
+                del self.league_roster_dict[NLPConversionUtil().normalize_text(player_instance.display)]
         else:
             print("These are different people, welcome to the Michael Jordan Data quality issue",
-                  vars(existing_player), vars(player_instance))
-            pass
-        self.duplicate_names.append(vars(player_instance))
-        self.duplicate_names.append(self.league_roster_dict[NLPConversionUtil().normalize_text(player_instance.display)])
+                  existing_player, vars(player_instance))
+            self.duplicate_names.append(vars(player_instance))
+            self.duplicate_names.append(self.league_roster_dict[NLPConversionUtil().normalize_text(player_instance.display)])
 
     def save_dict(self, dictionary, file_name):
         tmp_json = json.dumps(dictionary)
@@ -192,7 +190,7 @@ class SportsReferenceRosterScraper(SportsReferencePlayerScraper):
                     roster[NLPConversionUtil().normalize_text(player_instance.display)] = vars(player_instance)
         return roster
 
-    def _manually_fix_roster_dict(self, league, leage_roster_dict):
+    def manually_fix_roster_dict(self, league, leage_roster_dict):
         if league == 'MLB':
             return self._manually_fix_mlb_dict(leage_roster_dict)
         elif league == 'NFL':

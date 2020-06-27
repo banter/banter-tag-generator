@@ -168,19 +168,19 @@ class SportsReferencePlayerScraper:
     def _manually_fix_nba_positions(self, player_dict):
         # There are scenarios where a player is labeled as SF-SG or PF-SG ... etc, NBAs going small ball
         if "JIMMY BUTLER" in player_dict:
-            player_dict["JIMMY BUTLER"]["postion"] = "SF"
+            player_dict["JIMMY BUTLER"]["position"] = "SF"
         if "THON MAKER" in player_dict:
-            player_dict["THON MAKER"]["postion"] = "C"
+            player_dict["THON MAKER"]["position"] = "C"
         if "WESLEY MATTHEWS" in player_dict:
-            player_dict["WESLEY MATTHEWS"]["postion"] = "SG"
+            player_dict["WESLEY MATTHEWS"]["position"] = "SG"
         if "KYLE KORVER" in player_dict:
-            player_dict["KYLE KORVER"]["postion"] = "SG"
+            player_dict["KYLE KORVER"]["position"] = "SG"
         if "PAUL WATSON" in player_dict:
-            player_dict["PAUL WATSON"]["postion"] = "SG"
+            player_dict["PAUL WATSON"]["position"] = "SG"
         if "HARRISON BARNES" in player_dict:
-            player_dict["HARRISON BARNES"]["postion"] = "SF"
+            player_dict["HARRISON BARNES"]["position"] = "SF"
         if "WILSON CHANDLER" in player_dict:
-            player_dict["WILSON CHANDLER"]["postion"] = "SF"
+            player_dict["WILSON CHANDLER"]["position"] = "SF"
         return player_dict
 
     @staticmethod

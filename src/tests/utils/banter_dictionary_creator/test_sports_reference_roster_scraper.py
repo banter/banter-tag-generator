@@ -9,11 +9,15 @@ from src.main.utils.banter_dictionary_creator.sports_reference_roster_scraper im
 
 
 class TestSportsReferenceScraper(unittest.TestCase):
+
     @classmethod
     def setUpClass(cls):
         cls.buffalo_roster = NFLRoster('BUF', '2019', False)
         cls.cin_roster = NFLRoster('CIN', '2020', False)
+        cls.sf_roster = NFLRoster('SFO', '2020', False)
         cls.nfl_scraper = SportsReferenceRosterScraper(league="NFL")
+        cls.mlb_scraper = SportsReferenceRosterScraper(league="MLB")
+        cls.nba_scraper = SportsReferenceRosterScraper(league="NBA")
         cls.util = NLPResourceUtil()
         FIXTURE_LOCATION = '%s/resources/fixtures/league_rosters' % BASEDIR
         cls.nfl_integration_test_fixture = cls.util.read_json_file(FIXTURE_LOCATION,
@@ -36,9 +40,18 @@ class TestSportsReferenceScraper(unittest.TestCase):
         print(response)
         self.assertEqual(len(response), 32)
 
+    @unittest.skip("Skipping Test for Bills")
     def test_get_team_roster(self):
         team_roster = self.nfl_scraper.get_team_roster("BUF")
         self.assertEqual(type(self.buffalo_roster), type(team_roster))
+
+    def test_create_team_player_dict_sf(self):
+        scraped = self.nfl_scraper.create_team_player_dict(self.sf_roster, "SAN FRANCISCO 49ERS", "NFL")
+        print("Scraped",scraped)
+        scraped = self.remove_player_id_for_test_verification(scraped)
+        print(self.nfl_scraper.duplicate_names)
+        self.assertEqual(False, "AJ GREEN" in scraped)
+        self.assertEqual(True, "GEORGE KITTLE" in scraped)
 
     def test_create_team_player_dict_cin(self):
         scraped = self.nfl_scraper.create_team_player_dict(self.cin_roster, "CINCINNATI BENGALS", "NFL")
@@ -57,6 +70,46 @@ class TestSportsReferenceScraper(unittest.TestCase):
         print("Reference", expected_roster)
         print(self.nfl_scraper.duplicate_names)
         self.assertEqual(bills_roster, expected_roster)
+
+    def test_handle_duplicate_names_same_player_id(self):
+        self.nfl_scraper.league_roster_dict = {"JARED GOFF":{"display": "Jared Goff",
+                                                                 "team": "WRONG TEAM",
+                                                                 "position": "P",
+                                                                 "player_id":"GoffJa00"}}
+        self.nfl_scraper.handle_duplicate_names(Player("JARED GOFF", "WRONG TEAM 2", "RB", "GoffJa00"))
+        expected = {"JARED GOFF":{"display": "Jared Goff",
+                                  "team": "LOS ANGELES RAMS",
+                                  "position": "P",
+                                  "player_id":"GoffJa00"}}
+        self.assertEqual(self.nfl_scraper.league_roster_dict, expected)
+
+    def test_handle_duplicate_names_same_player_id_no_current_team(self):
+        self.mlb_scraper.league_roster_dict = {"MIKE WRIGHT":{"display": "Mike Wright",
+                                                             "team": "TEAM 1",
+                                                             "position": "P",
+                                                             "player_id":"wrighmi01"}}
+        self.mlb_scraper.handle_duplicate_names(Player("Mike Wright", "TEAM 2", "RB", "wrighmi01"))
+        self.assertEqual(self.mlb_scraper.league_roster_dict, {})
+
+    def test_handle_duplicate_names_different_player_id(self):
+        self.nfl_scraper.league_roster_dict = {"JARED GOFF":{"display": "Jared Goff",
+                                                                 "team": "TEAM 1",
+                                                                 "position": "P",
+                                                                 "player_id":"GoffJa01"}}
+        self.nfl_scraper.handle_duplicate_names(Player("JARED GOFF", "TEAM 2", "RB", "GoffJa00"))
+        expected = {"JARED GOFF":{"display": "Jared Goff",
+                                  "team": "TEAM 1",
+                                  "position": "P",
+                                  "player_id":"GoffJa01"}}
+        self.assertEqual(self.nfl_scraper.league_roster_dict, expected)
+
+    def test_manually_fix_nba_positions(self):
+        result = self.nba_scraper.manually_fix_roster_dict("NBA",{"JIMMY BUTLER":{"position": "SG-SF"}})
+        self.assertEqual(result,{"JIMMY BUTLER":{"position": "SF"}})
+
+    def test_manually_fix_nfl_dict(self):
+        result = self.nfl_scraper.manually_fix_roster_dict("NFL",{"MICHAEL JORDAN":{"position": "SG-SF"}})
+        self.assertEqual(result,{})
 
     @unittest.skip("Skip this unless verifying the new results")
     def test_post_dict_creation(self):
