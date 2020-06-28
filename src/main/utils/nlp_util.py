@@ -120,7 +120,7 @@ class NLPUtil(NLPConversionUtil, NLPResourceUtil):
             return []
         elif len(str_.split()) == 1:
             nlp_response = self.get_nlp_response(str_)
-            nlp_entities : List[NLPEntityModel] = [{
+            nlp_entities: List[NLPEntityModel] = [{
                 'text': str_,
                 'type': "MANUAL",
                 'start_char': 0,

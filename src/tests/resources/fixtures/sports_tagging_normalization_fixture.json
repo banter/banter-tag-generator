@@ -107,7 +107,7 @@
       "isPrimary": false
     }
   ],
-  "Today we introduce Jordan Mcrae and talk about his time in the NBA.":[
+  "Today we introduce Jordan Mcrae and talk about his time in the NBA.": [
     {
       "type": "team",
       "value": "Detroit Pistons",
@@ -133,8 +133,8 @@
       "value": "Basketball",
       "isPrimary": false
     }
-  ] ,
-  "Today we introduce De'Aaron Fox and talk about his time in the NBA.":[
+  ],
+  "Today we introduce De'Aaron Fox and talk about his time in the NBA.": [
     {
       "type": "team",
       "value": "Sacramento Kings",
@@ -161,7 +161,7 @@
       "isPrimary": false
     }
   ],
-  "Today we introduce DeAaron Fox and talk about his time in the NBA.":[
+  "Today we introduce DeAaron Fox and talk about his time in the NBA.": [
     {
       "type": "team",
       "value": "Sacramento Kings",
@@ -188,7 +188,7 @@
       "isPrimary": false
     }
   ],
-  "Today we introduce DJ LeMahieu and talk about life.":[
+  "Today we introduce DJ LeMahieu and talk about life.": [
     {
       "type": "team",
       "value": "New York Yankees",
@@ -215,7 +215,7 @@
       "isPrimary": false
     }
   ],
-  "Today we introduce DJ Lemahieu and talk about life.":[
+  "Today we introduce DJ Lemahieu and talk about life.": [
     {
       "type": "team",
       "value": "New York Yankees",

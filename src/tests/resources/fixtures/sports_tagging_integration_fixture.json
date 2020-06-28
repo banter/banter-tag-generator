@@ -1,6 +1,5 @@
 {
   "Magic": [
-
     {
       "type": "team",
       "value": "Orlando Magic",
@@ -18,7 +17,6 @@
     }
   ],
   "Bucks": [
-
     {
       "type": "team",
       "value": "Milwaukee Bucks",
@@ -36,7 +34,6 @@
     }
   ],
   "Yankees": [
-
     {
       "type": "team",
       "value": "New York Yankees",
@@ -345,7 +342,7 @@
   "Today we are going to discuss Tom Brady's assention into stardom.": [
     {
       "type": "team",
-      "value": "New England Patriots",
+      "value": "Tampa Bay Buccaneers",
       "isPrimary": false
     },
     {
