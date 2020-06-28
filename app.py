@@ -10,7 +10,7 @@ initialize_logger(PARENT_DIR)
 hostname = os.popen('hostname').read()
 # If on docker or local log to logs directory, if on AWS ec2 log to logs folder outside project
 if 'ec2' in hostname:
-    initialize_logger('../../', is_local=False)
+    initialize_logger('../', is_local=False)
 else:
     initialize_logger(PARENT_DIR, is_local=True)
 
