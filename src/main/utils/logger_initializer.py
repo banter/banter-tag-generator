@@ -6,16 +6,17 @@ import os.path
 from logging.handlers import RotatingFileHandler
 
 
-def initialize_logger(output_dir):
-    logger = logging.getLogger()
-    logger.setLevel(logging.DEBUG)
+def initialize_logger(output_dir, is_local: bool = False):
 
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
+    if is_local:
     # create console handler and set level to info
-    handler = logging.StreamHandler()
-    handler.setLevel(logging.INFO)
-    formatter = logging.Formatter("%(asctime)-15s - %(levelname)s - %(message)s")
-    handler.setFormatter(formatter)
-    logger.addHandler(handler)
+        handler = logging.StreamHandler()
+        handler.setLevel(logging.CRITICAL)
+        formatter = logging.Formatter("%(asctime)-15s - %(levelname)s - %(message)s")
+        handler.setFormatter(formatter)
+        logger.addHandler(handler)
 
     # create error file handler and set level to error
     handler = RotatingFileHandler(os.path.join(output_dir, "logs/error.log"),
@@ -35,8 +36,8 @@ def initialize_logger(output_dir):
     handler.setFormatter(formatter)
     logger.addHandler(handler)
 
-    # create debug file handler and set level to debug, adding rotator
-    handler = RotatingFileHandler(os.path.join(output_dir, "logs/error.log"),
+    # create info file handler and set level to info, adding rotator
+    handler = RotatingFileHandler(os.path.join(output_dir, "logs/info.log"),
                                   maxBytes=10000000,
                                   backupCount=6)
     handler.setLevel(logging.INFO)
