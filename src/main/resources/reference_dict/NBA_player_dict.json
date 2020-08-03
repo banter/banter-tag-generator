@@ -11,12 +11,6 @@
     "position": "C",
     "player_id": "lopezbr01"
   },
-  "PAT CONNAUGHTON": {
-    "display": "Pat Connaughton",
-    "team": "MILWAUKEE BUCKS",
-    "position": "SG",
-    "player_id": "connapa01"
-  },
   "ROBIN LOPEZ": {
     "display": "Robin Lopez",
     "team": "MILWAUKEE BUCKS",
@@ -29,17 +23,17 @@
     "position": "SG",
     "player_id": "divindo01"
   },
+  "PAT CONNAUGHTON": {
+    "display": "Pat Connaughton",
+    "team": "MILWAUKEE BUCKS",
+    "position": "SG",
+    "player_id": "connapa01"
+  },
   "GIANNIS ANTETOKOUNMPO": {
     "display": "Giannis Antetokounmpo",
     "team": "MILWAUKEE BUCKS",
     "position": "PF",
     "player_id": "antetgi01"
-  },
-  "ERIC BLEDSOE": {
-    "display": "Eric Bledsoe",
-    "team": "MILWAUKEE BUCKS",
-    "position": "PG",
-    "player_id": "bledser01"
   },
   "ERSAN \u0130LYASOVA": {
     "display": "Ersan \u0130lyasova",
@@ -52,6 +46,12 @@
     "team": "MILWAUKEE BUCKS",
     "position": "SF",
     "player_id": "middlkh01"
+  },
+  "ERIC BLEDSOE": {
+    "display": "Eric Bledsoe",
+    "team": "MILWAUKEE BUCKS",
+    "position": "PG",
+    "player_id": "bledser01"
   },
   "GEORGE HILL": {
     "display": "George Hill",
@@ -161,12 +161,6 @@
     "position": "SF",
     "player_id": "wiggian01"
   },
-  "DRAGAN BENDER": {
-    "display": "Dragan Bender",
-    "team": "GOLDEN STATE WARRIORS",
-    "position": "PF",
-    "player_id": "bendedr01"
-  },
   "MYCHAL MULDER": {
     "display": "Mychal Mulder",
     "team": "GOLDEN STATE WARRIORS",
@@ -178,12 +172,6 @@
     "team": "GOLDEN STATE WARRIORS",
     "position": "PG",
     "player_id": "curryst01"
-  },
-  "CHASSON RANDLE": {
-    "display": "Chasson Randle",
-    "team": "GOLDEN STATE WARRIORS",
-    "position": "PG",
-    "player_id": "randlch01"
   },
   "KLAY THOMPSON": {
     "display": "Klay Thompson",
@@ -293,6 +281,12 @@
     "position": "SF",
     "player_id": "milleda01"
   },
+  "SINDARIUS THORNWELL": {
+    "display": "Sindarius Thornwell",
+    "team": "NEW ORLEANS PELICANS",
+    "position": "SG",
+    "player_id": "thornsi01"
+  },
   "TOBIAS HARRIS": {
     "display": "Tobias Harris",
     "team": "PHILADELPHIA 76ERS",
@@ -365,17 +359,17 @@
     "position": "C",
     "player_id": "pelleno01"
   },
-  "GLENN ROBINSON": {
-    "display": "Glenn Robinson III",
-    "team": "PHILADELPHIA 76ERS",
-    "position": "SF",
-    "player_id": "robingl02"
-  },
   "ALEC BURKS": {
     "display": "Alec Burks",
     "team": "PHILADELPHIA 76ERS",
     "position": "SG",
     "player_id": "burksal01"
+  },
+  "GLENN ROBINSON": {
+    "display": "Glenn Robinson III",
+    "team": "PHILADELPHIA 76ERS",
+    "position": "SF",
+    "player_id": "robingl02"
   },
   "ZHAIRE SMITH": {
     "display": "Zhaire Smith",
@@ -388,6 +382,12 @@
     "team": "PHILADELPHIA 76ERS",
     "position": "SG",
     "player_id": "shayoma01"
+  },
+  "RYAN BROEKHOFF": {
+    "display": "Ryan Broekhoff",
+    "team": "PHILADELPHIA 76ERS",
+    "position": "SG",
+    "player_id": "broekry01"
   },
   "IVICA ZUBAC": {
     "display": "Ivica Zubac",
@@ -455,12 +455,6 @@
     "position": "SG",
     "player_id": "mannte01"
   },
-  "JOHNATHAN MOTLEY": {
-    "display": "Johnathan Motley",
-    "team": "LOS ANGELES CLIPPERS",
-    "position": "PF",
-    "player_id": "motlejo01"
-  },
   "AMIR COFFEY": {
     "display": "Amir Coffey",
     "team": "LOS ANGELES CLIPPERS",
@@ -472,6 +466,12 @@
     "team": "LOS ANGELES CLIPPERS",
     "position": "PF",
     "player_id": "morrima03"
+  },
+  "JOHNATHAN MOTLEY": {
+    "display": "Johnathan Motley",
+    "team": "LOS ANGELES CLIPPERS",
+    "position": "PF",
+    "player_id": "motlejo01"
   },
   "MFIONDU KABENGELE": {
     "display": "Mfiondu Kabengele",
@@ -527,17 +527,17 @@
     "position": "PF",
     "player_id": "anthoca01"
   },
-  "NASSIR LITTLE": {
-    "display": "Nassir Little",
-    "team": "PORTLAND TRAIL BLAZERS",
-    "position": "PF",
-    "player_id": "littlna01"
-  },
   "MARIO HEZONJA": {
     "display": "Mario Hezonja",
     "team": "PORTLAND TRAIL BLAZERS",
     "position": "SF",
     "player_id": "hezonma01"
+  },
+  "NASSIR LITTLE": {
+    "display": "Nassir Little",
+    "team": "PORTLAND TRAIL BLAZERS",
+    "position": "PF",
+    "player_id": "littlna01"
   },
   "TREVOR ARIZA": {
     "display": "Trevor Ariza",
@@ -560,7 +560,7 @@
   "WENYEN GABRIEL": {
     "display": "Wenyen Gabriel",
     "team": "PORTLAND TRAIL BLAZERS",
-    "position": null,
+    "position": "PF",
     "player_id": "gabriwe01"
   },
   "JAYLEN HOARD": {
@@ -586,6 +586,12 @@
     "team": "PORTLAND TRAIL BLAZERS",
     "position": "C",
     "player_id": "nurkiju01"
+  },
+  "JAYLEN ADAMS": {
+    "display": "Jaylen Adams",
+    "team": "PORTLAND TRAIL BLAZERS",
+    "position": "PG",
+    "player_id": "adamsja01"
   },
   "SHAI GILGEOUS-ALEXANDER": {
     "display": "Shai Gilgeous-Alexander",
@@ -671,6 +677,12 @@
     "position": "PF",
     "player_id": "herveke01"
   },
+  "DEVON HALL": {
+    "display": "Devon Hall",
+    "team": "OKLAHOMA CITY THUNDER",
+    "position": "SG",
+    "player_id": "hallde01"
+  },
   "ISAIAH ROBY": {
     "display": "Isaiah Roby",
     "team": "OKLAHOMA CITY THUNDER",
@@ -680,7 +692,7 @@
   "ANDRE ROBERSON": {
     "display": "Andre Roberson",
     "team": "OKLAHOMA CITY THUNDER",
-    "position": null,
+    "position": "SG",
     "player_id": "roberan03"
   },
   "TERENCE DAVIS": {
@@ -737,17 +749,17 @@
     "position": "SG",
     "player_id": "powelno01"
   },
-  "PATRICK MCCAW": {
-    "display": "Patrick McCaw",
-    "team": "TORONTO RAPTORS",
-    "position": "SG",
-    "player_id": "mccawpa01"
-  },
   "MARC GASOL": {
     "display": "Marc Gasol",
     "team": "TORONTO RAPTORS",
     "position": "C",
     "player_id": "gasolma01"
+  },
+  "PATRICK MCCAW": {
+    "display": "Patrick McCaw",
+    "team": "TORONTO RAPTORS",
+    "position": "SG",
+    "player_id": "mccawpa01"
   },
   "MATT THOMAS": {
     "display": "Matt Thomas",
@@ -869,17 +881,17 @@
     "position": "SG",
     "player_id": "jeffrda01"
   },
-  "KYLE GUY": {
-    "display": "Kyle Guy",
-    "team": "SACRAMENTO KINGS",
-    "position": "SG",
-    "player_id": "guyky01"
-  },
   "JABARI PARKER": {
     "display": "Jabari Parker",
     "team": "SACRAMENTO KINGS",
     "position": "PF",
     "player_id": "parkeja01"
+  },
+  "KYLE GUY": {
+    "display": "Kyle Guy",
+    "team": "SACRAMENTO KINGS",
+    "position": "SG",
+    "player_id": "guyky01"
   },
   "COREY BREWER": {
     "display": "Corey Brewer",
@@ -929,17 +941,17 @@
     "position": "C",
     "player_id": "bryanth01"
   },
-  "IAN MAHINMI": {
-    "display": "Ian Mahinmi",
-    "team": "WASHINGTON WIZARDS",
-    "position": "C",
-    "player_id": "mahinia01"
-  },
   "MORITZ WAGNER": {
     "display": "Moritz Wagner",
     "team": "WASHINGTON WIZARDS",
     "position": "C",
     "player_id": "wagnemo01"
+  },
+  "IAN MAHINMI": {
+    "display": "Ian Mahinmi",
+    "team": "WASHINGTON WIZARDS",
+    "position": "C",
+    "player_id": "mahinia01"
   },
   "GARY PAYTON": {
     "display": "Gary Payton II",
@@ -983,11 +995,23 @@
     "position": "C",
     "player_id": "willijo04"
   },
+  "JERIAN GRANT": {
+    "display": "Jerian Grant",
+    "team": "WASHINGTON WIZARDS",
+    "position": "PG",
+    "player_id": "grantje02"
+  },
   "JOHN WALL": {
     "display": "John Wall",
     "team": "WASHINGTON WIZARDS",
     "position": "PG",
     "player_id": "walljo01"
+  },
+  "JARROD UTHOFF": {
+    "display": "Jarrod Uthoff",
+    "team": "WASHINGTON WIZARDS",
+    "position": "PF",
+    "player_id": "uthofja01"
   },
   "PJ TUCKER": {
     "display": "P.J. Tucker",
@@ -1064,7 +1088,7 @@
   "MICHAEL FRAZIER": {
     "display": "Michael Frazier",
     "team": "HOUSTON ROCKETS",
-    "position": null,
+    "position": "SG",
     "player_id": "frazimi01"
   },
   "DEMARRE CARROLL": {
@@ -1090,6 +1114,12 @@
     "team": "HOUSTON ROCKETS",
     "position": "SG",
     "player_id": "nwabada01"
+  },
+  "LUC MBAH A MOUTE": {
+    "display": "Luc Mbah a Moute",
+    "team": "HOUSTON ROCKETS",
+    "position": "PF",
+    "player_id": "mbahalu01"
   },
   "DEANDRE HUNTER": {
     "display": "De'Andre Hunter",
@@ -1385,18 +1415,6 @@
     "position": "C",
     "player_id": "fallta01"
   },
-  "SPENCER DINWIDDIE": {
-    "display": "Spencer Dinwiddie",
-    "team": "BROOKLYN NETS",
-    "position": "PG",
-    "player_id": "dinwisp01"
-  },
-  "TAUREAN PRINCE": {
-    "display": "Taurean Prince",
-    "team": "BROOKLYN NETS",
-    "position": "SF",
-    "player_id": "princta02"
-  },
   "JARRETT ALLEN": {
     "display": "Jarrett Allen",
     "team": "BROOKLYN NETS",
@@ -1409,17 +1427,29 @@
     "position": "SG",
     "player_id": "harrijo01"
   },
-  "DEANDRE JORDAN": {
-    "display": "DeAndre Jordan",
+  "SPENCER DINWIDDIE": {
+    "display": "Spencer Dinwiddie",
     "team": "BROOKLYN NETS",
-    "position": "C",
-    "player_id": "jordade01"
+    "position": "PG",
+    "player_id": "dinwisp01"
+  },
+  "TAUREAN PRINCE": {
+    "display": "Taurean Prince",
+    "team": "BROOKLYN NETS",
+    "position": "SF",
+    "player_id": "princta02"
   },
   "GARRETT TEMPLE": {
     "display": "Garrett Temple",
     "team": "BROOKLYN NETS",
     "position": "SG",
     "player_id": "templga01"
+  },
+  "DEANDRE JORDAN": {
+    "display": "DeAndre Jordan",
+    "team": "BROOKLYN NETS",
+    "position": "C",
+    "player_id": "jordade01"
   },
   "CARIS LEVERT": {
     "display": "Caris LeVert",
@@ -1439,17 +1469,17 @@
     "position": "SF",
     "player_id": "kurucro01"
   },
-  "WILSON CHANDLER": {
-    "display": "Wilson Chandler",
-    "team": "BROOKLYN NETS",
-    "position": "SF",
-    "player_id": "chandwi01"
-  },
   "D\u017dANAN MUSA": {
     "display": "D\u017eanan Musa",
     "team": "BROOKLYN NETS",
     "position": "SG",
     "player_id": "musadz01"
+  },
+  "WILSON CHANDLER": {
+    "display": "Wilson Chandler",
+    "team": "BROOKLYN NETS",
+    "position": "SF",
+    "player_id": "chandwi01"
   },
   "KYRIE IRVING": {
     "display": "Kyrie Irving",
@@ -1475,17 +1505,41 @@
     "position": "PG",
     "player_id": "martije02"
   },
-  "KEVIN DURANT": {
-    "display": "Kevin Durant",
+  "JUSTIN ANDERSON": {
+    "display": "Justin Anderson",
     "team": "BROOKLYN NETS",
     "position": "SF",
-    "player_id": "duranke01"
+    "player_id": "anderju01"
   },
   "TYLER JOHNSON": {
     "display": "Tyler Johnson",
     "team": "BROOKLYN NETS",
     "position": "PG",
     "player_id": "johnsty01"
+  },
+  "LANCE THOMAS": {
+    "display": "Lance Thomas",
+    "team": "BROOKLYN NETS",
+    "position": "PF",
+    "player_id": "thomala01"
+  },
+  "DONTA HALL": {
+    "display": "Donta Hall",
+    "team": "BROOKLYN NETS",
+    "position": "PF",
+    "player_id": "halldo01"
+  },
+  "KEVIN DURANT": {
+    "display": "Kevin Durant",
+    "team": "BROOKLYN NETS",
+    "position": "SF",
+    "player_id": "duranke01"
+  },
+  "JAMAL CRAWFORD": {
+    "display": "Jamal Crawford",
+    "team": "BROOKLYN NETS",
+    "position": "SG",
+    "player_id": "crawfja01"
   },
   "KENTAVIOUS CALDWELL-POPE": {
     "display": "Kentavious Caldwell-Pope",
@@ -1571,17 +1625,23 @@
     "position": "PF",
     "player_id": "antetko01"
   },
+  "DION WAITERS": {
+    "display": "Dion Waiters",
+    "team": "LOS ANGELES LAKERS",
+    "position": "SG",
+    "player_id": "waitedi01"
+  },
   "TALEN HORTON-TUCKER": {
     "display": "Talen Horton-Tucker",
     "team": "LOS ANGELES LAKERS",
     "position": "SG",
     "player_id": "hortota01"
   },
-  "DION WAITERS": {
-    "display": "Dion Waiters",
+  "JR SMITH": {
+    "display": "J.R. Smith",
     "team": "LOS ANGELES LAKERS",
     "position": "SG",
-    "player_id": "waitedi01"
+    "player_id": "smithjr01"
   },
   "JOE INGLES": {
     "display": "Joe Ingles",
@@ -1601,17 +1661,17 @@
     "position": "SG",
     "player_id": "mitchdo01"
   },
-  "BOJAN BOGDANOVI\u0106": {
-    "display": "Bojan Bogdanovi\u0107",
-    "team": "UTAH JAZZ",
-    "position": "SF",
-    "player_id": "bogdabo02"
-  },
   "RUDY GOBERT": {
     "display": "Rudy Gobert",
     "team": "UTAH JAZZ",
     "position": "C",
     "player_id": "goberru01"
+  },
+  "BOJAN BOGDANOVI\u0106": {
+    "display": "Bojan Bogdanovi\u0107",
+    "team": "UTAH JAZZ",
+    "position": "SF",
+    "player_id": "bogdabo02"
   },
   "GEORGES NIANG": {
     "display": "Georges Niang",
@@ -1691,29 +1751,29 @@
     "position": "PG",
     "player_id": "millspa02"
   },
-  "BRYN FORBES": {
-    "display": "Bryn Forbes",
-    "team": "SAN ANTONIO SPURS",
-    "position": "SG",
-    "player_id": "forbebr01"
-  },
-  "TREY LYLES": {
-    "display": "Trey Lyles",
-    "team": "SAN ANTONIO SPURS",
-    "position": "PF",
-    "player_id": "lylestr01"
-  },
   "DEMAR DEROZAN": {
     "display": "DeMar DeRozan",
     "team": "SAN ANTONIO SPURS",
     "position": "SG",
     "player_id": "derozde01"
   },
+  "BRYN FORBES": {
+    "display": "Bryn Forbes",
+    "team": "SAN ANTONIO SPURS",
+    "position": "SG",
+    "player_id": "forbebr01"
+  },
   "DERRICK WHITE": {
     "display": "Derrick White",
     "team": "SAN ANTONIO SPURS",
     "position": "PG",
     "player_id": "whitede01"
+  },
+  "TREY LYLES": {
+    "display": "Trey Lyles",
+    "team": "SAN ANTONIO SPURS",
+    "position": "PF",
+    "player_id": "lylestr01"
   },
   "RUDY GAY": {
     "display": "Rudy Gay",
@@ -1724,7 +1784,7 @@
   "DEJOUNTE MURRAY": {
     "display": "Dejounte Murray",
     "team": "SAN ANTONIO SPURS",
-    "position": null,
+    "position": "PG",
     "player_id": "murrade01"
   },
   "JAKOB POELTL": {
@@ -1733,17 +1793,17 @@
     "position": "C",
     "player_id": "poeltja01"
   },
-  "LAMARCUS ALDRIDGE": {
-    "display": "LaMarcus Aldridge",
-    "team": "SAN ANTONIO SPURS",
-    "position": "C",
-    "player_id": "aldrila01"
-  },
   "LONNIE WALKER": {
     "display": "Lonnie Walker",
     "team": "SAN ANTONIO SPURS",
     "position": "SG",
     "player_id": "walkelo01"
+  },
+  "LAMARCUS ALDRIDGE": {
+    "display": "LaMarcus Aldridge",
+    "team": "SAN ANTONIO SPURS",
+    "position": "C",
+    "player_id": "aldrila01"
   },
   "MARCO BELINELLI": {
     "display": "Marco Belinelli",
@@ -1751,17 +1811,17 @@
     "position": "SG",
     "player_id": "belinma01"
   },
-  "CHIMEZIE METU": {
-    "display": "Chimezie Metu",
-    "team": "SAN ANTONIO SPURS",
-    "position": "PF",
-    "player_id": "metuch01"
-  },
   "DREW EUBANKS": {
     "display": "Drew Eubanks",
     "team": "SAN ANTONIO SPURS",
     "position": "PF",
     "player_id": "eubandr01"
+  },
+  "CHIMEZIE METU": {
+    "display": "Chimezie Metu",
+    "team": "SAN ANTONIO SPURS",
+    "position": "PF",
+    "player_id": "metuch01"
   },
   "KELDON JOHNSON": {
     "display": "Keldon Johnson",
@@ -1775,17 +1835,17 @@
     "position": "SG",
     "player_id": "weathqu01"
   },
-  "LUKA \u0160AMANI\u0106": {
-    "display": "Luka \u0160amani\u0107",
-    "team": "SAN ANTONIO SPURS",
-    "position": "PF",
-    "player_id": "samanlu01"
-  },
   "TYLER ZELLER": {
     "display": "Tyler Zeller",
     "team": "SAN ANTONIO SPURS",
     "position": "C",
     "player_id": "zellety01"
+  },
+  "LUKA \u0160AMANI\u0106": {
+    "display": "Luka \u0160amani\u0107",
+    "team": "SAN ANTONIO SPURS",
+    "position": "PF",
+    "player_id": "samanlu01"
   },
   "MILES BRIDGES": {
     "display": "Miles Bridges",
@@ -1865,12 +1925,6 @@
     "position": "PF",
     "player_id": "mcdanja01"
   },
-  "JOE CHEALEY": {
-    "display": "Joe Chealey",
-    "team": "CHARLOTTE HORNETS",
-    "position": "PG",
-    "player_id": "chealjo01"
-  },
   "KOBI SIMMONS": {
     "display": "Kobi Simmons",
     "team": "CHARLOTTE HORNETS",
@@ -1934,7 +1988,7 @@
   "MICHAEL PORTER": {
     "display": "Michael Porter Jr.",
     "team": "DENVER NUGGETS",
-    "position": null,
+    "position": "PF",
     "player_id": "portemi01"
   },
   "PAUL MILLSAP": {
@@ -1972,6 +2026,18 @@
     "team": "DENVER NUGGETS",
     "position": "SG",
     "player_id": "danietr01"
+  },
+  "BOL BOL": {
+    "display": "Bol Bol",
+    "team": "DENVER NUGGETS",
+    "position": "C",
+    "player_id": "bolbo01"
+  },
+  "TYLER COOK": {
+    "display": "Tyler Cook",
+    "team": "DENVER NUGGETS",
+    "position": "PF",
+    "player_id": "cookty01"
   },
   "MAXI KLEBER": {
     "display": "Maxi Kleber",
@@ -2024,7 +2090,7 @@
   "KRISTAPS PORZI\u0145\u0122IS": {
     "display": "Kristaps Porzi\u0146\u0123is",
     "team": "DALLAS MAVERICKS",
-    "position": null,
+    "position": "PF",
     "player_id": "porzikr01"
   },
   "DWIGHT POWELL": {
@@ -2069,6 +2135,12 @@
     "position": "SG",
     "player_id": "clevean01"
   },
+  "TREY BURKE": {
+    "display": "Trey Burke",
+    "team": "DALLAS MAVERICKS",
+    "position": "PG",
+    "player_id": "burketr01"
+  },
   "JOSH REAVES": {
     "display": "Josh Reaves",
     "team": "DALLAS MAVERICKS",
@@ -2087,12 +2159,6 @@
     "position": "PG",
     "player_id": "mccontj01"
   },
-  "DOMANTAS SABONIS": {
-    "display": "Domantas Sabonis",
-    "team": "INDIANA PACERS",
-    "position": "C",
-    "player_id": "sabondo01"
-  },
   "DOUG MCDERMOTT": {
     "display": "Doug McDermott",
     "team": "INDIANA PACERS",
@@ -2104,6 +2170,12 @@
     "team": "INDIANA PACERS",
     "position": "SF",
     "player_id": "warretj01"
+  },
+  "DOMANTAS SABONIS": {
+    "display": "Domantas Sabonis",
+    "team": "INDIANA PACERS",
+    "position": "C",
+    "player_id": "sabondo01"
   },
   "AARON HOLIDAY": {
     "display": "Aaron Holiday",
@@ -2267,6 +2339,12 @@
     "position": "PF",
     "player_id": "owensta01"
   },
+  "CAMERON PAYNE": {
+    "display": "Cameron Payne",
+    "team": "PHOENIX SUNS",
+    "position": "PG",
+    "player_id": "payneca01"
+  },
   "MARKELLE FULTZ": {
     "display": "Markelle Fultz",
     "team": "ORLANDO MAGIC",
@@ -2333,17 +2411,17 @@
     "position": "PF",
     "player_id": "isaacjo01"
   },
-  "AL-FAROUQ AMINU": {
-    "display": "Al-Farouq Aminu",
-    "team": "ORLANDO MAGIC",
-    "position": "PF",
-    "player_id": "aminual01"
-  },
   "GARY CLARK": {
     "display": "Gary Clark",
     "team": "ORLANDO MAGIC",
     "position": "PF",
     "player_id": "clarkga01"
+  },
+  "AL-FAROUQ AMINU": {
+    "display": "Al-Farouq Aminu",
+    "team": "ORLANDO MAGIC",
+    "position": "PF",
+    "player_id": "aminual01"
   },
   "MELVIN FRAZIER": {
     "display": "Melvin Frazier",
@@ -2486,7 +2564,7 @@
   "KENDRICK NUNN": {
     "display": "Kendrick Nunn",
     "team": "MIAMI HEAT",
-    "position": null,
+    "position": "SG",
     "player_id": "nunnke01"
   },
   "KELLY OLYNYK": {
@@ -2630,7 +2708,7 @@
   "DENZEL VALENTINE": {
     "display": "Denzel Valentine",
     "team": "CHICAGO BULLS",
-    "position": null,
+    "position": "SG",
     "player_id": "valende01"
   },
   "LUKE KORNET": {
@@ -2849,11 +2927,11 @@
     "position": "SG",
     "player_id": "moonema01"
   },
-  "SHELDON MAC": {
-    "display": "Sheldon Mac",
+  "JORDAN BELL": {
+    "display": "Jordan Bell",
     "team": "CLEVELAND CAVALIERS",
-    "position": null,
-    "player_id": "mcclesh01"
+    "position": "C",
+    "player_id": "belljo01"
   },
   "DILLON BROOKS": {
     "display": "Dillon Brooks",

@@ -45,8 +45,7 @@ class SportsReferencePlayerScraper:
 
     def get_position_mlb(self, player):
         try:
-            is_position_correct = self.is_position_attribute_corect(player.position)
-            if is_position_correct:
+            if self.is_position_attribute_corect(player.position):
                 if player.position in MLB_OUTFIELD_POSITIONS:
                     return 'OF'
                 else:
@@ -82,7 +81,9 @@ class SportsReferencePlayerScraper:
         is_every_position_empty = True
         try:
             positions = player._position
-            if type(positions) == list:
+            if positions is None:
+                return self._scrape_sports_reference_for_nfl_players_position(player.player_id)
+            elif type(positions) == list:
                 for index, position in enumerate(positions):
                     if position.upper() in FANTASY_FOOTBALL_POSITIONS:
                         return position.upper()
@@ -110,7 +111,7 @@ class SportsReferencePlayerScraper:
             return ''
 
     def get_position_nba(self, player):
-        if player.position != '':
+        if self.is_position_attribute_corect(player.position):
             return player.position
         else:
             try:

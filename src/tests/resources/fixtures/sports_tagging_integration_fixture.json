@@ -387,5 +387,86 @@
       "value": "Hockey",
       "isPrimary": false
     }
+  ],
+  "Will Perdue rant on Denzel Valentine": [
+    {
+      "type": "person",
+      "value": "Denzel Valentine",
+      "isPrimary": true
+    },
+    {
+      "type": "team",
+      "value": "Chicago Bulls",
+      "isPrimary": false
+    },
+    {
+      "type": "position",
+      "value": "SG",
+      "isPrimary": false
+    },
+    {
+      "type": "league",
+      "value": "NBA",
+      "isPrimary": false
+    },
+    {
+      "type": "sport",
+      "value": "Basketball",
+      "isPrimary": false
+    }
+  ],
+  "Bol Bol": [
+    {
+      "type": "person",
+      "value": "Bol Bol",
+      "isPrimary": true
+    },
+    {
+      "type": "team",
+      "value": "Denver Nuggets",
+      "isPrimary": false
+    },
+    {
+      "type": "position",
+      "value": "C",
+      "isPrimary": false
+    },
+    {
+      "type": "league",
+      "value": "NBA",
+      "isPrimary": false
+    },
+    {
+      "type": "sport",
+      "value": "Basketball",
+      "isPrimary": false
+    }
+  ],
+  "Joe Burrow": [
+    {
+      "type": "team",
+      "value": "Cincinnati Bengals",
+      "isPrimary": false
+    },
+    {
+      "type": "person",
+      "value": "Joe Burrow",
+      "isPrimary": true
+    },
+    {
+      "type": "position",
+      "value": "QB",
+      "isPrimary": false
+    },
+    {
+      "type": "league",
+      "value": "NFL",
+      "isPrimary": false
+    },
+    {
+      "type": "sport",
+      "value": "Football",
+      "isPrimary": false
+    }
   ]
 }
