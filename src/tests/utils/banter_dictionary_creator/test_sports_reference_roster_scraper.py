@@ -6,6 +6,7 @@ from src.main.utils.nlp_resource_util import NLPResourceUtil
 
 BASEDIR = os.path.abspath(os.path.dirname(dirname(dirname(realpath(__file__)))))
 from sportsreference.nfl.roster import Roster as NFLRoster
+from sportsreference.nba.roster import Roster as NBARoster
 from src.main.utils.banter_dictionary_creator.sports_reference_roster_scraper import SportsReferenceRosterScraper, \
     Player
 
@@ -17,6 +18,7 @@ class TestSportsReferenceScraper(unittest.TestCase):
         cls.buffalo_roster = NFLRoster('BUF', '2019', False)
         cls.cin_roster = NFLRoster('CIN', '2020', False)
         cls.sf_roster = NFLRoster('SFO', '2020', False)
+        cls.den_roster = NBARoster('DEN', '2020', False)
         cls.nfl_scraper = SportsReferenceRosterScraper(league="NFL")
         cls.mlb_scraper = SportsReferenceRosterScraper(league="MLB")
         cls.nba_scraper = SportsReferenceRosterScraper(league="NBA")
@@ -55,13 +57,21 @@ class TestSportsReferenceScraper(unittest.TestCase):
         self.assertEqual(False, "AJ GREEN" in scraped)
         self.assertEqual(True, "GEORGE KITTLE" in scraped)
 
+    def test_create_team_player_dict_den(self):
+        scraped = self.nba_scraper.create_team_player_dict(self.den_roster, "DENVER NUGGETS", "NBA")
+        print("Scraped", scraped)
+        scraped = self.remove_player_id_for_test_verification(scraped)
+        print(self.nfl_scraper.duplicate_names)
+        self.assertEqual(True, "BOL BOL" in scraped)
+        self.assertEqual(False, "GEORGE KITTLE" in scraped)
+
     def test_create_team_player_dict_cin(self):
         scraped = self.nfl_scraper.create_team_player_dict(self.cin_roster, "CINCINNATI BENGALS", "NFL")
         print("Scraped", scraped)
         scraped = self.remove_player_id_for_test_verification(scraped)
         print(self.nfl_scraper.duplicate_names)
         self.assertEqual(True, "AJ GREEN" in scraped)
-        self.assertEqual(True, "RODNEY ANDERSON" in scraped)
+        self.assertEqual(False, "RODNEY ANDERSON" in scraped)
 
     @unittest.skip("Skipping Bills Test")
     def test_create_team_player_dict_bills(self):

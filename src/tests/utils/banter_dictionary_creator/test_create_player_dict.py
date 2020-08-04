@@ -53,6 +53,22 @@ class TestCreatePlayerDict(unittest.TestCase):
         position = SportsReferencePlayerScraper('NBA').get_position(lebron)
         self.assertEqual(position, 'SF')
 
+    def test_denzel_valentine(self):
+        denzel = NBAPlayer('valende01')
+        position = SportsReferencePlayerScraper('NBA').get_position(denzel)
+        self.assertEqual('SG', position)
+
+    def test_dejounte_murray(self):
+        murray = NBAPlayer('murrade01')
+        position = SportsReferencePlayerScraper('NBA').get_position(murray)
+        self.assertEqual('PG', position)
+
+    def test_bol_bol(self):
+        murray = NBAPlayer("bolbo01")
+        position = SportsReferencePlayerScraper('NBA').get_position(murray)
+        self.assertEqual('C', position)
+
+
     def test_terrance_ferg(self):
         terrance_fergeson = NBAPlayer('fergute01')
         position = SportsReferencePlayerScraper('NBA').get_position(terrance_fergeson)
@@ -68,6 +84,12 @@ class TestCreatePlayerDict(unittest.TestCase):
         position = SportsReferencePlayerScraper('MLB').get_position(player)
         self.assertEqual(position, 'OF')
 
+    def test_brantmi02(self):
+        brantmi = MLBPlayer('brantmi02')
+        position = SportsReferencePlayerScraper('MLB').get_position(brantmi)
+        self.assertEqual(position, 'DH')
+
+
     def test_get_position_outfield_not_main_position(self):
         player = TestPlayer(['1B', 'OF', 'RF'])
         position = SportsReferencePlayerScraper('MLB').get_position(player)
@@ -77,6 +99,17 @@ class TestCreatePlayerDict(unittest.TestCase):
         cp3 = NBAPlayer('paulch01')
         position = SportsReferencePlayerScraper('NBA').get_position(cp3)
         self.assertEqual(position, 'PG')
+
+
+    def test_joe_burrow(self):
+        burrow = NFLPlayer('BurrJo01')
+        position = SportsReferencePlayerScraper('NFL').get_position(burrow)
+        self.assertEqual(position, 'QB')
+
+    def test_tua(self):
+        burrow = NFLPlayer('TagoTu00')
+        position = SportsReferencePlayerScraper('NFL').get_position(burrow)
+        self.assertEqual(position, 'QB')
 
     def test_get_position_football(self):
         player = TestPlayer('QB/RB/DT')

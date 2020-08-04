@@ -210,7 +210,6 @@ class SportsReferenceRosterScraper(SportsReferencePlayerScraper):
         return fixed_dict
 
     def _manually_fix_nfl_dict(self, league_roster_dict):
-        self._manually_fix_nfl_delete_from_dict(league_roster_dict)
         removed_dict = self._manually_fix_nfl_delete_from_dict(league_roster_dict)
         fixed_dict = self._manually_fix_nfl_add_to_dict(removed_dict)
         return fixed_dict

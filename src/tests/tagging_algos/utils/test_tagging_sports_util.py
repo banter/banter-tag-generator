@@ -102,7 +102,7 @@ class TestTaggingSportsUtil(unittest.TestCase):
         response = self.sport_util.get_team_player_league_tags_on_player_or_coach(sample,
                                                                                   self.sport_util.util.sports_player_dict,
                                                                                   is_tag_for_player=True)
-        valid_response = [{'type': 'team', 'value': 'HOUSTON ASTROS', 'isPrimary': False},
+        valid_response = [{'type': 'team', 'value': 'NEW YORK METS', 'isPrimary': False},
                           {'type': 'league', 'value': 'MLB', 'isPrimary': False},
                           {'type': 'position', 'value': 'OF', 'isPrimary': False},
                           {'type': 'person', 'value': 'Jake Marisnick', 'isPrimary': True},
