@@ -89,11 +89,23 @@ class NLPConversionUtil(LanguageConfig):
                 if tag_type == "person":
                     if tag["value"].upper() == tag["value"]:
                         tag["value"] = self.format_name(tag["value"])
-                    else:
-                        pass
+                elif tag_type == "team":
+                    tag["value"] = self.format_team_name(tag["value"])
                 else:
                     tag["value"] = tag["value"].title()
         return tags
+
+    def format_team_name(self, team: str) -> str:
+        if self.has_numbers(team):
+            capitalized_team : list = []
+            for word in team.split():
+                capitalized_team.append(word.capitalize())
+            return " ".join(capitalized_team)
+        return team.title()
+
+    @staticmethod
+    def has_numbers(inputString):
+        return any(char.isdigit() for char in inputString)
 
     @staticmethod
     def format_name(name: str):

@@ -143,6 +143,46 @@ class TestNLPConversionUtil(unittest.TestCase):
         expected = [{"type": "position", "value": "RB"}]
         response = NLPConversionUtil().conver_non_league_tags_to_Title_Case_and_format_names(tag)
         self.assertEqual(expected, response)
+        tag = [{"type": "team", "value": "SAN FRANCISCO 49ERS"}]
+        expected = [{"type": "team", "value": "San Francisco 49ers"}]
+        response = NLPConversionUtil().conver_non_league_tags_to_Title_Case_and_format_names(tag)
+        self.assertEqual(expected, response)
+        tag = [{"type": "team", "value": "PHILADELPHIA 76ERS"}]
+        expected = [{"type": "team", "value": "Philadelphia 76ers"}]
+        response = NLPConversionUtil().conver_non_league_tags_to_Title_Case_and_format_names(tag)
+        self.assertEqual(expected, response)
+        tag = [{"type": "team", "value": "NEW YORK YANKEES"}]
+        expected = [{"type": "team", "value": "New York Yankees"}]
+        response = NLPConversionUtil().conver_non_league_tags_to_Title_Case_and_format_names(tag)
+        self.assertEqual(expected, response)
+        tag = [{"type": "team", "value": "BOSTON CELTICS"}]
+        expected = [{"type": "team", "value": "Boston Celtics"}]
+        response = NLPConversionUtil().conver_non_league_tags_to_Title_Case_and_format_names(tag)
+        self.assertEqual(expected, response)
+
+    def test_format_team_names(self):
+        team = "PHILADELPHIA 76ERS"
+        response = NLPConversionUtil().format_team_name(team)
+        expected = "Philadelphia 76ers"
+        self.assertEqual(expected, response)
+        team = "SAN FRANCISCO 49ERS"
+        response = NLPConversionUtil().format_team_name(team)
+        expected = "San Francisco 49ers"
+        self.assertEqual(expected, response)
+        team = "NEW YORK YANKEES"
+        response = NLPConversionUtil().format_team_name(team)
+        expected = "New York Yankees"
+        self.assertEqual(expected, response)
+        team = "GOLDEN STATE WARRIORS"
+        response = NLPConversionUtil().format_team_name(team)
+        expected = "Golden State Warriors"
+        self.assertEqual(expected, response)
+
+    def test_has_numbers(self):
+        self.assertTrue(NLPConversionUtil().has_numbers("76ERS"))
+        self.assertTrue(NLPConversionUtil().has_numbers("PHILADELPHIA 76ERS"))
+        self.assertFalse(NLPConversionUtil().has_numbers("YANKEES"))
+        self.assertFalse(NLPConversionUtil().has_numbers("NEW YORK YANKEES"))
 
     def test_format_names(self):
         response = NLPConversionUtil().format_name("AJ GREEN")

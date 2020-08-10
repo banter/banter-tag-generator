@@ -64,9 +64,9 @@ class TestCreatePlayerDict(unittest.TestCase):
         self.assertEqual('PG', position)
 
     def test_bol_bol(self):
-        murray = NBAPlayer("bolbo01")
-        position = SportsReferencePlayerScraper('NBA').get_position(murray)
-        self.assertEqual('C', position)
+        bol = NBAPlayer("bolbo01")
+        position = SportsReferencePlayerScraper('NBA').get_position(bol)
+        self.assertEqual('SF', position)
 
 
     def test_terrance_ferg(self):

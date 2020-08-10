@@ -2,4 +2,4 @@
 source /home/ec2-user/.bash_profile
 [ -d "/home/ec2-user/app/release" ] && \
 cd /home/ec2-user/app/release && \
-kill $(pgrep python3)
+if pgrep python3; then pkill python3; fi
