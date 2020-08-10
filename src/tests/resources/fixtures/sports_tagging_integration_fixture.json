@@ -468,5 +468,32 @@
       "value": "Football",
       "isPrimary": false
     }
+  ],
+  "Jimmy Garoppolo": [
+    {
+      "type": "team",
+      "value": "San Francisco 49ers",
+      "isPrimary": false
+    },
+    {
+      "type": "person",
+      "value": "Jimmy Garoppolo",
+      "isPrimary": true
+    },
+    {
+      "type": "position",
+      "value": "QB",
+      "isPrimary": false
+    },
+    {
+      "type": "league",
+      "value": "NFL",
+      "isPrimary": false
+    },
+    {
+      "type": "sport",
+      "value": "Football",
+      "isPrimary": false
+    }
   ]
 }
