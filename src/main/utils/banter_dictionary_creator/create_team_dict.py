@@ -57,6 +57,7 @@ def save_dict(dictionary, file_name):
 
 
 def create_team_dict(is_team_upper_case: False):
+    # TODO 8/11 --This Doesnt have Las Vegas Raiders
     if is_team_upper_case:
         teams = NHLTeams(2019)
         nhl_dict = create_team_dict_ref(teams)

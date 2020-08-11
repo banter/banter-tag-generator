@@ -46,23 +46,28 @@ class SportsReferenceRosterScraper(SportsReferencePlayerScraper):
         super().__init__(league)
         self.league = league.upper()
         self.valid_team_names = set()
-        if league == 'MLB':
-            self.league_teams = MLBTeams("2019")
-            self.Roster_Package = MLBRoster
-        elif league == 'NFL':
-            self.league_teams = NFLTeams("2019")
-            self.Roster_Package = NFLRoster
-        elif league == 'NBA':
-            self.league_teams = NBATeams("2019")
-            self.Roster_Package = NBARoster
-        elif league == 'NHL':
-            self.league_teams = NHLTeams("2019")
-            self.Roster_Package = NHLRoster
+        self.league_teams, self.Roster_Package = self._set_league_teams_and_roster_package(league)
         self.league_roster_dict: dict = {}
         self.duplicate_names: list = []
         if get_rosters:
             self.create_league_player_dict()
             self.league_roster_dict = self.manually_fix_roster_dict(self.league, self.league_roster_dict)
+
+    def _set_league_teams_and_roster_package(self, league : str):
+        if league == 'MLB':
+            league_teams = MLBTeams("2020")
+            Roster_Package = MLBRoster
+        #     NO 2020 Team List as of 8/11, manuallly add Las Vegas Raiders
+        elif league == 'NFL':
+            league_teams = NFLTeams("2019")
+            Roster_Package = NFLRoster
+        elif league == 'NBA':
+            league_teams = NBATeams("2020")
+            Roster_Package = NBARoster
+        elif league == 'NHL':
+            league_teams = NHLTeams("2020")
+            Roster_Package = NHLRoster
+        return [league_teams, Roster_Package]
 
     def _get_valid_team_names(self) -> set:
         """
@@ -78,10 +83,12 @@ class SportsReferenceRosterScraper(SportsReferencePlayerScraper):
         else:
             return self.valid_team_names
 
-    def _get_list_of_team_details(self) -> list:
+    def get_list_of_team_details(self) -> list:
         team_details = []
         for team in self.league_teams:
-            team_details.append({"team_abbreviation": team.abbreviation, "team_name": team.name})
+            if team.name == "Oakland Raiders":
+                team_details.append({"team_abbreviation": team.abbreviation, "team_name": "Las Vegas Raiders"})
+            else: team_details.append({"team_abbreviation": team.abbreviation, "team_name": team.name})
         return team_details
 
     def get_team_name(self, team_details: dict) -> str:
@@ -101,7 +108,7 @@ class SportsReferenceRosterScraper(SportsReferencePlayerScraper):
 
     def create_league_player_dict(self):
         print("Start of Create League Player")
-        for team_details in self._get_list_of_team_details():
+        for team_details in self.get_list_of_team_details():
             print("Starting:", team_details)
             team_roster = self.get_team_roster(team_abbreviation=team_details["team_abbreviation"])
             team_name = self.get_team_name(team_details)
