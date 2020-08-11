@@ -428,7 +428,7 @@
     },
     {
       "type": "position",
-      "value": "C",
+      "value": "SF",
       "isPrimary": false
     },
     {
@@ -478,6 +478,50 @@
     {
       "type": "person",
       "value": "Jimmy Garoppolo",
+      "isPrimary": true
+    },
+    {
+      "type": "position",
+      "value": "QB",
+      "isPrimary": false
+    },
+    {
+      "type": "league",
+      "value": "NFL",
+      "isPrimary": false
+    },
+    {
+      "type": "sport",
+      "value": "Football",
+      "isPrimary": false
+    }
+  ],
+  "Raiders": [
+    {
+      "type": "team",
+      "value": "Las Vegas Raiders",
+      "isPrimary": true
+    },
+    {
+      "type": "league",
+      "value": "NFL",
+      "isPrimary": false
+    },
+    {
+      "type": "sport",
+      "value": "Football",
+      "isPrimary": false
+    }
+  ],
+  "Derek Carr": [
+    {
+      "type": "team",
+      "value": "Las Vegas Raiders",
+      "isPrimary": false
+    },
+    {
+      "type": "person",
+      "value": "Derek Carr",
       "isPrimary": true
     },
     {

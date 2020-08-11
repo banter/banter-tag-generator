@@ -40,9 +40,19 @@ class TestSportsReferenceScraper(unittest.TestCase):
         return response
 
     def test_get_list_of_abbreviations(self):
-        response = self.nfl_scraper._get_list_of_team_details()
+        response = self.nfl_scraper.get_list_of_team_details()
         print(response)
         self.assertEqual(len(response), 32)
+
+    def test_get_list_of_abbreviations_raiders(self):
+        response = self.nfl_scraper.get_list_of_team_details()
+        count = 0
+        for team in response:
+            if team["team_name"] == "Las Vegas Raiders":
+                count += 1
+            if team["team_name"] == "Oakland Raider":
+                count -= 1
+        self.assertEqual(count, 1)
 
     @unittest.skip("Skipping Test for Bills")
     def test_get_team_roster(self):
